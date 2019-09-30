@@ -1,0 +1,26 @@
+.kanan{
+    width: 55%;
+    float: left;
+
+}
+.kanan table tr{
+    display: inline-block;
+    color: #414341; font-size: 20px;
+    margin: 5px;
+}
+.kanan table tr td:nth-child(1){
+width: 300px;
+}
+.kiri{
+    width: 45%;
+    float: left;
+}
+
+}
+.bawah{
+    width: 100%;
+    clear: both;
+}
+body {
+    background-color: antiquewhite
+}
