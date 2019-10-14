@@ -15,7 +15,6 @@ header h1
 }
 header img
 {
-    /* background-color: chartreuse; */
     width: 100px;
     float: left;
     padding: 5px;
@@ -26,20 +25,11 @@ nav
 }
 nav ul li
 {
-    
-    /* background-color: aqua; */
     display: inline-block;
     margin: 20px 72px;
-    /* padding: 10px 30px; */
 }
-/* nav ul 
-{
-    background-color: darkolivegreen;
-} */
 nav ul li a
 {
-    /* background-color: deeppink; */
-    /* padding: 10px 50px; */
     text-decoration: none;
     color: black;
     font-size: 20px;
@@ -48,7 +38,35 @@ ul .submenu
 {
     text-align: left;
 }
+/* Dropdown */
+li.dropdown {
+    display: inline-block;
+}
 
+.dropdown:hover .isi-dropdown {
+    display: block;
+}
+
+.isi-dropdown a:hover {
+    color: #fff !important;
+}
+
+.isi-dropdown {
+    position: absolute;
+    display: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+    background-color: #f9f9f9;
+}
+
+.isi-dropdown a {
+    color: #3c3c3c !important;
+}
+
+.isi-dropdown a:hover {
+    color: #232323 !important;
+    background: #f3f3f3 !important;
+}
 /* bagian section */
 section
 {
