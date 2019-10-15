@@ -1,0 +1,54 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* ini digunakan untuk kepala */
+#kepala{
+    background: brown;
+    color: white;
+    height: 50;
+    padding: 20px;
+    border-bottom: 6px solid #b31417;
+    padding: 30px 50px 40px 50px;   
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+li{
+   display: inline; 
+   /* padding: 0px 20px 0px 20px; */
+   padding: 40px 30px;
+  
+   
+}
+nav{
+    float: right;
+}
+
+
+/* Bagian Section */
+section li{
+   display: inline-block;
+}
+section{
+    text-align: center;
+    padding-bottom: 200px;
+
+.konten{
+    text-align: center;
+    margin: 20px 20px 20px 20px;
+}
+
+/* Bagian footer */
+footer{
+    text-align: center;
+}
+footer img{
+    width: 50px;
+}
