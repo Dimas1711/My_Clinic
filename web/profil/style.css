@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+body
+{
+    background-image: url(Funny_Richard.jpg);
+    background-position: center;
+}
+
 
 /* bagian header */
 header h1
@@ -20,59 +26,45 @@ header img
     float: left;
     padding: 5px;
 }       
-nav
+
+.menu
 {
     background-color:#97C3F6;
+    position: relative;
 }
-nav ul li
+.menu ul li
 {
-    
-    /* background-color: aqua; */
     display: inline-block;
     margin: 20px 72px;
-    /* padding: 10px 30px; */
+    position: relative;
 }
-/* nav ul 
+.menu ul li:hover ul.dropdown
 {
-    background-color: darkolivegreen;
-} */
-nav ul li a
+    display: block;
+}
+.menu ul li a
 {
-    /* background-color: deeppink; */
-    /* padding: 10px 50px; */
     text-decoration: none;
     color: black;
     font-size: 20px;
-}
-ul .submenu
-{
-    background-color:#97C3F6 ;
-    text-align: left;
-    position: absolute;
-    border: 1px;
-    top: 20px;
-    left: 0;
-}
-ul.submenu li
-{
-    display: block;
-}
-ul .submenu li a
-{
-    display: block;
-    padding: 5px 10px;
-}
+} 
+
+
+
+
+
 
 /* bagian section */
-section
-{
-    background-image: url(Funny_Richard.jpg);
-}
 section h2
 {   
+    /* background-color:#EBEEEF; */
     text-align: center;
     color: cyan;
 }
+
+
+
+
 
 
 
