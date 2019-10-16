@@ -82,16 +82,36 @@ li.dropdown {
 /* bagian section */
 section h2
 {   
-    background-color:rgba(102, 95, 95, 0.135);
-    margin: 10px 500px 80px 500px;
+    opacity: 0.8;
+    font-size: 60px;
+    background-color:#FFFFFF;
+    margin: 10px 150px 80px 150px;
     text-align: center;
     color: black;
+    /* #4e4e4e */
+} 
+section ul
+{
+    opacity: 0.8;
+    background-color:#FFFFFF;
+    margin: 10px 150px 80px 150px;
+    text-align: left;
+    color: black;
+}
+section p 
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 30px;
 }
 section li
 {
-    text-decoration: ;
+    margin-bottom: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    list-style-type: none;
 }
-
 
 
 
