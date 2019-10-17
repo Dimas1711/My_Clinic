@@ -1,0 +1,62 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body 
+{
+    background-image: url(back.jpg);   
+}
+header h1
+{
+    background-color:#EBEEEF;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px 120px 5px 120px;
+}
+header img
+{
+    width: 100px;
+    float: left;
+    padding: 5px;
+} 
+
+/* bagian section */
+section
+{
+    opacity: 0.8;
+    margin: 50px 350px 100px 350px; 
+    background-color: rgba(238, 235, 235, 0.836);
+    padding-top: 10px;
+    /* padding-left: 100px; */
+    text-align: center;
+    
+}
+section input
+{
+    width: 200px;
+    height: 30px;
+}
+section p
+{
+    margin-top: 30px;
+    opacity: 0.8;
+    font-size: 30px;
+}
+
+section button
+{
+    margin-top: 20px;
+    background-color: aqua;
+    width: 100px;
+    height: 40px;
+}
+section a
+{
+    text-decoration: none;
+    color: red;
+}
+.daftar
+{
+    margin-bottom: 50px;
+}
