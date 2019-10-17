@@ -47,7 +47,7 @@ ul .submenu
 }
 
 
-/* Dropdown */
+/* Dropdown
 li.dropdown {
     display: inline-block;
 }
@@ -74,7 +74,7 @@ li.dropdown {
 .isi-dropdown a:hover {
     color: #232323 ;
     background: #f3f3f3 ;
-}
+} */
 
 /* Dropdown */
 li.dropdown {
