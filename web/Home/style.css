@@ -3,9 +3,6 @@
     margin: 0;
     padding: 0;
 }
-
-
-
 /* bagian header */
 header h1
 {
@@ -120,32 +117,56 @@ section h2
     margin-left: 320px;
     margin-bottom: 25px;
 }
+/* Grid */
+.grid {
+    display: grid;
+    grid-gap: 10px;
+ 
+}
 /* tips */
 #tipsnya {
     background-color: rgba(238, 235, 235, 0.836);
-    
     margin-left: 50px;
     margin-right: 750px;
 }
 .tips {
-    display: grid;
-    grid-template-columns: 66% auto;
+   
     margin-right: 750px;
+    border-bottom :2px solid black;
      background-color: rgba(238, 235, 235, 0.836);
 }
 #tipsnya ul {
-    margin-left: 100px;
+    margin-left: 50px;
     list-style: none;
+    margin-bottom: 50px;
 }
 #tipsnya a {
     text-decoration: none;
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    color: black;
+   
 }
 .tips {
     margin-left: 50px;
-  
 }
+/* maps */
+
+.maps {
+    margin: 0px 550px 75px 50px;
+    background-color: rgba(238, 235, 235, 0.836);
+}
+#info{
+    margin: 0px 500px 0px 50px;    
+    background-color: rgba(238, 235, 235, 0.836);
+}
+#info h2{
+    border-bottom :2px solid black;
+}
+#detail{
+    margin-left: 50px;
+}
+
 /* sec */
 .sec   {
     background-color: red;
