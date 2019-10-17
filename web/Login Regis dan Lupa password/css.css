@@ -33,10 +33,12 @@ section {
 section input {
     width: 300px;
     height: 35px;
+    margin-left: 200px;
 }
 section select {
     width: 300px;
     height: 35px;
+    margin-left: 200px;
 }
 section h2 {
     text-align: center;
