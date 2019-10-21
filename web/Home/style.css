@@ -26,54 +26,75 @@ nav ul li
 {
     display: inline-block;
     margin: 20px 72px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-nav ul li a
+ nav ul li a
 {
     text-decoration: none;
     color: black;
     font-size: 20px;
-}
-ul .submenu
+} 
+/ul .submenu
 {
     text-align: left;
-}
+} 
 
 /* //// body //// */
 body {
- background-image: url(back.jpg);   
+ background-image: url(back.jpg); 
+
 }
+
 /* Dropdown */
 li.dropdown {
     display: inline-block;
-}
-
-.dropdown:hover .isi-dropdown {
+  }
+.dropdown{
+    position: relative;
+  }
+  
+  .dropdown:hover .isi-dropdown {
     display: block;
-}
+  }
 
-.isi-dropdown a:hover {
-    color: #fff ;
-}
-
-.isi-dropdown {
+  .isi-dropdown a:hover {
+    color: #fff !important;
+  }
+  
+  .isi-dropdown {
     position: absolute;
     display: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
     background-color: #f9f9f9;
-}
-
-.isi-dropdown a {
-    color: #3c3c3c ;
-}
-
-.isi-dropdown a:hover {
-    color: #232323 ;
-    background: #f3f3f3 ;
-}
+  }
+  
+  .isi-dropdown a {
+    color: #3c3c3c !important;
+  }
+  
+  .isi-dropdown a:hover {
+    color: #232323 !important;
+    background: #f3f3f3 !important;
+  }
+  
+  /* bagian section */
+  section h2
+  {   
+      background-color:rgba(102, 95, 95, 0.135);
+      margin: 10px 500px 80px 500px;
+      text-align: center;
+      color: black;
+  }
+  section li
+  {
+      text-decoration: ;
+  } 
+  
+    
 /* bagian section */
 
-section h2
+ section h2
 {   
     text-align: center;
     color: black;
@@ -97,17 +118,19 @@ section h2
     background-color: #aaa;
     background-size:cover ;
     position: relative;
-}
+} 
 
 /* /////// gambar ///// */
 .gambar img {
     width: 1000px;
     height: 500px;
     margin-left: 150px;
+    
 }
 .gambar {
     margin: 50px 50px 50px 50px ;
-}
+
+} 
 
 /* //// Video ///// */
 .video h2  {
@@ -118,18 +141,30 @@ section h2
 #videonya {
     margin-left: 320px;
     margin-bottom: 25px;
-}
+} 
 /* Grid */
+<<<<<<< HEAD
 
+=======
+ .container {
+    padding: 50px 20px;
+    
+} 
+>>>>>>> fc7a2b058c8c42e780675b2db101f019d706264f
 /* tips */
-#tipsnya {
+ #tipsnya {
     background-color: rgba(238, 235, 235, 0.836);
     margin-left: 50px;
     margin-right: 750px;
     
+<<<<<<< HEAD
     
 }
 .tips {
+=======
+} 
+ .tips {
+>>>>>>> fc7a2b058c8c42e780675b2db101f019d706264f
     margin-right: 750px;
     border-bottom :2px solid black;
      background-color: rgba(238, 235, 235, 0.836);
@@ -150,7 +185,7 @@ section h2
     margin-left: 50px;
 }
 /* ///// Pelayanan //////// */
-.Pelayanan{
+ .Pelayanan{
     margin-right: 750px;
     margin-left: 50px;
     border-bottom :2px solid black;
@@ -162,10 +197,10 @@ section h2
     margin-right: 750px;
     margin-bottom: 50px;
     
-}
+}  
 /* maps */
 
-.maps {
+ .maps {
     margin: 0px 550px 75px 50px;
     background-color: rgba(238, 235, 235, 0.836);
 }
@@ -180,20 +215,25 @@ section h2
 #detail{
     margin-left: 100px;
     
-}
+} 
 
 /* sec */
+<<<<<<< HEAD
 .sec   {
   
+=======
+ .sec   {
+    background-color: red;
+>>>>>>> fc7a2b058c8c42e780675b2db101f019d706264f
     margin-right: 750px;
     margin-left: 100px;
-}
+} 
     /* bagian footer */
 
-footer
+ footer
 {
     padding: 10px;
     background-color:#EBEEEF;
     text-align: center;
-}
+} 
 
