@@ -56,6 +56,10 @@ section a
     text-decoration: none;
     color: red;
 }
+section a:hover
+{
+    color: blueviolet;
+}
 .daftar
 {
     margin-bottom: 50px;
@@ -63,6 +67,6 @@ section a
 .lupa
 {
     text-decoration: none;
-    color: black;
+    color: red;
     font-size: 25px;
 }
