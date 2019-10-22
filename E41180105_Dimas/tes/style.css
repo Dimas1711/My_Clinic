@@ -1,0 +1,92 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+
+/* bagian header */
+#header1
+{
+    color: white;
+    background-color: brown;
+    padding: 20px;
+    border-bottom: 6px solid brown;
+}
+header h1
+{
+    float: left;
+    position: absolute;
+}
+header h2
+{
+    padding-top: 30px;
+}
+header h1 a
+{
+    text-decoration: none;
+    color: white;
+}
+header h2 a
+{
+    text-decoration: none;
+    color: white;
+}
+
+/* bagian navigasi */
+nav ul
+{
+    list-style: none;
+    margin-top: 20px;
+}
+nav a
+{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+nav li
+{
+    display: inline;
+    padding: 10px 30px;
+}
+nav
+{
+    float: right;
+}
+
+
+/* bagian section */
+section
+{
+    text-align: center;
+    margin-bottom: 150px;
+}
+section li
+{
+    display: inline-block;
+}
+section img
+{
+    width: 250px;
+}
+section a
+{
+    text-decoration: none;
+    color: black;
+}
+section h2
+{
+    margin-top: 30px;
+}
+
+
+/* bagian footer */
+footer
+{
+    text-align: center;
+}
+footer img
+{
+    width: 50px;
+}
