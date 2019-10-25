@@ -46,19 +46,16 @@ section p
 
 section button
 {
+    
     margin-top: 20px;
     background-color: aqua;
-    width: 100px;
+    width: 150px;
     height: 40px;
 }
 section a
 {
     text-decoration: none;
     color: red;
-}
-section a:hover
-{
-    color: blueviolet;
 }
 .daftar
 {
@@ -67,6 +64,11 @@ section a:hover
 .lupa
 {
     text-decoration: none;
-    color: red;
+    color: black;
     font-size: 25px;
+}
+section h2
+{
+    font-size: 40px;
+    opacity: 0.8;
 }
