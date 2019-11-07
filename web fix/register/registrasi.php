@@ -1,70 +1,33 @@
 <?php
+// require 'functions.php';
 $conn = mysqli_connect("localhost","root","","coba");
-if (isset($_POST["register"]))
+
+        $id_anggota = @$_POST['id_anggota'];
+        $password = @$_POST['password'];
+        $ktp = @$_POST['ktp'];
+        $nama = @$_POST['nama'];
+        $jenis = @$_POST['jenis'];
+        $jenis_kelamin = @$_POST['jenis_kelamin'];
+        $ttl = @$_POST['ttl'];
+        $alamat = @$_POST['alamat'];
+        $pendidikan = @$_POST['pendidikan'];
+        $nohp = @$_POST['nohp'];
+        $pekerjaan = @$_POST['pekerjaan'];
+        $email = @$_POST['email'];      
+        $nama_foto = @$_FILES['foto']['name'];
+        $tmp_foto = @$_FILES['foto']['tmp_name'];
+        $folder = "img/".$nama_foto;
+
+if (isset($_POST['register']))
 {
-  $id_anggota = $_POST["id_anggota"];
-  $password = $_POST["password"];
-  $ktp = $_POST["ktp"];
-  $nama = $_POST["nama"];
-  $jenis = $_POST["jenis"];
-  $jenis_kelamin = $_POST["jenis_kelamin"];
-  $ttl = $_POST["ttl"];
-  $alamat = $_POST["alamat"];
-  $pendidikan = $_POST["pendidikan"];
-  $nohp = $_POST["nohp"];
-  $pekerjaan = $_POST["pekerjaan"];
-  $email = $_POST["email"];
-
-  
-  //upload foto
-//   $foto = upload();
-
-//   function upload()
-//   {
-//         $namafile = $_FILES["foto"]["namafile"];
-//         $ukuran = $_FILES["foto"]["ukuran"];
-//         $error = $_FILES["foto"]["error"];
-//         $tmpname = $_FILES["foto"]["tmpname"];
-
-//         //tidak ada gambar yang diupload
-//         if ($error === 4)
-//         {
-//                 echo "<script>
-//                         alert('Upload Foto Terlebih Dahulu')
-//                 </script>";
-//         }
-  
-//   }
-
-//   move_uploaded_file($tmpname, 'img/' . $namafile);
-//$foto = $_POST["foto"];
-
-        if (    $id_anggota == "" || $password == "" || $ktp == "" ||
-                $nama == "" || $jenis == "" || $jenis_kelamin == "" ||
-                $ttl == "" || $alamat == "" || $pendidikan == "" ||
-                $nohp == "" || $pekerjaan == "" || $email == "" || $foto == ""
-           )
-        {
-                echo
-                "<script>
-                        alert('Data Harus Terisi Semua!')
-                </script>"; 
         
-        }
-        else
-        {
-                $query="INSERT INTO tb_anggota VALUES
-                ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto')";
-      
-                mysqli_query($conn, $query);
+        move_uploaded_file($tmp_foto, $folder);
+        $query="INSERT INTO tb_anggota VALUES
+        ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$folder')";
 
-                echo 
-                "<script>
-                        alert('Data Telah Berhasil Disimpan!')
-                </script>"; 
-        }
-
+        $sql= mysqli_query($conn, $query);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +50,7 @@ if (isset($_POST["register"]))
         </header>
         <section>
             <h2> Form Pendaftaran</h2>
-            <form action="" method="POST" >
+            <form action="" method="POST" enctype="multipart/form-data" >
             <table>
                 <tr>
                         <td>Id Anggota</td>
@@ -163,7 +126,7 @@ if (isset($_POST["register"]))
                 </tr>
                 <tr>
                         <td>Foto</td>
-                        <td class="nama"><input type="text" name="foto" id="foto"></td>
+                        <td class="nama"><input type="file" name="foto" id="foto"></td>
                 </tr>
                 <button type="submit" name="register" class="kirim">Kirim</button>
                 <button class="batal">Batal</button>
