@@ -1,7 +1,7 @@
 <?php
 $conn = mysqli_connect("localhost","root","","coba");
 
-function registrasi($data)
+function registrasi()
 {
   global $conn;
   
@@ -17,12 +17,36 @@ function registrasi($data)
   $nohp = $_POST["nohp"];
   $pekerjaan = $_POST["pekerjaan"];
   $email = $_POST["email"];
-  $foto = $_POST["foto"];
+  $foto = upload();
   
-  
-  mysqli_query($conn, "INSERT INTO tb_anggota VALUES
-          ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto')");
+  function upload($foto)
+  {
+  $nama_file = $_FILES['foto']['nama'];
+  $tmp_file = $_FILES['foto']['tmp'];
+  $foto_baru = date('dmYHis').$nama_file;
 
-          return mysqli_affected_rows($conn);
-}
-?>
+  $path = "img/".$foto_baru;
+
+  move_uploaded_file($tmp_file, $path);
+  }
+
+        $query="INSERT INTO tb_anggota VALUES
+        ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto')";
+
+        $sql= mysqli_query($conn, $query);
+
+        if($sql)
+        {
+                echo 
+                "<script>
+                        alert('Data Telah Berhasil Disimpan!')
+                </script>";  
+        }
+        else
+        {
+                echo
+                "<script>
+                        alert('Terjadi Kesalahan Saat Menyimpan Data')
+                </script>"; 
+        }
+  
