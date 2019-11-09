@@ -29,9 +29,11 @@ if (isset($_POST['register']))
 
         if($sql)
         {
+                echo "<script>alert('Data Telah Berhasil Disimpan!')</script>"; 
                 header("Location: Home.php");
         }
 }
+
 
 if(isset($_POST['batal']))
 {

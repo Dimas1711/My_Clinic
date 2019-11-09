@@ -4,6 +4,9 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+body {
+    background-image: url(back.jpg);   
+   }
 
 nav li {
     margin-left: 90px;
@@ -38,18 +41,22 @@ section h2
 section table
 {
     margin-top: 30px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 100px;
     background-color:white;
-    font-size: 40px;
+    font-size: 30px;
     opacity: 0.8;
 }
 section td
 {
     padding: 0px 11px;
 }
-footer {
-  font-size: 15px;
-  margin-top: 50px;
-  margin-left: 400px;
+
+
+footer
+{
+    padding-top: 20px;
+    background-color:#EBEEEF;
+    text-align: center;
 }
