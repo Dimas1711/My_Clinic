@@ -9,8 +9,7 @@ $password = @$_POST['password'];
 if (isset($_POST['login']))
 {
 
-  $query = mysqli_query($conn, 
-  "SELECT id_anggota, password FROM tb_anggota WHERE id_anggota='$id_anggota' AND password = '$password' ");
+  $query = "SELECT id_anggota, password FROM tb_anggota WHERE (id_anggota='$id_anggota' AND password = '$password' )";
 
   $sql= mysqli_query($conn, $query);
 

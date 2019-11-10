@@ -1,72 +1,78 @@
 <?php
-// require 'functions.php';
-$conn = mysqli_connect("localhost","root","","coba");
 
-        $id_anggota = @$_POST['id_anggota'];
-        $password = @$_POST['password'];
-        $ktp = @$_POST['ktp'];
-        $nama = @$_POST['nama'];
-        $jenis = @$_POST['jenis'];
-        $jenis_kelamin = @$_POST['jenis_kelamin'];
-        $ttl = @$_POST['ttl'];
-        $alamat = @$_POST['alamat'];
-        $pendidikan = @$_POST['pendidikan'];
-        $nohp = @$_POST['nohp'];
-        $pekerjaan = @$_POST['pekerjaan'];
-        $email = @$_POST['email'];      
-        $nama_foto = @$_FILES['foto']['name'];
-        $tmp_foto = @$_FILES['foto']['tmp_name'];
-        $folder = "img/".$nama_foto;
+    $conn = mysqli_connect("localhost","root","","test");
 
-if (isset($_POST['register']))
-{
-        
-        move_uploaded_file($tmp_foto, $folder);
+    //ambil data dari tabel 
+    $result = mysqli_query($conn, "SELECT * FROM tb_anggota");
 
-        $query="INSERT INTO tb_anggota VALUES
-        ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$folder')";
-
-        $sql= mysqli_query($conn, $query);
-
-        
-}
+    //cek error
+    // if(!$result)
+    // {
+    //     echo mysqli_error($conn);
+    // }
 
 
-if(isset($_POST['batal']))
-{
-        header("Location: Home.php");
-        exit;
-}
-
+    //ambil data (fetch) anggota dari object result
+    // $ang = mysqli_fetch_assoc($result);
+    // var_dump($ang["JENIS_ANGGOTA"]);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="registrasi.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-        <header>
-                <img src="logo polije.png" alt="ini gambar">
-                <h1>Klinik Pratama
-                    <br>
-                    Rawat Jalan
-                    <br>
-                    Politeknik Negeri Jember
-                    <br>
-                </h1>
+<header>
         </header>
         <section>
-            <h2> Form Pendaftaran</h2>
-            <form action="" method="POST" enctype="multipart/form-data" >
-            <table>
+            <h2> Data Anggota</h2>
+            <!-- <form action="" method="POST" enctype="multipart/form-data" > -->
+            <table border = "1", cellpadding = "15" , cellspacing ="0">
                 <tr>
-                        <td>Id Anggota</td>
-                        <td class="nama"><input type="text" name="id_anggota" id="id_anggota"></td>
+                        <th>Id Anggota</th>
+                        <th>Password</th>
+                        <th>NO.KTP/NIM/NIP</th>
+                        <th>Nama Anggota</th>
+                        <th>Jenis Anggota</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tempat Tanggal Lahir</th>
+                        <th>Alamat</th>
+                        <th>Pendidikan Terakhir</th>
+                        <th>NO.HP</th>
+                        <th>Pekerjaan/Prodi</th>
+                        <th>Email</th>
+                        <th>Foto</th>
+                        <th>Aksi</th>
+                        <!-- <td class="nama"><input type="text" name="id_anggota" id="id_anggota"></td> -->
                 </tr>
+
+
+<?php while( $row = mysqli_fetch_assoc($result) ) : ?>
                 <tr>
+                    <td><?= $row["ID_ANGGOTA"] ?></td>
+                    <td><?= $row["PASSWORD"];?></td>
+                    <td><?= $row["NO_KTP_NIM_NIP"];?></td>
+                    <td><?= $row["NAMA_ANGGOTA"];?></td>
+                    <td><?= $row["JENIS_ANGGOTA"];?></td>
+                    <td><?= $row["JENIS_KELAMIN"];?></td>
+                    <td><?= $row["TEMPAT_TANGGAL_LAHIR"];?></td>
+                    <td><?= $row["ALAMAT"];?></td>
+                    <td><?= $row["PENDIDIKAN_TERAKHIR"];?></td>
+                    <td><?= $row["NO_HP"];?></td>
+                    <td><?= $row["PEKERJAAN_PRODI"];?></td>
+                    <td><?= $row["EMAIL"];?></td>
+                    <td><img src="<?php  echo $row["FOTO"]; ?>" alt="" width="50px"></td>
+                    <td>
+                        <a href="">Edit</a>
+                    </td>     
+                </tr>
+<?php endwhile; ?>
+                <!-- <tr>
                         <td>Password</td>
                         <td class="nama"><input type="text" name="password" id="password"></td>
                 </tr>
@@ -139,9 +145,9 @@ if(isset($_POST['batal']))
                         <td class="nama"><input type="file" name="foto" id="foto"></td>
                 </tr>
                 <button type="submit" name="register" class="kirim">Kirim</button>
-                <button class="batal" name="batal">Batal</button>
+                <button class="batal" name="batal">Batal</button> -->
              </table>
-             </form>
+             <!-- </form> -->
         </section>
 </body>
 </html>
