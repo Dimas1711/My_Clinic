@@ -1,21 +1,30 @@
 <?php
 require 'functions.php';
 
+//ambil data di url
+$id = $_GET['id'];
+
+
+//query berdasarkan id
+$ang = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id'")[0];
+
+
+
+
 //cek tombol sudah ditekan atau belum
 if( isset ($_POST["submit"]) )
 {
- 
         //cek data berhasil ditambah?
-        if( tambah($_POST) > 0 )
+        if( ubah($_POST) > 0 )
         {
                 echo "<script>
-                alert('Data Berhasil Ditambahkan');
+                alert('Data Berhasil Diubah');
                 document.location.href = 'anggota.php';
                 </script>";
         }
         else
         {
-                echo "<script>alert('Gagal Menambahkan Data')</script>";
+                echo "<script>alert('Gagal Mengubah Data')</script>";
         }
        
 }
@@ -46,29 +55,25 @@ if(isset($_POST['batal']))
                 </h1>
         </header>
         <section>
-            <h2> Form Pendaftaran</h2>
+            <h2> Form Edit Profil</h2>
             <form action="" method="POST" enctype="multipart/form-data" >
             <table>
-                <tr>
-                        <td>Id Anggota</td>
-                        <td class="nama"><input type="text" name="ID_ANGGOTA" id="id_anggota" ></td>
-                </tr>
-                <tr>
-                        <td>Password</td>
-                        <td class="nama"><input type="password" name="PASSWORD" id="password" ></td>
-                </tr>
+                
+                        <input type="hidden" name="ID_ANGGOTA" id="id_anggota" value="<?= $ang["ID_ANGGOTA"];?>">
+                        <input type="hidden" name="PASSWORD" id="password" value="<?= $ang["PASSWORD"];?>">
+                        <input type="hidden" name="GAMBARLAMA" id="password" value="<?= $ang["FOTO"];?>">
                 <tr>
                         <td>No.KTP/NIM/NIP</td>
-                        <td class="nama"><input type="text" name="NO_KTP_NIM_NIP" id="ktp"></td>
+                        <td class="nama"><input type="text" name="NO_KTP_NIM_NIP" id="ktp" value="<?= $ang["NO_KTP_NIM_NIP"]?>"></td>
                 </tr>
                 <tr>
                         <td>Nama Anggota</td>
-                        <td class="nama"><input type="text" name="NAMA_ANGGOTA" id="nama" ></td>
+                        <td class="nama"><input type="text" name="NAMA_ANGGOTA" id="nama" value="<?= $ang["NAMA_ANGGOTA"]?>"></td>
                 </tr>
                 <tr>
                         <td>Jenis Anggota</td>
                         <td class="nama">
-                                <select name="JENIS_ANGGOTA" id="jenis" >
+                                <select name="JENIS_ANGGOTA" id="jenis" value="<?= $ang["JENIS_ANGGOTA"]?>" >
                                         <option value="">Silahkan Pilih</option>
                                         <option value="umum">Umum</option>
                                         <option value="mahasiswa">Mahasiswa</option>
@@ -80,7 +85,7 @@ if(isset($_POST['batal']))
                 <tr>
                         <td>Jenis Kelamin</td>
                         <td class="nama">
-                        <select name="JENIS_KELAMIN" id="jenis_kelamin" >
+                        <select name="JENIS_KELAMIN" id="jenis_kelamin" value="<?= $ang["JENIS_KELAMIN"]?>">
                                 <option value="">Silahkan Pilih</option>
                                 <option value="l">L</option>
                                 <option value="p">P</option>
@@ -89,16 +94,16 @@ if(isset($_POST['batal']))
                 </tr>
                 <tr>
                         <td>Tempat Tanggal Lahir</td>
-                        <td class="nama"><input type="text" name="TEMPAT_TANGGAL_LAHIR" id="ttl" ></td>
+                        <td class="nama"><input type="text" name="TEMPAT_TANGGAL_LAHIR" id="ttl" value="<?= $ang["TEMPAT_TANGGAL_LAHIR"]?>"></td>
                 </tr>
                 <tr>
                         <td>Alamat</td>
-                        <td class="nama"><input type="text" name="ALAMAT" id="alamat" ></td>
+                        <td class="nama"><input type="text" name="ALAMAT" id="alamat" value="<?= $ang["ALAMAT"]?>"></td>
                 </tr>
                 <tr>
                         <td>Pendidikan Terakhir</td>
                         <td class="nama">
-                        <select name="PENDIDIKAN_TERAKHIR" id="pendidikan" >
+                        <select name="PENDIDIKAN_TERAKHIR" id="pendidikan" value="<?= $ang["PENDIDIKAN_TERAKHIR"]?>">
                                 <option value="">Silahkan Pilih</option>
                                 <option value="SD">SD</option>
                                 <option value="SMP">SMP</option>
@@ -111,21 +116,25 @@ if(isset($_POST['batal']))
                 </tr>
                 <tr>
                         <td>NO.HP</td>
-                        <td class="nama"><input type="text" name="NO_HP" id="nohp" ></td>
+                        <td class="nama"><input type="text" name="NO_HP" id="nohp" value="<?= $ang["NO_HP"]?>"></td>
                 </tr>
                 <tr>
                         <td>Pekerjaan / Prodi</td>
-                        <td class="nama"><input type="text" name="PEKERJAAN_PRODI" id="pekerjaan" ></td>
+                        <td class="nama"><input type="text" name="PEKERJAAN_PRODI" id="pekerjaan" value="<?= $ang["PEKERJAAN_PRODI"]?>"></td>
                 </tr>
                 <tr>
                         <td>Email</td>
-                        <td class="nama"><input type="text" name="EMAIL" id="email" ></td>
+                        <td class="nama"><input type="text" name="EMAIL" id="email" value="<?= $ang["EMAIL"]?>"></td>
                 </tr>
                 <tr>
                         <td>Foto</td>
-                        <td class="nama"><input type="file" name="FOTO" id="foto" ></td>
+                        <td><img src="img/<?= $ang['FOTO'];?>" alt="" width="100px"></td>
                 </tr>
-                <button type="submit" name="submit" class="kirim">Kirim</button>
+                <tr>
+                    <td></td>
+                    <td class="nama"><input type="file" name="FOTO" id="foto" ></td>
+                </tr>
+                <button type="submit" name="submit" class="kirim">Ubah</button>
                 <button class="batal" name="batal">Batal</button>
              </table>
              </form>

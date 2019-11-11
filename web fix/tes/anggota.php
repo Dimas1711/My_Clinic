@@ -54,7 +54,7 @@ $anggota = query("select * from tb_anggota");
                     <td><?= $row["EMAIL"];?></td>
                     <td><img src="img/<?=  $row["FOTO"]; ?>" alt="" width="50px"></td>
                     <td>
-                        <a href="">Edit</a> |
+                        <a href="ubah.php?id=<?= $row["ID_ANGGOTA"]; ?>">Edit</a> |
                         <a href="hapus.php?id=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Apakan Anda Benar Ingin Menghapus Data Ini?');">Hapus</a>
                     </td>     
                 </tr>

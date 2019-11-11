@@ -12,11 +12,11 @@ if( hapus($id) > 0 )
     }
 else
     {
-        // echo "<script>
-        // alert('Gagal Menghapus Data');
-        // document.location.href = 'anggota.php';
-        // </script>";
-        echo mysqli_error($conn);
+        echo "<script>
+        alert('Gagal Menghapus Data');
+        document.location.href = 'anggota.php';
+        </script>";
+        // echo mysqli_error($conn);
 
     }
 
