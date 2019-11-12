@@ -37,12 +37,11 @@ function tambah($data)
             return false;
         }
 
-        $query="INSERT INTO tb_anggota VALUES
-        ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto')";
+        $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto')");
 
-        $sql= mysqli_query($conn, $query);
+        
 
-        return mysqli_affected_rows($conn);
+        return $qu;
 
 
 }

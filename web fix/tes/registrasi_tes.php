@@ -25,6 +25,25 @@ if(isset($_POST['batal']))
         exit;
 }
 
+
+$carikode = mysqli_query($conn, "SELECT max(ID_ANGGOTA) FROM tb_anggota") or die(mysqli_error($conn));
+$datakode = mysqli_fetch_array($carikode);
+if($datakode)
+{
+        $nilaikode = substr($datakode[0], 1);
+        $kode = (int) $nilaikode;
+        $kode = $kode + 1;
+        $hasilkode = "AG" .str_pad($kode, 3, "0", STR_PAD_LEFT);
+        $hasilkode++;
+}
+else
+{
+        $hasilkode = "AG001";
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +70,7 @@ if(isset($_POST['batal']))
             <table>
                 <tr>
                         <td>Id Anggota</td>
-                        <td class="nama"><input type="text" name="ID_ANGGOTA" id="id_anggota" ></td>
+                        <td class="nama"><input type="text" name="ID_ANGGOTA" id="id_anggota" value="<?php echo $hasilkode?>" readonly></td>
                 </tr>
                 <tr>
                         <td>Password</td>
