@@ -50,7 +50,7 @@ else
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="registrasi.css">
+    <link rel="stylesheet" href="#">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -70,7 +70,7 @@ else
             <table>
                 <tr>
                         <td>Id Anggota</td>
-                        <td class="nama"><input type="text" name="ID_ANGGOTA" id="id_anggota" value="<?php echo $hasilkode?>" readonly></td>
+                        <td class="nama"><input type="text" name="ID_ANGGOTA" id="id_anggota" value="<?php echo $hasilkode?>" ></td>
                 </tr>
                 <tr>
                         <td>Password</td>
@@ -107,8 +107,8 @@ else
                         </td>
                 </tr>
                 <tr>
-                        <td>Tempat Tanggal Lahir</td>
-                        <td class="nama"><input type="text" name="TEMPAT_TANGGAL_LAHIR" id="ttl" ></td>
+                        <td>Tempat,Tanggal Lahir</td>
+                        <td class="nama"><input type="text" name="TEMPAT_TANGGAL_LAHIR" id="ttl" placeholder="Jember, 17 November 1999"></td>
                 </tr>
                 <tr>
                         <td>Alamat</td>
@@ -138,7 +138,7 @@ else
                 </tr>
                 <tr>
                         <td>Email</td>
-                        <td class="nama"><input type="text" name="EMAIL" id="email" ></td>
+                        <td class="nama"><input type="text" name="EMAIL" id="email" placeholder="contoh@gmail.com"></td>
                 </tr>
                 <tr>
                         <td>Foto</td>

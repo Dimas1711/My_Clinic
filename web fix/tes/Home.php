@@ -1,17 +1,24 @@
 <?php
+require 'functions.php';
 session_start();
+if(isset($_POST["login"])){
 
-$conn = mysqli_connect("localhost","root","","coba");
+  $id_anggota = $_POST["ID_ANGGOTA"];
+  $password = $_POST["PASSWORD"];
 
-$id_anggota = @$_POST['id_anggota'];
-$password = @$_POST['password'];
+  $result = mysqli_query($conn, "SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota' AND PASSWORD = '$password'");
 
-if (isset($_POST['login']))
-{
-
-  $query = "SELECT id_anggota, password FROM tb_anggota WHERE (id_anggota='$id_anggota' AND password = '$password' )";
-
-  $sql= mysqli_query($conn, $query);
+  if( mysqli_num_rows($result) === 1 )
+  {
+    //cek password
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION["login"] = true;
+    header("location: anggota.php");
+  }
+  else
+  {
+    header("location: login.php?gagal");
+  }
 
 }
 
@@ -69,48 +76,21 @@ if (isset($_POST['login']))
                             
                     <li class="nav-item ">
                       <!-- Button trigger modal -->
-    <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-      Login
+
+    <?php
+    if(!isset($_SESSION["login"])){?>
+    <button type="button" name="login" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a class=lgn href="login.php">Login</a>
     </button>
+    <?php }?>
+
+    <?php
+    if(isset($_SESSION["login"])){?>
+    <button type="button" name= "logout" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a class=lgn href="logout.php">Logout</a>
+    </button>
+    <?php }?>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">ID Anggota</label>
-                <input type="text" name="id_anggota" class="form-control" id="exampleInputIDAnggota1" placeholder="ID Anggota">
-
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-              </div>
-              <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              </div>
-              <div>
-                <p>Belum Punya Akun?</p><a href="registrasi.php">Daftar Sekarang</a>
-              </div>
-
-            </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" name="login" class="btn btn-primary">Login</button>
-            </div>
-          </div>
-          </div>
-    </div>
+        
                   </li>
                   </ul>
                 </div>

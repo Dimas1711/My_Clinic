@@ -118,6 +118,8 @@ function ubah($data)
         $email = htmlspecialchars($data["EMAIL"]);
         $fotolama = htmlspecialchars($data["GAMBARLAMA"]);
 
+        
+
         //cek apa pilih gambar baru atau tidak
         if( $_FILES['FOTO']['error'] === 4 )
         {

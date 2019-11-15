@@ -1,15 +1,15 @@
 <?php
 require 'functions.php';
+session_start();
+
+$_SESSION['user'];
 
 //ambil data di url
-$id = $_GET['id'];
+$id = $_SESSION['user'];
 
 
 //query berdasarkan id
-$ang = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id'")[0];
-
-
-
+$ang = query("SELECT * FROM tb_anggota WHERE NAMA_ANGGOTA = '$id'")[0];
 
 //cek tombol sudah ditekan atau belum
 if( isset ($_POST["submit"]) )
@@ -19,7 +19,7 @@ if( isset ($_POST["submit"]) )
         {
                 echo "<script>
                 alert('Data Berhasil Diubah');
-                document.location.href = 'anggota.php';
+                document.location.href = 'Home_login.php';
                 </script>";
         }
         else
@@ -28,20 +28,23 @@ if( isset ($_POST["submit"]) )
         }
        
 }
-if(isset($_POST['batal']))
+if(isset($_POST["batal"]))
 {
-        header("Location: anggota.php");
+        header("Location: home_login.php");
         exit;
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="registrasi.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="editt.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
 <body>
         <header>
@@ -55,7 +58,7 @@ if(isset($_POST['batal']))
                 </h1>
         </header>
         <section>
-            <h2> Form Edit Profil</h2>
+        <h2 class="edit"> Form Edit Profil</h2>
             <form action="" method="POST" enctype="multipart/form-data" >
             <table>
                 
@@ -128,16 +131,18 @@ if(isset($_POST['batal']))
                 </tr>
                 <tr>
                         <td>Foto</td>
-                        <td><img src="img/<?= $ang['FOTO'];?>" alt="" width="100px"></td>
+                        <td ><img class="foto" src="img/<?= $ang['FOTO'];?>" alt="" width="100px"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td class="nama"><input type="file" name="FOTO" id="foto" ></td>
                 </tr>
-                <button type="submit" name="submit" class="kirim">Ubah</button>
+                <button type="submit" name="submit" class="kirim" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button>
                 <button class="batal" name="batal">Batal</button>
              </table>
              </form>
-        </section>
+              </section>
+    
 </body>
 </html>
+   

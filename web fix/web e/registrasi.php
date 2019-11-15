@@ -1,42 +1,57 @@
 <?php
-// require 'functions.php';
-$conn = mysqli_connect("localhost","root","","coba");
+require 'functions.php';
 
-        $id_anggota = @$_POST['id_anggota'];
-        $password = @$_POST['password'];
-        $ktp = @$_POST['ktp'];
-        $nama = @$_POST['nama'];
-        $jenis = @$_POST['jenis'];
-        $jenis_kelamin = @$_POST['jenis_kelamin'];
-        $ttl = @$_POST['ttl'];
-        $alamat = @$_POST['alamat'];
-        $pendidikan = @$_POST['pendidikan'];
-        $nohp = @$_POST['nohp'];
-        $pekerjaan = @$_POST['pekerjaan'];
-        $email = @$_POST['email'];      
-        $nama_foto = @$_FILES['foto']['name'];
-        $tmp_foto = @$_FILES['foto']['tmp_name'];
-        $folder = "img/".$nama_foto;
-
-if (isset($_POST['register']))
+//cek tombol sudah ditekan atau belum
+if( isset ($_POST["submit"]) )
 {
-        
-        move_uploaded_file($tmp_foto, $folder);
-
-        $query="INSERT INTO tb_anggota VALUES
-        ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$folder')";
-
-        $sql= mysqli_query($conn, $query);
-
-        
+ 
+        //cek data berhasil ditambah?
+        if( tambah($_POST) > 0 )
+        {
+                echo "<script>
+                alert('Data Berhasil Ditambahkan');
+                document.location.href = 'Home_login.php';
+                </script>";
+        }
+        else
+        {
+                echo "<script>alert('Gagal Menambahkan Data')</script>";
+        }
+       
 }
-
-
-if(isset($_POST['batal']))
+if(isset($_POST["batal"]))
 {
-        header("Location: Home.php");
+        header("Location: Home_login.php");
         exit;
 }
+
+// $query = "SELECT max(ID_ANGGOTA) as maxKode FROM tb_anggota";
+// $hasil = mysqli_query($conn, $query);
+// $data = mysqli_fetch_array($hasil);
+// $datakode = $data['maxKode'];
+
+
+// $nourut = (int) substr($datakode, 3, 3);
+
+// $nourut++;
+
+// $char = "AG";
+// $datakode = $char . sprintf("%02", $nourut);
+
+// $carikode = mysqli_query($conn, "SELECT max(ID_ANGGOTA) FROM tb_anggota") ;
+// $datakode = mysqli_fetch_array($carikode);
+// if($datakode)
+// {
+//         $nilaikode = substr($datakode[0], 1);
+//         $kode = (int) $nilaikode;
+//         $kode = $kode + 1;
+//         $hasilkode = "AG" .str_pad($kode, 3, "0", STR_PAD_LEFT);
+// }
+// else
+// {
+//         $hasilkode = "AG001";
+// }
+
 
 ?>
 <!DOCTYPE html>
@@ -64,24 +79,24 @@ if(isset($_POST['batal']))
             <table>
                 <tr>
                         <td>Id Anggota</td>
-                        <td class="nama"><input type="text" name="id_anggota" id="id_anggota"></td>
+                        <td class="nama"><input type="text" name="ID_ANGGOTA" id="id_anggota" ></td>
                 </tr>
                 <tr>
                         <td>Password</td>
-                        <td class="nama"><input type="text" name="password" id="password"></td>
+                        <td class="nama"><input type="password" name="PASSWORD" id="password" ></td>
                 </tr>
                 <tr>
                         <td>No.KTP/NIM/NIP</td>
-                        <td class="nama"><input type="text" name="ktp" id="ktp"></td>
+                        <td class="nama"><input type="text" name="NO_KTP_NIM_NIP" id="ktp"></td>
                 </tr>
                 <tr>
                         <td>Nama Anggota</td>
-                        <td class="nama"><input type="text" name="nama" id="nama"></td>
+                        <td class="nama"><input type="text" name="NAMA_ANGGOTA" id="nama" ></td>
                 </tr>
                 <tr>
                         <td>Jenis Anggota</td>
                         <td class="nama">
-                                <select name="jenis" id="jenis">
+                                <select name="JENIS_ANGGOTA" id="jenis" >
                                         <option value="">Silahkan Pilih</option>
                                         <option value="umum">Umum</option>
                                         <option value="mahasiswa">Mahasiswa</option>
@@ -93,7 +108,7 @@ if(isset($_POST['batal']))
                 <tr>
                         <td>Jenis Kelamin</td>
                         <td class="nama">
-                        <select name="jenis_kelamin" id="jenis_kelamin">
+                        <select name="JENIS_KELAMIN" id="jenis_kelamin" >
                                 <option value="">Silahkan Pilih</option>
                                 <option value="l">L</option>
                                 <option value="p">P</option>
@@ -101,44 +116,44 @@ if(isset($_POST['batal']))
                         </td>
                 </tr>
                 <tr>
-                        <td>Tempat Tanggal Lahir</td>
-                        <td class="nama"><input type="text" name="ttl" id="ttl"></td>
+                        <td>Tempat,Tanggal Lahir</td>
+                        <td class="nama"><input type="text" name="TEMPAT_TANGGAL_LAHIR" id="ttl" placeholder="Kota, Tanggal Bulan Tahun"></td>
                 </tr>
                 <tr>
                         <td>Alamat</td>
-                        <td class="nama"><input type="text" name="alamat" id="alamat"></td>
+                        <td class="nama"><input type="text" name="ALAMAT" id="alamat" ></td>
                 </tr>
                 <tr>
                         <td>Pendidikan Terakhir</td>
                         <td class="nama">
-                        <select name="pendidikan" id="pendidikan">
+                        <select name="PENDIDIKAN_TERAKHIR" id="pendidikan" >
                                 <option value="">Silahkan Pilih</option>
-                                <option value="sd">SD</option>
-                                <option value="smp">SMP</option>
-                                <option value="sma">SMA</option>
-                                <option value="s1">S1</option>
-                                <option value="s2">S2</option>
-                                <option value="s3">S3</option>
+                                <option value="SD">SD</option>
+                                <option value="SMP">SMP</option>
+                                <option value="SMA">SMA</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="S3">S3</option>
                         </select>
                         </td>
                 </tr>
                 <tr>
                         <td>NO.HP</td>
-                        <td class="nama"><input type="text" name="nohp" id="nohp"></td>
+                        <td class="nama"><input type="text" name="NO_HP" id="nohp" ></td>
                 </tr>
                 <tr>
                         <td>Pekerjaan / Prodi</td>
-                        <td class="nama"><input type="text" name="pekerjaan" id="pekerjaan"></td>
+                        <td class="nama"><input type="text" name="PEKERJAAN_PRODI" id="pekerjaan" ></td>
                 </tr>
                 <tr>
                         <td>Email</td>
-                        <td class="nama"><input type="text" name="email" id="email"></td>
+                        <td class="nama"><input type="text" name="EMAIL" id="email" placeholder="contoh@gmail.com"></td>
                 </tr>
                 <tr>
                         <td>Foto</td>
-                        <td class="nama"><input type="file" name="foto" id="foto"></td>
+                        <td class="nama"><input type="file" name="FOTO" id="foto" ></td>
                 </tr>
-                <button type="submit" name="register" class="kirim">Kirim</button>
+                <button type="submit" name="submit" class="kirim">Kirim</button>
                 <button class="batal" name="batal">Batal</button>
              </table>
              </form>

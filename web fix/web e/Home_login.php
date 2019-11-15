@@ -1,10 +1,19 @@
+<?php
+require 'functions.php';
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css2.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>SI WEB Poliklinik Politeknik Negeri Jember</title>
+
+
+
 </head>
 <body>
     <!-- Image and text -->
@@ -23,14 +32,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="Home.php">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="Home_login.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Profil
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Data Klinik</a>
+                            <a class="dropdown-item" href="data_klinik.php">Data Klinik</a>
                             <a class="dropdown-item" href="#">Struktur Organisasi</a>
                             <a class="dropdown-item" href="#">Civitas</a>
                       </div>
@@ -44,32 +53,93 @@
                       </a>
                     </li>
                     <li class="nav-item ">
-                            <a class="nav-link" href="lain-lain.php">
-                              Lain Lain
-                            </a>
-                            <li class="nav-item dropdown">
+                        <a class="nav-link" href="lain-lain.php">
+                          Lain Lain
+                        </a>
+                    </li>
+                 
+
+    <!-- AWAL BUTTON LOGIN & NAV USER -->    
+
+
+     <!-- BELUM LOGIN -->
+    <?php
+    if(!isset($_SESSION["login"])){?>
+    <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Tes
+                          User
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Edit Profil</a>
-                            <a class="dropdown-item" href="#">Kartu Berobat</a>
+                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Edit Profil');">Edit Profil</a>
+                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Cetak Kartu Berobat');">Cetak Kartu Berobat</a>
+                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Ubah Password');">Ubah Password</a>
                       </div>
-                    </li>
-                            
-                    <li class="nav-item ">
-                      <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-      Logout
+                  </li>
+    <li class="nav-item ">
+    <button type="button" name="login" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="login.php">Login</a>
+    </button>
+
+    <?php }?>
+    
+    
+
+      
+      <!-- SUDAH LOGIN -->
+    <?php
+    if(isset($_SESSION["login"])){?>
+
+
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+
+var Tawk_API=Tawk_API||{};
+Tawk_API.visitor = {
+name : '<?php echo $_SESSION['user'];?>'
+};
+
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5dce4f60d96992700fc78d18/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+</script>
+<!--End of Tawk.to Script-->
+
+    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <?php 
+                            echo $_SESSION['user']; 
+                          ?>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="edit_profil.php">Edit Profil</a>
+                            <a class="dropdown-item" href="#">Cetak Kartu Berobat</a>
+                            <a class="dropdown-item" href="#">Ubah Password</a>
+                      </div>
+                  </li>
+    <li class="nav-item ">
+    <button type="button" name= "logout" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="logout.php"onclick="return confirm('Apakan Anda Benar Ingin Logout?');">Logout</a>
     </button>
     
-        
-            </form>
-            
-          </div>
-          </div>
-    </div>
-                  </li>
+    
+    
+  
+    <?php }?>
+
+    <!-- AKHIR BUTTON LOGIN & NAV USER  -->
+
+
+
+
+    
+
+
+    <!-- Modal -->
                   </ul>
                 </div>
                 </div>
@@ -197,9 +267,9 @@
                   </div>
                   <div class="maps">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.421534099274!2d113.72091001451282!3d-8.160214884015843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6fbfa55a4d83c8c!2sKlinik%20POLIJE!5e0!3m2!1sid!2sid!4v1571283935490!5m2!1sid!2sid"
-                   width="1330" height="450" frameborder="2" style="border:1;" allowfullscreen=""></iframe>
+                   width="1500" height="450" frameborder="2" style="border:1;" allowfullscreen=""></iframe>
                   </div>
-                  <footer>
+                  <footer >
                     JALAN MASTRIP NO. 64 JEMBER 68101<br>
                     <br>
                     TELP. (0331) 333532 – 34 FAKS. (0331) 333531<br>
