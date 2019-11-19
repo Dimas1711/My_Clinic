@@ -65,6 +65,9 @@ session_start();
      <!-- BELUM LOGIN -->
     <?php
     if(!isset($_SESSION["login"])){?>
+
+    <!-- <a style="display:scroll; position:fixed; bottom:0; right:0;" href="" target="_blank"><img src="chat.png" alt=""></a> -->
+
     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           User
@@ -94,7 +97,8 @@ session_start();
 
 var Tawk_API=Tawk_API||{};
 Tawk_API.visitor = {
-name : '<?php echo $_SESSION['user'];?>'
+name : '<?php echo $_SESSION['user'];?>',
+email : '<?php echo $_SESSION['email'];?>'
 };
 
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

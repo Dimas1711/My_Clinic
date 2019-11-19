@@ -38,19 +38,19 @@ if(isset($_POST["batal"]))
 // $char = "AG";
 // $datakode = $char . sprintf("%02", $nourut);
 
-// $carikode = mysqli_query($conn, "SELECT max(ID_ANGGOTA) FROM tb_anggota") ;
-// $datakode = mysqli_fetch_array($carikode);
-// if($datakode)
-// {
-//         $nilaikode = substr($datakode[0], 1);
-//         $kode = (int) $nilaikode;
-//         $kode = $kode + 1;
-//         $hasilkode = "AG" .str_pad($kode, 3, "0", STR_PAD_LEFT);
-// }
-// else
-// {
-//         $hasilkode = "AG001";
-// }
+$carikode = mysqli_query($conn, "SELECT max(ID_ANGGOTA) FROM tb_anggota") or die(mysqli_error($conn));
+$datakode = mysqli_fetch_array($carikode);
+if($datakode)
+{
+        $nilaikode = substr($datakode[0], 2);
+        $kode = (int) $nilaikode;
+        $kode = $kode + 1;
+        $hasilkode = "AG" .str_pad($kode, 4, "0", STR_PAD_LEFT);
+}
+else
+{
+        $hasilkode = "AG001";
+}
 
 
 ?>
@@ -79,7 +79,7 @@ if(isset($_POST["batal"]))
             <table>
                 <tr>
                         <td>Id Anggota</td>
-                        <td class="nama"><input type="text" name="ID_ANGGOTA" id="id_anggota" ></td>
+                        <td class="nama"><input type="text" name="ID_ANGGOTA" id="id_anggota" value="<?php echo $hasilkode ?>" readonly></td>
                 </tr>
                 <tr>
                         <td>Password</td>
@@ -115,9 +115,13 @@ if(isset($_POST["batal"]))
                         </select>
                         </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                         <td>Tempat,Tanggal Lahir</td>
                         <td class="nama"><input type="text" name="TEMPAT_TANGGAL_LAHIR" id="ttl" placeholder="Kota, Tanggal Bulan Tahun"></td>
+                </tr> -->
+                <tr>
+                        <td>Tanggal Lahir</td>
+                        <td class="nama"><input type="date" name="TEMPAT_TANGGAL_LAHIR"></td>
                 </tr>
                 <tr>
                         <td>Alamat</td>

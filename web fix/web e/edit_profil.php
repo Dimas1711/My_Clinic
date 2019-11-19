@@ -131,7 +131,7 @@ if(isset($_POST["batal"]))
                 </tr>
                 <tr>
                         <td>Foto</td>
-                        <td ><img class="foto" src="img/<?= $ang['FOTO'];?>" alt="" width="100px"></td>
+                        <td ><img class="foto" src="img/<?= $ang['FOTO'];?>" alt="" width="200px"></td>
                 </tr>
                 <tr>
                     <td></td>

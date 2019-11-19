@@ -17,6 +17,7 @@ if(isset($_POST["login"])){
     $row = mysqli_fetch_assoc($result);
     $_SESSION["login"] = true;
     $_SESSION['user'] = $row ["NAMA_ANGGOTA"];
+    $_SESSION['email'] = $row ["EMAIL"];
     header("location: Home_login.php");
     
   }

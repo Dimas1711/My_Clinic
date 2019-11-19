@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","test");
+$conn = mysqli_connect("localhost","root","","pdm_klinik");
 
 function query($query)
 {
@@ -38,8 +38,6 @@ function tambah($data)
         }
 
         $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto')");
-
-        
 
         return $qu;
 
