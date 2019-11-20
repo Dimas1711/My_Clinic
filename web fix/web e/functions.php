@@ -73,15 +73,15 @@ function upload()
         return false;
     }
 
-    $ukurangambar = ['> 2097152'];
-    if( in_array($ukuranfile, $ukurangambar) )
-    {
-        echo "<script>
-                alert('Ukuran Foto Terlalu Besar, Gunakan Maksimal 2MB');
-              </script>";
-        return false;
+    // $ukurangambar = ['> 2097152'];
+    // if( in_array($ukuranfile, $ukurangambar) )
+    // {
+    //     echo "<script>
+    //             alert('Ukuran Foto Terlalu Besar, Gunakan Maksimal 2MB');
+    //           </script>";
+    //     return false;
 
-    }
+    // }
 
     //foto lolos
     //generate nama baru
@@ -146,7 +146,7 @@ function ubah($data)
                 NAMA_ANGGOTA = '$nama',
                 JENIS_ANGGOTA = '$jenis',
                 JENIS_KELAMIN = '$jenis_kelamin',
-                TEMPAT_TANGGAL_LAHIR = '$ttl',
+                TANGGAL_LAHIR = '$ttl',
                 ALAMAT = '$alamat',
                 PENDIDIKAN_TERAKHIR = '$pendidikan',
                 NO_HP = '$nohp',
@@ -159,8 +159,39 @@ function ubah($data)
         $sql= mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
+}
 
+function ubahpassword($data)
+{
+    global $conn;
+        $id_anggota = htmlspecialchars($data["ID_ANGGOTA"]);
+        $pass = htmlspecialchars($data["PASSWORD"]);
+        $passlama = htmlspecialchars($data["PASSWORD_LAMA"]);
+        $passbaru = htmlspecialchars($data["PASSWORD_BARU"]);
+        $konfpass = htmlspecialchars($data["KONFIRMASI_PASSWORD"]);
+
+        if($passlama != $pass)
+        {
+            echo "<script>alert('Password Lama Salah')</script>";
+        }
+        else if($passlama == $pass && $passbaru != $konfpass)
+        {
+            echo "<script>alert('Konfirmasi Password Tidak Sesuai')</script>";
+        }
+        else if($passlama == $pass && $passbaru == $konfpass)
+        {
+            $query="UPDATE tb_anggota SET PASSWORD = '$passbaru' WHERE ID_ANGGOTA = '$id_anggota'";
+
+            $sql= mysqli_query($conn, $query);
+
+            return mysqli_affected_rows($conn);
+        }
+
+        
 }
 
 
+
 ?>
+
+

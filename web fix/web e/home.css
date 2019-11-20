@@ -4,6 +4,10 @@
     margin: 0px;
     font-family: 'Roboto', sans-serif;
 }
+body
+{
+    background-image: url(back.jpg);
+}
 /* NAVIGASI */
 
 nav li {

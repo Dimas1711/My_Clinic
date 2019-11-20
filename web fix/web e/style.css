@@ -1,19 +1,16 @@
-*
-{
-    margin: 0;
-    padding: 0;
+*{
+    padding: 0px;
+    margin: 0px;
     font-family: 'Roboto', sans-serif;
 }
-
 body
 {
-    background-image: url(web.jpg);
+    background-image: url(back.jpg);   
 }
+/* NAVIGASI */
 
-
-/* bagian header */
 nav li {
-    margin-left: 90px;
+    margin-left: 30px;
 }
 
 #text {
@@ -32,53 +29,21 @@ nav li {
   font-size: 35px;
 }
 
-
-
-/* bagian section */
-section h2
-{   
-    opacity: 0.8;
-    font-size: 60px;
-    background-color:#FFFFFF;
-    margin: 10px 150px 80px 150px;
-    text-align: center;
-    color: black;
-    /* #4e4e4e */
-} 
-section ul
+#lgn
 {
-    opacity: 0.8;
-    background-color:#FFFFFF;
-    margin: 10px 150px 100px 150px;
-    text-align: left;
-    color: black;
+    text-decoration: none;
+    color: white;
 }
-section p 
-{
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 30px;
-}
-section li
-{
-    margin-bottom: 7px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-    list-style-type: none;
+section {
+    background-color: rgba(238, 235, 235, 0.836);
+    margin: 30px 250px;
+    padding: 100px;
+    font-size: 15px;
+    margin-left: 300px;
 }
 
 
+footer {
 
-
-
-
-
-/* bagian footer */
-footer
-{
-    padding: 10px;
-    background-color:#EBEEEF;
-    text-align: center;
+    margin-left: 500px;
 }
-

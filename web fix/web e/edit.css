@@ -25,7 +25,7 @@ body
 section {
     background-color: rgba(238, 235, 235, 0.836);
     margin: 30px 250px;
-    padding: 100px;
+    padding: 50px;
     font-size: 15px;
     margin-left: 300px;
 }
@@ -42,29 +42,37 @@ section h2 {
     margin-bottom: 50px ;
     font-size: 50px;
 }
+/* #inputfoto
+{
+    margin-left: 20px;
+} */
+
 section button
 {
     width: 200px;
     height: 35px;
 }
+
+
 .nama   
 {
     padding-left: 50px;
 }
+
+.foto
+{
+    margin-left: 20px;
+    border-radius: 50%;
+}
 .kirim
 {
     position: absolute;
-    margin-top: 530px;
+    margin-top: 570px;
     margin-left: 70px;
 }
 .batal
 {
     position: absolute;
-    margin-top: 530px;
+    margin-top: 570px;
     margin-left: 300px;
 }
-.foto
-{
-    margin-left: 50px;
-}
-

@@ -4,7 +4,6 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-/* bagian header */
 header h1
 {
     background-color:#EBEEEF;
@@ -17,12 +16,19 @@ header img
     width: 100px;
     float: left;
     padding: 5px;
-}       
-/* //// body /// */
-body {
-    background-image: url(back.jpg);   
-   }
-/* ////////////// Form ////////// */
+}
+
+body
+{
+    background-image: url(back.jpg);
+}
+section {
+    background-color: rgba(238, 235, 235, 0.836);
+    margin: 30px 250px;
+    padding: 100px;
+    font-size: 15px;
+    margin-left: 300px;
+}
 section {
     background-color: rgba(238, 235, 235, 0.836);
     margin: 30px 250px;
@@ -34,35 +40,29 @@ section input {
     width: 300px;
     height: 35px;
 }
-section select {
-    width: 300px;
-    height: 35px;
-}
 section h2 {
     text-align: center;
     margin-bottom: 50px ;
     font-size: 50px;
 }
-
 section button
 {
     width: 200px;
     height: 35px;
-    background-color: aquamarine;
 }
 .nama   
 {
     padding-left: 50px;
 }
-button.kirim
+.kirim
 {
     position: absolute;
-    margin-top: 530px;
+    margin-top: 150px;
     margin-left: 70px;
 }
-button.batal
+.batal
 {
     position: absolute;
-    margin-top: 530px;
+    margin-top: 150px;
     margin-left: 300px;
 }

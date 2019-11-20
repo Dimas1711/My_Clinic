@@ -25,18 +25,7 @@ if(isset($_POST["batal"]))
         exit;
 }
 
-// $query = "SELECT max(ID_ANGGOTA) as maxKode FROM tb_anggota";
-// $hasil = mysqli_query($conn, $query);
-// $data = mysqli_fetch_array($hasil);
-// $datakode = $data['maxKode'];
 
-
-// $nourut = (int) substr($datakode, 3, 3);
-
-// $nourut++;
-
-// $char = "AG";
-// $datakode = $char . sprintf("%02", $nourut);
 
 $carikode = mysqli_query($conn, "SELECT max(ID_ANGGOTA) FROM tb_anggota") or die(mysqli_error($conn));
 $datakode = mysqli_fetch_array($carikode);
@@ -115,10 +104,6 @@ else
                         </select>
                         </td>
                 </tr>
-                <!-- <tr>
-                        <td>Tempat,Tanggal Lahir</td>
-                        <td class="nama"><input type="text" name="TEMPAT_TANGGAL_LAHIR" id="ttl" placeholder="Kota, Tanggal Bulan Tahun"></td>
-                </tr> -->
                 <tr>
                         <td>Tanggal Lahir</td>
                         <td class="nama"><input type="date" name="TEMPAT_TANGGAL_LAHIR"></td>

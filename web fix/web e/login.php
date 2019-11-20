@@ -27,6 +27,10 @@ if(isset($_POST["login"])){
   }
 
 }
+if( isset($_POST["cancel"]) )
+{
+  header("location: Home_login.php");
+}
 
 
 ?>
@@ -37,7 +41,7 @@ if(isset($_POST["login"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="anyar.css">
 </head>
 <body>
     <!-- header -->
@@ -55,14 +59,25 @@ if(isset($_POST["login"])){
    <!-- section -->
    <section>
        <form action="" method="POST">
-        <p><b>ID Anggota</b></p> <input type="text" name="ID_ANGGOTA" id="username" >
-        <p><b>Password</b></p> <input type="password" name="PASSWORD" id="password"><br>
-        <button type="submit" name="login">Login</button> 
-        <button type="button" name="cancel"><a href="Home_login.php">Cancel</a></button>
+        <table>
+          <tr>
+            <td colspan="2"><img src="login.png" alt="" class="foto"></td>
+          </tr>
+          <tr>
+            <th>ID ANGGOTA</th>
+            <td><input type="text" name="ID_ANGGOTA" id="username" ></td>
+          </tr>
+          <tr>
+            <th class="pass">PASSWORD</th>
+            <td class="pass"><input type="password" name="PASSWORD" id="password"></td>
+          </tr>
+        </table>
+        <button type="submit" name="login" class="login">Login</button>  
+        <button type="submit" name="cancel" class="cancelbtn">Cancel</button>
         <br>
-        <p>Belum Punya Akun ? <a href="registrasi.php">Daftar Sekarang</a></p>
+        <p>Belum Punya Akun ? <a class="link" href="registrasi.php">Daftar Sekarang</a></p>
         <br>
-        <a class="lupa" href="lupa-pass.html">Lupa Password?</a>
+        <p class="p2"><a class="link" href="lupa-pass.html">Lupa Password</a> ? </p>
        </form>
        
    </section>

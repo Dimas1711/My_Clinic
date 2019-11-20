@@ -8,8 +8,11 @@ body {
     background-image: url(back.jpg);   
    }
 
+
+/* NAVIGASI */
+
 nav li {
-    margin-left: 90px;
+    margin-left: 30px;
 }
 
 #text {
@@ -27,6 +30,14 @@ nav li {
 .macam h2 {
   font-size: 35px;
 }
+
+#lgn
+{
+    text-decoration: none;
+    color: white;
+}
+
+
 
 
 section h2
@@ -60,3 +71,27 @@ footer
     background-color:#EBEEEF;
     text-align: center;
 }
+
+
+
+
+
+/* nav li {
+    margin-left: 90px;
+}
+
+#text {
+    float: right;
+    margin-left: 30px;
+}
+
+.macam  {
+  margin-top: 150px;
+  margin-left: 290px;
+  margin-right: 600px;
+  margin-bottom:  100px;
+
+}
+.macam h2 {
+  font-size: 35px;
+} */
