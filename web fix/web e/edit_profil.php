@@ -42,7 +42,7 @@ if(isset($_POST["batal"]))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="edit.css">
+    <link rel="stylesheet" href="editt.css">
     <title>Document</title>
 </head>
 <body>
@@ -61,7 +61,7 @@ if(isset($_POST["batal"]))
             <form action="" method="POST" enctype="multipart/form-data" >
             
             
-            <table >
+            <table>
                 
                         <input type="hidden" name="ID_ANGGOTA" id="id_anggota" value="<?= $ang["ID_ANGGOTA"];?>">
                         <input type="hidden" name="PASSWORD" id="password" value="<?= $ang["PASSWORD"];?>">
@@ -136,8 +136,12 @@ if(isset($_POST["batal"]))
                         <th>Email</th>
                         <td class="nama"><input type="text" name="EMAIL" id="email" value="<?= $ang["EMAIL"]?>"></td>
                 </tr>
-                <button class="kirim" type="submit" name="submit"  onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button>
-                <button class="batal" name="batal">Batal</button>
+                <tr>
+                        <td class="btnubah"><button type="submit" name="submit" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button></td>
+                        <td class="btnbatal"><button name="batal">Batal</button></td>
+                </tr>
+                <!-- <button class="kirim" type="submit" name="submit" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button>
+                <button class="batal" name="batal">Batal</button> -->
              </table>
              </form>
               </section>

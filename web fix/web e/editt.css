@@ -6,7 +6,7 @@
 }
 header h1
 {
-    background-color:#EBEEEF;
+    background-color: #EBEEEF;
     text-align: center;
     font-size: 30px;
     padding: 5px;
@@ -17,7 +17,6 @@ header img
     float: left;
     padding: 5px;
 }
-
 body
 {
     background-image: url(back.jpg);
@@ -42,14 +41,11 @@ section h2 {
     margin-bottom: 50px ;
     font-size: 50px;
 }
-
 section button
 {
     width: 200px;
     height: 35px;
 }
-
-
 .nama   
 {
     padding-left: 50px;
@@ -57,10 +53,16 @@ section button
 
 .foto
 {
-    margin-left: 20px;
+    margin-left: 45px;
     border-radius: 50%;
 }
 .btnubah
 {
-    padding-left: 50px;
+    padding-top: 50px;
+    padding-left: 40px;
+}
+.btnbatal
+{
+    padding-top: 50px;
+    padding-left: 120px;
 }
