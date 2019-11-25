@@ -12,13 +12,13 @@
   
 <h3 style="margin-left:2.5% ; font-size:20px"> 
   <tr>
-                        <td>Id Berobat</td>
-                        <td><input type="text" name="id_berobat"></td>
+    <td>Id Berobat</td>
+    <td><input type="text" name="id_berobat"></td>
   </tr> 
 
   <tr>
-                        <td>Tanggal</td>
-                        <td><input type="date" name="tanggal"></td>
+    <td>Tanggal</td>
+    <td><input type="date" name="tanggal"></td>
   </tr> 
 
 </h3>
@@ -140,7 +140,7 @@
                 
                 </script>
                 <?php
-
+                      include "koneksi.php";
                       $id_berobat = @$_POST['id_berobat'];
                       $id_anggota = @$_POST['id_anggota'];
                       $id_klinik = @$_POST ['poli'];

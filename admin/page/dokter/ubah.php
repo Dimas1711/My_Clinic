@@ -1,5 +1,5 @@
 <?php
-
+include "koneksi.php";
 
 $id = $_GET['ID_DOKTER'];
 
@@ -61,8 +61,8 @@ $poli = $tampil['ID_KLINIK'];
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Tempat Tanggal Lahir</label>
-                    <input class="form-control" name="tempat_tanggal_lahir" type="date" value="<?php echo $tampil['TEMPAT_TANGGAL_LAHIR']; ?>"/>
+                    <label>Tanggal Lahir</label>
+                    <input class="form-control" name="tanggal_lahir" type="date" value="<?php echo $tampil['TANGGAL_LAHIR']; ?>"/>
 
                 </div>
                 <div class="form-group">
@@ -136,7 +136,7 @@ $poli = $tampil['ID_KLINIK'];
           $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
           $nama = @$_POST ['nama_dokter'];
           $jk = @$_POST ['jk'];
-          $ttl = @$_POST ['tempat_tanggal_lahir'];
+          $ttl = @$_POST ['tanggal_lahir'];
           $alamat = @$_POST ['alamat'];
           $pendidikan = @$_POST ['pendidikan_terakhir'];
           $no_hp = @$_POST ['no_hp'];
@@ -145,7 +145,7 @@ $poli = $tampil['ID_KLINIK'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("update tb_dokter set ID_DOKTER = '$id' ,	PASSWORD = '$pass',	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_DOKTER = '$nama' ,JENIS_KELAMIN = '$jk',TEMPAT_TANGGAL_LAHIR =  '$ttl',ALAMAT ='$alamat' ,PENDIDIKAN_TERAKHIR = '$pendidikan',
+            $sql = $koneksi -> query ("update tb_dokter set ID_DOKTER = '$id' ,	PASSWORD = '$pass',	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_DOKTER = '$nama' ,JENIS_KELAMIN = '$jk',TANGGAL_LAHIR =  '$ttl',ALAMAT ='$alamat' ,PENDIDIKAN_TERAKHIR = '$pendidikan',
             NO_HP = '$no_hp' , ID_KLINIK = '$polinya' where ID_DOKTER = '$id'");
             if ($sql) {
               ?>

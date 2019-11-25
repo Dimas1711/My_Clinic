@@ -35,8 +35,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>TEMPAT TANGGAL LAHIR</label>
-                    <input class="form-control" name="tempat_tanggal_lahir" type="date"/>
+                    <label>TANGGAL LAHIR</label>
+                    <input class="form-control" name="tanggal_lahir" type="date"/>
 
                 </div>
                 <div class="form-group">
@@ -63,14 +63,14 @@
                     <input class="form-control" type="number" name="no_hp" />
                 </div>
                 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label>Jenis Poli</label>
                     <select class="form-control" name="poli">
                         <option value="01" >Poli Umum</option>
                         <option value="02">Poli KIA</option>
                         <option value="03">Poli Gigi</option>
                     </select>
-                </div>
+                </div>-->
                 <div>
                   <input  type="submit" name="simpan" value="simpan" class="btn btn-primary">
                 </div>
@@ -83,23 +83,23 @@
           </div>
 
           <?php
-
+          include "koneksi.php";
           $id = @$_POST ['id_dokter'];
           $pass = @$_POST ['password'];
           $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
           $nama = @$_POST ['nama_dokter'];
           $jk = @$_POST ['jk'];
-          $ttl = @$_POST ['tempat_tanggal_lahir'];
+          $ttl = @$_POST ['tanggal_lahir'];
           $alamat = @$_POST ['alamat'];
           $pendidikan = @$_POST ['pendidikan_terakhir'];
           $no_hp = @$_POST ['no_hp'];
-          $poli = @$_POST ['poli'];
+          //$poli = @$_POST ['poli'];
           $simpan = @$_POST ['simpan'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("insert into tb_dokter(ID_DOKTER,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_DOKTER,JENIS_KELAMIN,TEMPAT_TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP , ID_KLINIK)
-            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' , '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp','$poli')");
+            $sql = $koneksi -> query ("insert into tb_dokter(ID_DOKTER,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_DOKTER,JENIS_KELAMIN,TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP)
+            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' , '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp')");
             if ($sql) {
               ?>
               <script type="text/javascript">

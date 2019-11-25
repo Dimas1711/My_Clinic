@@ -16,6 +16,11 @@
                     <label>NAMA OBAT</label>
                     <input class="form-control" name="nama_obat"  />
 
+                    </div>
+                <div class="form-group">
+                    <label>KETERANGAN</label>
+                    <input class="form-control" name="Keterangan"  />
+
                 </div>
                 <div class="form-group">
                     <label>Harga</label>
@@ -39,17 +44,18 @@
           </div>
 
           <?php
-
+          include "koneksi.php";
           $id = @$_POST ['id_obat'];
           $nama = @$_POST ['nama_obat'];
+          $ket = @$_POST ['Keterangan'];
           $harga = @$_POST ['harga'];
           $stok = @$_POST ['stok'];
           $simpan = @$_POST ['simpan'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("insert into tb_obat(ID_OBAT , NAMA_OBAT ,HARGA , STOK)
-            values('$id' , '$nama' ,'$harga' , '$stok')");
+            $sql = $koneksi -> query ("insert into tb_obat(ID_OBAT , NAMA_OBAT , Keterangan, HARGA , STOK)
+            values('$id' , '$nama' , '$ket' ,'$harga' , '$stok')");
             if ($sql) {
               ?>
               <script type="text/javascript">

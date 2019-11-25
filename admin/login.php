@@ -12,6 +12,10 @@
     <link href="assets/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <link rel="stylesheet" href="login.css">
+   
+
+
 
 </head>
 <body>
@@ -31,7 +35,7 @@
                         <strong>   Enter Details To Login </strong>
                             </div>
                             <div class="panel-body">
-                                <form role="form" method="post">
+                                <form role="form" method="get" action="plogin.php">
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
@@ -43,6 +47,19 @@
                                         </div>
 
                                     <input type="submit" name="login" value="Login Now" class="btn btn-primary">
+                                    <?php 
+	                                    if(isset($_GET['pesan'])){
+                                        if($_GET['pesan'] == "gagal"){
+                                            echo "Login gagal! username dan password salah!";
+                                        }else if($_GET['pesan'] == "logout"){
+                                        echo "Anda telah berhasil logout";
+                                    }
+                                        /*  else if($_GET['pesan'] == "belum_login"){
+                                            echo "Anda harus login untuk mengakses halaman admin";
+                                        } */
+                                    }
+                                    ?>
+
                                     <hr />
 
                                     </form>
@@ -65,6 +82,17 @@
     <script src="assets/js/jquery.metisMenu.js"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
+
+    <style> 
+    body {
+        background-image: url("back.jpg");
+        height:100%;
+        padding: 32px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+   </style> 
 
 </body>
 </html>
