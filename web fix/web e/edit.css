@@ -42,10 +42,6 @@ section h2 {
     margin-bottom: 50px ;
     font-size: 50px;
 }
-/* #inputfoto
-{
-    margin-left: 20px;
-} */
 
 section button
 {
@@ -67,7 +63,7 @@ section button
 .kirim
 {
     position: absolute;
-    margin-top: 570px;
+    margin-top: 200px;
     margin-left: 70px;
 }
 .batal

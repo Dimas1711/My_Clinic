@@ -50,7 +50,7 @@ session_start();
                       </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="lain-lain.php">
+                        <a class="nav-link" href="lain_tes.php">
                           Lain Lain
                         </a>
                     </li>

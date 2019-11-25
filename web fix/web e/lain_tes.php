@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="lain_tes.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
@@ -142,45 +142,27 @@ s0.parentNode.insertBefore(s1,s0);
 </header>
 
 
-    <section>
-      <h2>Data Klinik</h2>
-      <table>
-          <tr>
-              <td>Nama Klinik</td>
-              <td>:</td>
-              <td>Klinik Rawat Jalan Pratama Politeknik Negeri Jember</td>
-          </tr>
-          <tr>
-              <td>Nama Pemilik</td>
-              <td>:</td>
-              <td>Ir. Nanang Dwi Wahyono, M.M.</td>
-          </tr>
-          <tr>
-              <td>Alamat Klinik</td>
-              <td>:</td>
-              <td>Jalan Mastrip No. 64 Jember 68101</td>
-          </tr>
-          <tr>
-              <td>Telepon</td>
-              <td>:</td>
-              <td>(0331) 333532 – 34</td>
-          </tr>
-          <tr>
-              <td>Faximile</td>
-              <td>:</td>
-              <td>(0331) 333531</td>
-          </tr>
-          <tr>
-              <td>Email</td>
-              <td>:</td>
-              <td>politeknik@polije.ac.id</td>
-          </tr>
-      </table>
-    </section>
+<section>
+      <h2>Tata Tertib</h2>
+      <ul>
+                <p><b>Untuk Pengunjung, Penunggu, dan Pasien :</b></p>
+                <li>Waktu berkunjung : Siang pukul 10.00 - 12.00 & Sore pukul 17.00 - 19.00</li>
+                <li>Dilarang merokok diarea rumah sakit</li>
+                <li>Anak usia dibawah 10 tahun tidak diperkenankan dibawa berkunjung ke rumah sakit</li>
+                <li>Pasien boleh ditunggu oleh keluarga bila telah diberi ijin dengan menunjukan kartu tunggu. Jumlah penunggu maksimal 2 orang</li>            
+                <li>Tidak merusak fasilitas yang ada di rumah sakit</li>
+                <li>Pengunjung dan penunggu dilarang duduk di tempat tidur kosong / tempat tidur pasien / kursi roda maupun kereta dorong</li>
+                <li>Dilarang membawa tikar, karpet, kasur, bantal dan guling</li>
+                <li>Dilarang menjemur pakaian di lingkungan rumah sakit</li>
+                <li>Dilarang membuat gaduh dan keributan di lingkungan rumah sakit</li>
+                <li>Dilarang membawa senjata tajam / senjata api</li>
+                <li>Gunakan bel bantuan sesuai dengan kebutuhan, 1-2 kali bel, tunggu 3-5 menit</li>
+            </ul> 
+</section>
 
 
 
-    <footer>
+<footer>
       JALAN MASTRIP NO. 64 JEMBER 68101<br>
       <br>
       TELP. (0331) 333532 – 34 FAKS. (0331) 333531<br>

@@ -46,24 +46,18 @@ section h2
     background-color: white;
     margin: 50px 500px;
     font-size: 50px;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
-section table
+section ul
 {
-    margin-top: 30px;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-bottom: 100px;
-    background-color:white;
-    font-size: 30px;
+    background-color: #EBEEEF;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-left: 50px;
     opacity: 0.9;
+    font-size: 20px;
 }
-section td
-{
-    padding: 0px 11px;
-}
-
 
 
 footer

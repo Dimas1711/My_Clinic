@@ -136,14 +136,6 @@ if(isset($_POST["batal"]))
                         <th>Email</th>
                         <td class="nama"><input type="text" name="EMAIL" id="email" value="<?= $ang["EMAIL"]?>"></td>
                 </tr>
-                <!-- <tr>
-                        <td>Foto</td>
-                        <td ><img class="foto" src="img/<?= $ang['FOTO'];?>" alt="" width="100px"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="nama"><input type="file" name="FOTO" id="foto"></td>
-                </tr> -->
                 <button class="kirim" type="submit" name="submit"  onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button>
                 <button class="batal" name="batal">Batal</button>
              </table>

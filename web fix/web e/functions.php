@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","pdm_klinik");
+$conn = mysqli_connect("localhost","root","","anyar");
 
 function query($query)
 {

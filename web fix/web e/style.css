@@ -1,12 +1,14 @@
-*{
-    padding: 0px;
-    margin: 0px;
+*
+{
+    margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-body
-{
+body {
     background-image: url(back.jpg);   
-}
+   }
+
+
 /* NAVIGASI */
 
 nav li {
@@ -34,16 +36,12 @@ nav li {
     text-decoration: none;
     color: white;
 }
-section {
-    background-color: rgba(238, 235, 235, 0.836);
-    margin: 30px 250px;
-    padding: 100px;
-    font-size: 15px;
-    margin-left: 300px;
+
+
+footer
+{
+    padding-top: 20px;
+    background-color: #EBEEEF;
 }
 
 
-footer {
-
-    margin-left: 500px;
-}

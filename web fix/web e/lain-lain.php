@@ -139,10 +139,6 @@ s0.parentNode.insertBefore(s1,s0);
               </nav>
               <div class="bd-example">
 
-
-              <section>
-                <h2>Tata Tertib</h2>
-              </section>
           
 
 
