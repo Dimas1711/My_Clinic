@@ -19,26 +19,6 @@ nav li {
     margin-left: 30px;
 }
 
-div.macam  {
-  margin-top: 150px;
-  margin-left: 100px;
-  margin-right: 300px;
-  margin-bottom:  100px;
-
-}
-.macam h2 {
-  font-size: 50px;
-  margin-right: 70px;
-}
-
-
-
-#lgn
-{
-    text-decoration: none;
-    color: white;
-}
-
 
 
 /* Card */
@@ -63,21 +43,34 @@ div.macam  {
 .card-deck {
     margin-top: 50px;
   margin-right: 150px;
-  padding-left: 200px;
+  padding-left: 300px;
 
 }
 .card1{
-    margin-top: 40px;
+    margin-top: 60px;
     width: 200px;
-    height: 100px;
+    height: 250px;
     margin-right: 80px;
-    
+
 }
 .movie {
     margin-top: 50px;
     margin-right: 25px;
-    margin-bottom: 70px;
 }
+
+
+h2.judul
+{
+    font-size: 60px;
+    margin-right: 300px;
+}
+
+#lgn
+{
+    text-decoration: none;
+    color: white;
+}
+
 
 /* row */
 .row {
