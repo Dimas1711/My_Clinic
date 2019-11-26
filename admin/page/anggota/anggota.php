@@ -16,7 +16,7 @@
                                 <th>NAMA ANGGOTA</th>
                                 <th>JENIS ANGGOTA</th>
                                 <th>JENIS KELAMIN</th>
-                                <th>TEMPAT TANGGAL LAHIR</th>
+                                <th>TANGGAL LAHIR</th>
                                 <th>ALAMAT</th>
                                 <th>PENDIDIKAN TERAKHIR</th>
                                 <th>NO.HP</th>
@@ -29,6 +29,7 @@
                     <tbody>
 
                       <?php
+                      include "koneksi.php";
                       $no = 1;
                           $sql = $koneksi -> query ("SELECT *FROM tb_anggota");
                 
@@ -41,7 +42,7 @@
                         <td><?php echo $data ['NAMA_ANGGOTA']; ?></td>
                         <td><?php echo $data ['JENIS_ANGGOTA']; ?></td>
                         <td><?php echo $data ['JENIS_KELAMIN']; ?></td>
-                        <td><?php echo $data ['TEMPAT_TANGGAL_LAHIR']; ?></td>
+                        <td><?php echo $data ['TANGGAL_LAHIR']; ?></td>
                         <td><?php echo $data ['ALAMAT']; ?></td>
                         <td><?php echo $data ['PENDIDIKAN_TERAKHIR']; ?></td>
                         <td><?php echo $data ['NO_HP']; ?></td>
@@ -50,7 +51,7 @@
                         <td><?php echo $data ['FOTO']; ?></td>
                         <td>
                           <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>" class="btn btn-info">Ubah</a>
-                          <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ...???? ')" href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>"class="btn btn-danger">Delete</a>
+                          <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ? ')" href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>"class="btn btn-danger">Delete</a>
                       </td>
                       </tr>
 

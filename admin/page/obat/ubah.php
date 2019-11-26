@@ -1,4 +1,5 @@
 <?php
+include "koneksi.php";
 $id = $_GET['ID_OBAT'];
 $sql = $koneksi->query("select * from tb_obat where ID_OBAT = '$id'");
 $tampil = $sql->fetch_assoc();
@@ -23,6 +24,11 @@ $tampil = $sql->fetch_assoc();
                 </div>
                 
                 <div class="form-group">
+                    <label>KETERANGAN</label>
+                    <input class="form-control"  name="Keterangan"  value="<?php echo $tampil['Keterangan']; ?>"/>
+                </div>
+            
+                <div class="form-group">
                     <label>HARGA</label>
                     <input class="form-control" type="number" name="harga"  value="<?php echo $tampil['HARGA']; ?>"/>
                 </div>
@@ -43,16 +49,17 @@ $tampil = $sql->fetch_assoc();
           </div>
 
           <?php
-
+          include "koneksi.php";
           $id = @$_POST ['id_obat'];
           $nama = @$_POST ['nama'];
+          $ket = @$_POST ['Keterangan'];
           $harga = @$_POST ['harga'];
           $stok = @$_POST ['stok'];
           $simpan = @$_POST ['simpan'];
-
+ 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("update tb_obat set ID_OBAT = '$id' ,	NAMA_OBAT = '$nama', HARGA = '$harga', STOK = '$stok' where ID_OBAT = '$id'");
+            $sql = $koneksi -> query ("update tb_obat set ID_OBAT = '$id' ,	NAMA_OBAT = '$nama', Keterangan = '$ket', HARGA = '$harga', STOK = '$stok' where ID_OBAT = '$id'");
             if ($sql) {
               ?>
               <script type="text/javascript">

@@ -44,8 +44,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Tempat Tanggal Lahir</label>
-                    <input class="form-control" name="tempat_tanggal_lahir" type="date"/>
+                    <label>Tanggal Lahir</label>
+                    <input class="form-control" name="tanggal_lahir" type="date"/>
 
                 </div>
                 <div class="form-group">
@@ -61,8 +61,11 @@
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA">SMA</option>
+                        <option value="D1">D1</option>
+                        <option value="D2">D2</option>
                         <option value="D3">D3</option>
-                        <option value="D4 / S1">D4 / S1</option>
+                        <option value="D4">D4</option>
+                        <option value="S1">S1</option>
                         <option value="S2">S2</option>
                         <option value="S3">S3</option>
                     </select>
@@ -72,7 +75,7 @@
                     <input class="form-control" type="number" name="no_hp" />
                 </div>
                 <div class="form-group">
-                    <label>Pekerjaan Prodi</label>
+                    <label>Pekerjaan Atau Prodi</label>
                     <input class="form-control" type="text" name="pekerjaan_prodi" />
                 </div>
                 <div class="form-group">
@@ -95,14 +98,14 @@
           </div>
 
           <?php
-
+          include "koneksi.php";
           $id = @$_POST ['username'];
           $pass = @$_POST ['password'];
           $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
           $nama = @$_POST ['nama_anggota'];
           $ja = @$_POST ['ja'];
           $jk = @$_POST ['jk'];
-          $ttl = @$_POST ['tempat_tanggal_lahir'];
+          $ttl = @$_POST ['tanggal_lahir'];
           $alamat = @$_POST ['alamat'];
           $pendidikan = @$_POST ['pendidikan_terakhir'];
           $no_hp = @$_POST ['no_hp'];
@@ -113,7 +116,7 @@
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("insert into tb_anggota (ID_ANGGOTA ,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_ANGGOTA,JENIS_ANGGOTA,JENIS_KELAMIN,TEMPAT_TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP , PEKERJAAN_PRODI, EMAIL , FOTO)
+            $sql = $koneksi -> query ("insert into tb_anggota (ID_ANGGOTA ,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_ANGGOTA,JENIS_ANGGOTA,JENIS_KELAMIN,TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP , PEKERJAAN_PRODI, EMAIL , FOTO)
             values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' ,'$ja', '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp','$pp','$email','$foto' )");
             if ($sql) {
               ?>

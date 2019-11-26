@@ -1,6 +1,5 @@
 <?php
-
-$koneksi = new mysqli("localhost","root","","yo");
+$koneksi = new mysqli("localhost","root","","pdm_klinik1");
 $nama = $_GET['nama'];//sesuai yg ada di
 $sql = mysqli_query($koneksi , "select * from tb_anggota where NAMA_ANGGOTA = '$nama'");
 $anggota = mysqli_fetch_array($sql);
