@@ -111,13 +111,13 @@
           $no_hp = @$_POST ['no_hp'];
           $pp = @$_POST ['pekerjaan_prodi'];
           $email = @$_POST ['email'];
-          $fileName = $_FILES['gambar'];
+          $fileName =@$_FILES['gambar'];
           $simpan = @$_POST ['simpan'];
 
 
           if ($simpan) {
             $sql = $koneksi -> query ("insert into tb_anggota (ID_ANGGOTA ,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_ANGGOTA,JENIS_ANGGOTA,JENIS_KELAMIN,TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP , PEKERJAAN_PRODI, EMAIL , FOTO)
-            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' ,'$ja', '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp','$pp','$email','$fileName' )");
+            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' ,'$ja', '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp','$pp','$email','$filename' )");
             move_uploaded_file($_FILES['gambar']['tmp_name'], "../img/".$_FILES['gambar']);
             if ($sql) {
               ?>
