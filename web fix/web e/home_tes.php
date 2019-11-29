@@ -8,7 +8,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home_tes.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>SI WEB Poliklinik Politeknik Negeri Jember</title>
 </head>
@@ -179,25 +179,14 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                   </div>
                   <br>
-                  <div class="macam">
-                    <h2> <b> Macam Macam Klinik </b></h2>
-                  </div>
 
-                  <div class="card-deck">
-                    <div class="card">
-                      <img src="ini yg umum.png" class="card-img-top" alt="...">
+                  
+                    <h2 class="judul">Macam - Macam Klinik</h2>
+ 
 
-                    </div>
-                    <div class="card">
-                      <img src="gigi.png" class="card-img-top" alt="...">
 
-                    </div>
-                    <div class="card">
-                      <img src="umum.png" class="card-img-top" alt="...">
 
-                    </div>
 
-                  </div>
                   <div class="row">
                       <div class="col-sm-6">
                         <div class="tips">
@@ -264,11 +253,12 @@ s0.parentNode.insertBefore(s1,s0);
                   </div>
                   <div class="maps">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.421534099274!2d113.72091001451282!3d-8.160214884015843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6fbfa55a4d83c8c!2sKlinik%20POLIJE!5e0!3m2!1sid!2sid!4v1571283935490!5m2!1sid!2sid"
-                   width="1345" height="450" frameborder="2" style="border:1;" allowfullscreen=""></iframe>
+                   width="1500" height="450" frameborder="2" style="border:1;" allowfullscreen=""></iframe>
                   </div>
 
 
-                  
+
+
                   <footer >
                     JALAN MASTRIP NO. 64 JEMBER 68101<br>
                     <br>
