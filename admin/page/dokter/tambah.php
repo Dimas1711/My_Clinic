@@ -63,14 +63,14 @@
                     <input class="form-control" type="number" name="no_hp" />
                 </div>
                 
-                <!--<div class="form-group">
+                <div class="form-group">
                     <label>Jenis Poli</label>
                     <select class="form-control" name="poli">
                         <option value="01" >Poli Umum</option>
                         <option value="02">Poli KIA</option>
                         <option value="03">Poli Gigi</option>
                     </select>
-                </div>-->
+                </div>
                 <div>
                   <input  type="submit" name="simpan" value="simpan" class="btn btn-primary">
                 </div>
@@ -93,13 +93,13 @@
           $alamat = @$_POST ['alamat'];
           $pendidikan = @$_POST ['pendidikan_terakhir'];
           $no_hp = @$_POST ['no_hp'];
-          //$poli = @$_POST ['poli'];
+          $poli = @$_POST ['poli'];
           $simpan = @$_POST ['simpan'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("insert into tb_dokter(ID_DOKTER,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_DOKTER,JENIS_KELAMIN,TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP)
-            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' , '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp')");
+            $sql = $koneksi -> query ("insert into tb_dokter(ID_DOKTER,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_DOKTER,JENIS_KELAMIN,TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP, ID_KLINIK)
+            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' , '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp','$poli')");
             if ($sql) {
               ?>
               <script type="text/javascript">
