@@ -1,9 +1,8 @@
 <?php
 
-$koneksi = new mysqli("localhost","root","","pdm_klinik1");
+include_once "koneksi.php";
 
-
- ?>
+?>
 
 
 
@@ -137,6 +136,9 @@ font-size: 16px;"> &nbsp; <a href="login.php" class="btn btn-danger square-btn-a
                           if ($aksi == "input") {
                            include "page/periksa/input.php";
                           }
+                          if ($aksi == "resepobat") {
+                            include "page/periksa/resepobat.php";
+                           }
                         }
                         elseif ($page == "obat") {
                           if ($aksi == "") {
