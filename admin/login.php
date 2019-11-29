@@ -23,8 +23,8 @@
         <div class="row text-center ">
             <div class="col-md-12">
                 <br /><br />
-                <h2> Klinik Pratama : Login</h2>
-                 <br />
+                <h2> Klinik Pratama </h2>
+                <h2> Login </h2>
             </div>
         </div>
          <div class="row ">
