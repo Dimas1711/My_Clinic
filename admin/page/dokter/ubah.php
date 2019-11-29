@@ -2,23 +2,13 @@
 include "koneksi.php";
 
 $id = $_GET['ID_DOKTER'];
-
 $sql = $koneksi->query("select * from tb_dokter where ID_DOKTER = '$id'");
-
 $hp = $koneksi->query("select NO_HP from tb_dokter where ID_DOKTER = '$id'");
-
 $tampil = $sql->fetch_assoc();
-
 $jenis_kelamin = $tampil['JENIS_KELAMIN'];
-
 $PT = $tampil['PENDIDIKAN_TERAKHIR'];
-
 $poli = $tampil['ID_KLINIK'];
-
  ?>
-
-
-
 
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -74,24 +64,21 @@ $poli = $tampil['ID_KLINIK'];
                     <label>Pendidikan Terakhir</label>
                     <select class="form-control" name="pendidikan_terakhir"  value="<?php echo $tampil['PENDIDIKAN_TERAKHIR']; ?> ">
                       <option >- - - - - - -</option>
-                        <option value="Tidak Sekolah" <?php if ($PT == 'Tidak Sekolah'){
+                        <option value="D1"<?php if ($PT == 'D1'){
                           echo "selected";
-                        } ?>>Tidak Sekolah</option>
-                        <option value="SD"<?php if ($PT == 'SD'){
+                        } ?>>D1</option>
+                        <option value="D2" <?php if ($PT == 'D2'){
                           echo "selected";
-                        } ?>>SD</option>
-                        <option value="SMP" <?php if ($PT == 'SMP'){
-                          echo "selected";
-                        } ?>>SMP</option>
-                        <option value="SMA"<?php if ($PT == 'SMA'){
-                          echo "selected";
-                        } ?>>SMA</option>
+                        } ?>>D2</option>
                         <option value="D3"<?php if ($PT == 'D3'){
                           echo "selected";
                         } ?>>D3</option>
-                        <option value="D4 / S1" <?php if ($PT == 'D4 / S1'){
+                        <option value="D4" <?php if ($PT == 'D4'){
                           echo "selected";
-                        } ?>>D4 / S1</option>
+                        } ?>>D4</option>
+                         <option value="S1" <?php if ($PT == 'S1'){
+                          echo "selected";
+                        } ?>>S1</option>
                         <option value="S2" <?php if ($PT == 'S2'){
                           echo "selected";
                         } ?>>S2</option>
@@ -130,7 +117,7 @@ $poli = $tampil['ID_KLINIK'];
           </div>
 
           <?php
-
+          include "koneksi.php";
           $id = @$_POST ['id_dokter'];
           $pass = @$_POST ['password'];
           $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];

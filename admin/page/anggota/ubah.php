@@ -164,12 +164,13 @@ $JA = $tampil['JENIS_ANGGOTA'];
           $no_hp = @$_POST ['no_hp'];
           $pp = @$_POST ['pekerjaan_prodi'];
           $email = @$_POST ['email'];
-          $foto = @$_POST ['foto'];
+          $fileName = $_FILES['gambar']['name'];
           $simpan = @$_POST ['simpan'];
 
 
           if ($simpan) {
             $sql = $koneksi -> query ("update tb_anggota set ID_ANGGOTA = '$id' ,	PASSWORD = '$pass' ,	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ANGGOTA =  '$nama',JENIS_ANGGOTA = '$ja',JENIS_KELAMIN = '$jk' ,TANGGAL_LAHIR = '$ttl' ,ALAMAT = '$alamat',PENDIDIKAN_TERAKHIR = '$pendidikan',	NO_HP = '$no_hp' , PEKERJAAN_PRODI = '$pp' , EMAIL = '$email' , FOTO = '$foto' where ID_ANGGOTA='$id'");
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "../img/".$_FILES['gambar']['name']);
             if ($sql) {
               ?>
               <script type="text/javascript">
