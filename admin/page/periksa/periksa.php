@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Periksa</title>
     
   <script src="jQuery.js"></script>
 </head>
@@ -12,13 +12,13 @@
   
 <h3 style="margin-left:2.5% ; font-size:20px"> 
   <tr>
-    <td>Id Berobat</td>
-    <td><input type="text" name="id_berobat"></td>
+                        <td>Id Berobat</td>
+                        <td><input type="text" name="id_berobat"></td>
   </tr> 
 
   <tr>
-    <td>Tanggal</td>
-    <td><input type="date" name="tanggal"></td>
+                        <td>Tanggal</td>
+                        <td><input type="date" name="tanggal"></td>
   </tr> 
 
 </h3>
@@ -116,9 +116,9 @@
                         </div>
                     </div>            
                 </div>
-                <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" class="btn btn-info">Input</a>
+                <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" class="btn btn-info">Rujukan</a>
                       
-                   <a href=""class="btn btn-danger">Batal</a>
+                   <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['id_berobat']; ?>"class="btn btn-danger">Resep Obat</a>
         
                 <script type="text/javascript">
                 
@@ -140,13 +140,14 @@
                 
                 </script>
                 <?php
-                      include "koneksi.php";
+
                       $id_berobat = @$_POST['id_berobat'];
                       $id_anggota = @$_POST['id_anggota'];
                       $id_klinik = @$_POST ['poli'];
                       $tensi = @$_POST['tensi'];
                       $tanggal = @$_POST['tanggal'];
                       $input = @$_POST ['input'];
+                      $resepobat = @$_POST ['resepobat'];
 
                       if ($input) {
                        
