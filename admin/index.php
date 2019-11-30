@@ -68,6 +68,13 @@ font-size: 16px;"> &nbsp; <a href="login.php" class="btn btn-danger square-btn-a
                     <li>
                         <a  href="?page=periksa"><i class="fa fa-dashboard fa-3x"></i> Periksa</a>
                     </li>
+                    <li class="dropdown"><a  href="?page=laporan"><i class="fa fa-dashboard fa-3x"></i> Laporan</a>
+                        <ul>
+                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Periksa</a></li>
+                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Rujukan</a></li>
+                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Obat</a></li>
+                        </ul>                       
+                    </li>
                 </ul>
 
             </div>

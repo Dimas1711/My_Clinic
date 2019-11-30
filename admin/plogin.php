@@ -2,7 +2,7 @@
 require "koneksi.php";
 $user = $_GET["username"];
 $pass = $_GET["pass"];
-$query = mysqli_query($koneksi,"SELECT * FROM tb_admin WHERE ID_ADMIN ='$user'");
+$query = mysqli_query($koneksi,"SELECT * FROM tb_admin WHERE ID_ADMIN ='$user' AND PASSWORD='$pass'");
 $count = mysqli_num_rows($query);
 if($count==1){
     $data = mysqli_fetch_array($query);
