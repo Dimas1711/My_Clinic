@@ -1,5 +1,5 @@
 <?php
-
+include "koneksi.php";
 $id = $_GET['ID_DOKTER'];
 
 $koneksi->query("delete from tb_dokter where ID_DOKTER = '$id'");

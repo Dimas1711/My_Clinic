@@ -1,5 +1,5 @@
 <?php
-
+include "koneksi.php";
 $id = $_GET['ID_OBAT'];
 
 $koneksi->query ("delete from tb_obat where ID_OBAT = '$id'");

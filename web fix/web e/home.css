@@ -19,16 +19,19 @@ nav li {
     margin-left: 30px;
 }
 
-.macam  {
+div.macam  {
   margin-top: 150px;
-  margin-left: 290px;
-  margin-right: 600px;
+  margin-left: 100px;
+  margin-right: 300px;
   margin-bottom:  100px;
 
 }
 .macam h2 {
-  font-size: 35px;
+  font-size: 50px;
+  margin-right: 70px;
 }
+
+
 
 #lgn
 {
@@ -60,20 +63,20 @@ nav li {
 .card-deck {
     margin-top: 50px;
   margin-right: 150px;
-  padding-left: 300px;
+  padding-left: 200px;
 
 }
 .card1{
-    margin-top: 60px;
+    margin-top: 40px;
     width: 200px;
-    height: 250px;
+    height: 100px;
     margin-right: 80px;
     
-
 }
 .movie {
     margin-top: 50px;
     margin-right: 25px;
+    margin-bottom: 70px;
 }
 
 /* row */

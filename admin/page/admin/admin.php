@@ -17,7 +17,7 @@
                                 <th>NO.KTP/NIM/NIP</th>
                                 <th>NAMA ADMIN</th>
                                 <th>JENIS KELAMIN</th>
-                                <th>TEMPAT TANGGAL LAHIR</th>
+                                <th>TANGGAL LAHIR</th>
                                 <th>ALAMAT</th>
                                 <th>PENDIDIKAN TERAKHIR</th>
 
@@ -27,6 +27,7 @@
                     <tbody>
 
                       <?php
+                                include "koneksi.php";
                       $no = 1;
                           $sql = $koneksi -> query ("select * from tb_admin");
 
@@ -41,7 +42,7 @@
                         <td><?php echo $data ['NO_KTP_NIM_NIP']; ?></td>
                         <td><?php echo $data ['NAMA_ADMIN']; ?></td>
                         <td><?php echo $data ['JENIS_KELAMIN']; ?></td>
-                        <td><?php echo $data ['TEMPAT_TANGGAL_LAHIR']; ?></td>
+                        <td><?php echo $data ['TANGGAL_LAHIR']; ?></td>
                         <td><?php echo $data ['ALAMAT']; ?></td>
                         <td><?php echo $data ['PENDIDIKAN_TERAKHIR']; ?></td>
                         

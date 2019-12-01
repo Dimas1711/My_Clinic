@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Periksa</title>
     
   <script src="jQuery.js"></script>
 </head>
@@ -116,9 +116,9 @@
                         </div>
                     </div>            
                 </div>
-                <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" class="btn btn-info">Input</a>
+                <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" class="btn btn-info">Rujukan</a>
                       
-                   <a href=""class="btn btn-danger">Batal</a>
+                   <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['id_berobat']; ?>"class="btn btn-danger">Resep Obat</a>
         
                 <script type="text/javascript">
                 
@@ -147,6 +147,7 @@
                       $tensi = @$_POST['tensi'];
                       $tanggal = @$_POST['tanggal'];
                       $input = @$_POST ['input'];
+                      $resepobat = @$_POST ['resepobat'];
 
                       if ($input) {
                        

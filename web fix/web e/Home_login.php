@@ -264,7 +264,7 @@ s0.parentNode.insertBefore(s1,s0);
                   </div>
                   <div class="maps">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.421534099274!2d113.72091001451282!3d-8.160214884015843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6fbfa55a4d83c8c!2sKlinik%20POLIJE!5e0!3m2!1sid!2sid!4v1571283935490!5m2!1sid!2sid"
-                   width="1500" height="450" frameborder="2" style="border:1;" allowfullscreen=""></iframe>
+                   width="1345" height="450" frameborder="2" style="border:1;" allowfullscreen=""></iframe>
                   </div>
 
 

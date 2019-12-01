@@ -1,4 +1,5 @@
 <?php
+include "koneksi.php";
 $id = $_GET['ID_ADMIN'];
 $sql = $koneksi->query("select * from tb_admin where ID_ADMIN = '$id'");
 $hp = $koneksi->query("select NO_HP from tb_admin where ID_ADMIN = '$id'");
@@ -47,8 +48,8 @@ $PT = $tampil['PENDIDIKAN_TERAKHIR'];
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Tempat Tanggal Lahir</label>
-                    <input class="form-control" name="tempat_tanggal_lahir" type="date" value="<?php echo $tampil['TEMPAT_TANGGAL_LAHIR']; ?>"/>
+                    <label>Tanggal Lahir</label>
+                    <input class="form-control" name="tanggal_lahir" type="date" value="<?php echo $tampil['TANGGAL_LAHIR']; ?>"/>
 
                 </div>
                 <div class="form-group">
@@ -60,30 +61,28 @@ $PT = $tampil['PENDIDIKAN_TERAKHIR'];
                     <label>Pendidikan Terakhir</label>
                     <select class="form-control" name="pendidikan_terakhir"  value="<?php echo $tampil['PENDIDIKAN_TERAKHIR']; ?> ">
                       <option >- - - - - - -</option>
-                        <option value="Tidak Sekolah" <?php if ($PT == 'Tidak Sekolah'){
+                        <option value="D1" <?php if ($PT == 'D1') {
                           echo "selected";
-                        } ?>>Tidak Sekolah</option>
-                        <option value="SD"<?php if ($PT == 'SD'){
+                        } ?>>D1</option>
+                        <option value="D2" <?php if ($PT == 'D2') {
                           echo "selected";
-                        } ?>>SD</option>
-                        <option value="SMP" <?php if ($PT == 'SMP'){
-                          echo "selected";
-                        } ?>>SMP</option>
-                        <option value="SMA"<?php if ($PT == 'SMA'){
-                          echo "selected";
-                        } ?>>SMA</option>
+                        } ?>>D2</option>
                         <option value="D3"<?php if ($PT == 'D3'){
                           echo "selected";
                         } ?>>D3</option>
-                        <option value="D4 / S1" <?php if ($PT == 'D4 / S1'){
+                        <option value="D4" <?php if ($PT == 'D4'){
+                          echo "selected";                   
+                        } ?>>D4</option>
+                        <option value="S1" <?php if ($PT == 'S1') {
                           echo "selected";
-                        } ?>>D4 / S1</option>
+                        } ?>>S1</option>
                         <option value="S2" <?php if ($PT == 'S2'){
                           echo "selected";
                         } ?>>S2</option>
                         <option value="S3" <?php if ($PT == 'S3'){
                           echo "selected";
                         } ?>>S3</option>
+                        
                     </select>
                 </div>
                 <div class="form-group">
@@ -102,13 +101,13 @@ $PT = $tampil['PENDIDIKAN_TERAKHIR'];
           </div>
 
           <?php
-
+          include "koneksi.php";
           $id = @$_POST ['id_admin'];
           $pass = @$_POST ['password'];
           $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
           $nama = @$_POST ['nama_admin'];
           $jk = @$_POST ['jk'];
-          $ttl = @$_POST ['tempat_tanggal_lahir'];
+          $ttl = @$_POST ['tanggal_lahir'];
           $alamat = @$_POST ['alamat'];
           $pendidikan = @$_POST ['pendidikan_terakhir'];
           $no_hp = @$_POST ['no_hp'];
@@ -116,7 +115,7 @@ $PT = $tampil['PENDIDIKAN_TERAKHIR'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("update tb_admin set ID_ADMIN = '$id' ,	PASSWORD = '$pass',	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ADMIN = '$nama' ,JENIS_KELAMIN = '$jk',TEMPAT_TANGGAL_LAHIR =  '$ttl',ALAMAT ='$alamat' ,PENDIDIKAN_TERAKHIR = '$pendidikan',
+            $sql = $koneksi -> query ("update tb_admin set ID_ADMIN = '$id' ,	PASSWORD = '$pass',	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ADMIN = '$nama' ,JENIS_KELAMIN = '$jk',TANGGAL_LAHIR =  '$ttl',ALAMAT ='$alamat' ,PENDIDIKAN_TERAKHIR = '$pendidikan',
             NO_HP = '$no_hp' where ID_ADMIN = '$id'");
             if ($sql) {
               ?>

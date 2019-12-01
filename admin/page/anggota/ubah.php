@@ -1,5 +1,5 @@
 <?php
-
+include "koneksi.php";
 
 $id = $_GET['ID_ANGGOTA'];
 
@@ -75,8 +75,8 @@ $JA = $tampil['JENIS_ANGGOTA'];
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Tempat Tanggal Lahir</label>
-                    <input class="form-control" name="tempat_tanggal_lahir" type="date" value="<?php echo $tampil['TEMPAT_TANGGAL_LAHIR']; ?>"/>
+                    <label>Tanggal Lahir</label>
+                    <input class="form-control" name="tanggal_lahir" type="date" value="<?php echo $tampil['TANGGAL_LAHIR']; ?>"/>
 
                 </div>
                 <div class="form-group">
@@ -100,12 +100,21 @@ $JA = $tampil['JENIS_ANGGOTA'];
                         <option value="SMA"<?php if ($PT == 'SMA'){
                           echo "selected";
                         } ?>>SMA</option>
+                        <option value="D1" <?php if ($PT == 'D1') {
+                          echo "selected";
+                        } ?>>D1</option>
+                        <option value="D2" <?php if ($PT == 'D2') {
+                          echo "selected";
+                        } ?>>D2</option>
                         <option value="D3"<?php if ($PT == 'D3'){
                           echo "selected";
                         } ?>>D3</option>
-                        <option value="D4 / S1" <?php if ($PT == 'D4 / S1'){
+                        <option value="D4" <?php if ($PT == 'D4'){
+                          echo "selected";                   
+                        } ?>>D4</option>
+                        <option value="S1" <?php if ($PT == 'S1') {
                           echo "selected";
-                        } ?>>D4 / S1</option>
+                        } ?>>S1</option>
                         <option value="S2" <?php if ($PT == 'S2'){
                           echo "selected";
                         } ?>>S2</option>
@@ -142,25 +151,26 @@ $JA = $tampil['JENIS_ANGGOTA'];
           </div>
 
           <?php
-
+          include "koneksi.php";
           $id = @$_POST ['username'];
           $pass = @$_POST ['password'];
           $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
           $nama = @$_POST ['nama_anggota'];
           $ja = @$_POST ['ja'];
           $jk = @$_POST ['jk'];
-          $ttl = @$_POST ['tempat_tanggal_lahir'];
+          $ttl = @$_POST ['tanggal_lahir'];
           $alamat = @$_POST ['alamat'];
           $pendidikan = @$_POST ['pendidikan_terakhir'];
           $no_hp = @$_POST ['no_hp'];
           $pp = @$_POST ['pekerjaan_prodi'];
           $email = @$_POST ['email'];
-          $foto = @$_POST ['foto'];
+          $filename =@$_FILES['gambar']['name'];
           $simpan = @$_POST ['simpan'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("update tb_anggota set ID_ANGGOTA = '$id' ,	PASSWORD = '$pass' ,	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ANGGOTA =  '$nama',JENIS_ANGGOTA = '$ja',JENIS_KELAMIN = '$jk' ,TEMPAT_TANGGAL_LAHIR = '$ttl' ,ALAMAT = '$alamat',PENDIDIKAN_TERAKHIR = '$pendidikan',	NO_HP = '$no_hp' , PEKERJAAN_PRODI = '$pp' , EMAIL = '$email' , FOTO = '$foto' where ID_ANGGOTA='$id'");
+            $sql = $koneksi -> query ("update tb_anggota set ID_ANGGOTA = '$id' ,	PASSWORD = '$pass' ,	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ANGGOTA =  '$nama',JENIS_ANGGOTA = '$ja',JENIS_KELAMIN = '$jk' ,TANGGAL_LAHIR = '$ttl' ,ALAMAT = '$alamat',PENDIDIKAN_TERAKHIR = '$pendidikan',	NO_HP = '$no_hp' , PEKERJAAN_PRODI = '$pp' , EMAIL = '$email' , gambar = '$filename' where ID_ANGGOTA='$id'");
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "../img/".$_FILES['gambar']['name']);
             if ($sql) {
               ?>
               <script type="text/javascript">

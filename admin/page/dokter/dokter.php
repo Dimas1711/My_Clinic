@@ -15,7 +15,7 @@
                                 <th>NO.KTP/NIM/NIP</th>
                                 <th>NAMA DOKTER</th>
                                 <th>JENIS KELAMIN</th>
-                                <th>TEMPAT TANGGAL LAHIR</th>
+                                <th>TANGGAL LAHIR</th>
                                 <th>ALAMAT</th>
                                 <th>PENDIDIKAN TERAKHIR</th>
                                 <th>NO.HP</th>
@@ -26,9 +26,10 @@
                     <tbody>
 
                       <?php
+                      include "koneksi.php";
                       $no = 1;
-                          $sql = $koneksi -> query ("select ID_DOKTER , PASSWORD , NO_KTP_NIM_NIP , NAMA_DOKTER , JENIS_KELAMIN , TEMPAT_TANGGAL_LAHIR , ALAMAT , PENDIDIKAN_TERAKHIR ,NO_HP , NAMA_KLINIK from tb_dokter ,tb_klinik WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK ");
-
+                      $sql = $koneksi -> query ("SELECT *FROM tb_dokter");
+                          $sql = $koneksi -> query ("select ID_DOKTER , PASSWORD , NO_KTP_NIM_NIP , NAMA_DOKTER , JENIS_KELAMIN , TANGGAL_LAHIR , ALAMAT , PENDIDIKAN_TERAKHIR ,NO_HP , NAMA_KLINIK from tb_dokter ,tb_klinik WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK ");
                           while ($data=$sql->fetch_assoc()) {
                             // code...
                             
@@ -39,14 +40,14 @@
                         <td><?php echo $data ['NO_KTP_NIM_NIP']; ?></td>
                         <td><?php echo $data ['NAMA_DOKTER']; ?></td>
                         <td><?php echo $data ['JENIS_KELAMIN']; ?></td>
-                        <td><?php echo $data ['TEMPAT_TANGGAL_LAHIR']; ?></td>
+                        <td><?php echo $data ['TANGGAL_LAHIR']; ?></td>
                         <td><?php echo $data ['ALAMAT']; ?></td>
                         <td><?php echo $data ['PENDIDIKAN_TERAKHIR']; ?></td>
                         <td><?php echo $data ['NO_HP']; ?></td>
                         <td><?php echo $data ['NAMA_KLINIK']; ?></td>
                         <td>
                         <a href="?page=dokter&aksi=ubah&ID_DOKTER=<?php echo $data['ID_DOKTER']; ?>" class="btn btn-info">Ubah</a>
-                        <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ...???? ')" href="?page=dokter&aksi=hapus&ID_DOKTER=<?php echo $data['ID_DOKTER'];?>"class="btn btn-danger">Delete</a>
+                        <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ? ')" href="?page=dokter&aksi=hapus&ID_DOKTER=<?php echo $data['ID_DOKTER'];?>"class="btn btn-danger">Delete</a>
 
                       </td>
                       </tr>

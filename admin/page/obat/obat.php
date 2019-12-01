@@ -14,6 +14,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>NAMA OBAT</th>
+                                <th>KETERANGAN</th>
                                 <th>HARGA</th>
                                 <th>STOK</th>
                                 <th>AKSI</th>
@@ -22,6 +23,7 @@
                     <tbody>
 
                       <?php
+                      include "koneksi.php";
                       $no = 1;
                           $sql = $koneksi -> query ("select * from tb_obat");
 
@@ -33,12 +35,13 @@
                       <tr>
                         <td><?php  echo $no++; ?></td>
                         <td><?php echo $data ['NAMA_OBAT']; ?></td>
+                        <td><?php echo $data ['Keterangan']; ?></td>
                         <td><?php echo $data ['HARGA']; ?></td>
                         <td><?php echo $data ['STOK']; ?></td>
                         
                         <td>
                         <a href="?page=obat&aksi=ubah&ID_OBAT=<?php echo $data['ID_OBAT'];?>" class="btn btn-info">Ubah</a>
-                        <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ...???? ')" href="?page=obat&aksi=hapus&ID_OBAT=<?php echo $data['ID_OBAT'];?>"class="btn btn-danger">Delete</a>
+                        <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ? ')" href="?page=obat&aksi=hapus&ID_OBAT=<?php echo $data['ID_OBAT'];?>"class="btn btn-danger">Delete</a>
                       </td>
                       </tr>
 
