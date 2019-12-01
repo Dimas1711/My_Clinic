@@ -1,6 +1,6 @@
 <?php
 
-$koneksi = new mysqli("localhost","root","","yo");
+$koneksi = new mysqli("localhost","root","","klinik_pdm");
 
 
  ?>
