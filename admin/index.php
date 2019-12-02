@@ -1,11 +1,8 @@
 <?php
-
-include_once "koneksi.php";
-
+  include_once "koneksi.php";
+  session_start();
   $result1 = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE NAMA_ADMIN='".$_SESSION['username']."'");
   $row = mysqli_fetch_array($result1);
-
-
 ?>
 
 
