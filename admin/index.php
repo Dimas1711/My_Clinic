@@ -1,6 +1,11 @@
 <?php
 
+session_start();
 include_once "koneksi.php";
+
+  $result1 = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE NAMA_ADMIN='".$_SESSION['username']."'");
+  $row = mysqli_fetch_array($result1);
+
 
 ?>
 
@@ -35,11 +40,13 @@ include_once "koneksi.php";
                 </button>
                 <a class="navbar-brand" href="index.html">Klinik Pratama</a>
             </div>
-  <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;"> &nbsp; <a href="login.php" class="btn btn-danger square-btn-adjust">Logout</a> </div>
-        </nav>
+            <?php
+                if ($row!=""){
+                  echo '<div style="color: white; padding: 15px 50px 5px 50px; float: left; font-size: 16px;">'.$row['NAMA_ADMIN'].'</div>';
+                  echo '<div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"><a href="logout.php" class="btn btn-danger square-btn-adjust">Log Out</a></div>';
+                }
+            ?>
+            </nav>
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
