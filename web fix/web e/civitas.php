@@ -1,29 +1,33 @@
 <?php
-  session_start();
+require 'functions.php';
+session_start();
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="profil.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="civitas_tes.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+    <title>Document</title>
 </head>
 <body>
-  <header>
-    <!-- Image and text -->
+    <header>
+        <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
-<a class="navbar-brand" href="#">
-<img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" width="70" height="70" class="d-inline-block align-top" alt="">
-<div id="text">
-Klinik Pratama
-<br>
-Politeknik Negeri Jember
-</div>
-</a>
+  <a class="navbar-brand" href="#">
+    <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" width="70" height="70" class="d-inline-block align-top" alt="">
+    <div id="text">
+    Klinik Pratama
+    <br>
+    Politeknik Negeri Jember
+    </div>
+  </a>
 
-<nav class="navbar navbar-expand-lg navbar-dard bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dard bg-light">
                 <div class="container">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
@@ -137,64 +141,124 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
                 </div>
               </nav>
-              
 
-</header>
-
-
+    </header>
+        
     <section>
-      <h2>Data Klinik</h2>
-      <table>
+      <h2 class="test">Civitas</h2>
+        <table >
           <tr>
-              <td>Nama Klinik</td>
-              <td>:</td>
-              <td>Klinik Rawat Jalan Pratama Politeknik Negeri Jember</td>
+            <th class="dokter">Dokter Umum</th>
+            <th class="jarak">:</th>
+            <th></th>
           </tr>
           <tr>
-              <td>Nama Pemilik</td>
-              <td>:</td>
-              <td>Ir. Nanang Dwi Wahyono, M.M.</td>
+            <td></td>
+            <td></td>
+            <td class="tes">1. dr.Anindita Pramadyasiwi</td>
           </tr>
           <tr>
-              <td>Alamat Klinik</td>
-              <td>:</td>
-              <td>Jalan Mastrip No. 64 Jember 68101</td>
+            <td></td>
+            <td></td>
+            <td class="tes">2. dr.Arisanty Nur Setya Restuti, M.Gizi</td>
           </tr>
           <tr>
-              <td>Telepon</td>
-              <td>:</td>
-              <td>(0331) 333532 – 34</td>
+            <td></td>
+            <td></td>
+            <td class="tes">3. dr.Arinda Lironika Suryana, M.Kes</td>
           </tr>
           <tr>
-              <td>Faximile</td>
-              <td>:</td>
-              <td>(0331) 333531</td>
+            <td></td>
+            <td></td>
+            <td class="tes">4. dr.Rinda Nurul Karimah, M.Kes</td>
           </tr>
           <tr>
-              <td>Email</td>
-              <td>:</td>
-              <td>politeknik@polije.ac.id</td>
+            <td></td>
+            <td></td>
+            <td class="tes">5. dr.Novita Nuraini, M.A.R.S</td>
           </tr>
-      </table>
+          <tr>
+            <th class="dokter">Dokter Gigi</th>
+            <th class="jarak">:</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="tes">1. drg.Tecky I,M.Kes</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="tes">2. drg.Dwi Merry C,M.Kes</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="tes">3. drg.Tantin E,M.Kes</td>
+          </tr>
+          <tr>
+            <th class="dokter">Perawat</th>
+            <th class="jarak">:</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="tes">1. Tri Pamungkas Ningtyas Ambarwati, AMd.Kep</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="tes">2. Reta Pristya Dewi, AMd.Kep</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="tes">3. Qies Rodlyan Hasbi, AMd.Kep</td>
+          </tr>
+          <tr>
+            <th class="dokter">Bidan</th>
+            <th class="jarak">:</th>
+            <td class="tes">Kiki Ulfa Rahayu, AMd.Keb</td>
+          </tr>
+          <tr>
+            <th class="dokter">Asisten Apoteker</th>
+            <th class="jarak">:</th>
+            <td class="tes">Erma Sulistyorini</td>
+          </tr>
+          <tr>
+            <th class="dokter">Administrasi</th>
+            <th class="jarak">:</th>
+            <td class="tes">Alvin Sudiro</td>
+          </tr>
+          <tr>
+            <th class="dokter">Rekam Medis</th>
+            <th class="jarak">:</th>
+            <td class="tes">Delina Ayu Budi Maitasari, S.ST</td>
+          </tr>
+          <tr>
+            <th class="dokter">Kebersihan</th>
+            <th class="jarak">:</th>
+            <td class="tes">Hosby</td>
+          </tr>
+        </table>
     </section>
 
+                  <footer >
+
+                    JALAN MASTRIP NO. 64 JEMBER 68101<br>
+                    <br>
+                    TELP. (0331) 333532 – 34 FAKS. (0331) 333531<br>
+                    <br>
+                    Email: klinikpratamapolije@gmail.com<br>
+                    <br>
+
+                  </footer>
 
 
-    <footer>
-      JALAN MASTRIP NO. 64 JEMBER 68101<br>
-      <br>
-      TELP. (0331) 333532 – 34 FAKS. (0331) 333531<br>
-      <br>
-      Email: klinikpratamapolije@gmail.com<br>
-      <br>
-</footer>
-
-
-
-
-<script src="js/jQuery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <script src="js/jQuery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
