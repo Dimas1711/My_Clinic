@@ -32,9 +32,7 @@
                       include "koneksi.php";
                       $no = 1;
                           $sql = $koneksi -> query ("SELECT *FROM tb_anggota");
-                
-                          while ($data=$sql ->fetch_assoc()) {
-
+                          while ($data = mysqli_fetch_array($sql)){
                        ?>
                       <tr>
                         <td><?php  echo $no++; ?></td>
@@ -48,7 +46,7 @@
                         <td><?php echo $data ['NO_HP']; ?></td>
                         <td><?php echo $data ['PEKERJAAN_PRODI']; ?></td>
                         <td><?php echo $data ['EMAIL']; ?></td>
-                        <td><?php echo $data ['FOTO']; ?></td>
+                        <td><?php echo "<img src='".$data['FOTO']."' width='100px' height='100px'/>"?></td>
                         <td>
                           <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>" class="btn btn-info">Ubah</a>
                           <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ? ')" href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>"class="btn btn-danger">Delete</a>

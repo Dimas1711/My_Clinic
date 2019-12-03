@@ -49,11 +49,11 @@
                     <select class="form-control" name="pendidikan_terakhir">
                       <option >- - - - - - -</option>
                         <option value="Tidak Sekolah">Tidak Sekolah</option>
-                        <option value="SD">SD</option>
-                        <option value="SMP">SMP</option>
-                        <option value="SMA">SMA</option>
+                        <option value="D1">D1</option>
+                        <option value="D2">D2</option>
                         <option value="D3">D3</option>
-                        <option value="D4 / S1">D4 / S1</option>
+                        <option value="D4">D4</option>
+                        <option value="S1">S1</option>
                         <option value="S2">S2</option>
                         <option value="S3">S3</option>
                     </select>
@@ -63,14 +63,14 @@
                     <input class="form-control" type="number" name="no_hp" />
                 </div>
                 
-                <!--<div class="form-group">
+                <div class="form-group">
                     <label>Jenis Poli</label>
                     <select class="form-control" name="poli">
                         <option value="01" >Poli Umum</option>
                         <option value="02">Poli KIA</option>
                         <option value="03">Poli Gigi</option>
                     </select>
-                </div>-->
+                </div>
                 <div>
                   <input  type="submit" name="simpan" value="simpan" class="btn btn-primary">
                 </div>
@@ -93,13 +93,14 @@
           $alamat = @$_POST ['alamat'];
           $pendidikan = @$_POST ['pendidikan_terakhir'];
           $no_hp = @$_POST ['no_hp'];
-          //$poli = @$_POST ['poli'];
+          $poli = @$_POST ['poli'];
           $simpan = @$_POST ['simpan'];
+          $fileName = $_FILES['gambar']['name'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("insert into tb_dokter(ID_DOKTER,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_DOKTER,JENIS_KELAMIN,TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP)
-            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' , '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp')");
+            $sql = $koneksi -> query ("insert into tb_dokter(ID_DOKTER,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_DOKTER,JENIS_KELAMIN,TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP, ID_KLINIK)
+            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' , '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp','$poli')");
             if ($sql) {
               ?>
               <script type="text/javascript">

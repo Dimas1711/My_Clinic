@@ -1,9 +1,9 @@
 <?php
-
-$koneksi = new mysqli("localhost","root","","pdm_klinik1");
-
-
- ?>
+  include_once "koneksi.php";
+  session_start();
+  $result1 = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE NAMA_ADMIN='".$_SESSION['username']."'");
+  $row = mysqli_fetch_array($result1);
+?>
 
 
 
@@ -36,11 +36,13 @@ $koneksi = new mysqli("localhost","root","","pdm_klinik1");
                 </button>
                 <a class="navbar-brand" href="index.html">Klinik Pratama</a>
             </div>
-  <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;"> &nbsp; <a href="login.php" class="btn btn-danger square-btn-adjust">Logout</a> </div>
-        </nav>
+            <?php
+                if ($row!=""){
+                  echo '<div style="color: white; padding: 15px 50px 5px 50px; float: left; font-size: 16px;">'.$row['NAMA_ADMIN'].'</div>';
+                  echo '<div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"><a href="logout.php" class="btn btn-danger square-btn-adjust">Log Out</a></div>';
+                }
+            ?>
+            </nav>
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
@@ -68,6 +70,13 @@ font-size: 16px;"> &nbsp; <a href="login.php" class="btn btn-danger square-btn-a
                     </li>
                     <li>
                         <a  href="?page=periksa"><i class="fa fa-dashboard fa-3x"></i> Periksa</a>
+                    </li>
+                    <li class="dropdown"><a  href="?page=laporan"><i class="fa fa-dashboard fa-3x"></i> Laporan</a>
+                        <ul>
+                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Periksa</a></li>
+                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Rujukan</a></li>
+                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Obat</a></li>
+                        </ul>                       
                     </li>
                 </ul>
 
@@ -137,6 +146,9 @@ font-size: 16px;"> &nbsp; <a href="login.php" class="btn btn-danger square-btn-a
                           if ($aksi == "input") {
                            include "page/periksa/input.php";
                           }
+                          if ($aksi == "resepobat") {
+                            include "page/periksa/resepobat.php";
+                           }
                         }
                         elseif ($page == "obat") {
                           if ($aksi == "") {
