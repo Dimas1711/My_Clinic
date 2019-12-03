@@ -29,7 +29,7 @@
                     <tbody>
 
                       <?php
-                      include "koneksi.php";
+                      include_once "koneksi.php";
                       $no = 1;
                           $sql = $koneksi -> query ("SELECT *FROM tb_anggota");
                           while ($data = mysqli_fetch_array($sql)){
@@ -46,7 +46,7 @@
                         <td><?php echo $data ['NO_HP']; ?></td>
                         <td><?php echo $data ['PEKERJAAN_PRODI']; ?></td>
                         <td><?php echo $data ['EMAIL']; ?></td>
-                        <td><?php echo "<img src='".$data['FOTO']."' width='100px' height='100px'/>"?></td>
+                        <td><?php echo "<img src='img/".$data['FOTO']."' width='100px' height='100px'/>" ?>
                         <td>
                           <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>" class="btn btn-info">Ubah</a>
                           <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ? ')" href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>"class="btn btn-danger">Delete</a>

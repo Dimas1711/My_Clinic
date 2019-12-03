@@ -137,7 +137,7 @@ $JA = $tampil['JENIS_ANGGOTA'];
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input class="form-control" type="file" name="foto" value="<?php echo $tampil['FOTO']; ?>"/>
+                    <input class="form-control" type="file" name="gambar" value="<?php echo $tampil['FOTO']; ?>"/>
                 </div>
                 <div>
                   <input  type="submit" name="simpan" value="simpan" class="btn btn-primary">
@@ -151,7 +151,7 @@ $JA = $tampil['JENIS_ANGGOTA'];
           </div>
 
           <?php
-          include "koneksi.php";
+          include_once "koneksi.php";
           $id = @$_POST ['username'];
           $pass = @$_POST ['password'];
           $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
@@ -169,8 +169,8 @@ $JA = $tampil['JENIS_ANGGOTA'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("update tb_anggota set ID_ANGGOTA = '$id' ,	PASSWORD = '$pass' ,	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ANGGOTA =  '$nama',JENIS_ANGGOTA = '$ja',JENIS_KELAMIN = '$jk' ,TANGGAL_LAHIR = '$ttl' ,ALAMAT = '$alamat',PENDIDIKAN_TERAKHIR = '$pendidikan',	NO_HP = '$no_hp' , PEKERJAAN_PRODI = '$pp' , EMAIL = '$email' , gambar = '$filename' where ID_ANGGOTA='$id'");
-            move_uploaded_file($_FILES['gambar']['tmp_name'], "../img/".$_FILES['gambar']['name']);
+            $sql = $koneksi -> query ("update tb_anggota set ID_ANGGOTA = '$id' ,	PASSWORD = '$pass' ,	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ANGGOTA =  '$nama',JENIS_ANGGOTA = '$ja',JENIS_KELAMIN = '$jk' ,TANGGAL_LAHIR = '$ttl' ,ALAMAT = '$alamat',PENDIDIKAN_TERAKHIR = '$pendidikan',	NO_HP = '$no_hp' , PEKERJAAN_PRODI = '$pp' , EMAIL = '$email' , FOTO = '$filename' where ID_ANGGOTA='$id'");
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "img/".$_FILES['gambar']['name']);
             if ($sql) {
               ?>
               <script type="text/javascript">
