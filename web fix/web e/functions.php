@@ -188,7 +188,18 @@ function ubahpassword($data)
         }
 }
 
+// function lupapass()
+// {
+//     global $conn;
+    
+//         $email = $_POST['email'];
 
+//         $selectquery = mysqli_query($conn, "SELECT * FROM tb_anggota WHERE EMAIL = '$email'");
+
+//         $count = mysqli_num_rows($selectquery);
+
+//         echo $count;
+// }
 
 ?>
 
