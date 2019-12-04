@@ -38,10 +38,59 @@ div.macam  {
     color: white;
 }
 
+h2.test
+{
+    font-size: 40px;
+    text-align: center;
+    margin: 30px 400px 20px 350px;
+    background-color: #EBEEEF;
+    opacity: 0.9;  
+     
+}
+
+/* ul.judul
+{
+    padding-left: 200px;
+}
+
+
+
+table
+{
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 350px;
+    margin-bottom: 100px;
+    background-color: #EBEEEF;
+    opacity: 0.9;
+}
+
+th.dokter
+{
+    padding-left: 10px;
+}
+
+td.tes
+{
+    padding-left: 20px;
+}
+
+th.jarak
+{
+    padding-left: 20px;
+} */
+
+img
+{
+    display: block;
+    margin: auto;
+
+}
 
 footer
 {
     padding-top: 20px;
     background-color:#EBEEEF;
     text-align: center;
+    margin-top: 20px;
 }
