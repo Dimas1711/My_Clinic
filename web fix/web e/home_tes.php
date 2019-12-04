@@ -37,7 +37,7 @@ session_start();
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="data_klinik.php">Data Klinik</a>
-                            <a class="dropdown-item" href="#">Struktur Organisasi</a>
+                            <a class="dropdown-item" href="struktur_organisasi.php">Struktur Organisasi</a>
                             <a class="dropdown-item" href="#">Civitas</a>
                       </div>
                     </li>

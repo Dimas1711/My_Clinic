@@ -77,7 +77,7 @@ if( isset($_POST["cancel"]) )
         <br>
         <p>Belum Punya Akun ? <a class="link" href="registrasi.php">Daftar Sekarang</a></p>
         <br>
-        <p class="p2"><a class="link" href="lupa-pass.html">Lupa Password</a> ? </p>
+        <p class="p2"><a class="link" href="lupapass.php">Lupa Password</a> ? </p>
        </form>
        
    </section>
