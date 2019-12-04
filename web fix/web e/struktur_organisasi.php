@@ -40,7 +40,7 @@ session_start();
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="data_klinik.php">Data Klinik</a>
-                            <a class="dropdown-item" href="#">Struktur Organisasi</a>
+                            <a class="dropdown-item" href="struktur_organisasi.php">Struktur Organisasi</a>
                             <a class="dropdown-item" href="civitas.php">Civitas</a>
                             <a class="dropdown-item" href="lain_tes.php">Tata Tertib</a>
                             <a class="dropdown-item" href="#">Alur Pendaftaran</a>
