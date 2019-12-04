@@ -43,7 +43,7 @@ Politeknik Negeri Jember
                       </div>
                     </li>
                     <li class="nav-item ">
-                      <a class="nav-link" href="#">
+                      <a class="nav-link" href="fasilitas.php">
                         Fasilitas
                         <span class="sr-only" >
                             (current)
