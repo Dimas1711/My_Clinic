@@ -4,7 +4,7 @@
   $result1 = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE NAMA_ADMIN='".$_SESSION['username']."'");
   $row = mysqli_fetch_array($result1);
 ?>
-
+<!-- sedfgtyhuny -->
 
 
 <!DOCTYPE html>
@@ -109,6 +109,9 @@
                         }
                         elseif ($aksi == "ubah") {
                           include "page/anggota/ubah.php";
+                        }
+                        elseif ($aksi == "ftam") {
+                          include "page/anggota/ftam.php";
                         }
                       }
                         elseif ($page == "admin") {

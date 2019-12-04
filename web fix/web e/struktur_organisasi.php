@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+// require 'functions.php';
 session_start();
 
 ?>
@@ -8,12 +8,15 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="struktur.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>SI WEB Poliklinik Politeknik Negeri Jember</title>
+    <title>Document</title>
 </head>
 <body>
-    <!-- Image and text -->
+    <header>
+        <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
     <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" width="70" height="70" class="d-inline-block align-top" alt="">
@@ -51,7 +54,6 @@ session_start();
                         </span>
                       </a>
                     </li>
-                   
                  
 
     <!-- AWAL BUTTON LOGIN & NAV USER -->    
@@ -139,54 +141,18 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
                 </div>
               </nav>
-              <div class="bd-example">
 
-                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                      <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                      </ol>
-                      <div class="carousel-inner">
+    </header>
+        
+    <section>
+      <h2 class="test">Struktur Organisasi
+      Unit Klinik Pratama Politeknik Negeri Jember </h2>
+      <img src="strukturOrganisasi.png"    alt="gbr rusak">
+    
+    </section>
 
-                        <div class="carousel-item active">
-                          <img src="2.jpg" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                            <h5>Kelompok 3</h5>
-
-                          </div>
-
-                        </div>
-                        <div class="carousel-item ">
-                          <img src="3.jpg" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                            <h5>Ini ruang gigi</h5>
-                            <p>Ruang periksa gigi</p>
-                          </div>
-                        </div>
-
-                        <div class="carousel-item ">
-                          <img src="1.jpg" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                            <h5>Ini ruang gigi</h5>
-                            <p>Ruang periksa gigi</p>
-                          </div>
-                        </div>
-
-
-                      </div>
-                      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                      </a>
-                    </div>
-                  </div>
-                  
                   <footer >
+
                     JALAN MASTRIP NO. 64 JEMBER 68101<br>
                     <br>
                     TELP. (0331) 333532 – 34 FAKS. (0331) 333531<br>
@@ -195,8 +161,6 @@ s0.parentNode.insertBefore(s1,s0);
                     <br>
 
                   </footer>
-
-
 
 
     <script src="js/jQuery.js"></script>
