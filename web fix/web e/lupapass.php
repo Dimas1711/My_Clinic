@@ -49,7 +49,7 @@ try {
     $mail->Port       =  587;                                    
 
    
-    $mail->setFrom('gumball4869@gmail.com', 'Mailer');
+    $mail->setFrom('gumball4869@gmail.com', 'Admin Klinik');
     $mail->addAddress($row["EMAIL"], 'Joe User');     
 
 
