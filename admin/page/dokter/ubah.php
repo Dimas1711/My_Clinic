@@ -100,7 +100,7 @@ $poli = $tampil['ID_KLINIK'];
                         <option value="02" <?php if ($poli == 'Poli KIA') {
                           echo "selected";
                         } ?>>Poli KIA</option>
-                         <option value="03" <?php if ($jenis_kelamin == 'Poli Gigi') {
+                         <option value="03" <?php if ($poli == 'Poli Gigi') {
                           echo "selected";
                         } ?>>Poli Gigi</option>
                     </select>
