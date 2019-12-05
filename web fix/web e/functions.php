@@ -188,18 +188,26 @@ function ubahpassword($data)
         }
 }
 
-// function lupapass()
-// {
-//     global $conn;
-    
-//         $email = $_POST['email'];
+function resetpass($data)
+{
+    global $conn;
+        $email = htmlspecialchars($data["EMAIL"]);
+        $passbaru = htmlspecialchars($data["PASSWORD_BARU"]);
+        $konfpass = htmlspecialchars($data["KONFIRMASI_PASSWORD"]);
 
-//         $selectquery = mysqli_query($conn, "SELECT * FROM tb_anggota WHERE EMAIL = '$email'");
+        if($passbaru != $konfpass)
+        {
+            echo "<script>alert('Konfirmasi Password Salah')</script>";
+        }
+        else
+        {
+            $query="UPDATE tb_anggota SET PASSWORD = '$passbaru' WHERE EMAIL = '$email'";
 
-//         $count = mysqli_num_rows($selectquery);
+            $sql= mysqli_query($conn, $query);
 
-//         echo $count;
-// }
+            return mysqli_affected_rows($conn);
+        }
+}
 
 ?>
 

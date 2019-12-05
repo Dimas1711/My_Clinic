@@ -23,8 +23,9 @@ use PHPMailer\PHPMailer\Exception;
 if($_POST)
 {
     $email = $_POST['email'];
+    $id = $_POST['idanggota'];
 
-        $selectquery = mysqli_query($conn, "SELECT * FROM tb_anggota WHERE EMAIL = '$email'");
+        $selectquery = mysqli_query($conn, "SELECT * FROM tb_anggota WHERE EMAIL = '$email' AND ID_ANGGOTA ='$id'");
         $count = mysqli_num_rows($selectquery);
         $row = mysqli_fetch_array($selectquery);
 
@@ -50,15 +51,16 @@ try {
 
    
     $mail->setFrom('gumball4869@gmail.com', 'Admin Klinik');
-    $mail->addAddress($row["EMAIL"], 'Joe User');     
+    $mail->addAddress($row["EMAIL"]);     
 
 
 
     $mail->isHTML(true);                                 
     $mail->Subject = 'Here is the subject';
-    $mail->Body    =   "Password anda adalah $tes";
+    $mail->Body    =  'Silahkan Ganti Password Anda di http://localhost/My_Clinic/web%20fix/web%20e/resetpass.php' ;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+    // "Password anda adalah <b>$tes</b>"
     $mail->send();
     echo 'Message has been sent';
 } catch (Exception $e) {
@@ -80,6 +82,7 @@ try {
 </head>
 <body>
     <form action="" method="POST">
+        id anggota : <input type="text" name="idanggota">
         email : <input type="text" name="email">
         <input type="submit">
     </form>

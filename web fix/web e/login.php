@@ -18,6 +18,7 @@ if(isset($_POST["login"])){
     $_SESSION["login"] = true;
     $_SESSION['user'] = $row ["NAMA_ANGGOTA"];
     $_SESSION['email'] = $row ["EMAIL"];
+    $_SESSION['id'] = $row["ID_ANGGOTA"];
     header("location: Home_login.php");
     
   }
