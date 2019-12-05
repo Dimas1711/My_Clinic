@@ -150,26 +150,51 @@ s0.parentNode.insertBefore(s1,s0);
                       <div class="carousel-inner">
 
                         <div class="carousel-item active">
-                          <img src="2.jpg" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                            <h5>Kelompok 3</h5>
-
-                          </div>
-
-                        </div>
-                        <div class="carousel-item ">
                           <img src="3.jpg" class="d-block w-100" alt="...">
                           <div class="carousel-caption d-none d-md-block">
-                            <h5>Ini ruang gigi</h5>
+                            <h5>Ruang pemeriksaan umum</h5>
+                            <p>Pasien menceritakan keluhannya serta melakukan tes tensi. Selanjutnya pasien diperiksa</p>
+
+                          </div>
+
+                        </div>
+                        <div class="carousel-item ">
+                          <img src="2.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Ruang Gigi</h5>
                             <p>Ruang periksa gigi</p>
                           </div>
                         </div>
 
                         <div class="carousel-item ">
-                          <img src="1.jpg" class="d-block w-100" alt="...">
+                          <img src="pengambilan obat.jpg" class="d-block w-100" alt="...">
                           <div class="carousel-caption d-none d-md-block">
-                            <h5>Ini ruang gigi</h5>
-                            <p>Ruang periksa gigi</p>
+                            <h5>Kamar Obat</h5>
+                            <p>Tempat pengambilan obat setelah mendapat resep dari dokter</p>
+                          </div>
+                        </div>
+
+                        <div class="carousel-item ">
+                          <img src="ruang pendaftaran.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Tempat pendaftaran atau registrasi</h5>
+                            <p>Tempat pasien mendaftarkan diri terlebih dahulu sebelum melakukan pemeriksaan</p>
+                          </div>
+                        </div>
+
+                        <div class="carousel-item ">
+                          <img src="ruang tunggu.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Ruang Tunggu</h5>
+                            <p>Tempat antrian pasien menunggu giliran diperiksa</p>
+                          </div>
+                        </div>
+
+                        <div class="carousel-item ">
+                          <img src="ruang periksa 1.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Ruang Periksa 1</h5>
+                            <p>Ruang periksa tertutup untuk pasien dengan kepentingan privasi</p>
                           </div>
                         </div>
 
