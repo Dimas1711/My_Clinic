@@ -44,7 +44,7 @@ session_start();
                       </div>
                     </li>
                     <li class="nav-item ">
-                      <a class="nav-link" href="#">
+                      <a class="nav-link" href="fasilitas.php">
                         Fasilitas
                         <span class="sr-only" >
                             (current)
@@ -185,7 +185,35 @@ s0.parentNode.insertBefore(s1,s0);
                       </a>
                     </div>
                   </div>
-                  
+                  <div class="jumbotron">
+                <h1 class="display-5">Apa saja sih fasilitas Klinik Pratama Politeknik Negeri Jember?</h1>
+                <p class="lead">Gambar di atas merupakan fasilitas-fasilitas yang ada di Klinik Pratama Politeknik Negeri Jember. Untuk selengkapnya silahkan baca dan simak penjelasan di bawah.</p>
+                <hr class="my-4">
+                <p>Klinik Pratama Politeknik Negeri Jember mempunyai tiga fasilitas utama, yaitu Poli Umum, Poli Gigi, dan Poli KIA. </p>
+                <table>
+                  <tr>
+                    <td><b>1. Poli Umum</b></td>
+                  </tr>
+                  <tr>
+                    <td>Poli Umum merupakan fasilitas untuk jenis pemeriksaan pasien yang mengalami keluhan yang bersifat umum, misalnya pusing,dll.</td>
+                  </tr>
+                  <tr>
+                    <td><b>2. Poli Gigi</b></td>
+                  </tr>
+                  <tr>
+                    <td>Poli Gigi merupakan fasilitas untuk jenis pemeriksaan pasien yang mengalami keluhan pada gigi.</td>
+                  </tr>
+                  <tr>
+                    <td><b>3. Poli KIA</b></td>
+                  </tr>
+                  <tr>
+                    <td>Poli KIA merupakan fasilitas untuk jenis pemeriksaan pasien pada ibu-ibu hamil yang ingin memeriksa kandungannya.</td>
+                  </tr>
+                </table>
+               
+               
+                <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+              </div>
                   <footer >
                     JALAN MASTRIP NO. 64 JEMBER 68101<br>
                     <br>
