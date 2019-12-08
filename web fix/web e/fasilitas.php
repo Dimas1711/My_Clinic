@@ -37,14 +37,14 @@ session_start();
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="data_klinik.php">Data Klinik</a>
-                            <a class="dropdown-item" href="#">Struktur Organisasi</a>
+                            <a class="dropdown-item" href="struktur_organisasi.php">Struktur Organisasi</a>
                             <a class="dropdown-item" href="civitas.php">Civitas</a>
                             <a class="dropdown-item" href="lain_tes.php">Tata Tertib</a>
                             <a class="dropdown-item" href="#">Alur Pendaftaran</a>
                       </div>
                     </li>
                     <li class="nav-item ">
-                      <a class="nav-link" href="#">
+                      <a class="nav-link" href="fasilitas.php">
                         Fasilitas
                         <span class="sr-only" >
                             (current)
@@ -150,26 +150,51 @@ s0.parentNode.insertBefore(s1,s0);
                       <div class="carousel-inner">
 
                         <div class="carousel-item active">
-                          <img src="2.jpg" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                            <h5>Kelompok 3</h5>
-
-                          </div>
-
-                        </div>
-                        <div class="carousel-item ">
                           <img src="3.jpg" class="d-block w-100" alt="...">
                           <div class="carousel-caption d-none d-md-block">
-                            <h5>Ini ruang gigi</h5>
+                            <h5>Ruang pemeriksaan umum</h5>
+                            <p>Pasien menceritakan keluhannya serta melakukan tes tensi. Selanjutnya pasien diperiksa</p>
+
+                          </div>
+
+                        </div>
+                        <div class="carousel-item ">
+                          <img src="2.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Ruang Gigi</h5>
                             <p>Ruang periksa gigi</p>
                           </div>
                         </div>
 
                         <div class="carousel-item ">
-                          <img src="1.jpg" class="d-block w-100" alt="...">
+                          <img src="pengambilan obat.jpg" class="d-block w-100" alt="...">
                           <div class="carousel-caption d-none d-md-block">
-                            <h5>Ini ruang gigi</h5>
-                            <p>Ruang periksa gigi</p>
+                            <h5>Kamar Obat</h5>
+                            <p>Tempat pengambilan obat setelah mendapat resep dari dokter</p>
+                          </div>
+                        </div>
+
+                        <div class="carousel-item ">
+                          <img src="ruang pendaftaran.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Tempat pendaftaran atau registrasi</h5>
+                            <p>Tempat pasien mendaftarkan diri terlebih dahulu sebelum melakukan pemeriksaan</p>
+                          </div>
+                        </div>
+
+                        <div class="carousel-item ">
+                          <img src="ruang tunggu.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Ruang Tunggu</h5>
+                            <p>Tempat antrian pasien menunggu giliran diperiksa</p>
+                          </div>
+                        </div>
+
+                        <div class="carousel-item ">
+                          <img src="ruang periksa 1.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Ruang Periksa 1</h5>
+                            <p>Ruang periksa tertutup untuk pasien dengan kepentingan privasi</p>
                           </div>
                         </div>
 
@@ -185,7 +210,35 @@ s0.parentNode.insertBefore(s1,s0);
                       </a>
                     </div>
                   </div>
-                  
+                  <div class="jumbotron">
+                <h1 class="display-5">Apa saja sih fasilitas Klinik Pratama Politeknik Negeri Jember?</h1>
+                <p class="lead">Gambar di atas merupakan fasilitas-fasilitas yang ada di Klinik Pratama Politeknik Negeri Jember. Untuk selengkapnya silahkan baca dan simak penjelasan di bawah.</p>
+                <hr class="my-4">
+                <p>Klinik Pratama Politeknik Negeri Jember mempunyai tiga fasilitas utama, yaitu Poli Umum, Poli Gigi, dan Poli KIA. </p>
+                <table>
+                  <tr>
+                    <td><b>1. Poli Umum</b></td>
+                  </tr>
+                  <tr>
+                    <td>Poli Umum merupakan fasilitas untuk jenis pemeriksaan pasien yang mengalami keluhan yang bersifat umum, misalnya pusing,dll.</td>
+                  </tr>
+                  <tr>
+                    <td><b>2. Poli Gigi</b></td>
+                  </tr>
+                  <tr>
+                    <td>Poli Gigi merupakan fasilitas untuk jenis pemeriksaan pasien yang mengalami keluhan pada gigi.</td>
+                  </tr>
+                  <tr>
+                    <td><b>3. Poli KIA</b></td>
+                  </tr>
+                  <tr>
+                    <td>Poli KIA merupakan fasilitas untuk jenis pemeriksaan pasien pada ibu-ibu hamil yang ingin memeriksa kandungannya.</td>
+                  </tr>
+                </table>
+               
+               
+                <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+              </div>
                   <footer >
                     JALAN MASTRIP NO. 64 JEMBER 68101<br>
                     <br>
