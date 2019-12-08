@@ -75,29 +75,29 @@
                   </div>
                   </div>
 
-<div class=" col-sm-12 col-xs-12">                     
+              <div class=" col-sm-12 col-xs-12">                     
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Input Tensi
                         </div>
                         <div class="panel-body">
-                        <table style="margin-left:35%">                  
+                <table style="margin-left:35%" id="table">                  
                 <div class="form-group">
                     <label>Nama</label>
-                    <input class="form-control" type="text" id="nama" name="nama" onkeypress="autofillnya()" />
+                    <input class="form-control" type="text" id="nama" name="nama" readonly />
                 </div>
                 <div class="form-group">
                     <label>Id_Anggota</label>
-                    <input class="form-control" type="text" id="id_anggota" name="id_anggota"  />
+                    <input class="form-control" type="text" id="id_anggota" name="id_anggota" readonly />
                 </div>
                 <div class="form-group">
                     <label>No.KTP/NIM/NIP</label>
-                    <input class="form-control" type="text" name="no" id="no" />
+                    <input class="form-control" type="text" name="no" id="no" readonly/>
                 </div>
                 
                 <div class="form-group">
                     <label>Jenis Anggota</label>
-                    <input class="form-control" type="text" name="ja" id="ja" />
+                    <input class="form-control" type="text" name="ja" id="ja" readonly/>
                 </div>
                 <div class="form-group">
                     <label>Jenis Poli</label>
@@ -112,6 +112,14 @@
                     <label>Tensi</label>
                     <input class="form-control" type="text" name="tensi" id="tensi" />
                 </div>
+                <div class="form-group">
+                    <label>Amnesa</label>
+                    <input class="form-control" type="text" name="amnesa" id="amnesa" />
+                </div>
+                <div class="form-group">
+                    <label>Diagnosa</label>
+                    <input class="form-control" type="text" name="diagnosa" id="diagnosa" />
+                </div>
                     </table>
                         </div>
                     </div>            
@@ -120,25 +128,23 @@
                       
                    <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['id_berobat']; ?>"class="btn btn-danger">Resep Obat</a>
         
-                <script type="text/javascript">
-                
-                            function autofillnya(){
+                   <script>
+    
+                var table = document.getElementById('dataTables-example');
+    
+               for(var i = 1; i < table.rows.length; i++)
+    {
+        table.rows[i].onclick = function()
+        {
+             //rIndex = this.rowIndex;
+             document.getElementById("id_anggota").value = this.cells[1].innerHTML;
+             document.getElementById("nama").value = this.cells[3].innerHTML;
+             document.getElementById("no").value = this.cells[2].innerHTML;
+             document.getElementById("ja").value = this.cells[4].innerHTML;
+        };
+    }
 
-                                var nama = $("#nama").val();
-                                $.ajax({
-                                  url : 'page/periksa/yo.php',
-                                  data: 'nama='+nama,
-                                }).success(function(data){
-                                   var json = data,
-                                   obj = JSON.parse(json);
-                                   $("#nama'").val(obj.NAMA_ANGGOTA);
-                                   $("#id_anggota").val(obj.ID_ANGGOTA);
-                                   $("#no").val(obj.NO_KTP_NIM_NIP);
-                                   $("#ja").val(obj.JENIS_ANGGOTA);
-                                 });
-                            }
-                
-                </script>
+</script>
                 <?php
 
                       $id_berobat = @$_POST['id_berobat'];

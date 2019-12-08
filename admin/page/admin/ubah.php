@@ -100,31 +100,31 @@ $PT = $tampil['PENDIDIKAN_TERAKHIR'];
           </div>
           </div>
 
-          <?php
-          include "koneksi.php";
-          $id = @$_POST ['id_admin'];
-          $pass = @$_POST ['password'];
-          $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
-          $nama = @$_POST ['nama_admin'];
-          $jk = @$_POST ['jk'];
-          $ttl = @$_POST ['tanggal_lahir'];
-          $alamat = @$_POST ['alamat'];
-          $pendidikan = @$_POST ['pendidikan_terakhir'];
-          $no_hp = @$_POST ['no_hp'];
-          $simpan = @$_POST ['simpan'];
+            <?php
+            include "koneksi.php";
+            $id = @$_POST ['id_admin'];
+            $pass = @$_POST ['password'];
+            $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
+            $nama = @$_POST ['nama_admin'];
+            $jk = @$_POST ['jk'];
+            $ttl = @$_POST ['tanggal_lahir'];
+            $alamat = @$_POST ['alamat'];
+            $pendidikan = @$_POST ['pendidikan_terakhir'];
+            $no_hp = @$_POST ['no_hp'];
+            $simpan = @$_POST ['simpan'];
 
 
-          if ($simpan) {
-            $sql = $koneksi -> query ("update tb_admin set ID_ADMIN = '$id' ,	PASSWORD = '$pass',	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ADMIN = '$nama' ,JENIS_KELAMIN = '$jk',TANGGAL_LAHIR =  '$ttl',ALAMAT ='$alamat' ,PENDIDIKAN_TERAKHIR = '$pendidikan',
-            NO_HP = '$no_hp' where ID_ADMIN = '$id'");
-            if ($sql) {
-              ?>
-              <script type="text/javascript">
-                  alert ("Update Berhasil");
-                  window.location.href="?page=admin";
-              </script>
-              <?php
+            if ($simpan) {
+              $sql = $koneksi -> query ("update tb_admin set ID_ADMIN = '$id' ,	PASSWORD = '$pass',	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ADMIN = '$nama' ,JENIS_KELAMIN = '$jk',TANGGAL_LAHIR =  '$ttl',ALAMAT ='$alamat' ,PENDIDIKAN_TERAKHIR = '$pendidikan',
+              NO_HP = '$no_hp' where ID_ADMIN = '$id'");
+              if ($sql) {
+                ?>
+                <script type="text/javascript">
+                    alert ("Update Berhasil");
+                    window.location.href="?page=admin";
+                </script>
+                <?php
+              }
             }
-          }
 
-           ?>
+            ?>
