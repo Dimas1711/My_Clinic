@@ -20,14 +20,14 @@
                                 <th>TANGGAL LAHIR</th>
                                 <th>ALAMAT</th>
                                 <th>PENDIDIKAN TERAKHIR</th>
-
+                                <th>FOTO</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
                     <tbody>
 
                       <?php
-                                include "koneksi.php";
+                                include_once "koneksi.php";
                       $no = 1;
                           $sql = $koneksi -> query ("select * from tb_admin");
 
@@ -45,6 +45,7 @@
                         <td><?php echo $data ['TANGGAL_LAHIR']; ?></td>
                         <td><?php echo $data ['ALAMAT']; ?></td>
                         <td><?php echo $data ['PENDIDIKAN_TERAKHIR']; ?></td>
+                        <td><?php echo "<img src='img/admin/".$data['FOTO']."' width='100px' height='100px'/>" ?>
                         
                         <td>
                         <a href="?page=admin&aksi=ubah&ID_ADMIN=<?php echo $data['ID_ADMIN'];?>" class="btn btn-info">Ubah</a>

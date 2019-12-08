@@ -62,6 +62,10 @@
                     <label>No.Hp</label>
                     <input class="form-control" type="number" name="no_hp" />
                 </div>
+                <div class="form-group">
+                    <label>Foto</label>
+                    <input class="form-control" type="file" name="gambar" />
+                </div>
                 <div>
                   <input  type="submit" name="simpan" value="simpan" class="btn btn-primary">
                 </div>
@@ -74,30 +78,27 @@
           </div>
 
           <?php
-          include "koneksi.php";
-          $id = @$_POST ['id_admin'];
-          $pass = @$_POST ['password'];
-          $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
-          $nama = @$_POST ['nama_admin'];
-          $jk = @$_POST ['jk'];
-          $ttl = @$_POST ['tanggal_lahir'];
-          $alamat = @$_POST ['alamat'];
-          $pendidikan = @$_POST ['pendidikan_terakhir'];
-          $no_hp = @$_POST ['no_hp'];
-          $simpan = @$_POST ['simpan'];
-
-
-          if ($simpan) {
-            $sql = $koneksi -> query ("insert into tb_admin(ID_ADMIN,	PASSWORD,	NO_KTP_NIM_NIP,	NAMA_ADMIN,JENIS_KELAMIN,TANGGAL_LAHIR,ALAMAT,PENDIDIKAN_TERAKHIR,	NO_HP)
-            values('$id' , '$pass' ,'$no_ktp_nim_nip' , '$nama' , '$jk' , '$ttl' ,'$alamat','$pendidikan','$no_hp')");
-            if ($sql) {
-              ?>
-              <script type="text/javascript">
-                  alert ("Data Berhasil");
-                  window.location.href="?page=admin";
-              </script>
-              <?php
-            }
-          }
+          include_once "koneksi.php";
+          if (isset($_POST['simpan'])){
+            $fileName = $_FILES['gambar']['name'];
+            $id = $_POST['id_admin'];
+        
+            $pwd=$_POST['password'];
+            $ktp=$_POST['no_ktp_nim_nip'];
+            $user=$_POST['nama_admin'];
+            $jklm=$_POST['jk'];
+            $ttl=$_POST['tanggal_lahir'];
+            $almt=$_POST['alamat'];
+            $pdktr=$_POST['pendidikan_terakhir'];
+            $nohp=$_POST['no_hp'];
+        
+        
+            // update data 
+          
+            mysqli_query($koneksi, "INSERT INTO tb_admin (ID_ADMIN, PASSWORD, NO_KTP_NIM_NIP, NAMA_ADMIN, JENIS_KELAMIN, TANGGAL_LAHIR, ALAMAT, PENDIDIKAN_TERAKHIR, NO_HP, FOTO) VALUES ('$id','$pwd','$ktp','$user','$jklm','$ttl','$almt','$pdktr','$nohp','$fileName')");
+            move_uploaded_file($_FILES['gambar']['name'], "img/".$_FILES['gambar']['name']);
+            echo"<script>alert('Gambar Berhasil diupload !');</script>";
+            header("location:?page=admin");
+        }
 
            ?>

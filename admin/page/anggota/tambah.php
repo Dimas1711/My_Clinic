@@ -123,7 +123,7 @@ if (isset($_POST['simpan'])){
     // update data 
   
     mysqli_query($koneksi, "INSERT INTO tb_anggota (ID_ANGGOTA, PASSWORD, NO_KTP_NIM_NIP, NAMA_ANGGOTA, JENIS_ANGGOTA, JENIS_KELAMIN, TANGGAL_LAHIR, ALAMAT, PENDIDIKAN_TERAKHIR, NO_HP, PEKERJAAN_PRODI, EMAIL, FOTO) VALUES ('$id','$pwd','$ktp','$user','$jagt','$jklm','$ttl','$almt','$pdktr','$nohp','$prodi','$email','$fileName')");
-    move_uploaded_file($_FILES['gambar']['tmp_name'], "img/".$_FILES['gambar']['name']);
+    move_uploaded_file($_FILES['gambar']['tmp_name'], "IMGanggota/".$_FILES['gambar']['name']);
     echo"<script>alert('Gambar Berhasil diupload !');</script>";
     header("location:?page=anggota");
 }

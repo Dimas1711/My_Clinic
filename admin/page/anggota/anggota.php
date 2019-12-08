@@ -46,7 +46,7 @@
                         <td><?php echo $data ['NO_HP']; ?></td>
                         <td><?php echo $data ['PEKERJAAN_PRODI']; ?></td>
                         <td><?php echo $data ['EMAIL']; ?></td>
-                        <td><?php echo "<img src='img/".$data['FOTO']."' width='100px' height='100px'/>" ?>
+                        <td><?php echo "<img src='IMGanggota/".$data['FOTO']."' width='100px' height='100px'/>" ?>
                         <td>
                           <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>" class="btn btn-info">Ubah</a>
                           <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ? ')" href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?php echo $data['ID_ANGGOTA'];?>"class="btn btn-danger">Delete</a>

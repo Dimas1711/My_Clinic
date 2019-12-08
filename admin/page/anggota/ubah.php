@@ -170,7 +170,7 @@ $JA = $tampil['JENIS_ANGGOTA'];
 
           if ($simpan) {
             $sql = $koneksi -> query ("update tb_anggota set ID_ANGGOTA = '$id' ,	PASSWORD = '$pass' ,	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ANGGOTA =  '$nama',JENIS_ANGGOTA = '$ja',JENIS_KELAMIN = '$jk' ,TANGGAL_LAHIR = '$ttl' ,ALAMAT = '$alamat',PENDIDIKAN_TERAKHIR = '$pendidikan',	NO_HP = '$no_hp' , PEKERJAAN_PRODI = '$pp' , EMAIL = '$email' , FOTO = '$filename' where ID_ANGGOTA='$id'");
-            move_uploaded_file($_FILES['gambar']['tmp_name'], "img/".$_FILES['gambar']['name']);
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "img/anggota/".$_FILES['gambar']['name']);
             if ($sql) {
               ?>
               <script type="text/javascript">
