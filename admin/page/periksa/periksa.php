@@ -1,7 +1,6 @@
 <?php 
         require 'functions_admin.php';
-
-
+        
         if (isset ($_POST["simpan"]) )
         {
             if (input_periksa($_POST) > 0){
