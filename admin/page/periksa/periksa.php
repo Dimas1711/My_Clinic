@@ -1,7 +1,7 @@
 <?php 
         require 'functions_admin.php';
         
-        if (isset ($_POST["simpan"]) )
+        if (isset ($_POST["SIMPAN"]) )
         {
             if (input_periksa($_POST) > 0){
                 echo "<script>
@@ -43,7 +43,7 @@
   <script src="jQuery.js"></script>
 </head>
 <body>
-  
+  <form  method="post" action="">
 <h3 style="margin-left:2.5% ; font-size:20px"> 
   <tr>                
         <td>Id Berobat</td>
@@ -51,8 +51,9 @@
   </tr> 
 
   <tr>
-        <td name="tgl">Tanggal</td>
-        <label for="tgl" name="TGL"><?php echo date("Y/m/d") ;?>     </label>               
+        <td name="TGL">Tanggal</td>
+        <label for="TGL" name="TGL"><?php echo date("Y/m/d") ;?>     </label>
+        <input type="hidden" name="TGL" value="<?php echo date("Y/m/d") ;?>">
   </tr> 
 
 </h3>
@@ -106,7 +107,7 @@
                   </div>
                   </div>
                   </div>
-
+            
               <div class=" col-sm-12 col-xs-12">                     
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -156,6 +157,10 @@
                     <label>Diagnosa</label>
                     <input class="form-control" type="text" name="DIAGNOSA" id="DIAGNOSA" />
                 </div>
+                <div class="form-group">
+                    <label>Catatan</label>
+                    <input class="form-control" type="text" name="CATATAN" id="CATATAN" />
+                </div>
                
                     </table>
                         </div>
@@ -164,6 +169,7 @@
                 <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" name="rujukan" class="btn btn-info">Rujukan</a>
                 <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" name="resep"class="btn btn-danger">Resep Obat</a>
                 <input  type="submit" name="SIMPAN" value="simpan" class="btn btn-primary">
+                </form>
                 <script>
                 var table = document.getElementById('dataTables-example');
     
