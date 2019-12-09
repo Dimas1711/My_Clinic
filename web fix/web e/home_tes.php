@@ -179,14 +179,7 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                   </div>
                   <br>
-
-                  
                     <h2 class="judul">Macam - Macam Klinik</h2>
- 
-
-
-
-
                   <div class="row">
                       <div class="col-sm-6">
                         <div class="tips">
