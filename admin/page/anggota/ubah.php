@@ -34,11 +34,6 @@ if( isset ($_POST["submit"]) )
         }
        
 }
-if(isset($_POST["batal"]))
-{
-        header("Location: home_login.php");
-        exit;
-}
 
  ?>
 
@@ -52,7 +47,7 @@ if(isset($_POST["batal"]))
     <div class="row">
         <div class="col-md-12">
 
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
             <input type="hidden" name="GAMBARLAMA" id="password" value="<?= $ang["FOTO"];?>">
 
                 <div class="form-group">
@@ -87,7 +82,7 @@ if(isset($_POST["batal"]))
                 </div>
                 <div class="form-group">
                     <label>Jenis Kelamin</label>
-                    <select class="form-control" name="JENIS_KELAMIN"  value="<?php echo $jenis_kelamin; ?> ">
+                    <select class="form-control" name="JENIS_KELAMIN"  >
                     <option value="">Silahkan Pilih</option>
                                 <option value="L" <?php if ($ang["JENIS_KELAMIN"] == 'L') {echo "selected";} ?> >L</option>
                                 <option value="P" <?php if ($ang["JENIS_KELAMIN"] == 'P') {echo "selected";} ?> >P</option>
@@ -106,13 +101,13 @@ if(isset($_POST["batal"]))
                 <div class="form-group">
                     <label>Pendidikan Terakhir</label>
                     <select class="form-control" name="PENDIDIKAN_TERAKHIR"  value="<?= $ang["PENDIDIKAN_TERAKHIR"]?>">
-                      <option >- - - - - - -</option>
+                    <option >- - - - - - -</option>
                       <option value="SD" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SD') {echo "selected";} ?> >SD</option>
                       <option value="SMP" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SMP') {echo "selected";} ?> >SMP</option>
                       <option value="SMA" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SMA') {echo "selected";} ?> >SMA</option>
                       <option value="S1" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S1') {echo "selected";} ?> >S1</option>
-                                <option value="S2" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S2') {echo "selected";} ?> >S2</option>
-                                <option value="S3" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S3') {echo "selected";} ?> >S3</option>
+                      <option value="S2" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S2') {echo "selected";} ?> >S2</option>
+                      <option value="S3" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S3') {echo "selected";} ?> >S3</option>
                     </select>
                 </div>
                 <div class="form-group">

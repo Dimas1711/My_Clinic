@@ -161,53 +161,63 @@ function ubah($data)
         return mysqli_affected_rows($conn);
 }
 
-function ubahpassword($data)
+//tambah data dokter
+function tambahdokter($data)
 {
     global $conn;
-        $id_anggota = htmlspecialchars($data["ID_ANGGOTA"]);
-        $pass = htmlspecialchars($data["PASSWORD"]);
-        $passlama = htmlspecialchars($data["PASSWORD_LAMA"]);
-        $passbaru = htmlspecialchars($data["PASSWORD_BARU"]);
-        $konfpass = htmlspecialchars($data["KONFIRMASI_PASSWORD"]);
+        $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
+        $poli = htmlspecialchars($data["ID_KLINIK"]);
+        $password = htmlspecialchars($data["PASSWORD"]);
+        $ktp = htmlspecialchars($data["NO_KTP_NIM_NIP"]);
+        $nama = htmlspecialchars($data["NAMA_DOKTER"]);
+        $jenis_kelamin = htmlspecialchars($data["JENIS_KELAMIN"]);
+        $ttl = htmlspecialchars($data["TEMPAT_TANGGAL_LAHIR"]);
+        $alamat = htmlspecialchars($data["ALAMAT"]);
+        $pendidikan = htmlspecialchars($data["PENDIDIKAN_TERAKHIR"]);
+        $nohp = htmlspecialchars($data["NO_HP"]);
+        
 
-        if($passlama != $pass)
-        {
-            echo "<script>alert('Password Lama Salah')</script>";
-        }
-        else if($passlama == $pass && $passbaru != $konfpass)
-        {
-            echo "<script>alert('Konfirmasi Password Tidak Sesuai')</script>";
-        }
-        else if($passlama == $pass && $passbaru == $konfpass)
-        {
-            $query="UPDATE tb_anggota SET PASSWORD = '$passbaru' WHERE ID_ANGGOTA = '$id_anggota'";
+        $qu = mysqli_query($conn, "INSERT INTO tb_dokter VALUES ('$id_dokter','$poli','$password','$ktp','$nama','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp')");
 
-            $sql= mysqli_query($conn, $query);
-
-            return mysqli_affected_rows($conn);
-        }
+        return $qu;
 }
 
-function resetpass($data)
+//ubah data dokter
+function ubahdokter($data)
 {
     global $conn;
-        $email = htmlspecialchars($data["EMAIL"]);
-        $passbaru = htmlspecialchars($data["PASSWORD_BARU"]);
-        $konfpass = htmlspecialchars($data["KONFIRMASI_PASSWORD"]);
+    $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
+    $poli = htmlspecialchars($data["ID_KLINIK"]);
+    $password = htmlspecialchars($data["PASSWORD"]);
+    $ktp = htmlspecialchars($data["NO_KTP_NIM_NIP"]);
+    $nama = htmlspecialchars($data["NAMA_DOKTER"]);
+    $jenis_kelamin = htmlspecialchars($data["JENIS_KELAMIN"]);
+    $ttl = htmlspecialchars($data["TEMPAT_TANGGAL_LAHIR"]);
+    $alamat = htmlspecialchars($data["ALAMAT"]);
+    $pendidikan = htmlspecialchars($data["PENDIDIKAN_TERAKHIR"]);
+    $nohp = htmlspecialchars($data["NO_HP"]);
 
-        if($passbaru != $konfpass)
-        {
-            echo "<script>alert('Konfirmasi Password Salah')</script>";
-        }
-        else
-        {
-            $query="UPDATE tb_anggota SET PASSWORD = '$passbaru' WHERE EMAIL = '$email'";
+               
 
-            $sql= mysqli_query($conn, $query);
+        $query="UPDATE tb_dokter SET
 
-            return mysqli_affected_rows($conn);
-        }
+                ID_KLINIK = '$poli',
+                PASSWORD = '$password',
+                NO_KTP_NIM_NIP = '$ktp',
+                NAMA_DOKTER = '$nama',
+                JENIS_KELAMIN = '$jenis_kelamin',
+                TANGGAL_LAHIR = '$ttl',
+                ALAMAT = '$alamat',
+                PENDIDIKAN_TERAKHIR = '$pendidikan',
+                NO_HP = '$nohp' 
+                WHERE ID_DOKTER = '$id_dokter'
+                ";
+
+        $sql= mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
 }
+
 
 function input_periksa($data){
 

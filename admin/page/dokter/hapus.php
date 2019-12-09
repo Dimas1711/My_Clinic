@@ -2,7 +2,7 @@
 include "koneksi.php";
 $id = $_GET['ID_DOKTER'];
 
-$koneksi->query("delete from tb_dokter where ID_DOKTER = '$id'");
+$koneksi->query("DELETE from tb_dokter WHERE ID_DOKTER = '$id'");
 
 
  ?>
