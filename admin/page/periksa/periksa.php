@@ -36,7 +36,7 @@
 <h3 style="margin-left:2.5% ; font-size:20px"> 
   <tr>                
         <td>Id Berobat</td>
-        <td><input type="text" name="ID_BEROBAt"></td>
+        <td><input type="text" name="ID_BEROBAT"></td>
   </tr> 
 
   <tr>
