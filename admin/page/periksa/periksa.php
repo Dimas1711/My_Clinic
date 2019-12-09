@@ -1,3 +1,26 @@
+<?php 
+        require 'functions_admin.php';
+
+
+        if (isset ($_POST["simpan"]) )
+        {
+            if (input_periksa($_POST) > 0){
+                echo "<script>
+                alert('Data Berhasil Ditambahkan');
+                </script>";   
+            }
+            else {
+                echo "<script>alert('Gagal Menambahkan Data')</script>";
+            }
+        }
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,16 +34,14 @@
 <body>
   
 <h3 style="margin-left:2.5% ; font-size:20px"> 
-  <tr>  
-                       
-                        <td>Id Berobat</td>
-                        <td><input type="text" name="id_berobat"></td>
+  <tr>                
+        <td>Id Berobat</td>
+        <td><input type="text" name="ID_BEROBAt"></td>
   </tr> 
 
   <tr>
-                        <td name="tgl">Tanggal</td>
-                        <label for="tgl"><?php echo date("d/m/Y") ;?>     </label>
-                       
+        <td name="tgl">Tanggal</td>
+        <label for="tgl" name="TGL"><?php echo date("d/m/Y") ;?>     </label>               
   </tr> 
 
 </h3>
@@ -84,45 +105,45 @@
                 <table style="margin-left:35%" id="table">                  
                 <div class="form-group">
                     <label>Nama</label>
-                    <input class="form-control" type="text" id="nama" name="nama" readonly />
+                    <input class="form-control" type="text" id="NAMA" name="NAMA" readonly />
                 </div>
                 <div class="form-group">
                     <label>Id_Anggota</label>
-                    <input class="form-control" type="text" id="id_anggota" name="id_anggota" readonly />
+                    <input class="form-control" type="text" id="ID_ANGGOTA" name="ID_ANGGOTA" readonly />
                 </div>
                 <div class="form-group">
                     <label>No.KTP/NIM/NIP</label>
-                    <input class="form-control" type="text" name="no" id="no" readonly/>
+                    <input class="form-control" type="text" name="NO" id="NO" readonly/>
                 </div>
                 
                 <div class="form-group">
                     <label>Jenis Anggota</label>
-                    <input class="form-control" type="text" name="ja" id="ja" readonly/>
+                    <input class="form-control" type="text" name="JA" id="JA" readonly/>
                 </div>
                 <div class="form-group">
                     <label>Jenis Poli</label>
-                    <select class="form-control" name="poli">
-                        <option value="01" >Poli Umum</option>
-                        <option value="02">Poli KIA</option>
-                        <option value="03">Poli Gigi</option>
+                    <select class="form-control" name="POLI">
+                        <option value="K01" >Poli Umum</option>
+                        <option value="K02">Poli KIA</option>
+                        <option value="K03">Poli Gigi</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
                     <label>Tensi</label>
-                    <input class="form-control" type="text" name="tensi" id="tensi" />
+                    <input class="form-control" type="text" name="TENSI" id="TENSI" />
                 </div>
                 <div class="form-group">
                     <label>Alergi Obat</label>
-                    <input class="form-control" type="text" name="alergi" id="alergi" />
+                    <input class="form-control" type="text" name="ALERGI" id="ALERGI" />
                 </div>
                 <div class="form-group">
                     <label>Anamanesa</label>
-                    <input class="form-control" type="text" name="anamnesa" id="anamnesa" />
+                    <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" />
                 </div>
                 <div class="form-group">
                     <label>Diagnosa</label>
-                    <input class="form-control" type="text" name="diagnosa" id="diagnosa" />
+                    <input class="form-control" type="text" name="DIAGNOSA" id="DIAGNOSA" />
                 </div>
                
                     </table>
@@ -131,6 +152,7 @@
                 </div>
                 <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" name="rujukan" class="btn btn-info">Rujukan</a>
                 <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" name="resep"class="btn btn-danger">Resep Obat</a>
+                <input  type="submit" name="SIMPAN" value="simpan" class="btn btn-primary">
                 <script>
                 var table = document.getElementById('dataTables-example');
     
@@ -139,42 +161,42 @@
         table.rows[i].onclick = function()
         {
              //rIndex = this.rowIndex;
-             document.getElementById("id_anggota").value = this.cells[1].innerHTML;
-             document.getElementById("nama").value = this.cells[3].innerHTML;
-             document.getElementById("no").value = this.cells[2].innerHTML;
-             document.getElementById("ja").value = this.cells[4].innerHTML;
+             document.getElementById("ID_ANGGOTA").value = this.cells[1].innerHTML;
+             document.getElementById("NAMA").value = this.cells[3].innerHTML;
+             document.getElementById("NO").value = this.cells[2].innerHTML;
+             document.getElementById("JA").value = this.cells[4].innerHTML;
         };
     }
 
 </script>
 
 
-                <?php
+                <!-- 
     
-    $id_berobat = @$_POST['id_berobat'];
-    $id_klinik = @$_POST ['poli'];
-    $id_anggota = @$_POST['id_anggota'];
-    $tensi = @$_POST['tensi'];       
-    $anamnesa = @$_POST['anamnesa'];       
-    $diagnosa = @$_POST['diagnosa'];                    
-    $tanggal = @$_POST['tgl'];
-    $rujukan = @$_POST ['rujukan'];
-    $resep = @$_POST ['resep'];
+    // $id_berobat = @$_POST['id_berobat'];
+    // $id_klinik = @$_POST ['poli'];
+    // $id_anggota = @$_POST['id_anggota'];
+    // $tensi = @$_POST['tensi'];       
+    // $anamnesa = @$_POST['anamnesa'];       
+    // $diagnosa = @$_POST['diagnosa'];                    
+    // $tanggal = @$_POST['tgl'];
+    // $rujukan = @$_POST ['rujukan'];
+    // $resep = @$_POST ['resep'];
 
-                      if ($resep) {
+    //                   if ($resep) {
                        
-                        $sql = $koneksi -> query ("insert into tb_berobat (ID_BEROBAT , ID_ANGGOTA , ID_KLINIK , TENSI , ANAMNESA, DIAGNOSA ,TANGGAL_BEROBAT) 
-                        values('$id_berobat','$id_anggota' , '$id_klinik' , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')");
-                        if ($sql) {
-                          ?>
-                           <script type="text/javascript">
-                             alert ("Data Berhasil");
-                            //window.location.href="?page=periksa";
-                          </script>
-                       <?php
-                        }
-                      }
-                      ?>
+    //                     $sql = $koneksi -> query ("insert into tb_berobat (ID_BEROBAT , ID_ANGGOTA , ID_KLINIK , TENSI , ANAMNESA, DIAGNOSA ,TANGGAL_BEROBAT) 
+    //                     values('$id_berobat','$id_anggota' , '$id_klinik' , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')");
+    //                     if ($sql) {
+                    //       ?>
+                    //        <script type="text/javascript">
+                    //          alert ("Data Berhasil");
+                    //         //window.location.href="?page=periksa";
+                    //       </script>
+                    //    
+                    //     }
+                    //   }
+                      ?> -->
 
 
   

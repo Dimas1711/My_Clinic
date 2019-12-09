@@ -209,6 +209,24 @@ function resetpass($data)
         }
 }
 
+function input_periksa($data){
+
+    global $conn;
+    $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
+    $id_klinik = htmlspecialchars($data["POLI"]);
+    $id_anggota = htmlspecialchars($data["ID_ANGGOTA"]);
+    $tensi = htmlspecialchars($data["TENSI"]);   
+    $anamnesa = htmlspecialchars($data["ANAMNESA"]);     
+    $diagnosa = htmlspecialchars($data["DIAGNOSA"]);                  
+    $tanggal = htmlspecialchars($data["TGL"]);
+    $rujukan = htmlspecialchars($data["rujukan"]);
+    $resep = htmlspecialchars($data["resep"]);
+
+    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')");
+
+    return $qu;
+
+}
 ?>
 
 
