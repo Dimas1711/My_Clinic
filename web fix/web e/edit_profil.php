@@ -85,10 +85,10 @@ if(isset($_POST["batal"]))
                         <td class="nama">
                                 <select name="JENIS_ANGGOTA" id="jenis" value="<?= $ang["JENIS_ANGGOTA"]?>" >
                                         <option value="">Silahkan Pilih</option>
-                                        <option value="umum" <?php if ($ang["JENIS_ANGGOTA"] == 'Umum') {echo "selected";} ?> >Umum</option>
-                                        <option value="mahasiswa" <?php if ($ang["JENIS_ANGGOTA"] == 'Mahasiswa') {echo "selected";} ?> >Mahasiswa</option>
-                                        <option value="karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'Karyawan') {echo "selected";} ?> >Karyawan</option>
-                                        <option value="keluarga Karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'Keluarga Karyawan') {echo "selected";} ?> >Keluarga Karyawan</option>
+                                        <option value="umum" <?php if ($ang["JENIS_ANGGOTA"] == 'umum') {echo "selected";} ?> >umum</option>
+                                        <option value="mahasiswa" <?php if ($ang["JENIS_ANGGOTA"] == 'mahasiswa') {echo "selected";} ?> >mahasiswa</option>
+                                        <option value="karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'karyawan') {echo "selected";} ?> >karyawan</option>
+                                        <option value="keluarga Karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'keluarga karyawan') {echo "selected";} ?> >keluarga karyawan</option>
                                 </select>
                         </td>
                 </tr>

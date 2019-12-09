@@ -1,17 +1,44 @@
 <?php
-include "koneksi.php";
+// include "koneksi.php";
 
+// $id = $_GET['ID_ANGGOTA'];
+
+// $sql = $koneksi->query("SELECT * FROM tb_anggota where ID_ANGGOTA = '$id'");
+
+// $tampil = $sql -> fetch_assoc();
+
+
+// $jenis_kelamin = $tampil['JENIS_KELAMIN'];
+
+// $PT = $tampil['PENDIDIKAN_TERAKHIR'];
+// $JA = $tampil['JENIS_ANGGOTA'];
+
+require 'functions_admin.php';
 $id = $_GET['ID_ANGGOTA'];
+$ang = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id'")[0];
 
-$sql = $koneksi->query("SELECT * FROM tb_anggota where ID_ANGGOTA = '$id'");
-
-$tampil = $sql -> fetch_assoc();
-
-
-$jenis_kelamin = $tampil['JENIS_KELAMIN'];
-
-$PT = $tampil['PENDIDIKAN_TERAKHIR'];
-$JA = $tampil['JENIS_ANGGOTA'];
+//cek tombol sudah ditekan atau belum
+if( isset ($_POST["submit"]) )
+{
+        //cek data berhasil ditambah?
+        if( ubah($_POST) > 0 )
+        {
+            echo "<script>
+                alert('Data Berhasil Diubah');
+                document.location.href = 'home.php';
+                </script>";
+        }
+        else
+        {
+                echo "<script>alert('Gagal Mengubah Data')</script>";
+        }
+       
+}
+if(isset($_POST["batal"]))
+{
+        header("Location: home_login.php");
+        exit;
+}
 
  ?>
 
@@ -19,128 +46,93 @@ $JA = $tampil['JENIS_ANGGOTA'];
 
 <div class="panel panel-default">
     <div class="panel-heading">
-      Tambah Anggota
+      Ubah Anggota
     </div>
 <div class="panel-body">
     <div class="row">
         <div class="col-md-12">
 
             <form method="post">
+            <input type="hidden" name="GAMBARLAMA" id="password" value="<?= $ang["FOTO"];?>">
+
                 <div class="form-group">
                     <label>Id_Anggota</label>
-                    <input class="form-control" name="username"  value="<?php echo $tampil['ID_ANGGOTA']; ?>" />
+                    <input class="form-control" name="ID_ANGGOTA"  value="<?= $ang["ID_ANGGOTA"];?>" readonly/>
 
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input class="form-control" name="password" type="password"  value="<?php echo $tampil['PASSWORD']; ?>"/>
+                    <input class="form-control" name="PASSWORD" type="password"  value="<?= $ang["PASSWORD"];?>" readonly/>
 
                 </div>
                 <div class="form-group">
                     <label>NO.KTP_NIM_NIP</label>
-                    <input class="form-control" name="no_ktp_nim_nip" value="<?php echo $tampil['NO_KTP_NIM_NIP']; ?>" />
+                    <input class="form-control" name="NO_KTP_NIM_NIP" value="<?= $ang["NO_KTP_NIM_NIP"]?>" />
 
                 </div>
                 <div class="form-group">
                     <label>Nama Anggota</label>
-                    <input class="form-control" name="nama_anggota" value="<?php echo $tampil['NAMA_ANGGOTA']; ?>"/>
+                    <input class="form-control" name="NAMA_ANGGOTA" value="<?= $ang["NAMA_ANGGOTA"]?>"/>
 
                 </div>
                 <div class="form-group">
                     <label>Jenis Anggota</label>
-                    <select class="form-control" name="ja" value="<?php echo $JA; ?>" >
-                        <option value="Umum"<?php if ($JA == 'Umum') {
-                          echo "selected";
-                        } ?> >Umum</option>
-                        <option value="Mahasiswa" <?php if ($JA =='Mahasiswa') {
-                          echo "selected";
-                        } ?>>Mahasiswa</option>
-                        <option value="Karyawan" <?php if ($JA == 'Karyawan') {
-                          echo "selected";
-                        } ?>>Karyawan</option>
-                        <option value="Keluarga Karyawan <?php if ($JA == 'Keluarga Karyawan') {
-                          echo "selected";
-                        } ?>">Keluarga Karyawan</option>
+                    <select class="form-control" name="JENIS_ANGGOTA" value="<?= $ang["JENIS_ANGGOTA"]?>" >
+                    <option value="">Silahkan Pilih</option>
+                                        <option value="umum" <?php if ($ang["JENIS_ANGGOTA"] == 'umum') {echo "selected";} ?> >umum</option>
+                                        <option value="mahasiswa" <?php if ($ang["JENIS_ANGGOTA"] == 'mahasiswa') {echo "selected";} ?> >mahasiswa</option>
+                                        <option value="karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'karyawan') {echo "selected";} ?> >karyawan</option>
+                                        <option value="keluarga Karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'keluarga karyawan') {echo "selected";} ?> >keluarga karyawan</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Jenis Kelamin</label>
-                    <select class="form-control" name="jk"  value="<?php echo $jenis_kelamin; ?> ">
-                        <option value="L" <?php if ($jenis_kelamin == 'L') {
-                          echo "selected";
-                        } ?>>Laki Laki</option>
-                        <option value="P" <?php if ($jenis_kelamin == 'P') {
-                          echo "selected";
-                        } ?>>Perempuan</option>
+                    <select class="form-control" name="JENIS_KELAMIN"  value="<?php echo $jenis_kelamin; ?> ">
+                    <option value="">Silahkan Pilih</option>
+                                <option value="L" <?php if ($ang["JENIS_KELAMIN"] == 'L') {echo "selected";} ?> >L</option>
+                                <option value="P" <?php if ($ang["JENIS_KELAMIN"] == 'P') {echo "selected";} ?> >P</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Tanggal Lahir</label>
-                    <input class="form-control" name="tanggal_lahir" type="date" value="<?php echo $tampil['TANGGAL_LAHIR']; ?>"/>
+                    <input class="form-control" name="TEMPAT_TANGGAL_LAHIR" type="date" value="<?= $ang["TANGGAL_LAHIR"]?>"/>
 
                 </div>
                 <div class="form-group">
                     <label>Alamat</label>
-                    <input class="form-control" name="alamat" value="<?php echo $tampil['ALAMAT']; ?>" />
+                    <input class="form-control" name="ALAMAT" value="<?= $ang["ALAMAT"]?>" />
 
                 </div>
                 <div class="form-group">
                     <label>Pendidikan Terakhir</label>
-                    <select class="form-control" name="pendidikan_terakhir"  value="<?php echo $tampil['PENDIDIKAN_TERAKHIR']; ?> ">
+                    <select class="form-control" name="PENDIDIKAN_TERAKHIR"  value="<?= $ang["PENDIDIKAN_TERAKHIR"]?>">
                       <option >- - - - - - -</option>
-                        <option value="Tidak Sekolah" <?php if ($PT == 'Tidak Sekolah'){
-                          echo "selected";
-                        } ?>>Tidak Sekolah</option>
-                        <option value="SD"<?php if ($PT == 'SD'){
-                          echo "selected";
-                        } ?>>SD</option>
-                        <option value="SMP" <?php if ($PT == 'SMP'){
-                          echo "selected";
-                        } ?>>SMP</option>
-                        <option value="SMA"<?php if ($PT == 'SMA'){
-                          echo "selected";
-                        } ?>>SMA</option>
-                        <option value="D1" <?php if ($PT == 'D1') {
-                          echo "selected";
-                        } ?>>D1</option>
-                        <option value="D2" <?php if ($PT == 'D2') {
-                          echo "selected";
-                        } ?>>D2</option>
-                        <option value="D3"<?php if ($PT == 'D3'){
-                          echo "selected";
-                        } ?>>D3</option>
-                        <option value="D4" <?php if ($PT == 'D4'){
-                          echo "selected";                   
-                        } ?>>D4</option>
-                        <option value="S1" <?php if ($PT == 'S1') {
-                          echo "selected";
-                        } ?>>S1</option>
-                        <option value="S2" <?php if ($PT == 'S2'){
-                          echo "selected";
-                        } ?>>S2</option>
-                        <option value="S3" <?php if ($PT == 'S3'){
-                          echo "selected";
-                        } ?>>S3</option>
+                      <option value="SD" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SD') {echo "selected";} ?> >SD</option>
+                      <option value="SMP" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SMP') {echo "selected";} ?> >SMP</option>
+                      <option value="SMA" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SMA') {echo "selected";} ?> >SMA</option>
+                      <option value="S1" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S1') {echo "selected";} ?> >S1</option>
+                                <option value="S2" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S2') {echo "selected";} ?> >S2</option>
+                                <option value="S3" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S3') {echo "selected";} ?> >S3</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>No.Hp</label>
-                    <input class="form-control" type="number" name="no_hp"  value="<?php echo $tampil['NO_HP']; ?>"/>
+                    <input class="form-control" type="number" name="NO_HP"  value="<?= $ang["NO_HP"]?>"/>
                 </div>
                 <div class="form-group">
                     <label>Pekerjaan Prodi</label>
-                    <input class="form-control" type="text" name="pekerjaan_prodi" value="<?php echo $tampil['PEKERJAAN_PRODI']; ?>"/>
+                    <input class="form-control" type="text" name="PEKERJAAN_PRODI" value="<?= $ang["PEKERJAAN_PRODI"]?>"/>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="text" name="email" value="<?php echo $tampil['EMAIL']; ?>" />
+                    <input class="form-control" type="text" name="EMAIL" value="<?= $ang["EMAIL"]?>" />
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input class="form-control" type="file" name="gambar" value="<?php echo $tampil['FOTO']; ?>"/>
+                    <input class="form-control" type="file" name="FOTO" />
                 </div>
                 <div>
-                  <input  type="submit" name="simpan" value="simpan" class="btn btn-primary">
+                  <button type="submit" name="submit" class="btn btn-primary">Ubah</button>
                 </div>
               </form>
 
@@ -150,35 +142,4 @@ $JA = $tampil['JENIS_ANGGOTA'];
           </div>
           </div>
 
-          <?php
-          include_once "koneksi.php";
-          $id = @$_POST ['username'];
-          $pass = @$_POST ['password'];
-          $no_ktp_nim_nip = @$_POST ['no_ktp_nim_nip'];
-          $nama = @$_POST ['nama_anggota'];
-          $ja = @$_POST ['ja'];
-          $jk = @$_POST ['jk'];
-          $ttl = @$_POST ['tanggal_lahir'];
-          $alamat = @$_POST ['alamat'];
-          $pendidikan = @$_POST ['pendidikan_terakhir'];
-          $no_hp = @$_POST ['no_hp'];
-          $pp = @$_POST ['pekerjaan_prodi'];
-          $email = @$_POST ['email'];
-          $filename =@$_FILES['gambar']['name'];
-          $simpan = @$_POST ['simpan'];
-
-
-          if ($simpan) {
-            $sql = $koneksi -> query ("update tb_anggota set ID_ANGGOTA = '$id' ,	PASSWORD = '$pass' ,	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_ANGGOTA =  '$nama',JENIS_ANGGOTA = '$ja',JENIS_KELAMIN = '$jk' ,TANGGAL_LAHIR = '$ttl' ,ALAMAT = '$alamat',PENDIDIKAN_TERAKHIR = '$pendidikan',	NO_HP = '$no_hp' , PEKERJAAN_PRODI = '$pp' , EMAIL = '$email' , FOTO = '$filename' where ID_ANGGOTA='$id'");
-            move_uploaded_file($_FILES['gambar']['tmp_name'], "img/anggota/".$_FILES['gambar']['name']);
-            if ($sql) {
-              ?>
-              <script type="text/javascript">
-                  alert ("Update Data Berhasil");
-                  window.location.href="?page=anggota";
-              </script>
-              <?php
-            }
-          }
-
-           ?>
+          

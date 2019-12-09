@@ -94,13 +94,13 @@ $poli = $tampil['ID_KLINIK'];
                 <div class="form-group">
                     <label>Jenis Poli</label>
                     <select class="form-control" name="poli"  value="<?php echo $poli; ?> ">
-                        <option value="01" <?php if ($poli == 'Poli Umum') {
+                        <option value="K01" <?php if ($poli == 'Poli Umum') {
                           echo "selected";
                         } ?>>Poli Umum</option>
-                        <option value="02" <?php if ($poli == 'Poli KIA') {
+                        <option value="K02" <?php if ($poli == 'Poli KIA') {
                           echo "selected";
                         } ?>>Poli KIA</option>
-                         <option value="03" <?php if ($poli == 'Poli Gigi') {
+                         <option value="K03" <?php if ($poli == 'Poli Gigi') {
                           echo "selected";
                         } ?>>Poli Gigi</option>
                     </select>
@@ -132,8 +132,8 @@ $poli = $tampil['ID_KLINIK'];
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("update tb_dokter set ID_DOKTER = '$id' ,	PASSWORD = '$pass',	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_DOKTER = '$nama' ,JENIS_KELAMIN = '$jk',TANGGAL_LAHIR =  '$ttl',ALAMAT ='$alamat' ,PENDIDIKAN_TERAKHIR = '$pendidikan',
-            NO_HP = '$no_hp' , ID_KLINIK = '$polinya' where ID_DOKTER = '$id'");
+            $sql = $koneksi -> query ("update tb_dokter set  ID_KLINIK = '$polinya' ,	PASSWORD = '$pass',	NO_KTP_NIM_NIP = '$no_ktp_nim_nip' ,	NAMA_DOKTER = '$nama' ,JENIS_KELAMIN = '$jk',TANGGAL_LAHIR =  '$ttl',ALAMAT ='$alamat' ,PENDIDIKAN_TERAKHIR = '$pendidikan',
+            NO_HP = '$no_hp'  where ID_DOKTER = '$id'");
             if ($sql) {
               ?>
               <script type="text/javascript">
@@ -142,6 +142,7 @@ $poli = $tampil['ID_KLINIK'];
               </script>
               <?php
             }
+           
           }
 
            ?>

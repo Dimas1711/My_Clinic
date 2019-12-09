@@ -11,14 +11,16 @@
 <body>
   
 <h3 style="margin-left:2.5% ; font-size:20px"> 
-  <tr>
+  <tr>  
+                       
                         <td>Id Berobat</td>
                         <td><input type="text" name="id_berobat"></td>
   </tr> 
 
   <tr>
-                        <td>Tanggal</td>
-                        <td><input type="date" name="tanggal"></td>
+                        <td name="tgl">Tanggal</td>
+                        <label for="tgl"><?php echo date("d/m/Y") ;?>     </label>
+                       
   </tr> 
 
 </h3>
@@ -40,8 +42,6 @@
                                 <th>NAMA ANGGOTA</th>
                                 <th>JENIS ANGGOTA</th>
                                 <th>JENIS KELAMIN</th>
-                               
-                               
                             </tr>
                         </thead>
 
@@ -113,23 +113,25 @@
                     <input class="form-control" type="text" name="tensi" id="tensi" />
                 </div>
                 <div class="form-group">
-                    <label>Amnesa</label>
-                    <input class="form-control" type="text" name="amnesa" id="amnesa" />
+                    <label>Alergi Obat</label>
+                    <input class="form-control" type="text" name="alergi" id="alergi" />
+                </div>
+                <div class="form-group">
+                    <label>Anamanesa</label>
+                    <input class="form-control" type="text" name="anamnesa" id="anamnesa" />
                 </div>
                 <div class="form-group">
                     <label>Diagnosa</label>
                     <input class="form-control" type="text" name="diagnosa" id="diagnosa" />
                 </div>
+               
                     </table>
                         </div>
                     </div>            
                 </div>
-                <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" class="btn btn-info">Rujukan</a>
-                      
-                   <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['id_berobat']; ?>"class="btn btn-danger">Resep Obat</a>
-        
-                   <script>
-    
+                <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" name="rujukan" class="btn btn-info">Rujukan</a>
+                <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['id_berobat']; ?>" name="resep"class="btn btn-danger">Resep Obat</a>
+                <script>
                 var table = document.getElementById('dataTables-example');
     
                for(var i = 1; i < table.rows.length; i++)
@@ -145,30 +147,40 @@
     }
 
 </script>
+
+
                 <?php
+    
+    $id_berobat = @$_POST['id_berobat'];
+    $id_klinik = @$_POST ['poli'];
+    $id_anggota = @$_POST['id_anggota'];
+    $tensi = @$_POST['tensi'];       
+    $anamnesa = @$_POST['anamnesa'];       
+    $diagnosa = @$_POST['diagnosa'];                    
+    $tanggal = @$_POST['tgl'];
+    $rujukan = @$_POST ['rujukan'];
+    $resep = @$_POST ['resep'];
 
-                      $id_berobat = @$_POST['id_berobat'];
-                      $id_anggota = @$_POST['id_anggota'];
-                      $id_klinik = @$_POST ['poli'];
-                      $tensi = @$_POST['tensi'];
-                      $tanggal = @$_POST['tanggal'];
-                      $input = @$_POST ['input'];
-                      $resepobat = @$_POST ['resepobat'];
-
-                      if ($input) {
+                      if ($resep) {
                        
-                        $sql = $koneksi -> query ("insert into tb_berobat (ID_BEROBAT , ID_ANGGOTA , ID_KLINIK , TENSI , TANGGAL_BEROBAT) 
-                        values('$id_berobat','$id_anggota' , '$id_klinik' , '$tensi' ,'$tanggal')");
+                        $sql = $koneksi -> query ("insert into tb_berobat (ID_BEROBAT , ID_ANGGOTA , ID_KLINIK , TENSI , ANAMNESA, DIAGNOSA ,TANGGAL_BEROBAT) 
+                        values('$id_berobat','$id_anggota' , '$id_klinik' , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')");
                         if ($sql) {
                           ?>
                            <script type="text/javascript">
                              alert ("Data Berhasil");
-                           //  window.location.href="?page=periksa";
+                            //window.location.href="?page=periksa";
                           </script>
                        <?php
                         }
                       }
                       ?>
+
+
+  
+
+
+
 
 
 

@@ -97,7 +97,7 @@
           
             mysqli_query($koneksi, "INSERT INTO tb_admin (ID_ADMIN, PASSWORD, NO_KTP_NIM_NIP, NAMA_ADMIN, JENIS_KELAMIN, TANGGAL_LAHIR, ALAMAT, PENDIDIKAN_TERAKHIR, NO_HP, FOTO) VALUES ('$id','$pwd','$ktp','$user','$jklm','$ttl','$almt','$pdktr','$nohp','$fileName')");
             move_uploaded_file($_FILES['gambar']['name'], "img/".$_FILES['gambar']['name']);
-            echo"<script>alert('Gambar Berhasil diupload !');</script>";
+            // echo"<script>alert('Gambar Berhasil diupload !');</script>";
             header("location:?page=admin");
         }
 
