@@ -51,8 +51,17 @@ if(isset($_POST["batal"]))
 
 <table>
     <tr>
-        <td>ID Anggota</td>
-        <td></td>
+         <th>NO.KTP/NIM/NIP</th>
+                        <th>Nama Anggota</th>
+                        <th>Jenis Anggota</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Alamat</th>
+                        <th>Pendidikan Terakhir</th>
+                        <th>NO.HP</th>
+                        <th>Pekerjaan/Prodi</th>
+                        <th>Email</th>
+                        <th>Foto</th>
     </tr>
 
 </table>
