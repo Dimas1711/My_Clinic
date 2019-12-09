@@ -14,8 +14,20 @@
             }
         }
 
-
-
+         
+        $carikode = mysqli_query($conn, "SELECT max(ID_BEROBAT) FROM tb_berobat") or die(mysqli_error($conn));
+        $datakode = mysqli_fetch_array($carikode);
+        if($datakode)
+        {
+                $nilaikode = substr($datakode[0], 2);
+                $kode = (int) $nilaikode;
+                $kode = $kode + 1;
+                $hasilkode = "B" .str_pad($kode, 4, "0", STR_PAD_LEFT);
+        }
+        else
+        {
+                $hasilkode = "B00001";
+        }
 ?>
 
 
@@ -36,12 +48,12 @@
 <h3 style="margin-left:2.5% ; font-size:20px"> 
   <tr>                
         <td>Id Berobat</td>
-        <td><input type="text" name="ID_BEROBAT"></td>
+        <td><input type="text" name="ID_BEROBAT"  value="<?php echo $hasilkode ?>" readonly></td>
   </tr> 
 
   <tr>
         <td name="tgl">Tanggal</td>
-        <label for="tgl" name="TGL"><?php echo date("d/m/Y") ;?>     </label>               
+        <label for="tgl" name="TGL"><?php echo date("Y/m/d") ;?>     </label>               
   </tr> 
 
 </h3>
@@ -123,9 +135,9 @@
                 <div class="form-group">
                     <label>Jenis Poli</label>
                     <select class="form-control" name="POLI">
-                        <option value="K01" >Poli Umum</option>
-                        <option value="K02">Poli KIA</option>
-                        <option value="K03">Poli Gigi</option>
+                        <option value="K01">poli umum</option>
+                        <option value="K02">poli kia</option>
+                        <option value="K03">poli gigi</option>
                     </select>
                 </div>
                 
