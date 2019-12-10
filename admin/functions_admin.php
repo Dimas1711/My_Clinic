@@ -218,6 +218,60 @@ function ubahdokter($data)
         return mysqli_affected_rows($conn);
 }
 
+//tambah data admin
+function tambahadmin($data)
+{
+    global $conn;
+        $id_admin = htmlspecialchars($data["ID_ADMIN"]);
+        $password = htmlspecialchars($data["PASSWORD"]);
+        $ktp = htmlspecialchars($data["NO_KTP_NIM_NIP"]);
+        $nama = htmlspecialchars($data["NAMA_ADMIN"]);
+        $jenis_kelamin = htmlspecialchars($data["JENIS_KELAMIN"]);
+        $ttl = htmlspecialchars($data["TEMPAT_TANGGAL_LAHIR"]);
+        $alamat = htmlspecialchars($data["ALAMAT"]);
+        $pendidikan = htmlspecialchars($data["PENDIDIKAN_TERAKHIR"]);
+        $nohp = htmlspecialchars($data["NO_HP"]);
+        
+
+        $qu = mysqli_query($conn, "INSERT INTO tb_admin VALUES ('$id_admin','$password','$ktp','$nama','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp')");
+
+        return $qu;
+}
+
+//ubah data admin
+function ubahadmin($data)
+{
+    global $conn;
+    $id_admin = htmlspecialchars($data["ID_ADMIN"]);
+    $password = htmlspecialchars($data["PASSWORD"]);
+    $ktp = htmlspecialchars($data["NO_KTP_NIM_NIP"]);
+    $nama = htmlspecialchars($data["NAMA_ADMIN"]);
+    $jenis_kelamin = htmlspecialchars($data["JENIS_KELAMIN"]);
+    $ttl = htmlspecialchars($data["TEMPAT_TANGGAL_LAHIR"]);
+    $alamat = htmlspecialchars($data["ALAMAT"]);
+    $pendidikan = htmlspecialchars($data["PENDIDIKAN_TERAKHIR"]);
+    $nohp = htmlspecialchars($data["NO_HP"]);
+
+               
+
+        $query="UPDATE tb_admin SET
+
+                PASSWORD = '$password',
+                NO_KTP_NIM_NIP = '$ktp',
+                NAMA_ADMIN = '$nama',
+                JENIS_KELAMIN = '$jenis_kelamin',
+                TANGGAL_LAHIR = '$ttl',
+                ALAMAT = '$alamat',
+                PENDIDIKAN_TERAKHIR = '$pendidikan',
+                NO_HP = '$nohp'
+                WHERE ID_ADMIN = '$id_admin'
+                ";
+
+        $sql= mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+}
+
 
 function input_periksa($data){
 

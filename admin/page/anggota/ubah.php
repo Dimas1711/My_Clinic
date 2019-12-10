@@ -84,8 +84,8 @@ if( isset ($_POST["submit"]) )
                     <label>Jenis Kelamin</label>
                     <select class="form-control" name="JENIS_KELAMIN"  >
                     <option value="">Silahkan Pilih</option>
-                                <option value="L" <?php if ($ang["JENIS_KELAMIN"] == 'L') {echo "selected";} ?> >L</option>
-                                <option value="P" <?php if ($ang["JENIS_KELAMIN"] == 'P') {echo "selected";} ?> >P</option>
+                                <option value="L" <?php if ($ang["JENIS_KELAMIN"] == 'L') {echo "selected";} ?> >Laki - Laki</option>
+                                <option value="P" <?php if ($ang["JENIS_KELAMIN"] == 'P') {echo "selected";} ?> >Perempuan</option>
                     </select>
                 </div>
                 <div class="form-group">
