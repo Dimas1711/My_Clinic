@@ -15,17 +15,20 @@ $ang = query("SELECT * FROM tb_anggota WHERE NAMA_ANGGOTA = '$id'")[0];
 if( isset ($_POST["submit"]) )
 {
         //cek data berhasil ditambah?
-        if( ubah($_POST) > 0 )
-        {
-                echo "<script>
-                alert('Data Berhasil Diubah');
-                document.location.href = 'Home_login.php';
-                </script>";
-        }
-        else
-        {
-                echo "<script>alert('Gagal Mengubah Data')</script>";
-        }
+        // if( ubah($_POST) > 0 )
+        // {
+        //         echo "<script>
+        //         alert('Data Berhasil Diubah');
+        //         document.location.href = 'Home_login.php';
+        //         </script>";
+        // }
+        // else
+        // {
+        //         echo "<script>alert('Gagal Mengubah Data')</script>";
+        // }
+        echo "<script>
+        window.print();
+</script>";
        
 }
 if(isset($_POST["batal"]))
@@ -139,9 +142,7 @@ if(isset($_POST["batal"]))
             
                 <div>
                   <button type="submit" name="submit" class="btn btn-primary">Ubah</button>
-                  <script>
-		                    window.print();
-	                    </script>
+                  
                 </div>
                 <!-- <button class="kirim" type="submit" name="submit" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button>
                 <button class="batal" name="batal">Batal</button> -->
@@ -151,9 +152,4 @@ if(isset($_POST["batal"]))
     
 </body>
 </html>
-   <?php
-        if (condition) {
-                # code...
-        }
-
-?>
+   
