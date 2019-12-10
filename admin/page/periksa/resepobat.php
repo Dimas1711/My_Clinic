@@ -1,3 +1,8 @@
+<?php
+$id = $_GET['ID_BEROBAT'];
+$berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +20,15 @@
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input type="text"   name="ID_BEROBAT" disabled>
+    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_ANGGOTA"><b>ID ANGGOTA</b></label> <input type="text" name="ID_ANGGOTA" disabled>
+    <label for="ID_ANGGOTA"><b>ID ANGGOTA</b></label> <input type="text" name="ID_ANGGOTA" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label><input type="text" name="NAMA_ANGGOTA" disabled>
+    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label><input type="text" name="NAMA_ANGGOTA" readonly>
     </br>
     </div>
     <div class="form-group">
@@ -31,15 +36,15 @@
     </br>
     </div>
     <div class="form-group">
-    <label for="NAMA_OBAT"><b>NAMA OBAT</b></label> <input type="text" name="NAMA_OBAT" disabled>    
+    <label for="NAMA_OBAT"><b>NAMA OBAT</b></label> <input type="text" name="NAMA_OBAT" readonly>    
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_DOKTER"><b>ID DOKTER</b></label> <input type="text"  name="ID_DOKTER" disabled>
+    <label for="ID_DOKTER"><b>ID DOKTER</b></label> <input type="text"  name="ID_DOKTER" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="NAMA_DOKTER"><b>NAMA DOKTER</b></label> <input type="text" name="NAMA_DOKTER" disabled>
+    <label for="NAMA_DOKTER"><b>NAMA DOKTER</b></label> <input type="text" name="NAMA_DOKTER" readonly>
     </br>
     </div>
     <div class="form-group">

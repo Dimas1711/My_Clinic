@@ -281,14 +281,16 @@ function input_periksa($data){
     $id_anggota = htmlspecialchars($data["ID_ANGGOTA"]);
     $tensi = htmlspecialchars($data["TENSI"]);   
     $anamnesa = htmlspecialchars($data["ANAMNESA"]);     
-    $diagnosa = htmlspecialchars($data["DIAGNOSA"]);                  
+    $diagnosa = htmlspecialchars($data["DIAGNOSA"]);
+    $alergi = htmlspecialchars($data["ALERGI"]);
+    $catatan = htmlspecialchars($data["CATATAN"]);                  
     $tanggal = htmlspecialchars($data["TGL"]);
 
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')");
+    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa',' $catatan',' $alergi','$tanggal')");
     // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
     return $qu;
-
+    
 }
 ?>
 
