@@ -1,12 +1,28 @@
 <?php 
         require 'functions_admin.php';
         
+
+        $carikode = mysqli_query($conn, "SELECT max(ID_BEROBAT) FROM tb_berobat") or die(mysqli_error($conn));
+        $datakode = mysqli_fetch_array($carikode);
+        if($datakode)
+        {
+                $nilaikode = substr($datakode[0], 2);
+                $kode = (int) $nilaikode;
+                $kode = $kode + 1;
+                $hasilkode = "B" .str_pad($kode, 5, "0", STR_PAD_LEFT);
+        }
+        else
+        {
+                $hasilkode = "B00001";
+        }
+
+        
         if (isset ($_POST["resep"]))
         {
             if (input_periksa($_POST) > 0){
                 echo "<script>
                 alert('Data Berhasil Ditambahkan');
-                document.location.href = 'home.php?page=periksa&aksi=resepobat';
+                document.location.href = 'home.php?page=periksa&aksi=resepobat&ID_BEROBAT=$hasilkode';
                 </script>";   
                 
             }
@@ -31,19 +47,7 @@
         
 
          
-        $carikode = mysqli_query($conn, "SELECT max(ID_BEROBAT) FROM tb_berobat") or die(mysqli_error($conn));
-        $datakode = mysqli_fetch_array($carikode);
-        if($datakode)
-        {
-                $nilaikode = substr($datakode[0], 2);
-                $kode = (int) $nilaikode;
-                $kode = $kode + 1;
-                $hasilkode = "B" .str_pad($kode, 5, "0", STR_PAD_LEFT);
-        }
-        else
-        {
-                $hasilkode = "B00001";
-        }
+        
 ?>
 
 
@@ -188,7 +192,7 @@
                 <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['ID_BEROBAT']; ?>" name="resep"class="btn btn-danger">Resep Obat</a>
                -->
                 <input  type="submit" name="resep" value="Resep Obat" class="btn btn-info">
-                <input  type="submit" name="rujukan" value="Rujukan" class="btn btn-danger">
+                <input  type="submit" name="rujukan" value="Rujukan" class="btn btn-primary">
                 </form>
                 <script>
                 var table = document.getElementById('dataTables-example');
