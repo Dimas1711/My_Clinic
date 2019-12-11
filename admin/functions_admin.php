@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","pdm_klinik1");
+$conn = mysqli_connect("localhost","root","","pdm_klinik2");
 
 function query($query)
 {

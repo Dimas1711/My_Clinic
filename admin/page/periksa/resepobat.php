@@ -1,6 +1,8 @@
 <?php
+include 'koneksi.php';
 $id = $_GET['ID_BEROBAT'];
-$berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
+$berobat = $koneksi -> query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'");
+$tampil = $berobat->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ $berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
+    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input type="text" name="ID_BEROBAT" value="<?= $tampil["ID_BEROBAT"];?>" readonly>
     </br>
     </div>
     <div class="form-group">

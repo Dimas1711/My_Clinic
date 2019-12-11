@@ -147,7 +147,7 @@
                           include "page/periksa/periksa.php";
                           }
                           if ($aksi == "input") {
-                           include "page/periksa/input.php";
+                           include "page/periksa/rujukan.php";
                           }
                           if ($aksi == "resepobat") {
                             include "page/periksa/resepobat.php";

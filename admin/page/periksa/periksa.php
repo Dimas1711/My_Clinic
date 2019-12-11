@@ -1,7 +1,7 @@
 <?php 
         require 'functions_admin.php';
         
-        if (isset ($_POST["SIMPAN"]) )
+        if (isset ($_POST["resep"]) )
         {
             if (input_periksa($_POST) > 0){
                 echo "<script>
@@ -13,6 +13,15 @@
             else {
                 echo "<script>alert('Gagal Menambahkan Data')</script>";
             }
+        }
+        elseif (isset ($_POST["rujukan"])) {
+            if (input_periksa($_POST) >0) {
+                echo "<script>
+                alert('Data Berhasil Ditambahkan');
+                document.location.href = 'home.php?page=input';
+                </script>";   
+            }
+         
         }
 
          
@@ -168,9 +177,11 @@
                         </div>
                     </div>            
                 </div>
+               
                 <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['ID_BEROBAT']; ?>" name="rujukan" class="btn btn-info">Rujukan</a>
                 <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['ID_BEROBAT']; ?>" name="resep"class="btn btn-danger">Resep Obat</a>
-                <input  type="submit" name="SIMPAN" value="simpan" class="btn btn-primary">
+              
+                <!-- <input  type="submit" name="resep" value="Resep" class="btn btn-primary"> -->
                 </form>
                 <script>
                 var table = document.getElementById('dataTables-example');
