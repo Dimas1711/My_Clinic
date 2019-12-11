@@ -28,7 +28,7 @@ $obat = query("select * from tb_obat");
                 <tr>
                     
                     <td><?= $row["NAMA_OBAT"];?></td>
-                    <td><?= $row["Keterangan"];?></td>
+                    <td><?= $row["KETERANGAN"];?></td>
                     <td><?= $row["HARGA"];?></td>
                     <td><?= $row["STOK"];?></td>
                     

@@ -14,21 +14,9 @@ $ang = query("SELECT * FROM tb_anggota WHERE NAMA_ANGGOTA = '$id'")[0];
 //cek tombol sudah ditekan atau belum
 if( isset ($_POST["submit"]) )
 {
-        //cek data berhasil ditambah?
-        // if( ubah($_POST) > 0 )
-        // {
-        //         echo "<script>
-        //         alert('Data Berhasil Diubah');
-        //         document.location.href = 'Home_login.php';
-        //         </script>";
-        // }
-        // else
-        // {
-        //         echo "<script>alert('Gagal Mengubah Data')</script>";
-        // }
         echo "<script>
         window.print();
-</script>";
+        </script>";
        
 }
 if(isset($_POST["batal"]))

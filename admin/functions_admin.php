@@ -272,6 +272,47 @@ function ubahadmin($data)
         return mysqli_affected_rows($conn);
 }
 
+//tambah data obat
+function tambahobat($data)
+{
+    global $conn;
+        $id_obat = htmlspecialchars($data["ID_OBAT"]);
+        $nama = htmlspecialchars($data["NAMA_OBAT"]);
+        $keterangan = htmlspecialchars($data["KETERANGAN"]);
+        $harga = htmlspecialchars($data["HARGA"]);
+        $stok = htmlspecialchars($data["STOK"]);
+        
+
+        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$keterangan','$harga','$stok')");
+
+        return $qu;
+}
+
+//ubah data obat
+function ubahobat($data)
+{
+    global $conn;
+        $id_obat = htmlspecialchars($data["ID_OBAT"]);
+        $nama = htmlspecialchars($data["NAMA_OBAT"]);
+        $keterangan = htmlspecialchars($data["KETERANGAN"]);
+        $harga = htmlspecialchars($data["HARGA"]);
+        $stok = htmlspecialchars($data["STOK"]);
+
+               
+
+        $query="UPDATE tb_obat SET
+
+                NAMA_OBAT = '$nama',
+                KETERANGAN = '$keterangan',
+                HARGA = '$harga',
+                STOK = '$stok'
+                WHERE ID_OBAT = '$id_obat'
+                ";
+
+        $sql= mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+}
 
 function input_periksa($data){
 
