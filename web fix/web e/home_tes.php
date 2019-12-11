@@ -119,7 +119,7 @@ s0.parentNode.insertBefore(s1,s0);
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="edit_profil.php">Edit Profil</a>
-                            <a class="dropdown-item" href="#">Cetak Kartu Berobat</a>
+                            <a class="dropdown-item" href="cetak2.php">Cetak Kartu Berobat</a>
                             <a class="dropdown-item" href="ubahpass.php">Ubah Password</a>
                       </div>
                   </li>
@@ -179,14 +179,7 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                   </div>
                   <br>
-
-                  
                     <h2 class="judul">Macam - Macam Klinik</h2>
- 
-
-
-
-
                   <div class="row">
                       <div class="col-sm-6">
                         <div class="tips">

@@ -13,7 +13,7 @@ if($cek > 0) {
     $_SESSION['username'] = $username;
     $_SESSION['status'] = 'login';
 
-    header("location:index.php");
+    header("location:home.php");
 }
 
 else if($username==null || $password==null){

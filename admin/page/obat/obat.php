@@ -1,4 +1,7 @@
-
+<?php
+require 'functions_admin.php';
+$obat = query("select * from tb_obat");
+?>
 <div class="row">
     <div class="col-md-12">
         <!-- Advanced Tables -->
@@ -12,7 +15,7 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                
                                 <th>NAMA OBAT</th>
                                 <th>KETERANGAN</th>
                                 <th>HARGA</th>
@@ -21,31 +24,20 @@
                             </tr>
                         </thead>
                     <tbody>
-
-                      <?php
-                      include "koneksi.php";
-                      $no = 1;
-                          $sql = $koneksi -> query ("select * from tb_obat");
-
-                          while ($data=$sql->fetch_assoc()) {
-                            // code...
-
-
-                       ?>
-                      <tr>
-                        <td><?php  echo $no++; ?></td>
-                        <td><?php echo $data ['NAMA_OBAT']; ?></td>
-                        <td><?php echo $data ['Keterangan']; ?></td>
-                        <td><?php echo $data ['HARGA']; ?></td>
-                        <td><?php echo $data ['STOK']; ?></td>
-                        
-                        <td>
-                        <a href="?page=obat&aksi=ubah&ID_OBAT=<?php echo $data['ID_OBAT'];?>" class="btn btn-info">Ubah</a>
-                        <a onclick="return confirm ('Anda Yakin Ingin Menghapus Data ini ? ')" href="?page=obat&aksi=hapus&ID_OBAT=<?php echo $data['ID_OBAT'];?>"class="btn btn-danger">Delete</a>
-                      </td>
-                      </tr>
-
-                      <?php } ?>
+                    <?php foreach ($obat as $row ) :  ?>
+                <tr>
+                    
+                    <td><?= $row["NAMA_OBAT"];?></td>
+                    <td><?= $row["Keterangan"];?></td>
+                    <td><?= $row["HARGA"];?></td>
+                    <td><?= $row["STOK"];?></td>
+                    
+                    <td>
+                        <a href="?page=obat&aksi=ubah&ID_OBAT=<?= $row["ID_OBAT"];?>" class="btn btn-info">Ubah</a>  
+                        <a href="?page=obat&aksi=hapus&ID_OBAT=<?= $row["ID_OBAT"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
+                    </td>     
+                </tr>
+                <?php endforeach; ?>
                     </tbody>
 
 
