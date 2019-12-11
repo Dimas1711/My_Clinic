@@ -1,9 +1,5 @@
 <?php
-include "koneksi.php";
-$id = $_GET['ID_BEROBAT'];
-$sql = $koneksi->query("select * from tb_berobat where ID_BEROBAT = '$id'");
-echo $sql;
-$tampil = $sql->fetch_assoc();
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +21,7 @@ $tampil = $sql->fetch_assoc();
     
       <div class="form-group">
                     <label>ID_RUJUKAN</label>
-                    <input class="form-control" type="text" id="ID_RUJUKAN" name="ID_RUJUKAN" value="<?php echo $tampil['ID_BEROBAT']; ?>readonly />
+                    <input class="form-control" type="text" id="ID_RUJUKAN" name="ID_RUJUKAN" readonly />
       </div>
       <div class="form-group">
                     <label>ID_BEROBAT</label>

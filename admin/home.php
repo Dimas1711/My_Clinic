@@ -149,7 +149,7 @@
                           if ($aksi == "input") {
                            include "page/periksa/rujukan.php";
                           }
-                          if ($aksi == "resepobat") {
+                          else if ($aksi == "resepobat") {
                             include "page/periksa/resepobat.php";
                            }
                         }
