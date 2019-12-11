@@ -11,7 +11,7 @@ if( isset ($_POST["submit"]) )
         {
             echo "<script>
                 alert('Data Berhasil Diubah');
-                document.location.href = '?page=dokter';
+                document.location.href = 'home.php?page=dokter';
                 </script>";
         }
         else
