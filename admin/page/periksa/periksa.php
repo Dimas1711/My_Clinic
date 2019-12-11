@@ -179,9 +179,9 @@
                 </div>
                
                 <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['ID_BEROBAT']; ?>" name="rujukan" class="btn btn-info">Rujukan</a>
-                <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['ID_BEROBAT']; ?>" name="resep"class="btn btn-danger">Resep Obat</a>
-              
-                <!-- <input  type="submit" name="resep" value="Resep" class="btn btn-primary"> -->
+                <!-- <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['ID_BEROBAT']; ?>" name="resep"class="btn btn-danger">Resep Obat</a>
+               -->
+                <input  type="submit" name="resep" value="Resep" class="btn btn-primary">
                 </form>
                 <script>
                 var table = document.getElementById('dataTables-example');
