@@ -1,8 +1,9 @@
 <?php
 require 'functions_admin.php';
 $id = $_GET['ID_BEROBAT'];
-$berobat = query("SELECT * FROM tb_berobat, tb_anggota WHERE ID_BEROBAT = '$id'")[0];
-$tes = query("SELECT ID_BEROBAT, NAMA_ANGGOTA FROM tb_anggota, tb_berobat WHERE ID_BEROBAT = '$id'")[0];
+$berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
+$yo = $berobat["ID_ANGGOTA"];
+$tes = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$yo'")[0];
 
 //cek tombol sudah ditekan atau belum
 if( isset ($_POST["submit"]) )
@@ -66,7 +67,7 @@ if( isset ($_POST["submit"]) )
                       <tr>
                         
                         <td><?php echo $data ['NAMA_OBAT']; ?></td>
-                        <td><?php echo $data ['Keterangan']; ?></td>
+                        <td><?php echo $data ['KETERANGAN']; ?></td>
                         <td><?php echo $data ['HARGA']; ?></td>
                         <td><?php echo $data ['STOK']; ?></td>
                         
@@ -96,7 +97,7 @@ if( isset ($_POST["submit"]) )
     </br>
     </div>
     <div class="form-group">
-    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label><input type="text" name="NAMA_ANGGOTA" value="<?= $berobat["NAMA_ANGGOTA"]?>" readonly>
+    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label><input type="text" name="NAMA_ANGGOTA" value="<?=$tes["NAMA_ANGGOTA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
