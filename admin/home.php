@@ -167,6 +167,12 @@
                             include "page/obat/hapus.php";
                           }
                         }
+                        elseif ($page == "laporan") {
+                          if ($aksi == "") {
+                            include "page/laporan/laporanrujukan.php";
+                          }
+                          
+                        }
                       
 
 

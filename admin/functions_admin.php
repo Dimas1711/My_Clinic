@@ -333,6 +333,22 @@ function input_periksa($data){
     return $qu;
     
 }
+
+
+function input_rujukan($data){
+
+    global $conn;
+    $id_rujukan = htmlspecialchars($data["ID_RUJUKAN"]);
+    $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
+    $id_klinik = htmlspecialchars($data["ID_KLINIK"]);
+    $tujuan = htmlspecialchars($data["TUJUAN"]);   
+   
+
+    $qu = mysqli_query($conn, "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')");
+    // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
+    return $qu;
+    
+}
 ?>
 
 

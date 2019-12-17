@@ -1,0 +1,60 @@
+section
+{
+    background-color: rgb(240, 206, 161);
+}
+p
+{
+    font-size: 30px;
+    margin-left: 300px;
+}
+table
+{
+    margin-top: 50px;
+    margin-left: 520px;
+    font-size: 20px;
+}
+th
+{
+    padding-top: 20px;
+}
+td
+{
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.btn
+{
+    padding-bottom: 130px;
+}
+input
+{
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+}
+#res
+{
+    border-radius: 10px;
+    width: 200px;
+    height: 100px;
+}
+button
+{
+    margin-left: 100px;
+    width: 100px;
+    height: 30px;
+}
+.foot
+{
+    font-size: 15px;
+    text-align: center;
+    margin-left: 30px;
+}
+.footimg
+{
+    margin-left: 20px;
+}
+.footimg2
+{
+    margin-left: 10px;
+}
