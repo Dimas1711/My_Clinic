@@ -41,8 +41,9 @@ if(isset($_POST["batal"]))
                 </h1>
         </header>
         <section>
+        <form action="" method="post">
         <h2 class="edit"> Kartu Berobat</h2>
-            <table border ="1">
+            <table border ="1" >
                 <tr>
                         <th colspan="2">Kartu Berobat</th>
                 </tr>     
@@ -75,12 +76,10 @@ if(isset($_POST["batal"]))
                         <td class="nama"><?= $ang["PEKERJAAN_PRODI"]?></td>
                 </tr>
              </table>
-             <table>
-             <tr>
-                <td><button type="submit" name="submit" class="btn"><a href="cetak3.php" target="_blank">Cetak</a></button></td>
-                <td><button type="submit" name="batal" class="btn2"><a href="home_login.php">Batal</a></button></td>
-             </tr>
-             </table>
+                <button type="submit" name="submit" class="btn"><a href="cetak3.php" target="_blank">Cetak</a></button>
+                <button type="submit" name="batal" class="btn2"><a href="home_login.php">Batal</a></button>
+        </form>
+        
              
              
               </section>
