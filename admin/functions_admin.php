@@ -349,6 +349,22 @@ function input_rujukan($data){
     return $qu;
     
 }
+
+function input_detail($data){
+    global $conn;
+    $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
+    $nama_obat = htmlspecialchars($data["NAMA_OBAT"]);
+    $id_obat = htmlspecialchars($data["ID_OBAT"]);
+    $harga = htmlspecialchars($data["HARGA"]);
+    $jumlah = htmlspecialchars($data["JUMLAH"]);
+     
+
+    $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ('$id_berobat', ' $id_obat'  , ' $jumlah')");
+    // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
+    return $qu;
+    
+    
+}
 ?>
 
 

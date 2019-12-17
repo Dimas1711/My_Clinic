@@ -23,6 +23,25 @@ if( isset ($_POST["submit"]) )
         }
        
 }
+
+if( isset ($_POST["tambahkan"]) )
+{
+        //cek data berhasil ditambah?
+        if( input_detail($_POST) > 0 )
+        {
+            echo "<script>
+                alert('Data Berhasil');
+                document.location.href = 'home.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+                </script>";
+        }
+        else
+        {
+                echo "<script>alert('Gagal Mengubah Data')</script>";
+        }
+       
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +90,7 @@ if( isset ($_POST["submit"]) )
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                              
+                                <th>Id Obat</th>
                                 <th>Nama Obat</th>
                                 <th>Keterangan</th>
                                 <th>Harga</th>
@@ -89,7 +108,7 @@ if( isset ($_POST["submit"]) )
 
                        ?>
                       <tr>
-                        
+                      <td><?php echo $data ['ID_OBAT']; ?></td>
                         <td><?php echo $data ['NAMA_OBAT']; ?></td>
                         <td><?php echo $data ['KETERANGAN']; ?></td>
                         <td><?php echo $data ['HARGA']; ?></td>
@@ -108,34 +127,15 @@ if( isset ($_POST["submit"]) )
                   </div>
                   </div>
                   <div class=" col-sm-12 col-xs-12">     
-                  <script>
-
-function addRow(){
-    var namaobat = document.getElementById('NAMA_OBAT').value;
-    var harga = document.getElementById('HARGA').value;
-    var jumlah = document.getElementById('JUMLAH').value;
-
-    var table = document.getElementsById('table-detail')[0];
-    var newRow = table.insertRow(table.rows.length/2+1);
-
-    var cell1 = newRow.insertCell(0);
-    var cell2 = newRow.insertCell(1);
-    var cell3 = newRow.insertCell(2);
-
-    cell1.innerHTML = namaobat;
-    cell2.innerHTML = harga;
-    cell3.innerHTML = jumlah;
-
-    
-}
-
-
-</script>
                 
 <div class="panel panel-default">
     <h1>Resep Obat</h1>
     <hr>
     <form method ="POST">
+    <div class="form-group">
+    <label for=">ID_OBAT"><b>Id Obat</b></label> <input type="text" name="ID_OBAT" id="ID_OBAT"  readonly>
+    </br>
+    </div>
     <div class="form-group">
     <label for=">NAMA_OBAT"><b>Nama Obat</b></label> <input type="text" name="NAMA_OBAT" id="NAMA_OBAT"  readonly>
     </br>
@@ -151,7 +151,7 @@ function addRow(){
     
     
     <div class="form-group">
-    <button onclick="addRow();"> Add</button>
+    <input  type="submit" name="tambahkan" value="Tambahkan" class="btn btn-info">
     
     </div>
 </div>
@@ -166,6 +166,7 @@ function addRow(){
         table.rows[i].onclick = function()
         {
              //rIndex = this.rowIndex;
+             document.getElementById("ID_OBAT").value = this.cells[0].innerHTML;
              document.getElementById("NAMA_OBAT").value = this.cells[1].innerHTML;
              document.getElementById("HARGA").value = this.cells[2].innerHTML;
         };
@@ -187,13 +188,31 @@ function addRow(){
                               
                                 <th>Nama Obat</th>
                                 <th>Jumlah</th>
-                                <th>Harga</th>
-                                <th>Total Harga</th>
+                                <th>Aksi</th>
                             </tr>
             
             
                         </thead>
+                        <tbody>
+
+                      <?php
+                     
+                          $sql = $koneksi -> query ("SELECT *FROM tb_detail_berobat WHERE ID_BEROBAT ='$id'");
+           
+                          while ($data=$sql ->fetch_assoc()) {
+
+                       ?>
+                      <tr>
+                      <td><?php echo $data ['ID_OBAT']; ?></td>
+                       
+                        <td><?php echo $data ['JUMLAH']; ?></td>
                         
+                        
+                        
+                      </tr>
+
+                      <?php } ?>
+                    </tbody>
 
                     <tbody>
 
