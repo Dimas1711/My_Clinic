@@ -41,14 +41,10 @@ section h2 {
     margin-bottom: 50px ;
     font-size: 50px;
 }
-section button
-{
-    width: 200px;
-    height: 35px;
-}
+
 .nama   
 {
-    padding-left: 50px;
+    padding-left: 100px;
 }
 
 .foto
@@ -56,13 +52,4 @@ section button
     margin-left: 45px;
     border-radius: 50%;
 }
-.btnubah
-{
-    padding-top: 50px;
-    padding-left: 40px;
-}
-.btnbatal
-{
-    padding-top: 50px;
-    padding-left: 120px;
-}
+
