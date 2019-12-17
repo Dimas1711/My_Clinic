@@ -210,7 +210,7 @@ s0.parentNode.insertBefore(s1,s0);
                         <div class="tips">
                           <div class="card-body">
                             <h5 class="card-title">Tips For Today</h5>
-                            <p class="card-text">
+                            <p class="card-text" >
                               Jember mengalami musim panas yg cukup ekstrim hingga mencapai suhu 37 C .
                               <br>
                               Diharapkan untuk tetap menggunakan masker dan membawa air puth
@@ -222,7 +222,7 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="movie">
                       <div class="card1">
-                        <video width="250" height="200" controls preload>
+                        <video width="250" height="200" controls preload ><source src="video.mp4" type="video/mp4">
                        </video>
                     </div>
                   </div>
