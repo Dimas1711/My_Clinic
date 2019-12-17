@@ -360,7 +360,7 @@ function input_detail($data){
      
 
     $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ('$id_berobat', ' $id_obat'  , ' $jumlah')");
-    // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
+   // echo "INSERT INTO tb_detail_berobat VALUES ('$id_berobat', ' $id_obat'  , ' $jumlah')";
     return $qu;
     
     

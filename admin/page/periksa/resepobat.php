@@ -27,6 +27,7 @@ if( isset ($_POST["submit"]) )
 if( isset ($_POST["tambahkan"]) )
 {
         //cek data berhasil ditambah?
+        //  input_detail($_POST)
         if( input_detail($_POST) > 0 )
         {
             echo "<script>
@@ -168,7 +169,7 @@ if( isset ($_POST["tambahkan"]) )
              //rIndex = this.rowIndex;
              document.getElementById("ID_OBAT").value = this.cells[0].innerHTML;
              document.getElementById("NAMA_OBAT").value = this.cells[1].innerHTML;
-             document.getElementById("HARGA").value = this.cells[2].innerHTML;
+             document.getElementById("HARGA").value = this.cells[3].innerHTML;
         };
     }
 
@@ -185,7 +186,7 @@ if( isset ($_POST["tambahkan"]) )
                     <table class="table table-striped table-bordered table-hover" id="table-detail">
                         <thead>
                             <tr>
-                              
+                                <th>Id Obat</th>
                                 <th>Nama Obat</th>
                                 <th>Jumlah</th>
                                 <th>Aksi</th>
@@ -197,14 +198,13 @@ if( isset ($_POST["tambahkan"]) )
 
                       <?php
                      
-                          $sql = $koneksi -> query ("SELECT *FROM tb_detail_berobat WHERE ID_BEROBAT ='$id'");
+                          $sql = $koneksi -> query ("SELECT * FROM tb_detail_berobat WHERE ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
                        ?>
                       <tr>
                       <td><?php echo $data ['ID_OBAT']; ?></td>
-                       
                         <td><?php echo $data ['JUMLAH']; ?></td>
                         
                         
