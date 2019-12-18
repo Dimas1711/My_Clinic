@@ -365,6 +365,15 @@ function input_detail($data){
     
     
 }
+function hapus_anggota($data){
+    global $conn;
+    $id = $_GET['ID_ANGGOTA'];
+    //$koneksi->query ("delete from tb_anggota where ID_ANGGOTA = '$id'");
+    mysqli_query($conn, "DELETE FROM tb_anggota WHERE ID_ANGGOTA = '$id'");
+
+
+
+}
 ?>
 
 
