@@ -27,18 +27,18 @@ if( isset ($_POST["submit"]) )
 if( isset ($_POST["tambahkan"]) )
 {
         //cek data berhasil ditambah?
-        //input_detail($_POST);
-        if( input_detail($_POST) > 0 )
-        {
-            echo "<script>
-                alert('Data Berhasil');
-                document.location.href = 'home.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
-                </script>";
-        }
-        else
-        {
-                echo "<script>alert('Gagal Mengubah Data')</script>";
-        }
+        input_detail($_POST);
+       // if( input_detail($_POST) > 0 )
+        // {
+        //     echo "<script>
+        //         alert('Data Berhasil');
+        //         document.location.href = 'home.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+        //         </script>";
+        // }
+        // else
+        // {
+        //         echo "<script>alert('Gagal Mengubah Data')</script>";
+        // }
        
 }
 
@@ -199,7 +199,7 @@ if( isset ($_POST["tambahkan"]) )
                       <?php
                      
                          // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT,tb_obat.ID_OBAT,tb_obat.NAMA_OBAT,tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
-                          $sql = $koneksi -> query ("SELECT ID_DETAIL , ID_BEROBAT , ID_OBAT , JUMLAH , NAMA_OBAT  FROM tb_obat , tb_detail_berobat WHERE  tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
+                          $sql = $koneksi -> query ("SELECT *  FROM tb_detail_berobat WHERE tb_detail_berobat.ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 

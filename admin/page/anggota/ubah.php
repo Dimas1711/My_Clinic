@@ -74,10 +74,10 @@ if( isset ($_POST["submit"]) )
                     <label>Jenis Anggota</label>
                     <select class="form-control" name="JENIS_ANGGOTA" value="<?= $ang["JENIS_ANGGOTA"]?>" >
                     <option value="">Silahkan Pilih</option>
-                                        <option value="umum" <?php if ($ang["JENIS_ANGGOTA"] == 'umum') {echo "selected";} ?> >umum</option>
-                                        <option value="mahasiswa" <?php if ($ang["JENIS_ANGGOTA"] == 'mahasiswa') {echo "selected";} ?> >mahasiswa</option>
-                                        <option value="karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'karyawan') {echo "selected";} ?> >karyawan</option>
-                                        <option value="keluarga Karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'keluarga karyawan') {echo "selected";} ?> >keluarga karyawan</option>
+                                        <option value="umum" <?php if ($ang["JENIS_ANGGOTA"] == 'Umum') {echo "selected";} ?> >umum</option>
+                                        <option value="mahasiswa" <?php if ($ang["JENIS_ANGGOTA"] == 'Mahasiswa') {echo "selected";} ?> >mahasiswa</option>
+                                        <option value="karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'Karyawan') {echo "selected";} ?> >karyawan</option>
+                                        <option value="keluarga Karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'Keluarga Karyawan') {echo "selected";} ?> >keluarga karyawan</option>
                     </select>
                 </div>
                 <div class="form-group">
