@@ -199,14 +199,14 @@ if( isset ($_POST["tambahkan"]) )
                       <?php
                      
                         // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                    $sql = $koneksi -> query ("SELECT * FROM tb_detail_berobat WHERE ID_BEROBAT ='$id'");
+                    $sql = $koneksi -> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
                        ?>
                       <tr>
                             <td><?php echo $data ['ID_OBAT']; ?></td>
-                            
+                            <td><?php echo $data ['NAMA_OBAT']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
                         <td>
                         <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" class="btn btn-info">Ubah</a>  
