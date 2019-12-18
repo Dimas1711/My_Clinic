@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home.php">Klinik Pratama</a>
+                <a class="navbar-brand" href="home.php" >Klinik Pratama</a>
             </div>
             <?php
                 if ($row!=""){
