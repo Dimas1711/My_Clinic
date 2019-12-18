@@ -91,7 +91,10 @@ if (isset ($_POST["submit"]))
                     <label>ID_KLINIK</label>
                     <input class="form-control" type="text" id="ID_KLINIK" name="ID_KLINIK"  value="<?= $qklinik ["ID_KLINIK"]?>" readonly />
       </div>
-      
+      <div class="form-group">
+                    <label>NAMA_KLINIK</label>
+                    <input class="form-control" type="text" id="NAMA_KLINIK" name="NAMA_KLINIK"  value="<?= $qklinik ["NAMA_KLINIK"]?>" readonly />
+      </div>
       <div class="form-group">
                     <label>TUJUAN</label>
                     <input class="form-control" type="text" id="TUJUAN" name="TUJUAN"/>
