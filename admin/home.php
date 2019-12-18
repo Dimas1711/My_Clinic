@@ -69,14 +69,9 @@
                         <a  href="?page=obat"> Data Obat</a>
                     </li>
                     <li>
-                        <a  href="?page=periksa"> Periksa</a>
+                        <a  href="?page=pengumuman">Pengumuman</a>
                     </li>
-                    <li>
-                        <a  href="?page=laporan"> Laporan Rujukan</a>
-                    </li>
-                    <li>
-                        <a  href="?page=laporanberobat"> Laporan Berobat</a>
-                    </li>
+                  
                 </ul>
 
             </div>
@@ -141,17 +136,6 @@
                             include "page/dokter/hapus.php";
                           }
                         }
-                        elseif ($page == "periksa") {
-                        if ($aksi == "") {
-                          include "page/periksa/periksa.php";
-                          }
-                          if ($aksi == "input") {
-                           include "page/periksa/rujukan.php";
-                          }
-                          else if ($aksi == "resepobat") {
-                            include "page/periksa/resepobat.php";
-                           }
-                        }
                         elseif ($page == "obat") {
                           if ($aksi == "") {
                             include "page/obat/obat.php";
@@ -166,20 +150,21 @@
                             include "page/obat/hapus.php";
                           }
                         }
-                        elseif ($page == "laporan") {
-                          if ($aksi == "") {
-                            include "page/laporan/laporanrujukan.php";
-                          }
+                          elseif ($page == "pengumuman") {
+                            if ($aksi == "") {
+                              include "page/pengumuman/pengumuman.php";
+                            }
+                            elseif ($aksi == "tambah"){
+                              include "page/pengumuman/tambah.php";
+                            }
+                            elseif ($aksi == "ubah") {
+                              include "page/pengumuman/ubah.php";
+                            }
+                            elseif ($aksi == "hapus") {
+                              include "page/pengumuman/hapus.php";
                         }
-                        elseif ($page == "laporanberobat") {
-                          if ($aksi == "") {
-                            include "page/laporan/laporanberobat.php";
-                          }
-                        }
-                      
-
-
-
+                      }
+                    
                      ?>
 
                     </div>
