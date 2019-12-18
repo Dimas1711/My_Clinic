@@ -4,7 +4,6 @@ $id = $_GET['ID_BEROBAT'];
 $berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
 $id_anggota = $berobat["ID_ANGGOTA"];
 $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0];
-
 $id_klinik = $berobat["ID_KLINIK"];
 $qklinik = query("SELECT * FROM tb_klinik  WHERE ID_KLINIK ='$id_klinik'")[0];
 
@@ -12,18 +11,21 @@ $qklinik = query("SELECT * FROM tb_klinik  WHERE ID_KLINIK ='$id_klinik'")[0];
 
 if (isset ($_POST["submit"])) 
 {
- if (input_rujukan($_POST) > 0) {
-   echo "<script>
-   alert('Data Berhasil Ditambahkan');
+
+
+  input_rujukan($_POST) ;
+//  if (input_rujukan($_POST) > 0) {
+//    echo "<script>
+//    alert('Data Berhasil Ditambahkan');
     
-   document.location.href = 'home.php?page=laporan';
+//    document.location.href = 'home.php?page=laporan';
   
-      </script>";
+//       </script>";
      
- }
- else {
-  echo "<script>alert('Gagal Menambahkan Data')</script>";
- }
+//  }
+//  else {
+//   echo "<script>alert('Gagal Menambahkan Data')</script>";
+//  }
 }
 
   $carikode = mysqli_query($conn, "SELECT max(ID_RUJUKAN) FROM tb_rujukan") or die(mysqli_error($conn));
