@@ -27,7 +27,7 @@ if( isset ($_POST["submit"]) )
 if( isset ($_POST["tambahkan"]) )
 {
         //cek data berhasil ditambah?
-      //   input_detail($_POST);
+        //input_detail($_POST);
         if( input_detail($_POST) > 0 )
         {
             echo "<script>
@@ -199,15 +199,15 @@ if( isset ($_POST["tambahkan"]) )
                       <?php
                      
                          // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT,tb_obat.ID_OBAT,tb_obat.NAMA_OBAT,tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
-                          $sql = $koneksi -> query ("SELECT * FROM tb_detail_berobat WHERE ID_BEROBAT ='$id'");
+                          $sql = $koneksi -> query ("SELECT ID_DETAIL , ID_BEROBAT , ID_OBAT , JUMLAH , NAMA_OBAT  FROM tb_obat , tb_detail_berobat WHERE  tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
                        ?>
                       <tr>
-                      <td><?php echo $data ['ID_OBAT']; ?></td>
-                      
-                        <td><?php echo $data ['JUMLAH']; ?></td>
+                            <td><?php echo $data ['ID_OBAT']; ?></td>
+                            
+                            <td><?php echo $data ['JUMLAH']; ?></td>
                         <td>
                         <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" class="btn btn-info">Ubah</a>  
                         <a href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
