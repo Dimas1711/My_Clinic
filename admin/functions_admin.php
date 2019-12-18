@@ -365,12 +365,33 @@ function input_detail($data){
     
     
 }
-function hapus_anggota($data){
+function hapus_anggota($id){
     global $conn;
-    $id = $_GET['ID_ANGGOTA'];
+    // $id = $_GET["ID_ANGGOTA"];
     //$koneksi->query ("delete from tb_anggota where ID_ANGGOTA = '$id'");
     mysqli_query($conn, "DELETE FROM tb_anggota WHERE ID_ANGGOTA = '$id'");
+    return mysqli_affected_rows($conn);
+}
 
+function hapus_admin($id){
+    global $conn;
+    
+    mysqli_query($conn, "DELETE FROM tb_admin WHERE ID_ADMIN = '$id'");
+    return mysqli_affected_rows($conn);
+}
+
+function hapus_dokter($id){
+    global $conn;
+    
+    mysqli_query($conn, "DELETE FROM tb_dokter WHERE ID_DOKTER = '$id'");
+    return mysqli_affected_rows($conn);
+}
+
+function hapus_obat($id){
+    global $conn;
+    
+    mysqli_query($conn, "DELETE FROM tb_obat WHERE ID_OBAT = '$id'");
+    return mysqli_affected_rows($conn);
 }
 ?>
 

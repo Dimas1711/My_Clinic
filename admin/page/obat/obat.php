@@ -1,6 +1,7 @@
 <?php
 require 'functions_admin.php';
 $obat = query("select * from tb_obat");
+
 ?>
 <div class="row">
     <div class="col-md-12">
