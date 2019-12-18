@@ -51,31 +51,31 @@
                     <img src="assets/img/find_user.png" class="user-image img-responsive"/>
 					             </li>
                     <li>
-                        <a  href="?page=dashbord"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a  href="?page=dashbord"> Dashboard</a>
                     </li>
 
                     <li>
-                        <a  href="?page=anggota"><i class="fa fa-dashboard fa-3x"></i> Data Anggota</a>
+                        <a  href="?page=anggota"> Data Anggota</a>
                     </li>
 
                     <li>
-                        <a  href="?page=admin"><i class="fa fa-dashboard fa-3x"></i> Data Admin</a>
+                        <a  href="?page=admin"> Data Admin</a>
                     </li>
 
                     <li>
-                        <a  href="?page=dokter"><i class="fa fa-dashboard fa-3x"></i> Data Dokter</a>
+                        <a  href="?page=dokter"> Data Dokter</a>
                     </li>
                     <li>
-                        <a  href="?page=obat"><i class="fa fa-dashboard fa-3x"></i> Data Obat</a>
+                        <a  href="?page=obat"> Data Obat</a>
                     </li>
                     <li>
-                        <a  href="?page=periksa"><i class="fa fa-dashboard fa-3x"></i> Periksa</a>
+                        <a  href="?page=periksa"> Periksa</a>
                     </li>
-                    <li class="dropdown"><a  href="?page=laporan"><i class="fa fa-dashboard fa-3x"></i> Laporan</a>
+                    <li class="dropdown"><a  href="?page=laporan"> Laporan</a>
                         <ul>
-                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Periksa</a></li>
-                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Rujukan</a></li>
-                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Obat</a></li>
+                          <li><a  href="?page=laporanprks"> Laporan Periksa</a></li>
+                          <li><a  href="?page=laporanprks"> Laporan Rujukan</a></li>
+                          <li><a  href="?page=laporanprks"> Laporan Obat</a></li>
                         </ul>                       
                     </li>
                 </ul>
