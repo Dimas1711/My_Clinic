@@ -41,10 +41,7 @@ if( isset ($_POST["submit"]) )
                     <input class="form-control"  name="NAMA_OBAT" value="<?= $obat["NAMA_OBAT"];?>"/>
                 </div>
                 
-                <div class="form-group">
-                    <label>KETERANGAN</label>
-                    <input class="form-control"  name="KETERANGAN" value="<?= $obat["KETERANGAN"];?>"/>
-                </div>
+               
             
                 <div class="form-group">
                     <label>HARGA</label>
@@ -54,6 +51,10 @@ if( isset ($_POST["submit"]) )
                 <div class="form-group">
                     <label>STOK</label>
                     <input class="form-control" type="number" name="STOK" value="<?= $obat["STOK"];?>"/>
+                </div>
+                <div class="form-group">
+                    <label>KETERANGAN</label>
+                    <input class="form-control"  name="KETERANGAN" value="<?= $obat["KETERANGAN"];?>"/>
                 </div>
                 <div>
                   <button  type="submit" name="submit" value="simpan" class="btn btn-primary">Ubah</button>

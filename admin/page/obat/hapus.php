@@ -8,14 +8,14 @@ if( hapus_obat($id) > 0 )
     {
         echo "<script>
         alert('Data Berhasil Dihapus');
-        document.location.href = '?page=anggota';
+        document.location.href = '?page=obat';
         </script>";
     }
 else
     {
         echo "<script>
         alert('Gagal Menghapus Data');
-        document.location.href = '?page=anggota';
+        document.location.href = '?page=obat';
         </script>";
         // echo mysqli_error($conn);
 

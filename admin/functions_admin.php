@@ -283,7 +283,7 @@ function tambahobat($data)
         $stok = htmlspecialchars($data["STOK"]);
         
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$keterangan','$harga','$stok')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$harga','$stok','$keterangan')");
 
         return $qu;
 }
@@ -303,9 +303,9 @@ function ubahobat($data)
         $query="UPDATE tb_obat SET
 
                 NAMA_OBAT = '$nama',
-                KETERANGAN = '$keterangan',
                 HARGA = '$harga',
-                STOK = '$stok'
+                STOK = '$stok',
+                KETERANGAN = '$keterangan'
                 WHERE ID_OBAT = '$id_obat'
                 ";
 

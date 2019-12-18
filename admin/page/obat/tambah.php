@@ -54,11 +54,7 @@
                     <input class="form-control" name="NAMA_OBAT"  />
 
                     </div>
-                <div class="form-group">
-                    <label>KETERANGAN</label>
-                    <input class="form-control" name="KETERANGAN"  />
-
-                </div>
+             
                 <div class="form-group">
                     <label>Harga</label>
                     <input class="form-control" name="HARGA" type="number"/>
@@ -67,6 +63,11 @@
                 <div class="form-group">
                     <label>Stok</label>
                     <input class="form-control" name="STOK" type="number"/>
+
+                </div>
+                <div class="form-group">
+                    <label>KETERANGAN</label>
+                    <input class="form-control" name="KETERANGAN"  />
 
                 </div>
                 <div>
@@ -91,8 +92,8 @@
 
 
           if ($simpan) {
-            $sql = $koneksi -> query ("insert into tb_obat(ID_OBAT , NAMA_OBAT , Keterangan, HARGA , STOK)
-            values('$id' , '$nama' , '$ket' ,'$harga' , '$stok')");
+            $sql = $koneksi -> query ("INSERT into tb_obat(ID_OBAT , NAMA_OBAT , HARGA , STOK, KETERANGAN)
+            values('$id' , '$nama'  ,'$harga' , '$stok', '$ket')");
             if ($sql) {
               ?>
               <script type="text/javascript">
