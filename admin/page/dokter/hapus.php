@@ -1,13 +1,24 @@
+
+
 <?php
-include "koneksi.php";
+require 'functions_admin.php';
+
 $id = $_GET['ID_DOKTER'];
 
-$koneksi->query("DELETE from tb_dokter WHERE ID_DOKTER = '$id'");
+if( hapus_dokter($id) > 0 )
+    {
+        echo "<script>
+        alert('Data Berhasil Dihapus');
+        document.location.href = '?page=anggota';
+        </script>";
+    }
+else
+    {
+        echo "<script>
+        alert('Gagal Menghapus Data');
+        document.location.href = '?page=anggota';
+        </script>";
+        // echo mysqli_error($conn);
 
-
- ?>
-
- <script type="text/javascript">
-
-    window.location.href="?page=dokter";
- </script>
+    }
+?>

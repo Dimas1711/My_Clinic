@@ -56,7 +56,7 @@ if( isset ($_POST["submit"]) )
                     <input class="form-control" type="number" name="STOK" value="<?= $obat["STOK"];?>"/>
                 </div>
                 <div>
-                  <button  type="submit" name="simpan" value="simpan" class="btn btn-primary">Ubah</button>
+                  <button  type="submit" name="submit" value="simpan" class="btn btn-primary">Ubah</button>
                 </div>
               </form>
 
@@ -66,26 +66,4 @@ if( isset ($_POST["submit"]) )
           </div>
           </div>
 
-          <?php
-          include "koneksi.php";
-          $id = @$_POST ['id_obat'];
-          $nama = @$_POST ['nama'];
-          $ket = @$_POST ['Keterangan'];
-          $harga = @$_POST ['harga'];
-          $stok = @$_POST ['stok'];
-          $simpan = @$_POST ['simpan'];
- 
-
-          if ($simpan) {
-            $sql = $koneksi -> query ("update tb_obat set ID_OBAT = '$id' ,	NAMA_OBAT = '$nama', Keterangan = '$ket', HARGA = '$harga', STOK = '$stok' where ID_OBAT = '$id'");
-            if ($sql) {
-              ?>
-              <script type="text/javascript">
-                  alert ("Update Berhasil");
-                  window.location.href="?page=obat";
-              </script>
-              <?php
-            }
-          }
-
-           ?>
+         
