@@ -32,7 +32,7 @@ if( isset ($_POST["tambahkan"]) )
         {
             echo "<script>
                 alert('Data Berhasil');
-                document.location.href = 'home.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+                document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
                 </script>";
         }
         else
