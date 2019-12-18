@@ -313,7 +313,27 @@ function ubahobat($data)
 
         return mysqli_affected_rows($conn);
 }
+function ubahpengumuman($data)
+{
+    global $conn;
+        $id_pengumuman = htmlspecialchars($data["ID_PENGUMUMAN"]);
+        $judul = htmlspecialchars($data["JUDUL"]);
+        $isi = htmlspecialchars($data["ISI"]);
+        
 
+               
+
+        $query="UPDATE tb_pengumuman SET
+
+                JUDUL = '$judul',
+                ISI = '$isi'
+                WHERE ID_PENGUMUMAN = '$id_pengumuman'
+                ";
+
+        $sql= mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+}
 function input_periksa($data){
 
     global $conn;
@@ -334,7 +354,19 @@ function input_periksa($data){
     
 }
 
+function tambahpengumuman($data)
+{
+    global $conn;
+        $id_pengumuman = htmlspecialchars($data["ID_PENGUMUMAN"]);
+        $judul = htmlspecialchars($data["JUDUL"]);
+        $isi = htmlspecialchars($data["ISI"]);
+     
+        
 
+        $qu = mysqli_query($conn, "INSERT INTO tb_pengumuman VALUES ('$id_pengumuman','$judul','$isi')");
+
+        return $qu;
+}
 function input_rujukan($data){
 
     global $conn;
@@ -391,6 +423,12 @@ function hapus_obat($id){
     global $conn;
     
     mysqli_query($conn, "DELETE FROM tb_obat WHERE ID_OBAT = '$id'");
+    return mysqli_affected_rows($conn);
+}
+function hapus_pengumuman($id){
+    global $conn;
+
+    mysqli_query($conn , "DELETE FROM tb_pengumuman WHERE ID_PENGUMUMAN ='$id'");
     return mysqli_affected_rows($conn);
 }
 ?>

@@ -95,7 +95,9 @@
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA">SMA</option>
-                        <option value="S1">S1</option>
+                        <option value="D1">D1</option>
+                        <option value="D3">D3</option>
+                        <option value="D4 / S1"> D4 / S1</option>
                         <option value="S2">S2</option>
                         <option value="S3">S3</option>
                     </select>

@@ -1,6 +1,6 @@
 <?php
 require 'functions_admin.php';
-$dokter = query("select * from tb_dokter");
+$dokter = query("SELECT tb_dokter.ID_DOKTER , tb_dokter.NO_KTP_NIM_NIP , tb_dokter.NAMA_DOKTER , tb_dokter.JENIS_KELAMIN ,tb_dokter.TANGGAL_LAHIR , tb_dokter.ALAMAT , tb_dokter.PENDIDIKAN_TERAKHIR , tb_dokter.NO_HP , tb_klinik.NAMA_KLINIK FROM tb_dokter , tb_klinik WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK");
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -38,7 +38,7 @@ $dokter = query("select * from tb_dokter");
                     <td><?= $row["ALAMAT"];?></td>
                     <td><?= $row["PENDIDIKAN_TERAKHIR"];?></td>
                     <td><?= $row["NO_HP"];?></td>
-                    <td><?= $row["ID_KLINIK"];?></td>
+                    <td><?= $row["NAMA_KLINIK"];?></td>
                     <td>
                         <a href="?page=dokter&aksi=ubah&ID_DOKTER=<?= $row["ID_DOKTER"];?>" class="btn btn-info">Ubah</a>  
                         <a href="?page=dokter&aksi=hapus&ID_DOKTER=<?= $row["ID_DOKTER"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>

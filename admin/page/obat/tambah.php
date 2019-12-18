@@ -19,13 +19,7 @@
                   }
                  
           }
-          if(isset($_POST["batal"]))
-          {
-                  header("Location: Home_login.php");
-                  exit;
-          }
-          
-          
+      
           
           $carikode = mysqli_query($conn, "SELECT max(ID_OBAT) FROM tb_obat") or die(mysqli_error($conn));
           $datakode = mysqli_fetch_array($carikode);
