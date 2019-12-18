@@ -1,7 +1,7 @@
 <?php
   include_once "koneksi.php";
   session_start();
-  $result1 = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE NAMA_ADMIN='".$_SESSION['username']."'");
+  $result1 = mysqli_query($koneksi, "SELECT * FROM tb_dokter WHERE NAMA_DOKTER='".$_SESSION['username']."'");
   $row = mysqli_fetch_array($result1);
 ?>
 <!-- sedfgtyhuny -->
@@ -38,7 +38,7 @@
             </div>
             <?php
                 if ($row!=""){
-                  echo '<div style="color: white; padding: 15px 50px 5px 50px; float: left; font-size: 16px;">'.$row['NAMA_ADMIN'].'</div>';
+                  echo '<div style="color: white; padding: 15px 50px 5px 50px; float: left; font-size: 16px;">'.$row['NAMA_DOKTER'].'</div>';
                   echo '<div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"><a href="logout.php" class="btn btn-danger square-btn-adjust">Log Out</a></div>';
                 }
             ?>
@@ -53,25 +53,15 @@
                     <li>
                         <a  href="?page=dashbord"> Dashboard</a>
                     </li>
-
                     <li>
-                        <a  href="?page=anggota"> Data Anggota</a>
-                    </li>
-
-                    <li>
-                        <a  href="?page=admin"> Data Admin</a>
-                    </li>
-
-                    <li>
-                        <a  href="?page=dokter"> Data Dokter</a>
+                        <a  href="?page=periksa"> Periksa</a>
                     </li>
                     <li>
-                        <a  href="?page=obat"> Data Obat</a>
+                        <a  href="?page=laporan"> Laporan Rujukan</a>
                     </li>
                     <li>
-                        <a  href="?page=pengumuman">Pengumuman</a>
+                        <a  href="?page=laporanberobat"> Laporan Berobat</a>
                     </li>
-                  
                 </ul>
 
             </div>
@@ -91,50 +81,16 @@
                       if ($page == "dashbord") {
                         include "page/dashbord.php";
                       }
-                      elseif ($page == "anggota") {
+                        elseif ($page == "periksa") {
                         if ($aksi == "") {
-                          include "page/anggota/anggota.php";
-                        }
-                        elseif ($aksi == "tambah") {
-                          include "page/anggota/tambah.php";
-                        }
-                        elseif ($aksi == "hapus") {
-                          include "page/anggota/hapus.php";
-                        }
-                        elseif ($aksi == "ubah") {
-                          include "page/anggota/ubah.php";
-                        }
-                        elseif ($aksi == "ftam") {
-                          include "page/anggota/ftam.php";
-                        }
-                      }
-                        elseif ($page == "admin") {
-                          if ($aksi == "") {
-                              include "page/admin/admin.php";
+                          include "page/periksa/periksa.php";
                           }
-                          elseif ($aksi =="tambah") {
-                              include "page/admin/tambah.php";
+                          if ($aksi == "input") {
+                           include "page/periksa/rujukan.php";
                           }
-                          elseif ($aksi =="ubah") {
-                            include "page/admin/ubah.php";
-                          }
-                          elseif ($aksi == "hapus") {
-                            include "page/admin/hapus.php";
-                          }
-                        }
-                        elseif ($page == "dokter") {
-                          if ($aksi == "") {
-                          include "page/dokter/dokter.php";
-                          }
-                          elseif ($aksi == "tambah") {
-                            include "page/dokter/tambah.php";
-                          }
-                          elseif ($aksi == "ubah") {
-                            include "page/dokter/ubah.php";
-                          }
-                          elseif ($aksi == "hapus"){
-                            include "page/dokter/hapus.php";
-                          }
+                          else if ($aksi == "resepobat") {
+                            include "page/periksa/resepobat.php";
+                           }
                         }
                         elseif ($page == "obat") {
                           if ($aksi == "") {
@@ -150,21 +106,20 @@
                             include "page/obat/hapus.php";
                           }
                         }
-                          elseif ($page == "pengumuman") {
-                            if ($aksi == "") {
-                              include "page/pengumuman/pengumuman.php";
-                            }
-                            elseif ($aksi == "tambah"){
-                              include "page/pengumuman/tambah.php";
-                            }
-                            elseif ($aksi == "ubah") {
-                              include "page/pengumuman/ubah.php";
-                            }
-                            elseif ($aksi == "hapus") {
-                              include "page/pengumuman/hapus.php";
+                        elseif ($page == "laporan") {
+                          if ($aksi == "") {
+                            include "page/laporan/laporanrujukan.php";
+                          }
                         }
-                      }
-                    
+                        elseif ($page == "laporanberobat") {
+                          if ($aksi == "") {
+                            include "page/laporan/laporanberobat.php";
+                          }
+                        }
+                      
+
+
+
                      ?>
 
                     </div>
