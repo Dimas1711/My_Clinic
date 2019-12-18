@@ -359,7 +359,7 @@ function input_detail($data){
     $jumlah = htmlspecialchars($data["JUMLAH"]);
      
 
-   $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ('$id_berobat', ' $id_obat'  , ' $jumlah')");
+  $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', ' $id_obat'  , ' $jumlah')");
   // echo "INSERT INTO tb_detail_berobat VALUES ('$id_berobat', ' $id_obat'  , ' $jumlah')";
    return $qu;
     
