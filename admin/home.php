@@ -71,12 +71,11 @@
                     <li>
                         <a  href="?page=periksa"> Periksa</a>
                     </li>
-                    <li class="dropdown"><a  href="?page=laporan"> Laporan</a>
-                        <ul>
-                          <li><a  href="?page=laporanprks"> Laporan Periksa</a></li>
-                          <li><a  href="?page=laporanprks"> Laporan Rujukan</a></li>
-                          <li><a  href="?page=laporanprks"> Laporan Obat</a></li>
-                        </ul>                       
+                    <li>
+                        <a  href="?page=laporan"> Laporan Rujukan</a>
+                    </li>
+                    <li>
+                        <a  href="?page=laporanberobat"> Laporan Berobat</a>
                     </li>
                 </ul>
 
@@ -171,7 +170,11 @@
                           if ($aksi == "") {
                             include "page/laporan/laporanrujukan.php";
                           }
-                          
+                        }
+                        elseif ($page == "laporanberobat") {
+                          if ($aksi == "") {
+                            include "page/laporan/laporanberobat.php";
+                          }
                         }
                       
 
