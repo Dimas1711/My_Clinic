@@ -52,13 +52,14 @@ a
 }
 .btn
 {
+    margin-top: 50px;
     margin-left: 250px;
     width: 100px;
     height: 30px;
 }
 .btn2
 {
-    margin-left: 20px;
+    margin-left: 70px;
     width: 100px;
     height: 30px;
 }
