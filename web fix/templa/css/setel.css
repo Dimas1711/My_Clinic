@@ -112,7 +112,6 @@
 	}
 
 	/* Sections/Articles */
-	
 		section,
 		article
 		{
@@ -135,8 +134,9 @@
 		.row > article
 		{
 			margin-bottom: 0;
+			/* text-align:center; */
 		}
-
+		
 	/* Images */
 
 		.image
@@ -162,6 +162,12 @@
 				display: block;
 				width: 100%;
 				margin-bottom: 2em;
+			}
+			.img.full1
+			{
+				align:center;
+				display:black;
+				margin:auto;
 			}
 			
 			.image.left
@@ -680,7 +686,7 @@
 	{
 		position: relative;
 		/* background: #f8efcf; */
-		background: #e6d39c;
+		background: #deebf1;
 	}
 		
 /*********************************************************************************/
@@ -690,7 +696,7 @@
 	#logo-wrapper
 	{
 		position: relative;
-		background: #f3f0f0 url(images/overlay.png) repeat;
+		background: #95c4d6 url(images/overlay.png) repeat;
 	}
 
 	#logo
@@ -751,15 +757,17 @@
 				text-decoration: none;
 				text-transform: uppercase;
 				font-size: 1em;
-				color: #db3b5d;
+				color: #0974b3;
 				outline: 0;
 			}
 
 			#nav li.active a
 			{
-				/* background: #db3b5d; */
+				background: #3ba0db;
+				
+				/* background: none; */
 				border-radius: 25px;
-				color: #FFF;
+				color: #0b669b;
 			}
 
 			#nav > ul > li > ul
@@ -774,7 +782,7 @@
 	#banner
 	{
 		position: relative;
-		background: #333 url(../images/banner.jpg) no-repeat center;
+		background: #333 url(../banner.jpg) no-repeat center;
 		background-size: cover;
 		color: #fff;
 	}
@@ -788,29 +796,107 @@
 		position: relative;
 		padding: 6em 0em;
 		background: #fff;
+		/* margin: 20px 20px 20px 20px; */
 	}
 	
-	#sidebar1 header h2, 
+	/* #sidebar1 header h2,  */
 	#sidebar2 header h2
 	{
 		font-size: 1.8em;
+		padding: 20px 0px 20px 80px;
+		
 	}
+
+	.row2
+	{
+		margin-top: 10px;
+	}
+	
+	.tips {
+		width: 650px;
+		height: 200px;
+		/* background-color: whitesmoke; */
+	}
+	.card-body {
+		width: 650px;
+	 
+	 }
+	 .card-title{
+		 border-bottom :5px solid black;
+	 
+	 }
+	 .card1
+	 {
+		margin: 0px 9px 3px 0px;
+		float: left;
+	 }
+
+	.movie {
+		/* margin-top: 50px; */
+		/* margin-right: 25px;
+		margin-bottom: 70px; */
+		margin: 0px 9px 3px 0px;
+		float: left;
+		padding: 20px 0px 20px 80px;
+		
+	}
+
+	.jadwal
+	{
+		/* margin-left: 700px; */
+		padding: 20px 0px 20px 150px;
+	}
+	
+	/* div.macam  {
+  margin-top: 150px;
+  margin-left: 100px;
+  margin-right: 300px;
+  margin-bottom:  100px;
+
+}
+.macam h2 {
+  font-size: 50px;
+  margin-right: 70px;
+}
+.card {
+  width: 300px;
+  height: 500px;
+  margin-left: 250px;
+}
+.card-body {
+   width: 900px;
+
+}
+.card-title{
+    border-bottom :5px solid black;
+
+}
+.card-deck {
+    margin-top: 50px;
+  margin-right: 150px;
+  padding-left: 200px;
+
+} */
+
 
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
 	
-	#footer
+	footer
 	{
 		position: relative;
-		background: #2c2c2c url(images/overlay.png) repeat;
+		background: #1d1d1d url(images/overlay.png) repeat;
 		color: rgba(255,255,255,.4);
+		text-align: center;
+		padding-top: 30px;
 	}
 	
 	#footer header
 	{
 		color: rgba(255,255,255,.9);
 	}
+	
 	
 /*********************************************************************************/
 /* Copyright                                                                     */
@@ -833,3 +919,5 @@
 		text-decoration: none;
 		color: rgba(255,255,255,.3);
 	}			
+
+	
