@@ -24,7 +24,7 @@ session_start();
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
       <link rel="stylesheet" href="css/civitas_tes.css" />
-			<!-- <link rel="stylesheet" href="css/skel-noscript.css" /> -->
+			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		<!-- </noscript> -->
@@ -182,7 +182,7 @@ s0.parentNode.insertBefore(s1,s0);
 
   <section >
       <h2 class="test">Civitas</h2>
-        <table >
+        <table style="font-size:20px; margin-top: 30px; margin-left: 350px; margin-bottom: 100px; opacity: 0.9; line-height:1.7; background-color: rgb(255, 255, 255);" >
           <tr>
             <th class="dokter">Dokter Umum</th>
             <th class="jarak">:</th>
