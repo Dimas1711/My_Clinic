@@ -57,7 +57,7 @@ if( isset($_POST["cancel"]) )
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
       <link rel="stylesheet" href="css/anyar.css"/>
-			<!-- <link rel="stylesheet" href="css/skel-noscript.css" /> -->
+			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		<!-- </noscript> -->
@@ -96,7 +96,7 @@ if( isset($_POST["cancel"]) )
 
    <!-- section -->
    
-   <section >
+   <section style="margin:30px 300px; padding:50px; font-size:15px;">
        <form action="" method="POST">
         <table style="margin-left:100px;">
           <tr>
@@ -116,9 +116,9 @@ if( isset($_POST["cancel"]) )
         <button type="submit" name="cancel" class="cancelbtn">Cancel</button>
        
         <br><br>
-        <p>Belum Punya Akun ? <a class="link" href="registrasi.php">Daftar Sekarang</a></p>
+        <p style="margin-top:30px; text-align:center; font-size:23px;">Belum Punya Akun ? <a class="link" href="registrasi.php">Daftar Sekarang</a></p>
         
-        <p class="p2"><a class="link" href="lupapass.php">Lupa Password</a> ? </p>
+        <p style="font-size:23px;"class="p2"><a class="link" href="lupapass.php">Lupa Password</a> ? </p>
        </form>
        
    </section>
