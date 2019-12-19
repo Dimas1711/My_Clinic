@@ -63,7 +63,7 @@ else
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
                 <link rel="stylesheet" href="css/registrasi.css"/>
-			<!-- <link rel="stylesheet" href="css/skel-noscript.css" /> -->
+			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		<!-- </noscript> -->
@@ -99,7 +99,7 @@ else
 		</div>
   <!-- /Banner -->
 
-        <section>
+        <section style="margin: 30px 250px;  padding: 100px; font-size: 15px;  margin-left: 300px;">
             <h2> Form Pendaftaran</h2>
             <form action="" method="POST" enctype="multipart/form-data" >
             <table>
