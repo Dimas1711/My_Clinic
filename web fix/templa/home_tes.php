@@ -8,13 +8,101 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="home_tes.css">
+    <link rel="stylesheet" href="model/tambahan/home_tes.css">
+    <link rel="stylesheet" href="model/tambahan.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>SI WEB Poliklinik Politeknik Negeri Jember</title>
 </head>
 <body>
     <!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
+    <div class="header">
+					<div class="top-header">
+						<div class="wrap">
+						<!-- <div class="top-header-left">
+							<p>+800-020-12345</p>
+						</div> -->
+						<div class="right-left">
+							<ul>
+								<li class="login"><a href="#">Login</a></li>
+								<li class="sign"><a href="#">Sign up</a></li>
+							</ul>
+						</div>
+						<div class="clear"> </div>
+					</div>
+				</div>
+					<div class="main-header">
+						<div class="wrap">
+							<div class="logo">
+								<a href="index.html"><img src="images/LOGO-POLITEKNIK-NEGERI-JEMBER.png"  width="90" height="90" class="d-inline-block align-top" title="logo" /></a>
+							</div>
+							<div id="text">
+								<h3>Klinik Pratama</h3>
+								<!-- <br> -->
+								<h3>Politeknik Negeri Jember</h3>
+								</div>
+							<!-- <div class="social-links">
+								<ul>
+									<li><a href="#"><img src="images/facebook.png" title="facebook" /></a></li>
+									<li><a href="#"><img src="images/twitter.png" title="twitter" /></a></li>
+									<li><a href="#"><img src="images/feed.png" title="Rss" /></a></li>
+									<div class="clear"> </div>
+								</ul>
+							</div> -->
+							<div class="clear"> </div>
+						</div>
+					</div>
+					<div class="clear"> </div>
+					<div class="top-nav">
+          <nav class="navbar navbar-expand-lg navbar-dard bg-light">
+                <div class="container">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="Home_login.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Profil
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="data_klinik.php">Data Klinik</a>
+                            <a class="dropdown-item" href="struktur_organisasi.php">Struktur Organisasi</a>
+                            <a class="dropdown-item" href="#">Civitas</a>
+                      </div>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="fasilitas.php">
+                        Fasilitas
+                        <span class="sr-only" >
+                            (current)
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="lain_tes.php">
+                          Lain Lain
+                        </a>
+                    </li>
+						<!-- <div class="wrap">
+							<ul>
+								<li class="active"><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="services.html">Services</a></li>
+								<li><a href="news.html">News</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								<div class="clear"> </div>
+							</ul>
+						</div> -->
+					</div>
+			</div>
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
     <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" width="70" height="70" class="d-inline-block align-top" alt="">
     <div id="text">
@@ -53,7 +141,7 @@ session_start();
                         <a class="nav-link" href="lain_tes.php">
                           Lain Lain
                         </a>
-                    </li>
+                    </li> -->
                  
 
     <!-- AWAL BUTTON LOGIN & NAV USER -->    
