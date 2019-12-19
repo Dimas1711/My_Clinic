@@ -189,6 +189,7 @@ if( isset ($_POST["tambahkan"]) )
                                 <th>Id Obat</th>
                                 <th>Nama Obat</th>
                                 <th>Jumlah</th>
+                                <th>Total Harga</th>
                                 <th>Aksi</th>
                             </tr>
             
@@ -199,7 +200,7 @@ if( isset ($_POST["tambahkan"]) )
                       <?php
                      
                         // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                    $sql = $koneksi -> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
+                    $sql = $koneksi -> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH , TOTAL_HARGA FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -208,6 +209,7 @@ if( isset ($_POST["tambahkan"]) )
                             <td><?php echo $data ['ID_OBAT']; ?></td>
                             <td><?php echo $data ['NAMA_OBAT']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
+                            <td><?php echo $data ['TOTAL_HARGA']; ?></td>
                         <td>
                         <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" class="btn btn-info">Ubah</a>  
                         <a href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>

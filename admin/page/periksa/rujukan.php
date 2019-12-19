@@ -13,19 +13,19 @@ if (isset ($_POST["submit"]))
 {
 
 
-  input_rujukan($_POST) ;
-//  if (input_rujukan($_POST) > 0) {
-//    echo "<script>
-//    alert('Data Berhasil Ditambahkan');
+ // input_rujukan($_POST);
+ if (input_rujukan($_POST) > 0) {
+   echo "<script>
+   alert('Data Berhasil Ditambahkan');
     
-//    document.location.href = 'home.php?page=laporan';
+   document.location.href = 'home1.php?page=laporan';
   
-//       </script>";
+      </script>";
      
-//  }
-//  else {
-//   echo "<script>alert('Gagal Menambahkan Data')</script>";
-//  }
+ }
+ else {
+  echo "<script>alert('Gagal Menambahkan Data')</script>";
+ }
 }
 
   $carikode = mysqli_query($conn, "SELECT max(ID_RUJUKAN) FROM tb_rujukan") or die(mysqli_error($conn));

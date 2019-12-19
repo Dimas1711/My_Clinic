@@ -69,7 +69,7 @@
                     <label>KETERANGAN</label>
                     <input class="form-control" name="KETERANGAN"  />
 
-                </div>
+                </div>  
                 <div>
                   <input  type="submit" name="submit" value="simpan" class="btn btn-primary">
                 </div>

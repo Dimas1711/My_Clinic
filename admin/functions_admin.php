@@ -376,9 +376,9 @@ function input_rujukan($data){
     $tujuan = htmlspecialchars($data["TUJUAN"]);   
    
 
-    //$qu = mysqli_query($conn, "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')");
-    echo "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')";
-    //return $qu;
+    $qu = mysqli_query($conn, "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')");
+    //echo "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')";
+    return $qu;
     
 }
 
@@ -389,10 +389,10 @@ function input_detail($data){
     $id_obat = htmlspecialchars($data["ID_OBAT"]);
     $harga = htmlspecialchars($data["HARGA"]);
     $jumlah = htmlspecialchars($data["JUMLAH"]);
-     
+    $perkalian = htmlspecialchars($jumlah * $harga);
 
- $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', ' $id_obat'  , ' $jumlah')");
-   echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', ' $id_obat'  , ' $jumlah' )";
+ $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian')");
+   //echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', ' $id_obat'  , ' $jumlah' )";
   return $qu;
     
     
