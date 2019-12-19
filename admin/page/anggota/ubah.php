@@ -74,10 +74,10 @@ if( isset ($_POST["submit"]) )
                     <label>Jenis Anggota</label>
                     <select class="form-control" name="JENIS_ANGGOTA" value="<?= $ang["JENIS_ANGGOTA"]?>" >
                     <option value="">Silahkan Pilih</option>
-                                        <option value="umum" <?php if ($ang["JENIS_ANGGOTA"] == 'umum') {echo "selected";} ?> >umum</option>
-                                        <option value="mahasiswa" <?php if ($ang["JENIS_ANGGOTA"] == 'mahasiswa') {echo "selected";} ?> >mahasiswa</option>
-                                        <option value="karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'karyawan') {echo "selected";} ?> >karyawan</option>
-                                        <option value="keluarga Karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'keluarga karyawan') {echo "selected";} ?> >keluarga karyawan</option>
+                                        <option value="umum" <?php if ($ang["JENIS_ANGGOTA"] == 'Umum') {echo "selected";} ?> >Umum</option>
+                                        <option value="mahasiswa" <?php if ($ang["JENIS_ANGGOTA"] == 'Mahasiswa') {echo "selected";} ?> >Mahasiswa</option>
+                                        <option value="karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'Karyawan') {echo "selected";} ?> >Karyawan</option>
+                                        <option value="keluarga Karyawan" <?php if ($ang["JENIS_ANGGOTA"] == 'Keluarga Karyawan') {echo "selected";} ?> >Keluarga Karyawan</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -105,7 +105,9 @@ if( isset ($_POST["submit"]) )
                       <option value="SD" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SD') {echo "selected";} ?> >SD</option>
                       <option value="SMP" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SMP') {echo "selected";} ?> >SMP</option>
                       <option value="SMA" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SMA') {echo "selected";} ?> >SMA</option>
-                      <option value="S1" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S1') {echo "selected";} ?> >S1</option>
+                      <option value="SMP" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'D1') {echo "selected";} ?> >D1</option>
+                      <option value="SMA" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'D3') {echo "selected";} ?> >D3</option>
+                      <option value="S1" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'D4 / S1') {echo "selected";} ?> >D4 / S1</option>
                       <option value="S2" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S2') {echo "selected";} ?> >S2</option>
                       <option value="S3" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S3') {echo "selected";} ?> >S3</option>
                     </select>

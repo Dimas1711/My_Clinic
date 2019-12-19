@@ -272,7 +272,68 @@ function ubahadmin($data)
         return mysqli_affected_rows($conn);
 }
 
+//tambah data obat
+function tambahobat($data)
+{
+    global $conn;
+        $id_obat = htmlspecialchars($data["ID_OBAT"]);
+        $nama = htmlspecialchars($data["NAMA_OBAT"]);
+        $keterangan = htmlspecialchars($data["KETERANGAN"]);
+        $harga = htmlspecialchars($data["HARGA"]);
+        $stok = htmlspecialchars($data["STOK"]);
+        
 
+        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$harga','$stok','$keterangan')");
+
+        return $qu;
+}
+
+//ubah data obat
+function ubahobat($data)
+{
+    global $conn;
+        $id_obat = htmlspecialchars($data["ID_OBAT"]);
+        $nama = htmlspecialchars($data["NAMA_OBAT"]);
+        $keterangan = htmlspecialchars($data["KETERANGAN"]);
+        $harga = htmlspecialchars($data["HARGA"]);
+        $stok = htmlspecialchars($data["STOK"]);
+
+               
+
+        $query="UPDATE tb_obat SET
+
+                NAMA_OBAT = '$nama',
+                HARGA = '$harga',
+                STOK = '$stok',
+                KETERANGAN = '$keterangan'
+                WHERE ID_OBAT = '$id_obat'
+                ";
+
+        $sql= mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+}
+function ubahpengumuman($data)
+{
+    global $conn;
+        $id_pengumuman = htmlspecialchars($data["ID_PENGUMUMAN"]);
+        $judul = htmlspecialchars($data["JUDUL"]);
+        $isi = htmlspecialchars($data["ISI"]);
+        
+
+               
+
+        $query="UPDATE tb_pengumuman SET
+
+                JUDUL = '$judul',
+                ISI = '$isi'
+                WHERE ID_PENGUMUMAN = '$id_pengumuman'
+                ";
+
+        $sql= mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+}
 function input_periksa($data){
 
     global $conn;
@@ -291,6 +352,84 @@ function input_periksa($data){
     // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
     return $qu;
     
+}
+
+function tambahpengumuman($data)
+{
+    global $conn;
+        $id_pengumuman = htmlspecialchars($data["ID_PENGUMUMAN"]);
+        $judul = htmlspecialchars($data["JUDUL"]);
+        $isi = htmlspecialchars($data["ISI"]);
+     
+        
+
+        $qu = mysqli_query($conn, "INSERT INTO tb_pengumuman VALUES ('$id_pengumuman','$judul','$isi')");
+
+        return $qu;
+}
+function input_rujukan($data){
+
+    global $conn;
+    $id_rujukan = htmlspecialchars($data["ID_RUJUKAN"]);
+    $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
+    $id_klinik = htmlspecialchars($data["ID_KLINIK"]);
+    $tujuan = htmlspecialchars($data["TUJUAN"]);   
+   
+
+    $qu = mysqli_query($conn, "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')");
+    //echo "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')";
+    return $qu;
+    
+}
+
+function input_detail($data){
+    global $conn;
+    $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
+    $nama_obat = htmlspecialchars($data["NAMA_OBAT"]);
+    $id_obat = htmlspecialchars($data["ID_OBAT"]);
+    $harga = htmlspecialchars($data["HARGA"]);
+    $jumlah = htmlspecialchars($data["JUMLAH"]);
+    $perkalian = htmlspecialchars($jumlah * $harga);
+
+ $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian')");
+   //echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', ' $id_obat'  , ' $jumlah' )";
+  return $qu;
+    
+    
+}
+function hapus_anggota($id){
+    global $conn;
+    // $id = $_GET["ID_ANGGOTA"];
+    //$koneksi->query ("delete from tb_anggota where ID_ANGGOTA = '$id'");
+    mysqli_query($conn, "DELETE FROM tb_anggota WHERE ID_ANGGOTA = '$id'");
+    return mysqli_affected_rows($conn);
+}
+
+function hapus_admin($id){
+    global $conn;
+    
+    mysqli_query($conn, "DELETE FROM tb_admin WHERE ID_ADMIN = '$id'");
+    return mysqli_affected_rows($conn);
+}
+
+function hapus_dokter($id){
+    global $conn;
+    
+    mysqli_query($conn, "DELETE FROM tb_dokter WHERE ID_DOKTER = '$id'");
+    return mysqli_affected_rows($conn);
+}
+
+function hapus_obat($id){
+    global $conn;
+    
+    mysqli_query($conn, "DELETE FROM tb_obat WHERE ID_OBAT = '$id'");
+    return mysqli_affected_rows($conn);
+}
+function hapus_pengumuman($id){
+    global $conn;
+
+    mysqli_query($conn , "DELETE FROM tb_pengumuman WHERE ID_PENGUMUMAN ='$id'");
+    return mysqli_affected_rows($conn);
 }
 ?>
 

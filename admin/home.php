@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home.php">Klinik Pratama</a>
+                <a class="navbar-brand" href="home.php" >Klinik Pratama</a>
             </div>
             <?php
                 if ($row!=""){
@@ -51,33 +51,27 @@
                     <img src="assets/img/find_user.png" class="user-image img-responsive"/>
 					             </li>
                     <li>
-                        <a  href="?page=dashbord"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a  href="?page=dashbord"> Dashboard</a>
                     </li>
 
                     <li>
-                        <a  href="?page=anggota"><i class="fa fa-dashboard fa-3x"></i> Data Anggota</a>
+                        <a  href="?page=anggota"> Data Anggota</a>
                     </li>
 
                     <li>
-                        <a  href="?page=admin"><i class="fa fa-dashboard fa-3x"></i> Data Admin</a>
+                        <a  href="?page=admin"> Data Admin</a>
                     </li>
 
                     <li>
-                        <a  href="?page=dokter"><i class="fa fa-dashboard fa-3x"></i> Data Dokter</a>
+                        <a  href="?page=dokter"> Data Dokter</a>
                     </li>
                     <li>
-                        <a  href="?page=obat"><i class="fa fa-dashboard fa-3x"></i> Data Obat</a>
+                        <a  href="?page=obat"> Data Obat</a>
                     </li>
                     <li>
-                        <a  href="?page=periksa"><i class="fa fa-dashboard fa-3x"></i> Periksa</a>
+                        <a  href="?page=pengumuman">Pengumuman</a>
                     </li>
-                    <li class="dropdown"><a  href="?page=laporan"><i class="fa fa-dashboard fa-3x"></i> Laporan</a>
-                        <ul>
-                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Periksa</a></li>
-                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Rujukan</a></li>
-                          <li><a  href="?page=laporanprks"><i class="fa fa-dashboard fa-3x"></i> Laporan Obat</a></li>
-                        </ul>                       
-                    </li>
+                  
                 </ul>
 
             </div>
@@ -142,17 +136,6 @@
                             include "page/dokter/hapus.php";
                           }
                         }
-                        elseif ($page == "periksa") {
-                        if ($aksi == "") {
-                          include "page/periksa/periksa.php";
-                          }
-                          if ($aksi == "input") {
-                           include "page/periksa/rujukan.php";
-                          }
-                          else if ($aksi == "resepobat") {
-                            include "page/periksa/resepobat.php";
-                           }
-                        }
                         elseif ($page == "obat") {
                           if ($aksi == "") {
                             include "page/obat/obat.php";
@@ -167,10 +150,21 @@
                             include "page/obat/hapus.php";
                           }
                         }
-                      
-
-
-
+                          elseif ($page == "pengumuman") {
+                            if ($aksi == "") {
+                              include "page/pengumuman/pengumuman.php";
+                            }
+                            elseif ($aksi == "tambah"){
+                              include "page/pengumuman/tambah.php";
+                            }
+                            elseif ($aksi == "ubah") {
+                              include "page/pengumuman/ubah.php";
+                            }
+                            elseif ($aksi == "hapus") {
+                              include "page/pengumuman/hapus.php";
+                        }
+                      }
+                    
                      ?>
 
                     </div>

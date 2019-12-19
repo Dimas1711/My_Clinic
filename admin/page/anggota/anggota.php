@@ -36,7 +36,6 @@ $anggota = query("select * from tb_anggota");
                         <th>Jenis Kelamin</th>
                         <th>Tanggal Lahir</th>
                         <th>Alamat</th>
-                        <th>Pendidikan Terakhir</th>
                         <th>NO.HP</th>
                         <th>Pekerjaan/Prodi</th>
                         <th>Email</th>
@@ -54,13 +53,12 @@ $anggota = query("select * from tb_anggota");
                     <td><?= $row["JENIS_KELAMIN"];?></td>
                     <td><?= $row["TANGGAL_LAHIR"];?></td>
                     <td><?= $row["ALAMAT"];?></td>
-                    <td><?= $row["PENDIDIKAN_TERAKHIR"];?></td>
                     <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
                     <td><?= $row["EMAIL"];?></td>
                     <td><img src="img/<?=  $row["FOTO"]; ?>" alt="" width="50px"></td>
                     <td>
-                        <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" class="btn btn-info">Ubah</a>  
+                        <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info">Ubah</a>  
                         <a href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
                     </td>     
                 </tr>

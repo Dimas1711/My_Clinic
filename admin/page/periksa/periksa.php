@@ -1,36 +1,7 @@
 <?php 
         require 'functions_admin.php';
         
-        if (isset ($_POST["resep"]))
-        {
-            if (input_periksa($_POST) > 0){
-                echo "<script>
-                alert('Data Berhasil Ditambahkan');
-                document.location.href = 'home.php?page=periksa&aksi=resepobat';
-                </script>";   
-                
-            }
-            else {
-                echo "<script>alert('Gagal Menambahkan Data')</script>";
-            }
-        }
-       elseif (isset ($_POST["rujukan"]))
-        {
-            if (input_periksa($_POST) > 0){
-                echo "<script>
-                alert('Data Berhasil Ditambahkan');
-                document.location.href = 'home.php?page=periksa&aksi=input';
-                </script>";   
-            
-                
-            }
-            else {
-                echo "<script>alert('Gagal Menambahkan Data')</script>";
-            }
-        }
-        
 
-         
         $carikode = mysqli_query($conn, "SELECT max(ID_BEROBAT) FROM tb_berobat") or die(mysqli_error($conn));
         $datakode = mysqli_fetch_array($carikode);
         if($datakode)
@@ -44,10 +15,40 @@
         {
                 $hasilkode = "B00001";
         }
+
+        
+        if (isset ($_POST["resep"]))
+        {
+            if (input_periksa($_POST) > 0){
+                echo "<script>
+                alert('Data Berhasil Ditambahkan');
+                document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT=$hasilkode';
+                </script>";   
+                
+            }
+            else {
+                echo "<script>alert('Gagal Menambahkan Data')</script>";
+            }
+        }
+       elseif (isset ($_POST["rujukan"]))
+        {
+            if (input_periksa($_POST) > 0){
+                echo "<script>
+                alert('Data Berhasil Ditambahkan');
+                document.location.href = 'home1.php?page=periksa&aksi=input&ID_BEROBAT=$hasilkode';
+                </script>";   
+            
+                
+            }
+            else {
+                echo "<script>alert('Gagal Menambahkan Data')</script>";
+            }
+        }
+        
+
+         
+        
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -153,8 +154,8 @@
                     <label>Jenis Poli</label>
                     <select class="form-control" name="POLI">
                         <option value="K01">poli umum</option>
-                        <option value="K02">poli kia</option>
-                        <option value="K03">poli gigi</option>
+                        <option value="K02">poli gigi</option>
+                        <option value="K03">poli kia</option>
                     </select>
                 </div>
                 
@@ -183,12 +184,9 @@
                         </div>
                     </div>            
                 </div>
-               
-                <!-- <a href="?page=periksa&aksi=input&ID_BEROBAT=<?php echo $data['ID_BEROBAT']; ?>" name="rujukan" class="btn btn-info">Rujukan</a>
-                <a href="?page=periksa&aksi=resepobat&ID_BEROBAT=<?php echo $data['ID_BEROBAT']; ?>" name="resep"class="btn btn-danger">Resep Obat</a>
-               -->
+            
                 <input  type="submit" name="resep" value="Resep Obat" class="btn btn-info">
-                <input  type="submit" name="rujukan" value="Rujukan" class="btn btn-danger">
+                <input  type="submit" name="rujukan" value="Rujukan" class="btn btn-primary">
                 </form>
                 <script>
                 var table = document.getElementById('dataTables-example');
@@ -208,40 +206,7 @@
 </script>
 
 
-                <!-- 
-    
-    // $id_berobat = @$_POST['id_berobat'];
-    // $id_klinik = @$_POST ['poli'];
-    // $id_anggota = @$_POST['id_anggota'];
-    // $tensi = @$_POST['tensi'];       
-    // $anamnesa = @$_POST['anamnesa'];       
-    // $diagnosa = @$_POST['diagnosa'];                    
-    // $tanggal = @$_POST['tgl'];
-    // $rujukan = @$_POST ['rujukan'];
-    // $resep = @$_POST ['resep'];
-
-    //                   if ($resep) {
-                       
-    //                     $sql = $koneksi -> query ("insert into tb_berobat (ID_BEROBAT , ID_ANGGOTA , ID_KLINIK , TENSI , ANAMNESA, DIAGNOSA ,TANGGAL_BEROBAT) 
-    //                     values('$id_berobat','$id_anggota' , '$id_klinik' , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')");
-    //                     if ($sql) {
-                    //       ?>
-                    //        <script type="text/javascript">
-                    //          alert ("Data Berhasil");
-                    //         //window.location.href="?page=periksa";
-                    //       </script>
-                    //    
-                    //     }
-                    //   }
-                      ?> -->
-
-
   
-
-
-
-
-
 
 </body>
 </html>
