@@ -44,26 +44,64 @@ if(isset($_POST["batal"]))
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="editt.css">
     <title>Document</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<!-- <noscript> -->
+      
+			<!-- <link rel="stylesheet" href="css/skel-noscript.css" /> -->
+			<link rel="stylesheet" href="css/setel.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		<!-- </noscript> -->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 </head>
-<body>
-        <header>
-                <img src="logo polije.png" alt="ini gambar">
-                <h1>Klinik Pratama
-                    <br>
-                    Rawat Jalan
-                    <br>
-                    Politeknik Negeri Jember
-                    <br>
-                </h1>
-        </header>
-        <section>
-        <h2 class="edit"> Form Edit Profil</h2>
+
+<body  style="background: #cde1ec;">
+    <div id="header">
+			<div id="logo-wrapper">
+				<div class="container">
+						
+					<!-- Logo -->
+						<div id="logo">
+            <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" style="float: left; margin: 0px 9px 3px 0px;" width="80" height="80" class="d-inline-block align-top" alt="">
+            <h1><a href="#" style="padding: 0px 0px 0px 90px;">Klinik Pratama Politeknik Negeri Jember</a></h1>
+            <!-- <div id="text">
+                 Klinik Pratama
+                 <br>
+                 Politeknik Negeri Jember
+            </div> -->
+            </div>
+            
+
+				</div>
+                        </div>	
+</div>
+
+
+		
+	<!-- Banner -->
+  <div id="banner">
+			<div class="container">
+			</div>
+		</div>
+  <!-- /Banner -->
+
+        <section style="margin:30px 250px; padding:50px; font-size:15px;">
+        <h2 style="text-align:center; margin-bottom:50px; font-size:50px; "class="edit"> Form Edit Profil</h2>
             <form action="" method="POST" enctype="multipart/form-data" >
             
             
             <table>
                 
-                        <input type="hidden" name="ID_ANGGOTA" id="id_anggota" value="<?= $ang["ID_ANGGOTA"];?>">
+                        <input style="width:300px; height:35px;" type="hidden" name="ID_ANGGOTA" id="id_anggota" value="<?= $ang["ID_ANGGOTA"];?>">
                         <input type="hidden" name="PASSWORD" id="password" value="<?= $ang["PASSWORD"];?>">
                         <input type="hidden" name="GAMBARLAMA" id="password" value="<?= $ang["FOTO"];?>">
                         
@@ -83,7 +121,7 @@ if(isset($_POST["batal"]))
                 <tr>
                         <th>Jenis Anggota</th>
                         <td class="nama">
-                                <select name="JENIS_ANGGOTA" id="jenis" value="<?= $ang["JENIS_ANGGOTA"]?>" >
+                                <select style="width:300px; height:35px;" name="JENIS_ANGGOTA" id="jenis" value="<?= $ang["JENIS_ANGGOTA"]?>" >
                                         <option value="">Silahkan Pilih</option>
                                         <option value="umum" <?php if ($ang["JENIS_ANGGOTA"] == 'Umum') {echo "selected";} ?> >Umum</option>
                                         <option value="mahasiswa" <?php if ($ang["JENIS_ANGGOTA"] == 'Mahasiswa') {echo "selected";} ?> >Mahasiswa</option>
@@ -137,7 +175,7 @@ if(isset($_POST["batal"]))
                         <td class="nama"><input type="text" name="EMAIL" id="email" value="<?= $ang["EMAIL"]?>"></td>
                 </tr>
                 <tr>
-                        <td class="btnubah"><button type="submit" name="submit" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button></td>
+                        <td  class="btnubah"><button type="submit" name="submit" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button></td>
                         <td class="btnbatal"><button name="batal">Batal</button></td>
                 </tr>
                 <!-- <button class="kirim" type="submit" name="submit" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button>
