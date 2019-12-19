@@ -49,7 +49,7 @@ session_start();
 
 
             <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" style="float: left; margin: 0px 9px 3px 0px;" width="80" height="80" class="d-inline-block align-top" alt="">
-            <h2><a href="#" style="padding: 35px 0px 0px 90px;">Klinik Pratama Politeknik Negeri Jember</a></h2>
+            <h3><a href="#" style="padding: 35px 0px 0px 90px;">Klinik Pratama Politeknik Negeri Jember</a></h3>
             <!-- <div id="text">
                  Klinik Pratama
                  <br>
