@@ -10,35 +10,64 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="struktur.css">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Document</title>
-</head>
-<body>
-    <header>
-        <!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" width="70" height="70" class="d-inline-block align-top" alt="">
-    <div id="text">
-    Klinik Pratama
-    <br>
-    Politeknik Negeri Jember
-    </div>
-  </a>
 
-        <nav class="navbar navbar-expand-lg navbar-dard bg-light">
-                <div class="container">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<!-- <noscript> -->
+      <link rel="stylesheet" href="css/struktur.css" />
+			<!-- <link rel="stylesheet" href="css/skel-noscript.css" /> -->
+			<link rel="stylesheet" href="css/setel.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		<!-- </noscript> -->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+
+</head>
+
+<body style="background:white;">
+    <div id="header">
+			<div id="logo-wrapper">
+				<div class="container">
+						
+					<!-- Logo -->
+						<div id="logo">
+            <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" style="float: left; margin: 0px 9px 3px 0px;" width="80" height="80" class="d-inline-block align-top" alt="">
+            <h1><a href="#" style="padding: 0px 0px 0px 90px;">Klinik Pratama Politeknik Negeri Jember</a></h1>
+            <!-- <div id="text">
+                 Klinik Pratama
+                 <br>
+                 Politeknik Negeri Jember
+            </div> -->
+            </div>
+            
+
+				</div>
+			</div>	
+
+
+			<div class="container">
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+            <li class="nav-item ">
                       <a class="nav-link" href="Home_login.php">Home <span class="sr-only">(current)</span></a>
-                    </li>
+            </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Profil
                       </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="data_klinik.php">Data Klinik</a>
                             <a class="dropdown-item" href="struktur_organisasi.php">Struktur Organisasi</a>
                             <a class="dropdown-item" href="civitas.php">Civitas</a>
@@ -46,7 +75,7 @@ session_start();
                             <a class="dropdown-item" href="#">Alur Pendaftaran</a>
                       </div>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item  ">
                       <a class="nav-link" href="fasilitas.php">
                         Fasilitas
                         <span class="sr-only" >
@@ -54,18 +83,11 @@ session_start();
                         </span>
                       </a>
                     </li>
-                 
 
-    <!-- AWAL BUTTON LOGIN & NAV USER -->    
-
-
-     <!-- BELUM LOGIN -->
-    <?php
+                    <?php
     if(!isset($_SESSION["login"])){?>
 
-    <!-- <a style="display:scroll; position:fixed; bottom:0; right:0;" href="" target="_blank"><img src="chat.png" alt=""></a> -->
-
-    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           User
                       </a>
@@ -74,16 +96,30 @@ session_start();
                             <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Cetak Kartu Berobat');">Cetak Kartu Berobat</a>
                             <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Ubah Password');">Ubah Password</a>
                       </div>
-                  </li>
+                    </li>
+    
     <li class="nav-item ">
-    <button type="button" name="login" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="login.php">Login</a>
-    </button>
+    <a href="login.php">login</a>
+    <!-- <button type="button" name="login" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="login.php">Login</a>
+    </button> -->
+    </li>
 
+						</ul>
+					</nav>
+			</div>
+    </div>
+	<!-- Header -->
+
+
+
+    <!-- AWAL BUTTON LOGIN & NAV USER -->    
+
+
+     <!-- BELUM LOGIN -->
+    
+    
     <?php }?>
     
-    
-
-      
       <!-- SUDAH LOGIN -->
     <?php
     if(isset($_SESSION["login"])){?>
@@ -124,11 +160,10 @@ s0.parentNode.insertBefore(s1,s0);
                       </div>
                   </li>
     <li class="nav-item ">
-    <button type="button" name= "logout" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="logout.php"onclick="return confirm('Apakan Anda Benar Ingin Logout?');">Logout</a>
-    </button>
-    
-    
-    
+    <a href="logout.php">logout</a>
+    <!-- <button type="button" name= "logout" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="logout.php"onclick="return confirm('Apakan Anda Benar Ingin Logout?');">Logout</a>
+    </button> -->
+     
   
     <?php }?>
 
@@ -141,13 +176,16 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
                 </div>
               </nav>
-
-    </header>
+<!-- Banner -->
+<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+  <!-- /Banner -->
         
     <section>
-      <h2 class="test">Struktur Organisasi
-      Unit Klinik Pratama Politeknik Negeri Jember </h2>
-      <img src="strukturOrganisasi.png"    alt="gbr rusak">
+      <h2 class="test" style="background:white; font-size: 35px; margin: 30px;">Struktur Organisasi Unit Klinik Pratama Politeknik Negeri Jember </h2>
+      <img src="strukturOrganisasi.png"    alt="gbr rusak" style="margin:auto; display: block;">
     
     </section>
 
