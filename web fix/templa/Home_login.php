@@ -101,6 +101,8 @@ session_start();
                     <?php
     if(!isset($_SESSION["login"])){?>
 
+    
+
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           User
@@ -123,79 +125,9 @@ session_start();
 					</nav>
 			</div>
     </div>
-	<!-- Header -->
-
-
-
-
-
-
-
-<!-- <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" width="70" height="70" class="d-inline-block align-top" alt="">
-    <div id="text">
-    Klinik Pratama
-    <br>
-    Politeknik Negeri Jember
-    </div>
-  </a>
-
-        <nav class="navbar navbar-expand-lg navbar-dard bg-light">
-                <div class="container">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="Home_login.php">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Profil
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="data_klinik.php">Data Klinik</a>
-                            <a class="dropdown-item" href="struktur_organisasi.php">Struktur Organisasi</a>
-                            <a class="dropdown-item" href="civitas.php">Civitas</a>
-                            <a class="dropdown-item" href="lain_tes.php">Tata Tertib</a>
-                            <a class="dropdown-item" href="#">Alur Pendaftaran</a>
-                      </div>
-                    </li>
-                    <li class="nav-item ">
-                      <a class="nav-link" href="fasilitas.php">
-                        Fasilitas
-                        <span class="sr-only" >
-                            (current)
-                        </span>
-                      </a>
-                    </li> -->
-                   
-                 
-
-    <!-- AWAL BUTTON LOGIN & NAV USER -->    
-
-
-     <!-- BELUM LOGIN -->
-    
-
-    <!-- <a style="display:scroll; position:fixed; bottom:0; right:0;" href="" target="_blank"><img src="chat.png" alt=""></a> -->
-
-<!-- 
-    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          User
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Edit Profil');">Edit Profil</a>
-                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Cetak Kartu Berobat');">Cetak Kartu Berobat</a>
-                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Ubah Password');">Ubah Password</a>
-                      </div>
-                  </li>
-    
-    <li class="nav-item ">
-    <button type="button" name="login" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="login.php">Login</a>
-    </button> -->
-    
     <?php }?>
+	<!-- Header -->
+    
     
     
 
@@ -235,7 +167,7 @@ s0.parentNode.insertBefore(s1,s0);
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="edit_profil.php">Edit Profil</a>
-                            <a class="dropdown-item" href="#">Cetak Kartu Berobat</a>
+                            <a class="dropdown-item" href="cetak2.php">Cetak Kartu Berobat</a>
                             <a class="dropdown-item" href="ubahpass.php">Ubah Password</a>
                       </div>
                   </li>
@@ -408,7 +340,7 @@ s0.parentNode.insertBefore(s1,s0);
               <!-- <a href="#" class="image full"><img src="ss.png" height="300" alt=""></a> -->
               <div class="movie">
                       <div class="card1" >
-                        <video width="350" height="250" controls preload >
+                        <video width="350" height="250" controls preload ><source src="video.mp4" type="video/mp4">
                        </video>
                     </div>
                   </div>
