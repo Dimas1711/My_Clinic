@@ -21,7 +21,7 @@
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
       <link rel="stylesheet" href="css/lain_tes.css" />
-			<!-- <link rel="stylesheet" href="css/skel-noscript.css" /> -->
+			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		<!-- </noscript> -->
