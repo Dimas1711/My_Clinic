@@ -179,7 +179,7 @@ s0.parentNode.insertBefore(s1,s0);
   
     <section>
     <h2 >Data Klinik</h2>
-      <table style="margin-top:30px; margin-left: 200px; margin-right:100px; margin-bottom:200;font-size:30px; line-height:2">
+      <table style="margin-top:30px; margin-left: 300px; margin-right:100px; margin-bottom:200;font-size:25px; line-height:2">
           <tr>
               <td>Nama Klinik</td>
               <td>:</td>
