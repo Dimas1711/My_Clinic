@@ -46,20 +46,56 @@ if(isset($_POST["batal"]))
     <link rel="stylesheet" href="ubahpass.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>SI WEB Poliklinik Politeknik Negeri Jember</title>
-</head>
-<body>
-    <header>
-    <img src="logo polije.png" alt="ini gambar">
-                <h1>Klinik Pratama
-                    <br>
-                    Rawat Jalan
-                    <br>
-                    Politeknik Negeri Jember
-                    <br>
-                </h1>
-    </header>
 
-    <section>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<!-- <noscript> -->
+      
+			<!-- <link rel="stylesheet" href="css/skel-noscript.css" /> -->
+			<link rel="stylesheet" href="css/setel.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		<!-- </noscript> -->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+</head>
+<body  style="background: #cde1ec;">
+    <div id="header">
+			<div id="logo-wrapper">
+				<div class="container">
+						
+					<!-- Logo -->
+						<div id="logo">
+            <img src="LOGO-POLITEKNIK-NEGERI-JEMBER.png" style="float: left; margin: 0px 9px 3px 0px;" width="80" height="80" class="d-inline-block align-top" alt="">
+            <h1><a href="#" style="padding: 0px 0px 0px 90px;">Klinik Pratama Politeknik Negeri Jember</a></h1>
+            <!-- <div id="text">
+                 Klinik Pratama
+                 <br>
+                 Politeknik Negeri Jember
+            </div> -->
+            </div>
+            
+
+				</div>
+                        </div>	
+</div>
+
+
+		
+	<!-- Banner -->
+  <div id="banner">
+			<div class="container">
+			</div>
+		</div>
+  <!-- /Banner -->
+
+    <section style="margin:30px 250px; padding:100px; font-size:15px; margin-left:300px; background-color: rgba(238, 235, 235, 0.836);">
     <form action="" method="POST">
     <table>
                 <input type="hidden" name = "ID_ANGGOTA" value="<?= $ang["ID_ANGGOTA"];?>">
