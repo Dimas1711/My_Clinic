@@ -1,4 +1,8 @@
-*{
+*
+
+
+
+{
     padding: 0px;
     margin: 0px;
     font-family: 'Roboto', sans-serif;
@@ -43,7 +47,7 @@ h2.test
     font-size: 40px;
     text-align: center;
     margin: 30px 400px 20px 350px;
-    background-color: #EBEEEF;
+    background-color: rgb(255, 255, 255);
     opacity: 0.9;    
 }
 
@@ -60,7 +64,7 @@ table
     margin-top: 30px;
     margin-left: 350px;
     margin-bottom: 100px;
-    background-color: #EBEEEF;
+    background-color: rgb(255, 255, 255);
     opacity: 0.9;
 }
 
@@ -79,9 +83,9 @@ th.jarak
     padding-left: 20px;
 }
 
-footer
+/* footer
 {
     padding-top: 20px;
     background-color:#EBEEEF;
     text-align: center;
-}
+} */
