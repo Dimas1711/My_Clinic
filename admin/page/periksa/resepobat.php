@@ -3,16 +3,29 @@ require 'functions_admin.php';
 $id = $_GET['ID_BEROBAT'];
 $berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
 $id_anggota = $berobat["ID_ANGGOTA"];
+//memanggil nama dari anggota
 $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0];
+//memanggil nama kliniknya berdasarkan id klinik
 $id_klinik = $berobat["ID_KLINIK"];
 $kliniknya = query("SELECT * FROM tb_klinik WHERE ID_KLINIK ='$id_klinik'")[0];
+
+$obat = query("SELECT STOK FROM tb_obat");
+//$stok = $obat["STOK"];
+$detail_berobat = query("SELECT tb_detail_berobat.JUMLAH FROM tb_detail_berobat");
+// $jumlah = $detail_berobat["JUMLAH"];
 //cek tombol sudah ditekan atau belum
 
 if( isset ($_POST["tambahkan"]) )
 {
         //cek data berhasil ditambah?
       //input_detail($_POST);
-       if( input_detail($_POST) > 0 )
+      if ($detail_berobat > $obat) {
+       echo "<script> 
+       alert('Stok Tidak Mencukupi');
+       </script>";
+      } 
+      
+      else if( input_detail($_POST) > 0 )
         {
             echo "<script>
                 alert('Data Berhasil');
