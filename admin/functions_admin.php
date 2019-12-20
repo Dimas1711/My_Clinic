@@ -393,7 +393,7 @@ function input_detail($data){
     $catatan = htmlspecialchars($data["CATATAN"]);
 
  $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian','$catatan')");
-   //echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', ' $id_obat'  , ' $jumlah' )";
+  // echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian', '$catatan')";
   return $qu;
     
     
