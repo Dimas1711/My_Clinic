@@ -25,7 +25,7 @@ if( isset ($_POST["submit"]) )
         {
             echo "<script>
                 alert('Data Berhasil Diubah');
-                document.location.href = 'home.php';
+                document.location.href = 'home.php?page=anggota';
                 </script>";
         }
         else

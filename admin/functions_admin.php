@@ -348,7 +348,7 @@ function input_periksa($data){
     $tanggal = htmlspecialchars($data["TGL"]);
 
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa',' $catatan',' $alergi','$tanggal')");
+    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$tanggal','$anamnesa',' $diagnosa',' $catatan',' $alergi')");
     // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
     return $qu;
     
@@ -390,8 +390,9 @@ function input_detail($data){
     $harga = htmlspecialchars($data["HARGA"]);
     $jumlah = htmlspecialchars($data["JUMLAH"]);
     $perkalian = htmlspecialchars($jumlah * $harga);
+    $catatan = htmlspecialchars($data["CATATAN"]);
 
- $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian')");
+ $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian','$catatan')");
    //echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', ' $id_obat'  , ' $jumlah' )";
   return $qu;
     
