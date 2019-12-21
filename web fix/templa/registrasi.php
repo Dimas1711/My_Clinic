@@ -38,7 +38,7 @@ if($datakode)
 }
 else
 {
-        $hasilkode = "AG001";
+        $hasilkode = "AG0001";
 }
 
 
@@ -102,6 +102,7 @@ else
         <section style="margin: 30px 250px;  padding: 100px; font-size: 15px;  margin-left: 300px;">
             <h2> Form Pendaftaran</h2>
             <form action="" method="POST" enctype="multipart/form-data" >
+            <input type="hidden" name="STATUS" value="Pending">
             <table>
                 <tr>
                         <td>Id Anggota</td>

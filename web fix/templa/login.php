@@ -7,9 +7,8 @@ if(isset($_POST["login"])){
   $password = $_POST["PASSWORD"];
 
 
-  $result = mysqli_query($conn, "SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota' AND PASSWORD = '$password'");
+  $result = mysqli_query($conn, "SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota' AND PASSWORD = '$password' AND STATUS = 'Accept'");
 
-  
 
   if( mysqli_num_rows($result) === 1 )
   {

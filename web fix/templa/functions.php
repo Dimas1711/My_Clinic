@@ -29,6 +29,7 @@ function tambah($data)
         $nohp = htmlspecialchars($data["NO_HP"]);
         $pekerjaan = htmlspecialchars($data["PEKERJAAN_PRODI"]);
         $email = htmlspecialchars($data["EMAIL"]);
+        $status = htmlspecialchars($data["STATUS"]);
 
         //upload foto
         $foto = upload();
@@ -37,7 +38,7 @@ function tambah($data)
             return false;
         }
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto','$status')");
 
         return $qu;
 
@@ -125,6 +126,7 @@ function ubah($data)
         $pekerjaan = htmlspecialchars($data["PEKERJAAN_PRODI"]);
         $email = htmlspecialchars($data["EMAIL"]);
         $fotolama = htmlspecialchars($data["GAMBARLAMA"]);
+        $status = htmlspecialchars($data["STATUS"]);
 
         
 
@@ -152,7 +154,8 @@ function ubah($data)
                 NO_HP = '$nohp',
                 PEKERJAAN_PRODI = '$pekerjaan',
                 EMAIL = '$email',
-                FOTO = '$foto' 
+                FOTO = '$foto',
+                STATUS = '$status'
                 WHERE ID_ANGGOTA = '$id_anggota'
                 ";
 

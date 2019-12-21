@@ -103,7 +103,8 @@ if(isset($_POST["batal"]))
                 
                         <input style="width:300px; height:35px;" type="hidden" name="ID_ANGGOTA" id="id_anggota" value="<?= $ang["ID_ANGGOTA"];?>">
                         <input type="hidden" name="PASSWORD" id="password" value="<?= $ang["PASSWORD"];?>">
-                        <input type="hidden" name="GAMBARLAMA" id="password" value="<?= $ang["FOTO"];?>">
+                        <input type="hidden" name="GAMBARLAMA" value="<?= $ang["FOTO"];?>">
+                        <input type="hidden" name="STATUS" value="<?= $ang["STATUS"];?>">
                         
 
                 <tr>
