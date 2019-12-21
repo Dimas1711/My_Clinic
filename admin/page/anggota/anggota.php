@@ -1,6 +1,6 @@
 <?php
 require 'functions_admin.php';
-$anggota = query("select * from tb_anggota");
+$anggota = query("select * from tb_anggota WHERE STATUS = 'Accept'");
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -15,31 +15,15 @@ $anggota = query("select * from tb_anggota");
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <!-- <th>No</th>
-                                <th>NO.KTP/NIM/NIP</th>
-                                <th>NAMA ANGGOTA</th>
-                                <th>JENIS ANGGOTA</th>
-                                <th>JENIS KELAMIN</th>
-                                <th>TANGGAL LAHIR</th>
-                                <th>ALAMAT</th>
-                                <th>PENDIDIKAN TERAKHIR</th>
-                                <th>NO.HP</th>
-                                <th>PEKERJAAN</th>
-                                <th>EMAIL</th>
-                                <th>FOTO</th>
-                                <th>AKSI</th> -->
-                                <!-- <th>Id Anggota</th>
-                        <th>Password</th> -->
+                               
                         <th>NO.KTP/NIM/NIP</th>
                         <th>Nama Anggota</th>
                         <th>Jenis Anggota</th>
                         <th>Jenis Kelamin</th>
-                        
                         <th>Alamat</th>
                         <th>NO.HP</th>
                         <th>Pekerjaan/Prodi</th>
                         <th>Email</th>
-                      
                         <th>Aksi</th>
                             </tr>
                         </thead>
