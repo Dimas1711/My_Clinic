@@ -219,8 +219,8 @@ if( isset ($_POST["tambahkan"]) )
                             <td><?php echo $data ['TOTAL_HARGA']; ?></td>
                             <td><?php echo $data ['CATATAN']; ?></td>
                         <td>
-                        <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" class="btn btn-info">Ubah</a>  
-                        <a href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
+              
+                        <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
                     </td>  
                         
                         

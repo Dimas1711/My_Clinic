@@ -456,6 +456,13 @@ function hapus_pengumuman($id){
     mysqli_query($conn , "DELETE FROM tb_pengumuman WHERE ID_PENGUMUMAN ='$id'");
     return mysqli_affected_rows($conn);
 }
+
+function hapus_resep($id){
+    global $conn;
+
+    mysqli_query($conn , "DELETE FROM tb_detail_berobat WHERE ID_DETAIL = '$id'");
+    return mysqli_affected_rows($conn);
+}
 ?>
 
 

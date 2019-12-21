@@ -90,7 +90,13 @@
                           }
                           else if ($aksi == "resepobat") {
                             include "page/periksa/resepobat.php";
-                           }
+                          }
+                        
+                        }
+                        elseif ($page == "resepobat") {
+                          if ($aksi == "hapus") {
+                            include "page/periksa/hapus.php";
+                          }
                         }
                         elseif ($page == "obat") {
                           if ($aksi == "") {
