@@ -130,7 +130,7 @@
                     <label>Pendidikan Terakhir</label>
                     <select class="form-control" name="PENDIDIKAN_TERAKHIR">
                       <option >- - - - - - -</option>
-                        <option value="Tidak Sekolah">Tidak Sekolah</option>
+                  
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA">SMA</option>

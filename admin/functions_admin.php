@@ -37,7 +37,7 @@ function tambah($data)
             return false;
         }
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto' , 'Pending')");
 
         return $qu;
 
@@ -159,6 +159,30 @@ function ubah($data)
         $sql= mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
+}
+function acc($id){
+    global $conn;
+    
+    $query="UPDATE tb_anggota SET
+    STATUS = 'Accept'
+    WHERE ID_ANGGOTA = '$id'
+    ";
+
+$sql= mysqli_query($conn, $query);
+
+return mysqli_affected_rows($conn);
+}
+function reject($id){
+    global $conn;
+    
+    $query="UPDATE tb_anggota SET
+    STATUS = 'Reject'
+    WHERE ID_ANGGOTA = '$id'
+    ";
+
+$sql= mysqli_query($conn, $query);
+
+return mysqli_affected_rows($conn);
 }
 
 //tambah data dokter

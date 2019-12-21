@@ -8,8 +8,7 @@ $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0
 //memanggil nama kliniknya berdasarkan id klinik
 $id_klinik = $berobat["ID_KLINIK"];
 $kliniknya = query("SELECT * FROM tb_klinik WHERE ID_KLINIK ='$id_klinik'")[0];
-// $id_obat = $_GET['ID_OBAT'];
-// $obat = query("SELECT * FROM tb_obat WHERE ID_OBAT ='$id_obat'");
+$obat = query("SELECT * FROM tb_obat");
 //$stok = $obat["STOK"];
 //$detail_berobat = query("SELECT tb_detail_berobat.JUMLAH FROM tb_detail_berobat");
 // $jumlah = $detail_berobat["JUMLAH"];
@@ -149,7 +148,7 @@ if( isset ($_POST["tambahkan"]) )
     </br>
     </div>
     <div class="form-group">
-    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH" >
+    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH" maxlength="<?=$obat["STOK"]?>" >
     </br>
     </div>
     <div class="form-group">

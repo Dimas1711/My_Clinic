@@ -53,6 +53,9 @@
                     <li>
                         <a  href="?page=dashbord"> Dashboard</a>
                     </li>
+                    <li>
+                        <a  href="?page=verifikasi"> Verifikasi Akun Anggota</a>
+                    </li>
 
                     <li>
                         <a  href="?page=anggota"> Data Anggota</a>
@@ -162,6 +165,18 @@
                             }
                             elseif ($aksi == "hapus") {
                               include "page/pengumuman/hapus.php";
+                        }
+                      
+                      }
+                      elseif ($page == "verifikasi") {
+                        if ($aksi == "") {
+                          include "page/verifikasi/verifikasi.php";
+                        }
+                        elseif ($aksi == "accept") {
+                          include "page/verifikasi/accept.php";
+                        }
+                        elseif ($aksi == "reject") {
+                          include "page/verifikasi/reject.php";
                         }
                       }
                     
