@@ -2,6 +2,8 @@
 require 'functions.php';
 session_start();
 
+$pengumuman = query("SELECT * FROM tb_pengumuman")[0];
+
 ?>
 
 <!DOCTYPE html>
@@ -308,15 +310,15 @@ s0.parentNode.insertBefore(s1,s0);
                         <div class="tips">
                           <div class="card-body">
                             <h5 class="card-title"><b>Tips For Today</b></h5>
-                            <p class="card-text">
-                              Jember mengalami musim panas yg cukup ekstrim hingga mencapai suhu 37 C .
+                            <p class="card-text"><?= $pengumuman["JUDUL"]?>
+                              <!-- Jember mengalami musim panas yg cukup ekstrim hingga mencapai suhu 37 C .
                               <br>
-                              Diharapkan untuk tetap menggunakan masker dan membawa air puth
+                              Diharapkan untuk tetap menggunakan masker dan membawa air puth -->
                             </p>
-                            <p class="card-text">
-                            Tubuh yang sehat selalu didukung dengan asupan kebutuhan nutrisi yang tepat
+                            <p class="card-text"><?= $pengumuman["ISI"]?>
+                            <!-- Tubuh yang sehat selalu didukung dengan asupan kebutuhan nutrisi yang tepat
                             dan tercukupi . Maka cukupilah kebutuhan dasar 4 sehat 5 sempurna dalam makanan
-                            yang kamu konsumsi sehari hari . Hindari makanan cepat saji karena tidak baik untuk tubuh
+                            yang kamu konsumsi sehari hari . Hindari makanan cepat saji karena tidak baik untuk tubuh -->
                    </p>
                           </div>
                         </div>
