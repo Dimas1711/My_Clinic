@@ -1,8 +1,6 @@
 <?php
 require 'functions.php';
 
-
-
 //cek tombol sudah ditekan atau belum
 if( isset ($_POST["submit"]) )
 {
@@ -54,7 +52,7 @@ if(isset($_POST["batal"]))
     <table>     
                 <tr>
                         <td>Email</td>
-                        <td class="nama"><input type="text" name="EMAIL" ></td>
+                        <td class="nama"><input type="text" name="EMAIL"></td>
                 </tr>
                 <tr>
                         <td>Password Baru</td>
