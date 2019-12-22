@@ -98,17 +98,18 @@ function upload()
 
 }
 
-//hapus data
-// function hapus($id)
-// {
-//     global $conn;
-//         mysqli_query($conn, "DELETE FROM tb_anggota WHERE ID_ANGGOTA = '$id'");
+function update_data($data){
+    global $conn;
 
-//         return mysqli_affected_rows($conn);
+$jumlah = htmlspecialchars($data["JUMLAH"]);
+$catatan = htmlspecialchars($data["CATATAN"]); 
+//$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL_BEROBAT = ''";
 
-// }
+echo "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL_BEROBAT = ''";
+// $sql= mysqli_query($conn, $query);
 
-//ubah data
+// return mysqli_affected_rows($conn);
+}
 function ubah($data)
 {
     global $conn;

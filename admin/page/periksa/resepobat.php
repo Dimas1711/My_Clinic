@@ -9,6 +9,7 @@ $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0
 $id_klinik = $berobat["ID_KLINIK"];
 $kliniknya = query("SELECT * FROM tb_klinik WHERE ID_KLINIK ='$id_klinik'")[0];
 $obat = query("SELECT tb_obat.STOK FROM tb_obat");
+$detailnya = query("SELECT tb_detail_berobat.ID_DETAIL FROM tb_detail_berobat WHERE ID_DETAIL");
 //$stok = $obat["STOK"];
 //$detail_berobat = query("SELECT tb_detail_berobat.JUMLAH FROM tb_detail_berobat");
 // $jumlah = $detail_berobat["JUMLAH"];
@@ -48,7 +49,18 @@ if( isset ($_POST["cetak"]))
                 </script>";
 }
 
-
+if (isset ($_POST["update"])){
+  update_data($_POST);
+  // if (update_data($_POST) > 0) {
+  //   echo "<script>
+  //   alert('Data Berhasil');
+  //   document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+  //   </script>";
+  // }  
+  // else{
+  //         echo "<script>alert('Gagal Mengubah Data')</script>";
+  // }
+}
 
 
 ?>
@@ -150,6 +162,10 @@ if( isset ($_POST["cetak"]))
     <hr>
     <form method ="POST">
     <div class="form-group">
+    <label for=">ID_DETAIL"><b>Id Detail</b></label> <input type="text" name="ID_DETAIL" id="ID_DETAIL" value="<?$detailnya;?>"  readonly>
+    </br>
+    </div>
+    <div class="form-group">
     <label for=">ID_OBAT"><b>Id Obat</b></label> <input type="text" name="ID_OBAT" id="ID_OBAT"  readonly>
     </br>
     </div>
@@ -173,7 +189,7 @@ if( isset ($_POST["cetak"]))
     
     <div class="form-group">
     <input  type="submit" name="tambahkan" value="Tambahkan" class="btn btn-info">
-    
+    <input  type="submit" name="update" value="update" class="btn btn-info" > 
     </div>
 </div>
 </div>
@@ -276,5 +292,4 @@ if( isset ($_POST["cetak"]))
              document.getElementById("CATATAN").value = this.cells[5].innerHTML;
         };
     }
-
 </script>
