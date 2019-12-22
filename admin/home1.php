@@ -51,7 +51,7 @@
                     <img src="assets/img/find_user.png" class="user-image img-responsive"/>
 					             </li>
                     <li>
-                        <a  href="?page=dashbord"> Dashboard</a>
+                        <a  href="?page=dashborddokter"> Dashboard</a>
                     </li>
                     <li>
                         <a  href="?page=periksa"> Periksa</a>
@@ -78,8 +78,8 @@
                       $page = @$_GET['page'];
                       $aksi = @$_GET['aksi'];
 
-                      if ($page == "dashbord") {
-                        include "page/dashbord.php";
+                      if ($page == "dashborddokter") {
+                        include "page/dashborddokter.php";
                       }
                         elseif ($page == "periksa") {
                         if ($aksi == "") {

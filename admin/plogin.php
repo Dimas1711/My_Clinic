@@ -17,7 +17,7 @@ if($cek > 0) {
     $_SESSION['username'] = $username;
     $_SESSION['status'] = 'login';
 
-    header("location:home.php");
+    header("location:home.php?page=dashbord");
 }
 
 else if($cek1 > 0) {
@@ -25,7 +25,7 @@ else if($cek1 > 0) {
     $_SESSION['username'] = $username;
     $_SESSION['status'] = 'login';
 
-    header("location:home1.php");
+    header("location:home1.php?page=dashborddokter");
 }
 
 else if($username==null || $password==null){
