@@ -2,9 +2,14 @@
   include_once "koneksi.php";
   $result1 = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE NAMA_ADMIN='".$_SESSION['username']."'");
   $row = mysqli_fetch_array($result1);
+  $totalanggota = mysqli_query($koneksi , "SELECT * FROM tb_anggota");
+  $d = mysqli_num_rows($totalanggota);
 
-  $totalanggota = mysqli_query($koneksi , "SELECT COUNT(NAMA_ANGGOTA) FROM tb_anggota");
+  $totaldokter = mysqli_query($koneksi , "SELECT * FROM tb_dokter");
+  $e = mysqli_num_rows($totaldokter);
 
+  $totalverifikasi = mysqli_query($koneksi , "SELECT * FROM tb_anggota WHERE STATUS = 'PENDING'");
+  $f = mysqli_num_rows($totalverifikasi);
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -47,34 +52,30 @@
                  <!-- /. ROW  -->
                  <div class="col-md-3 col-sm-6 col-xs-6">     
                  <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-red set-icon">
-                    <i class="fa fa-envelope-o"></i>
-                </span>
+            
                 <div class="text-box" >
-                    <p class="main-text"><?php $totalanggota;?>
-                    <p class="text-muted">Total Anggota</p>
+                <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+                    <p class="text-muted"><b>Total Anggota</b></p>
+                    <p class="main-text"><?php echo "$d";?>
                 </div>
              </div>
 		     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-green set-icon">
-                    <i class="fa fa-bars"></i>
-                </span>
+                
                 <div class="text-box" >
-                    <p class="main-text">30 Tasks</p>
-                    <p class="text-muted">Total Dokter</p>
-                </div>
-             </div>
-		     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-blue set-icon">
-                    <i class="fa fa-bell-o"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text">240 New</p>
+                <img src="assets/img/verif.png" class="user-image img-responsive" style= "width:65%"/>
                     <p class="text-muted">Verifikasi Anggota</p>
+                    <p class="main-text"><?php echo "$f";?></p>
+                </div>
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <div class="text-box" >
+                <img src="assets/img/dokter.jpg" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Total Dokter</p>
+                    <p class="main-text"><?php echo "$e";?></p>
                 </div>
              </div>
 		     </div>
