@@ -231,7 +231,8 @@ if( isset ($_POST["tambahkan"]) )
                     </tbody>
 
                     <tbody>
-
+                    
+                    <button type="submit" name="cetak"><a href="resep.php">Cetak</a></button>
                     
                     </tbody>
                     </table>
