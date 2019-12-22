@@ -100,7 +100,7 @@
 
                       <?php
                       $no = 1;
-                          $sql = $koneksi -> query ("SELECT *FROM tb_anggota");
+                          $sql = $koneksi -> query ("SELECT *FROM tb_anggota WHERE STATUS = 'Accept'");
            
                           while ($data=$sql ->fetch_assoc()) {
 

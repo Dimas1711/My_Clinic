@@ -8,7 +8,7 @@ $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0
 //memanggil nama kliniknya berdasarkan id klinik
 $id_klinik = $berobat["ID_KLINIK"];
 $kliniknya = query("SELECT * FROM tb_klinik WHERE ID_KLINIK ='$id_klinik'")[0];
-$obat = query("SELECT * FROM tb_obat");
+$obat = query("SELECT tb_obat.STOK FROM tb_obat");
 //$stok = $obat["STOK"];
 //$detail_berobat = query("SELECT tb_detail_berobat.JUMLAH FROM tb_detail_berobat");
 // $jumlah = $detail_berobat["JUMLAH"];
@@ -58,6 +58,10 @@ if( isset ($_POST["tambahkan"]) )
     <h1>Resep Obat</h1>
     <hr>
     <form method ="POST">
+    <div class="form-group">
+    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="text" name="TANGGAL" value="<?= $berobat["TANGGAL_BEROBAT"];?>" readonly>
+    </br>
+    </div>
     <div class="form-group">
     <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
     </br>
@@ -148,7 +152,7 @@ if( isset ($_POST["tambahkan"]) )
     </br>
     </div>
     <div class="form-group">
-    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH" maxlength="<?=$obat["STOK"]?>" >
+    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH" maxlength="<?php $obat?>" >
     </br>
     </div>
     <div class="form-group">
@@ -235,11 +239,12 @@ if( isset ($_POST["tambahkan"]) )
                     
                     </tbody>
                     </table>
-
+                  
                   </div>
                   </div>
                   </div>
                   </div>
                   </div>
-                  <div class=" col-sm-12 col-xs-12">       
+                  <div class=" col-sm-12 col-xs-12">   
+                  <input  type="submit" name="cetak" value="Cetak Resep Obat" class="btn btn-info">    
               
