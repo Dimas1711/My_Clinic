@@ -100,15 +100,14 @@ function upload()
 
 function update_data($data){
     global $conn;
-
+$detail = htmlspecialchars($data["ID_DETAIL"]);
 $jumlah = htmlspecialchars($data["JUMLAH"]);
 $catatan = htmlspecialchars($data["CATATAN"]); 
-//$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL_BEROBAT = ''";
+$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL = '$detail'";
 
-echo "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL_BEROBAT = ''";
-// $sql= mysqli_query($conn, $query);
-
-// return mysqli_affected_rows($conn);
+//echo "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL = '$detail'";
+ $sql= mysqli_query($conn, $query);
+ return mysqli_affected_rows($conn);
 }
 function ubah($data)
 {

@@ -9,7 +9,13 @@ $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0
 $id_klinik = $berobat["ID_KLINIK"];
 $kliniknya = query("SELECT * FROM tb_klinik WHERE ID_KLINIK ='$id_klinik'")[0];
 $obat = query("SELECT tb_obat.STOK FROM tb_obat");
-$detailnya = query("SELECT tb_detail_berobat.ID_DETAIL FROM tb_detail_berobat WHERE ID_DETAIL");
+// $detailnya = query("SELECT tb_detail_berobat.ID_DETAIL FROM tb_detail_berobat WHERE ID_DETAIL");
+
+$table = query("SHOW TABLE STATUS LIKE 'tb_detail_berobat'")[0];
+$detailnya = $table["Auto_increment"];
+
+
+
 //$stok = $obat["STOK"];
 //$detail_berobat = query("SELECT tb_detail_berobat.JUMLAH FROM tb_detail_berobat");
 // $jumlah = $detail_berobat["JUMLAH"];
@@ -50,18 +56,17 @@ if( isset ($_POST["cetak"]))
 }
 
 if (isset ($_POST["update"])){
-  update_data($_POST);
-  // if (update_data($_POST) > 0) {
-  //   echo "<script>
-  //   alert('Data Berhasil');
-  //   document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
-  //   </script>";
-  // }  
-  // else{
-  //         echo "<script>alert('Gagal Mengubah Data')</script>";
-  // }
+  // update_data($_POST);
+  if (update_data($_POST) > 0) {
+    echo "<script>
+    alert('Data Berhasil');
+    document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+    </script>";
+  }  
+  else{
+          echo "<script>alert('Gagal Mengubah Data')</script>";
+  }
 }
-
 
 ?>
 
@@ -162,7 +167,7 @@ if (isset ($_POST["update"])){
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for=">ID_DETAIL"><b>Id Detail</b></label> <input type="text" name="ID_DETAIL" id="ID_DETAIL" value="<?$detailnya;?>"  readonly>
+    <label for=">ID_DETAIL"><b>Id Detail</b></label> <input type="text" name="ID_DETAIL" id="ID_DETAIL" value="<?= $detailnya;?>"  readonly>
     </br>
     </div>
     <div class="form-group">
@@ -185,11 +190,13 @@ if (isset ($_POST["update"])){
     <label for="CATATAN"><b>Catatan</b></label><textarea cols="60" rows="5" type="text" name="CATATAN" id="CATATAN" ></textarea>
     </br>
     </div>
+
+    
     
     
     <div class="form-group">
-    <input  type="submit" name="tambahkan" value="Tambahkan" class="btn btn-info">
-    <input  type="submit" name="update" value="update" class="btn btn-info" > 
+    <input  type="submit" name="tambahkan" value="Tambahkan" id="tambahkan" class="btn btn-info">
+    <input  type="submit" name="update" value="update" id="update" class="btn btn-info" disabled> 
     </div>
 </div>
 </div>
@@ -222,6 +229,7 @@ if (isset ($_POST["update"])){
                     <table class="table table-striped table-bordered table-hover" id="table-beli">
                         <thead>
                             <tr>
+                            <th>Id Detail</th>
                                 <th>Id Obat</th>
                                 <th>Nama Obat</th>
                                 <th>Harga Obat</th>
@@ -243,7 +251,7 @@ if (isset ($_POST["update"])){
                           while ($data=$sql ->fetch_assoc()) {
 
                        ?>
-                      <tr>
+                      <tr><td><?php echo $data ['ID_DETAIL']; ?></td>
                             <td><?php echo $data ['ID_OBAT']; ?></td>
                             <td><?php echo $data ['NAMA_OBAT']; ?></td>
                             <td><?php echo $data ['HARGA']; ?></td>
@@ -252,7 +260,7 @@ if (isset ($_POST["update"])){
                             <td><?php echo $data ['CATATAN']; ?></td>
                         <td>
               
-                        <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"];?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
+                        <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"];?>&ID_BEROBAT=<?= $berobat["ID_BEROBAT"];?> "onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
                     </td>  
                         
                         
@@ -279,17 +287,25 @@ if (isset ($_POST["update"])){
                   </form>    
                   <script>
                 var table = document.getElementById('table-beli');
+                var button = document.getElementById("update");
+                var button2 = document.getElementById("tambahkan");
     
                for(var i = 1; i < table.rows.length; i++)
     {
         table.rows[i].onclick = function()
         {
              //rIndex = this.rowIndex;
-             document.getElementById("ID_OBAT").value = this.cells[0].innerHTML;
-             document.getElementById("NAMA_OBAT").value = this.cells[1].innerHTML;
-             document.getElementById("HARGA").value = this.cells[2].innerHTML;
-             document.getElementById("JUMLAH").value = this.cells[3].innerHTML;
-             document.getElementById("CATATAN").value = this.cells[5].innerHTML;
+            
+             document.getElementById("ID_DETAIL").value = this.cells[0].innerHTML;
+             document.getElementById("ID_OBAT").value = this.cells[1].innerHTML;
+             document.getElementById("NAMA_OBAT").value = this.cells[2].innerHTML;
+             document.getElementById("HARGA").value = this.cells[3].innerHTML;
+             document.getElementById("JUMLAH").value = this.cells[4].innerHTML;
+             document.getElementById("CATATAN").value = this.cells[6].innerHTML;
+             button.disabled = false;
+             button2.disabled = true;
         };
+        
     }
+
 </script>
