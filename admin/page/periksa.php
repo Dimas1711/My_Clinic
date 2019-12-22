@@ -86,7 +86,7 @@
                 </div>              
                 <div class="form-group">
                     <label>Nama</label>
-                    <input class="form-control" type="text" id="nama" name="nama" onkeypress="autofillnya()" />
+                    <input class="form-control" type="text" id="nama" name="nama" />
                 </div>
                 
                 <div class="form-group">
@@ -127,25 +127,7 @@
                       
                 <a href=""class="btn btn-danger">Batal</a>
         
-                <script type="text/javascript">
-                
-                            function autofillnya(){
-
-                                var nama = $("#nama").val();
-                                $.ajax({
-                                  url : 'page/periksa/yo.php',
-                                  data: 'nama='+nama,
-                                }).success(function(data){
-                                   var json = data,
-                                   obj = JSON.parse(json);
-                                   $("#nama'").val(obj.NAMA_ANGGOTA);
-                                   $("#id_anggota").val(obj.ID_ANGGOTA);
-                                   $("#no").val(obj.NO_KTP_NIM_NIP);
-                                   $("#ja").val(obj.JENIS_ANGGOTA);
-                                 });
-                            }
-                
-                </script>
+           
                 <?php
                       include "koneksi.php";
                       $id_berobat = @$_POST['id_berobat'];

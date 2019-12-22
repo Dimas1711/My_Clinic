@@ -203,11 +203,12 @@ if( isset ($_POST["cetak"]))
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="table-detail">
+                    <table class="table table-striped table-bordered table-hover" id="table-beli">
                         <thead>
                             <tr>
-               
+                                <th>Id Obat</th>
                                 <th>Nama Obat</th>
+                                <th>Harga Obat</th>
                                 <th>Jumlah</th>
                                 <th>Total Harga</th>
                                 <th>Catatan</th>
@@ -221,14 +222,15 @@ if( isset ($_POST["cetak"]))
                       <?php
                      
                         // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                    $sql = $koneksi -> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH , TOTAL_HARGA , CATATAN FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
+                    $sql = $koneksi -> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH ,tb_obat.HARGA, TOTAL_HARGA , CATATAN FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
                        ?>
                       <tr>
-                            
+                            <td><?php echo $data ['ID_OBAT']; ?></td>
                             <td><?php echo $data ['NAMA_OBAT']; ?></td>
+                            <td><?php echo $data ['HARGA']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['TOTAL_HARGA']; ?></td>
                             <td><?php echo $data ['CATATAN']; ?></td>
@@ -259,4 +261,20 @@ if( isset ($_POST["cetak"]))
                   <div class=" col-sm-12 col-xs-12">   
                   <input  type="submit" name="cetak" value="Cetak Resep Obat" class="btn btn-info">
                   </form>    
-              
+                  <script>
+                var table = document.getElementById('table-beli');
+    
+               for(var i = 1; i < table.rows.length; i++)
+    {
+        table.rows[i].onclick = function()
+        {
+             //rIndex = this.rowIndex;
+             document.getElementById("ID_OBAT").value = this.cells[0].innerHTML;
+             document.getElementById("NAMA_OBAT").value = this.cells[1].innerHTML;
+             document.getElementById("HARGA").value = this.cells[2].innerHTML;
+             document.getElementById("JUMLAH").value = this.cells[3].innerHTML;
+             document.getElementById("CATATAN").value = this.cells[5].innerHTML;
+        };
+    }
+
+</script>
