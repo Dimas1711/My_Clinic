@@ -44,7 +44,7 @@ if( isset ($_POST["cetak"]))
 {
   echo "<script>
                 alert('Data Berhasil');
-                document.location.href = 'cetakresep.php';
+                document.location.href = 'page/periksa/cetakresep.php';
                 </script>";
 }
 
@@ -246,7 +246,7 @@ if( isset ($_POST["cetak"]))
 
                     <tbody>
                     
-                    <!-- <button type="submit" name="cetak" class="btn btn-info"><a href="cetakresep.php">Cetak</a></button> -->
+                   
                     
                     </tbody>
                     </table>
