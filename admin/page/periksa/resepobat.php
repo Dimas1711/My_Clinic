@@ -40,6 +40,16 @@ if( isset ($_POST["tambahkan"]) )
        
 }
 
+if( isset ($_POST["cetak"]))
+{
+  echo "<script>
+                alert('Data Berhasil');
+                document.location.href = 'cetakresep.php';
+                </script>";
+}
+
+
+
 
 ?>
 
@@ -167,7 +177,7 @@ if( isset ($_POST["tambahkan"]) )
     </div>
 </div>
 </div>
-</form> 
+<!-- </form>  -->
 </body>
  <script>
                 var table = document.getElementById('dataTables-example');
@@ -224,7 +234,7 @@ if( isset ($_POST["tambahkan"]) )
                             <td><?php echo $data ['CATATAN']; ?></td>
                         <td>
               
-                        <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
+                        <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"];?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
                     </td>  
                         
                         
@@ -236,7 +246,7 @@ if( isset ($_POST["tambahkan"]) )
 
                     <tbody>
                     
-                    <button type="submit" name="cetak"><a href="resep.php">Cetak</a></button>
+                    <!-- <button type="submit" name="cetak" class="btn btn-info"><a href="cetakresep.php">Cetak</a></button> -->
                     
                     </tbody>
                     </table>
@@ -247,5 +257,6 @@ if( isset ($_POST["tambahkan"]) )
                   </div>
                   </div>
                   <div class=" col-sm-12 col-xs-12">   
-                  <input  type="submit" name="cetak" value="Cetak Resep Obat" class="btn btn-info">    
+                  <input  type="submit" name="cetak" value="Cetak Resep Obat" class="btn btn-info">
+                  </form>    
               
