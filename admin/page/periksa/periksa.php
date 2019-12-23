@@ -163,18 +163,22 @@
                     <label>Tensi</label>
                     <input class="form-control" type="text" name="TENSI" id="TENSI" />
                 </div>
-                <div class="form-group">
-                    <label>Alergi Obat</label>
-                    <input class="form-control" type="text" name="ALERGI" id="ALERGI" />
-                </div>
+
                 <div class="form-group">
                     <label>Anamanesa</label>
                     <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" />
                 </div>
+
+                <div class="form-group">
+                    <label>Alergi Obat</label>
+                    <input class="form-control" type="text" name="ALERGI" id="ALERGI" />
+                </div>
+               
                 <div class="form-group">
                     <label>Diagnosa</label>
                     <input class="form-control" type="text" name="DIAGNOSA" id="DIAGNOSA" />
                 </div>
+                
                 <div class="form-group">
                     <label>Catatan</label>
                     <input class="form-control" type="text" name="CATATAN" id="CATATAN" />

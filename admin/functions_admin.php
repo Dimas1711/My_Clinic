@@ -103,7 +103,10 @@ function update_data($data){
 $detail = htmlspecialchars($data["ID_DETAIL"]);
 $jumlah = htmlspecialchars($data["JUMLAH"]);
 $catatan = htmlspecialchars($data["CATATAN"]); 
-$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL = '$detail'";
+$harga = htmlspecialchars($data["HARGA"]);
+$jumlah = htmlspecialchars($data["JUMLAH"]);
+$perkalian = htmlspecialchars($jumlah * $harga);
+$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , TOTAL_HARGA = '$perkalian', CATATAN = '$catatan' WHERE ID_DETAIL = '$detail'";
 
 //echo "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL = '$detail'";
  $sql= mysqli_query($conn, $query);

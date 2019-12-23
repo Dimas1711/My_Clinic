@@ -2,6 +2,17 @@
   include_once "koneksi.php";
   $result1 = mysqli_query($koneksi, "SELECT * FROM tb_dokter WHERE NAMA_DOKTER='".$_SESSION['username']."'");
   $row = mysqli_fetch_array($result1);
+  $totalanggota = mysqli_query($koneksi , "SELECT * FROM tb_anggota");
+  $d = mysqli_num_rows($totalanggota);
+
+  $totaldokter = mysqli_query($koneksi , "SELECT * FROM tb_dokter");
+  $e = mysqli_num_rows($totaldokter);
+
+  $totalverifikasi = mysqli_query($koneksi , "SELECT * FROM tb_anggota WHERE STATUS = 'PENDING'");
+  $f = mysqli_num_rows($totalverifikasi);
+
+  $totalperiksa = mysqli_query($koneksi , "SELECT * FROM tb_berobat");
+  $g = mysqli_num_rows($totalperiksa);
 ?>
 <!-- sedfgtyhuny -->
 
@@ -46,7 +57,44 @@
        
                  <!-- /. ROW  -->
                
-
+                 <div class="col-md-3 col-sm-6 col-xs-6">     
+                 <div class="panel panel-back noti-box">
+            
+                <div class="text-box" >
+                <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+                    <p class="text-muted"><b>Total Anggota</b></p>
+                    <p class="main-text"><?php echo "$d";?>
+                </div>
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                
+                <div class="text-box" >
+                <img src="assets/img/verif.png" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Verifikasi Anggota</p>
+                    <p class="main-text"><?php echo "$f";?></p>
+                </div>
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <div class="text-box" >
+                <img src="assets/img/dokter.jpg" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Total Dokter</p>
+                    <p class="main-text"><?php echo "$e";?></p>
+                </div>
+             </div>
+		     </div>
+         <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <div class="text-box" >
+                <img src="assets/img/periksa.jpg" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Total Berobat</p>
+                    <p class="main-text"><?php echo "$g";?></p>
+                </div>
+             </div>
+		     </div>
     </div>
              <!-- /. PAGE INNER  -->
             </div>

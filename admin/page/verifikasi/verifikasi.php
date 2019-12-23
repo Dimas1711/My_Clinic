@@ -1,6 +1,6 @@
 <?php
 require 'functions_admin.php';
-$anggota = query("select * from tb_anggota");
+$anggota = query("select * from tb_anggota  ");
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -14,7 +14,6 @@ $anggota = query("select * from tb_anggota");
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                       
                         <th>NO.KTP/NIM/NIP</th>
                         <th>Nama Anggota</th>
                         <th>Jenis Anggota</th>
@@ -58,3 +57,9 @@ $anggota = query("select * from tb_anggota");
                   </div>
                   </div>
                   </div>
+                  </div>
+                  </div>
+
+                  
+       
+                  
