@@ -367,6 +367,7 @@ function input_periksa($data){
     $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
     $id_klinik = htmlspecialchars($data["POLI"]);
     $id_anggota = htmlspecialchars($data["ID_ANGGOTA"]);
+    $nm_dokter = htmlspecialchars($data["NAMA_DOKTER"]);
     $tensi = htmlspecialchars($data["TENSI"]);   
     $anamnesa = htmlspecialchars($data["ANAMNESA"]);     
     $diagnosa = htmlspecialchars($data["DIAGNOSA"]);
@@ -375,7 +376,7 @@ function input_periksa($data){
     $tanggal = htmlspecialchars($data["TGL"]);
 
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$tanggal','$anamnesa',' $diagnosa',' $catatan',' $alergi')");
+    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota','$nm_dokter' , '$tensi' ,'$tanggal','$anamnesa',' $diagnosa',' $catatan',' $alergi')");
     // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
     return $qu;
     
