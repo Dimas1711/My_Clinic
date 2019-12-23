@@ -302,12 +302,12 @@ function tambahobat($data)
     global $conn;
         $id_obat = htmlspecialchars($data["ID_OBAT"]);
         $nama = htmlspecialchars($data["NAMA_OBAT"]);
-        $keterangan = htmlspecialchars($data["KETERANGAN"]);
         $harga = htmlspecialchars($data["HARGA"]);
         $stok = htmlspecialchars($data["STOK"]);
+        $exp = htmlspecialchars($data["EXP"]);
         
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$harga','$stok','$keterangan')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$harga','$stok','$exp')");
 
         return $qu;
 }
@@ -318,9 +318,9 @@ function ubahobat($data)
     global $conn;
         $id_obat = htmlspecialchars($data["ID_OBAT"]);
         $nama = htmlspecialchars($data["NAMA_OBAT"]);
-        $keterangan = htmlspecialchars($data["KETERANGAN"]);
         $harga = htmlspecialchars($data["HARGA"]);
         $stok = htmlspecialchars($data["STOK"]);
+        $exp = htmlspecialchars($data["EXP"]);
 
                
 
@@ -329,7 +329,7 @@ function ubahobat($data)
                 NAMA_OBAT = '$nama',
                 HARGA = '$harga',
                 STOK = '$stok',
-                KETERANGAN = '$keterangan'
+                EXP = '$exp'
                 WHERE ID_OBAT = '$id_obat'
                 ";
 
