@@ -2,7 +2,7 @@
   include_once "koneksi.php";
   $result1 = mysqli_query($koneksi, "SELECT * FROM tb_dokter WHERE NAMA_DOKTER='".$_SESSION['username']."'");
   $row = mysqli_fetch_array($result1);
-  $totalanggota = mysqli_query($koneksi , "SELECT * FROM tb_anggota");
+  $totalanggota = mysqli_query($koneksi , "SELECT * FROM tb_anggota WHERE STATUS = 'ACCEPT'");
   $d = mysqli_num_rows($totalanggota);
 
   $totaldokter = mysqli_query($koneksi , "SELECT * FROM tb_dokter");
