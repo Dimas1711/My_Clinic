@@ -18,10 +18,9 @@ $obat = query("select * from tb_obat");
                             <tr>
                                 
                                 <th>NAMA OBAT</th>
-                                
                                 <th>HARGA</th>
                                 <th>STOK</th>
-                                <th>KETERANGAN</th>
+                                <th>EXP</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -30,10 +29,9 @@ $obat = query("select * from tb_obat");
                 <tr>
                     
                     <td><?= $row["NAMA_OBAT"];?></td>
-                  
                     <td><?= $row["HARGA"];?></td>
                     <td><?= $row["STOK"];?></td>
-                    <td><?= $row["KETERANGAN"];?></td>
+                    <td><?= $row["EXP"]?></td>
                     
                     <td>
                         <a href="?page=obat&aksi=ubah&ID_OBAT=<?= $row["ID_OBAT"];?>" class="btn btn-info">Ubah</a>  

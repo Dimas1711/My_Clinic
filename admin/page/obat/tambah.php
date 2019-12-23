@@ -51,23 +51,23 @@
                 </div>
                 <div class="form-group">
                     <label>NAMA OBAT</label>
-                    <input class="form-control" name="NAMA_OBAT"  />
+                    <input class="form-control" name="NAMA_OBAT" />
 
                     </div>
              
                 <div class="form-group">
-                    <label>Harga</label>
+                    <label>HARGA</label>
                     <input class="form-control" name="HARGA" type="number"/>
 
                 </div>
                 <div class="form-group">
-                    <label>Stok</label>
+                    <label>STOK</label>
                     <input class="form-control" name="STOK" type="number"/>
 
                 </div>
                 <div class="form-group">
-                    <label>KETERANGAN</label>
-                    <input class="form-control" name="KETERANGAN"  />
+                    <label>EXP</label>
+                    <input class="form-control" name="EXP" type="date"  />
 
                 </div>  
                 <div>
@@ -80,28 +80,3 @@
 
           </div>
           </div>
-
-          <?php
-          include "koneksi.php";
-          $id = @$_POST ['id_obat'];
-          $nama = @$_POST ['nama_obat'];
-          $ket = @$_POST ['Keterangan'];
-          $harga = @$_POST ['harga'];
-          $stok = @$_POST ['stok'];
-          $simpan = @$_POST ['simpan'];
-
-
-          if ($simpan) {
-            $sql = $koneksi -> query ("INSERT into tb_obat(ID_OBAT , NAMA_OBAT , HARGA , STOK, KETERANGAN)
-            values('$id' , '$nama'  ,'$harga' , '$stok', '$ket')");
-            if ($sql) {
-              ?>
-              <script type="text/javascript">
-                  alert ("Data Berhasil");
-                  window.location.href="?page=obat";
-              </script>
-              <?php
-            }
-          }
-
-           ?>
