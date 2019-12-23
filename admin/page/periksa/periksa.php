@@ -132,7 +132,21 @@
                             Input Tensi
                         </div>
                         <div class="panel-body">
-                <table style="margin-left:35%" id="table">                  
+                <table style="margin-left:35%" id="table">
+
+                <?php
+                    include_once "koneksi.php";
+                    
+                    $result1 = mysqli_query($koneksi, "SELECT * FROM tb_dokter WHERE NAMA_DOKTER='".$_SESSION['username']."'");
+                    $row = mysqli_fetch_array($result1);
+                ?>
+
+                <div class="form-group">
+                    <label>Nama Dokter</label><br>
+                    <?php if ($row!=""){
+                    echo '<div name="NAMA_DOKTER" style="color: red; padding: 15px 50px 5px 50px; float: left; font-size: 16px;">'.$row['NAMA_DOKTER'].'</div>';
+                } ?><br><br>
+                </div>                  
                 <div class="form-group">
                     <label>Nama</label>
                     <input class="form-control" type="text" id="NAMA" name="NAMA" readonly />
