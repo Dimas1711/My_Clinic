@@ -143,9 +143,8 @@
 
                 <div class="form-group">
                     <label>Nama Dokter</label><br>
-                    <?php if ($row!=""){
-                    echo '<div name="NAMA_DOKTER" style="color: red; padding: 15px 50px 5px 50px; float: left; font-size: 16px;">'.$row['NAMA_DOKTER'].'</div>';
-                } ?><br><br>
+                    <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
+                    <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>                  
                 <div class="form-group">
                     <label>Nama</label>
@@ -196,6 +195,42 @@
                 <div class="form-group">
                     <label>Catatan</label>
                     <input class="form-control" type="text" name="CATATAN" id="CATATAN" />
+                </div>
+
+                <div class="form-group">
+                    <label>SUHU</label>
+                    <input class="form-control" type="text" name="SUHU" id="SUHU" />
+                </div>
+
+                <div class="form-group">
+                    <label>NADI</label>
+                    <input class="form-control" type="text" name="NADI" id="NADI" />
+                </div>
+
+                <div class="form-group">
+                    <label>PERNAPASAN</label>
+                    <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" />
+                </div>
+
+                <div class="form-group">
+                    <label>GOLONGAN DARAH</label>
+                    <select class="form-control" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="O">O</option>
+                        <option value="AB">AB</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>BERAT BADAN</label>
+                    <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN"/>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label>TINGGI BADAN</label>
+                    <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" />
                 </div>
                
                     </table>

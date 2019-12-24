@@ -106,7 +106,7 @@ $catatan = htmlspecialchars($data["CATATAN"]);
 $harga = htmlspecialchars($data["HARGA"]);
 $jumlah = htmlspecialchars($data["JUMLAH"]);
 $perkalian = htmlspecialchars($jumlah * $harga);
-$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , TOTAL_HARGA = '$perkalian', CATATAN = '$catatan' WHERE ID_DETAIL = '$detail'";
+$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , TOTAL_HARGA = '$perkalian', DOSIS = '$catatan' WHERE ID_DETAIL = '$detail'";
 
 //echo "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL = '$detail'";
  $sql= mysqli_query($conn, $query);
@@ -367,16 +367,22 @@ function input_periksa($data){
     $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
     $id_klinik = htmlspecialchars($data["POLI"]);
     $id_anggota = htmlspecialchars($data["ID_ANGGOTA"]);
-    $nm_dokter = htmlspecialchars($data["NAMA_DOKTER"]);
+    $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
     $tensi = htmlspecialchars($data["TENSI"]);   
     $anamnesa = htmlspecialchars($data["ANAMNESA"]);     
     $diagnosa = htmlspecialchars($data["DIAGNOSA"]);
     $alergi = htmlspecialchars($data["ALERGI"]);
     $catatan = htmlspecialchars($data["CATATAN"]);                  
     $tanggal = htmlspecialchars($data["TGL"]);
+    $suhu = htmlspecialchars($data["SUHU"]);
+    $nadi = htmlspecialchars($data["NADI"]);
+    $pernapasan = htmlspecialchars($data["PERNAPASAN"]);
+    $goldar = htmlspecialchars($data["GOLONGAN_DARAH"]);
+    $berat = htmlspecialchars($data["BERAT_BADAN"]);
+    $tinggi = htmlspecialchars($data["TINGGI_BADAN"]);
 
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota','$nm_dokter' , '$tensi' ,'$tanggal','$anamnesa',' $diagnosa',' $catatan',' $alergi')");
+    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat','$id_klinik','$id_dokter','$id_anggota','$tensi','$tanggal','$anamnesa','$diagnosa','$catatan','$alergi','$suhu','$nadi','$pernapasan','$goldar','$berat','$tinggi')");
     // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
     return $qu;
     

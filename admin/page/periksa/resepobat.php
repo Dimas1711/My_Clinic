@@ -126,9 +126,9 @@ if (isset ($_POST["update"])){
                             <tr>
                                 <th>Id Obat</th>
                                 <th>Nama Obat</th>
-                                <th>Keterangan</th>
                                 <th>Harga</th>
                                 <th>Stok</th>
+                                <th>Exp</th>
                             </tr>
                         </thead>
 
@@ -144,10 +144,9 @@ if (isset ($_POST["update"])){
                       <tr>
                         <td><?php echo $data ['ID_OBAT']; ?></td>
                         <td><?php echo $data ['NAMA_OBAT']; ?></td>
-                        <td><?php echo $data ['KETERANGAN']; ?></td>
                         <td><?php echo $data ['HARGA']; ?></td>
                         <td><?php echo $data ['STOK']; ?></td>
-                        
+                        <td><?php echo $data ['EXP']; ?></td>
                         
                       </tr>
 
@@ -212,7 +211,7 @@ if (isset ($_POST["update"])){
              //rIndex = this.rowIndex;
              document.getElementById("ID_OBAT").value = this.cells[0].innerHTML;
              document.getElementById("NAMA_OBAT").value = this.cells[1].innerHTML;
-             document.getElementById("HARGA").value = this.cells[3].innerHTML;
+             document.getElementById("HARGA").value = this.cells[2].innerHTML;
         };
     }
 
@@ -226,7 +225,7 @@ if (isset ($_POST["update"])){
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="table-beli">
+                    <table class="table table-striped table-bordered table-hover" id="table-beli" >
                         <thead>
                             <tr>
                             <th>Id Detail</th>
@@ -245,8 +244,8 @@ if (isset ($_POST["update"])){
 
                       <?php
                      
-                        // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                    $sql = $koneksi -> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH ,tb_obat.HARGA, TOTAL_HARGA , CATATAN FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
+                       // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
+                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH ,tb_obat.HARGA, TOTAL_HARGA , DOSIS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -257,7 +256,7 @@ if (isset ($_POST["update"])){
                             <td><?php echo $data ['HARGA']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['TOTAL_HARGA']; ?></td>
-                            <td><?php echo $data ['CATATAN']; ?></td>
+                            <td><?php echo $data ['DOSIS']; ?></td>
                         <td>
               
                         <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"];?>&ID_BEROBAT=<?= $berobat["ID_BEROBAT"];?> "onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
