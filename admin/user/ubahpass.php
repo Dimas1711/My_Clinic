@@ -103,7 +103,7 @@ if(isset($_POST["batal"]))
                 
                 <tr>
                         <td>Password Lama</td>
-                        <td class="nama"><input type="text" name="PASSWORD_LAMA" ></td>
+                        <td class="nama"><input type="password" name="PASSWORD_LAMA" ></td>
                 </tr>
                 <tr>
                         <td>Password Baru</td>
@@ -111,7 +111,7 @@ if(isset($_POST["batal"]))
                 </tr>
                 <tr>
                         <td>Konfirmasi Password</td>
-                        <td class="nama"><input type="text" name="KONFIRMASI_PASSWORD" ></td>
+                        <td class="nama"><input type="password" name="KONFIRMASI_PASSWORD" ></td>
                 </tr>
                 <button type="submit" name="submit" class="kirim">Kirim</button>
                 <button class="batal" name="batal">Batal</button>

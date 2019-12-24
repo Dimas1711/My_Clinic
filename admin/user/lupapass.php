@@ -60,7 +60,7 @@ try {
 
     $mail->isHTML(true);                                 
     $mail->Subject = 'Here is the subject';
-    $mail->Body    =  'Silahkan Ganti Password Anda di http://localhost/My_Clinic/web%20fix/templa/resetpass.php' ;
+    $mail->Body    =  'Silahkan Ganti Password Anda di http://localhost/My_Clinic/admin/user/resetpass.php' ;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
