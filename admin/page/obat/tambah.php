@@ -55,10 +55,6 @@
 
                     </div>
              
-                <div class="form-group">
-                    <label>HARGA</label>
-                    <input class="form-control" name="HARGA" type="number"/>
-
                 </div>
                 <div class="form-group">
                     <label>STOK</label>

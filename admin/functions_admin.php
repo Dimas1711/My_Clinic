@@ -103,10 +103,8 @@ function update_data($data){
 $detail = htmlspecialchars($data["ID_DETAIL"]);
 $jumlah = htmlspecialchars($data["JUMLAH"]);
 $catatan = htmlspecialchars($data["CATATAN"]); 
-$harga = htmlspecialchars($data["HARGA"]);
 $jumlah = htmlspecialchars($data["JUMLAH"]);
-$perkalian = htmlspecialchars($jumlah * $harga);
-$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , TOTAL_HARGA = '$perkalian', DOSIS = '$catatan' WHERE ID_DETAIL = '$detail'";
+$query = "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah', DOSIS = '$catatan' WHERE ID_DETAIL = '$detail'";
 
 //echo "UPDATE tb_detail_berobat SET JUMLAH = '$jumlah' , CATATAN = '$catatan' WHERE ID_DETAIL = '$detail'";
  $sql= mysqli_query($conn, $query);
@@ -305,12 +303,11 @@ function tambahobat($data)
     global $conn;
         $id_obat = htmlspecialchars($data["ID_OBAT"]);
         $nama = htmlspecialchars($data["NAMA_OBAT"]);
-        $harga = htmlspecialchars($data["HARGA"]);
         $stok = htmlspecialchars($data["STOK"]);
         $exp = htmlspecialchars($data["EXP"]);
         
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$harga','$stok','$exp')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$stok','$exp')");
 
         return $qu;
 }
@@ -321,7 +318,6 @@ function ubahobat($data)
     global $conn;
         $id_obat = htmlspecialchars($data["ID_OBAT"]);
         $nama = htmlspecialchars($data["NAMA_OBAT"]);
-        $harga = htmlspecialchars($data["HARGA"]);
         $stok = htmlspecialchars($data["STOK"]);
         $exp = htmlspecialchars($data["EXP"]);
 
@@ -330,7 +326,6 @@ function ubahobat($data)
         $query="UPDATE tb_obat SET
 
                 NAMA_OBAT = '$nama',
-                HARGA = '$harga',
                 STOK = '$stok',
                 EXP = '$exp'
                 WHERE ID_OBAT = '$id_obat'
@@ -421,12 +416,10 @@ function input_detail($data){
     $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
     $nama_obat = htmlspecialchars($data["NAMA_OBAT"]);
     $id_obat = htmlspecialchars($data["ID_OBAT"]);
-    $harga = htmlspecialchars($data["HARGA"]);
     $jumlah = htmlspecialchars($data["JUMLAH"]);
-    $perkalian = htmlspecialchars($jumlah * $harga);
     $catatan = htmlspecialchars($data["CATATAN"]);
 
- $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian','$catatan')");
+ $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' ,'$catatan')");
   // echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian', '$catatan')";
   return $qu;
     

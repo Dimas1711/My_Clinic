@@ -18,7 +18,6 @@ $obat = query("select * from tb_obat");
                             <tr>
                                 
                                 <th>NAMA OBAT</th>
-                                <th>HARGA</th>
                                 <th>STOK</th>
                                 <th>EXP</th>
                                 <th>AKSI</th>
@@ -29,7 +28,6 @@ $obat = query("select * from tb_obat");
                 <tr>
                     
                     <td><?= $row["NAMA_OBAT"];?></td>
-                    <td><?= $row["HARGA"];?></td>
                     <td><?= $row["STOK"];?></td>
                     <td><?= $row["EXP"]?></td>
                     

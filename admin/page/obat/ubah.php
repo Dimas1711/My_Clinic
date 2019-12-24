@@ -41,12 +41,6 @@ if( isset ($_POST["submit"]) )
                     <input class="form-control"  name="NAMA_OBAT" value="<?= $obat["NAMA_OBAT"];?>"/>
                 </div>
                 
-               
-            
-                <div class="form-group">
-                    <label>HARGA</label>
-                    <input class="form-control" type="number" name="HARGA" value="<?= $obat["HARGA"];?>"/>
-                </div>
                 
                 <div class="form-group">
                     <label>STOK</label>

@@ -126,7 +126,6 @@ if (isset ($_POST["update"])){
                             <tr>
                                 <th>Id Obat</th>
                                 <th>Nama Obat</th>
-                                <th>Harga</th>
                                 <th>Stok</th>
                                 <th>Exp</th>
                             </tr>
@@ -144,7 +143,6 @@ if (isset ($_POST["update"])){
                       <tr>
                         <td><?php echo $data ['ID_OBAT']; ?></td>
                         <td><?php echo $data ['NAMA_OBAT']; ?></td>
-                        <td><?php echo $data ['HARGA']; ?></td>
                         <td><?php echo $data ['STOK']; ?></td>
                         <td><?php echo $data ['EXP']; ?></td>
                         
@@ -178,15 +176,11 @@ if (isset ($_POST["update"])){
     </br>
     </div>
     <div class="form-group">
-    <label for="HARGA"><b>HARGA</b></label><input type="number" name="HARGA" id="HARGA" >
-    </br>
-    </div>
-    <div class="form-group">
     <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH" maxlength="<?php $obat?>" >
     </br>
     </div>
     <div class="form-group">
-    <label for="CATATAN"><b>Catatan</b></label><textarea cols="60" rows="5" type="text" name="CATATAN" id="CATATAN" ></textarea>
+    <label for="CATATAN"><b>Dosis</b></label><input type="text" name="CATATAN" id="CATATAN" ></textarea>
     </br>
     </div>
 
@@ -211,7 +205,6 @@ if (isset ($_POST["update"])){
              //rIndex = this.rowIndex;
              document.getElementById("ID_OBAT").value = this.cells[0].innerHTML;
              document.getElementById("NAMA_OBAT").value = this.cells[1].innerHTML;
-             document.getElementById("HARGA").value = this.cells[2].innerHTML;
         };
     }
 
@@ -231,9 +224,7 @@ if (isset ($_POST["update"])){
                             <th>Id Detail</th>
                                 <th>Id Obat</th>
                                 <th>Nama Obat</th>
-                                <th>Harga Obat</th>
                                 <th>Jumlah</th>
-                                <th>Total Harga</th>
                                 <th>Catatan</th>
                                 <th>Aksi</th>
                             </tr>
@@ -245,7 +236,7 @@ if (isset ($_POST["update"])){
                       <?php
                      
                        // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH ,tb_obat.HARGA, TOTAL_HARGA , DOSIS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
+                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH  , DOSIS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -253,9 +244,7 @@ if (isset ($_POST["update"])){
                       <tr><td><?php echo $data ['ID_DETAIL']; ?></td>
                             <td><?php echo $data ['ID_OBAT']; ?></td>
                             <td><?php echo $data ['NAMA_OBAT']; ?></td>
-                            <td><?php echo $data ['HARGA']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
-                            <td><?php echo $data ['TOTAL_HARGA']; ?></td>
                             <td><?php echo $data ['DOSIS']; ?></td>
                         <td>
               
@@ -298,9 +287,8 @@ if (isset ($_POST["update"])){
              document.getElementById("ID_DETAIL").value = this.cells[0].innerHTML;
              document.getElementById("ID_OBAT").value = this.cells[1].innerHTML;
              document.getElementById("NAMA_OBAT").value = this.cells[2].innerHTML;
-             document.getElementById("HARGA").value = this.cells[3].innerHTML;
-             document.getElementById("JUMLAH").value = this.cells[4].innerHTML;
-             document.getElementById("CATATAN").value = this.cells[6].innerHTML;
+             document.getElementById("JUMLAH").value = this.cells[3].innerHTML;
+             document.getElementById("CATATAN").value = this.cells[4].innerHTML;
              button.disabled = false;
              button2.disabled = true;
         };
