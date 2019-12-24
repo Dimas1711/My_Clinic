@@ -58,7 +58,7 @@ session_start();
 					<nav id="nav">
 						<ul>
             <li class="nav-item ">
-                      <a class="nav-link" href="Home_login.php">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

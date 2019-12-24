@@ -18,7 +18,7 @@ if(isset($_POST["login"])){
     $_SESSION['user'] = $row ["NAMA_ANGGOTA"];
     $_SESSION['email'] = $row ["EMAIL"];
     $_SESSION['id'] = $row["ID_ANGGOTA"];
-    header("location: Home_login.php");
+    header("location: index.php");
     
   }
   else
@@ -29,7 +29,7 @@ if(isset($_POST["login"])){
 }
 if( isset($_POST["cancel"]) )
 {
-  header("location: Home_login.php");
+  header("location: index.php");
 }
 
 
@@ -111,8 +111,8 @@ if( isset($_POST["cancel"]) )
           </tr>
         </table>
         
-        <button style="margin-left:200px;" type="submit" name="login" class="login" style="margin-left:200px; margin-right:20px;">Login</button>  
-        <button type="submit" name="cancel" class="cancelbtn">Cancel</button>
+        <button style="margin-left:200px;" type="submit" name="login" class="btn btn-info" style="margin-left:200px; margin-right:20px;">Login</button>  
+        <button type="submit" name="cancel"class="btn btn-danger">Cancel</button>
        
         <br><br>
         <p style="margin-top:30px; text-align:center; font-size:23px;">Belum Punya Akun ? <a class="link" href="registrasi.php">Daftar Sekarang</a></p>

@@ -19,7 +19,7 @@ use PHPMailer\PHPMailer\Exception;
 
 if( isset($_POST["batal"]) )
 {
-  header("location: Home_login.php");
+  header("location: index.php");
 }
 
 
@@ -67,7 +67,7 @@ try {
     // echo 'Message has been sent';
     echo "<script>
     alert('Pesan Telah Dikirim di email yang dituju');
-    document.location.href = 'Home_login.php';
+    document.location.href = 'index.php';
     </script>";
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

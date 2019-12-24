@@ -14,7 +14,7 @@ $ang = query("SELECT * FROM tb_anggota WHERE NAMA_ANGGOTA = '$id'")[0];
 
 if(isset($_POST["batal"]))
 {
-        header("Location: home_login.php");
+        header("Location: index.php");
         exit;
 }
 
@@ -78,7 +78,7 @@ if(isset($_POST["batal"]))
                 </tr>
              </table>
                 <button type="submit" name="submit" class="btn"><a href="cetak3.php" target="_blank">Cetak</a></button>
-                <button type="submit" name="batal" class="btn2"><a href="home_login.php">Batal</a></button>
+                <button type="submit" name="batal" class="btn2"><a href="index.php">Batal</a></button>
         </form>
         
              

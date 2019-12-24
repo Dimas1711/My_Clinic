@@ -19,7 +19,7 @@ if( isset ($_POST["submit"]) )
         {
                 echo "<script>
                 alert('Data Berhasil Diubah');
-                document.location.href = 'Home_login.php';
+                document.location.href = 'index.php';
                 </script>";
         }
         else
@@ -30,7 +30,7 @@ if( isset ($_POST["submit"]) )
 }
 if(isset($_POST["batal"]))
 {
-        header("Location: home_login.php");
+        header("Location: index.php");
         exit;
 }
 

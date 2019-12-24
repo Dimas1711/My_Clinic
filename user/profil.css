@@ -1,0 +1,111 @@
+*
+
+
+
+
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-image: url(back.jpg);   
+   }
+
+
+/* NAVIGASI */
+
+nav li {
+    margin-left: 30px;
+}
+
+#text {
+    float: right;
+    margin-left: 30px;
+}
+
+.macam  {
+  margin-top: 150px;
+  margin-left: 290px;
+  margin-right: 600px;
+  margin-bottom:  100px;
+
+}
+.macam h2 {
+  font-size: 35px;
+}
+
+#lgn
+{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+section h2
+{
+    text-align: center;
+    background-color: white;
+    margin: 50px 500px;
+    font-size: 50px;
+    opacity: 0.9;
+}
+h2.test
+{
+    font-size: 40px;
+    text-align: center;
+    margin: 30px 400px 20px 350px;
+    background-color: #EBEEEF;
+    opacity: 0.9;    
+}
+
+section table
+{
+    margin-top: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 100px;
+    background-color:white;
+    font-size: 30px;
+    opacity: 0.9;
+}
+section td
+{
+    padding: 0px 11px;
+}
+
+
+
+/* 
+footer
+{
+    padding-top: 20px;
+    background-color:rgba(0, 0, 0, 0.1);
+    text-align: center;
+} */
+
+
+
+
+
+/* nav li {
+    margin-left: 90px;
+}
+
+#text {
+    float: right;
+    margin-left: 30px;
+}
+
+.macam  {
+  margin-top: 150px;
+  margin-left: 290px;
+  margin-right: 600px;
+  margin-bottom:  100px;
+
+}
+.macam h2 {
+  font-size: 35px;
+} */
