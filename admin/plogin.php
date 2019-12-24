@@ -12,6 +12,7 @@ $query1 =
 mysqli_query($koneksi,"select * from tb_dokter where NAMA_DOKTER='$username' and PASSWORD='$password'");
 $cek1 = mysqli_num_rows($query1);
 
+
 if($cek > 0) {
     session_start();
     $_SESSION['username'] = $username;
