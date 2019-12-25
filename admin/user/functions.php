@@ -24,6 +24,7 @@ function tambah($data)
         $jenis = htmlspecialchars($data["JENIS_ANGGOTA"]);
         $jenis_kelamin = htmlspecialchars($data["JENIS_KELAMIN"]);
         $ttl = htmlspecialchars($data["TEMPAT_TANGGAL_LAHIR"]);
+        $usia = htmlspecialchars($data["USIA"]);
         $alamat = htmlspecialchars($data["ALAMAT"]);
         $pendidikan = htmlspecialchars($data["PENDIDIKAN_TERAKHIR"]);
         $nohp = htmlspecialchars($data["NO_HP"]);
@@ -38,7 +39,7 @@ function tambah($data)
             return false;
         }
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto','$status')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$usia','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto','$status')");
 
         return $qu;
 
@@ -120,6 +121,7 @@ function ubah($data)
         $jenis = htmlspecialchars($data["JENIS_ANGGOTA"]);
         $jenis_kelamin = htmlspecialchars($data["JENIS_KELAMIN"]);
         $ttl = htmlspecialchars($data["TEMPAT_TANGGAL_LAHIR"]);
+        $usia = htmlspecialchars($data["USIA"]);
         $alamat = htmlspecialchars($data["ALAMAT"]);
         $pendidikan = htmlspecialchars($data["PENDIDIKAN_TERAKHIR"]);
         $nohp = htmlspecialchars($data["NO_HP"]);
@@ -149,6 +151,7 @@ function ubah($data)
                 JENIS_ANGGOTA = '$jenis',
                 JENIS_KELAMIN = '$jenis_kelamin',
                 TANGGAL_LAHIR = '$ttl',
+                USIA = '$usia',
                 ALAMAT = '$alamat',
                 PENDIDIKAN_TERAKHIR = '$pendidikan',
                 NO_HP = '$nohp',

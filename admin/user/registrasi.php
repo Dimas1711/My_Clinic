@@ -9,7 +9,7 @@ if( isset ($_POST["submit"]) )
         if( tambah($_POST) > 0 )
         {
                 echo "<script>
-                alert('Data Berhasil Ditambahkan');
+                alert('Terima Kasih Sudah Mendaftar, Silahkan tunggu verifikasi dari admin');
                 document.location.href = 'index.php';
                 </script>";
         }
@@ -145,6 +145,10 @@ else
                 <tr>
                         <td>Tanggal Lahir</td>
                         <td class="nama"><input type="date" name="TEMPAT_TANGGAL_LAHIR"></td>
+                </tr>
+                <tr>
+                        <td>Usia</td>
+                        <td class="nama"><input type="text" name="USIA"></td>
                 </tr>
                 <tr>
                         <td>Alamat</td>
