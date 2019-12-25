@@ -462,8 +462,16 @@ function hapus_pengumuman($id){
 
 function hapus_resep($id){
     global $conn;
+    $id_d = $_POST['ID_DETAIL'];
 
-    mysqli_query($conn , "DELETE FROM tb_detail_berobat WHERE ID_DETAIL = '$id'");
+    // $stok = htmlspecialchars($data["STOK"]);
+    // $jumlah = htmlspecialchars($data["JUMLAH"]);
+    // $id_obat = htmlspecialchars($data["ID_OBAT"]);
+    // $total = $stok + $jumlah;
+    mysqli_query($conn , "DELETE FROM tb_detail_berobat WHERE ID_DETAIL = '$id_d'");
+//     $query="UPDATE tb_obat SET STOK = '$total' WHERE ID_OBAT = '$id_obat'";
+//    // echo"DELETE FROM tb_detail_berobat WHERE ID_DETAIL = '$id_d'";
+//    $sql= mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
 ?>

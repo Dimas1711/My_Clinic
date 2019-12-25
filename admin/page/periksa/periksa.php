@@ -70,7 +70,7 @@
 
   <tr>
         <td name="TGL">Tanggal</td>
-        <label for="TGL" name="TGL"><?php echo date("Y/m/d") ;?>     </label>
+        <label for="TGL" name="TGL"><?php echo date("d/m/Y H:i:s") ;?>     </label>
         <input type="hidden" name="TGL" value="<?php echo date("Y/m/d") ;?>">
   </tr> 
 

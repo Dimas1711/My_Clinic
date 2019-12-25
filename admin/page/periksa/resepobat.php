@@ -10,7 +10,7 @@ $id_klinik = $berobat["ID_KLINIK"];
 $kliniknya = query("SELECT * FROM tb_klinik WHERE ID_KLINIK ='$id_klinik'")[0];
 $obat = query("SELECT tb_obat.STOK FROM tb_obat");
 // $detailnya = query("SELECT tb_detail_berobat.ID_DETAIL FROM tb_detail_berobat WHERE ID_DETAIL");
-
+$tanggal = date("d/m/Y H:i:s");
 $table = query("SHOW TABLE STATUS LIKE 'tb_detail_berobat'")[0];
 $detailnya = $table["Auto_increment"];
 
@@ -67,6 +67,19 @@ if (isset ($_POST["update"])){
           echo "<script>alert('Gagal Mengubah Data')</script>";
   }
 }
+if (isset ($_POST["hapus"])){
+  // update_data($_POST);
+  //hapus_resep($_POST);
+  if (hapus_resep($_POST) > 0) {
+    echo "<script>
+    alert('Data Berhasil');
+    document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+    </script>";
+  }  
+  else{
+          echo "<script>alert('Gagal Mengubah Data')</script>";
+  }
+}
 
 ?>
 
@@ -86,7 +99,7 @@ if (isset ($_POST["update"])){
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="text" name="TANGGAL" value="<?= $berobat["TANGGAL_BEROBAT"];?>" readonly>
+    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
     </br>
     </div>
     <div class="form-group">
@@ -173,10 +186,14 @@ if (isset ($_POST["update"])){
     </div>
     <div class="form-group">
     <label for=">NAMA_OBAT"><b>Nama Obat</b></label> <input type="text" name="NAMA_OBAT" id="NAMA_OBAT"  readonly>
-    </br>
+    
     </div>
     <div class="form-group">
-    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH" maxlength="<?php $obat?>" >
+    <input type="number" name="STOK" id="STOK" hidden>
+  
+    </div>
+    <div class="form-group">
+    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH">
     </br>
     </div>
     <div class="form-group">
@@ -224,6 +241,7 @@ if (isset ($_POST["update"])){
                             <th>Id Detail</th>
                                 <th>Id Obat</th>
                                 <th>Nama Obat</th>
+                                <th hidden>Stok</th>
                                 <th>Jumlah</th>
                                 <th>Catatan</th>
                                 <th>Aksi</th>
@@ -236,7 +254,7 @@ if (isset ($_POST["update"])){
                       <?php
                      
                        // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , JUMLAH  , DOSIS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
+                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , STOK , JUMLAH  , DOSIS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -244,12 +262,13 @@ if (isset ($_POST["update"])){
                       <tr><td><?php echo $data ['ID_DETAIL']; ?></td>
                             <td><?php echo $data ['ID_OBAT']; ?></td>
                             <td><?php echo $data ['NAMA_OBAT']; ?></td>
+                            <td hidden><?php echo $data ['STOK']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['DOSIS']; ?></td>
                         <td>
               
-                        <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"];?> "onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
-                      
+                       
+                        <input  type="submit" name="hapus" value="Hapus" id="hapus" class="btn btn-info"> 
                         <!-- <a href="home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id_berobat'"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapusaa</a> -->
                 
                     </td>  
@@ -290,8 +309,8 @@ if (isset ($_POST["update"])){
              document.getElementById("ID_DETAIL").value = this.cells[0].innerHTML;
              document.getElementById("ID_OBAT").value = this.cells[1].innerHTML;
              document.getElementById("NAMA_OBAT").value = this.cells[2].innerHTML;
-             document.getElementById("JUMLAH").value = this.cells[3].innerHTML;
-             document.getElementById("CATATAN").value = this.cells[4].innerHTML;
+             document.getElementById("JUMLAH").value = this.cells[4].innerHTML;
+             document.getElementById("CATATAN").value = this.cells[5].innerHTML;
              button.disabled = false;
              button2.disabled = true;
         };
