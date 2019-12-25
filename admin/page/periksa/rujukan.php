@@ -75,6 +75,11 @@ if (isset ($_POST["submit"]))
                     <input class="form-control" type="text" id="ID_BEROBAT" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly />
       </div>
       <div class="form-group">
+                    <label>Nama Dokter</label><br>
+                    <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
+                    <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
+                </div>
+      <div class="form-group">
                     <label>ID_ANGGOTA</label>
                     <input class="form-control" type="text" id="ID_ANGGOTA" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>"readonly />
       </div>
@@ -102,12 +107,7 @@ if (isset ($_POST["submit"]))
       <div class="form-group">
                     <label>NAMA_KLINIK</label>
                     <input class="form-control" type="text" id="NAMA_KLINIK" name="NAMA_KLINIK"  value="<?= $qklinik ["NAMA_KLINIK"]?>" readonly />
-      </div>
-      <div class="form-group">
-                    <label>Nama Dokter</label><br>
-                    <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
-                    <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
-                </div>     
+      </div>     
       <div class="form-group">
                     <label>DOKTER_TUJUAN</label>
                     <input class="form-control" type="text" id="DOKTER_TUJUAN" name="DOKTER_TUJUAN"   />
