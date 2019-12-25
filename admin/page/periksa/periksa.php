@@ -137,7 +137,7 @@
                 <?php
                     include_once "koneksi.php";
                     
-                    $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
+                    $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , tb_dokter.ID_DOKTER, NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
                     $row = mysqli_fetch_array($result1);
          
                 ?>
@@ -165,7 +165,7 @@
                     <input class="form-control" type="text" name="JA" id="JA" readonly/>
                 </div>
                 <div class="form-group">
-                    <label>Klinik</label><br>
+                    <label>Klinik</label>
                     <input class="form-control" type="text" id="POLI" name="POLI" value="<?= $row["NAMA_KLINIK"]?>" readonly>
                     <input type="hidden" name="ID_KLINIK" value="<?= $row["ID_KLINIK"]?>" >
                 </div>    
