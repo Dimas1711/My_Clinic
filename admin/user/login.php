@@ -119,6 +119,7 @@ if( isset($_POST["cancel"]) )
         
         <p style="font-size:23px;"class="p2"><a class="link" href="lupapass.php">Lupa Password</a> ? </p>
         <a style="margin-left:450px;" href="../index.php">Login Sebagai Admin</a>
+        <a style="margin-left:450px;" href="../index.php">Login Sebagai Dokter</a>
        </form>
        
    </section>
