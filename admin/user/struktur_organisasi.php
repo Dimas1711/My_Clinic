@@ -185,7 +185,7 @@ s0.parentNode.insertBefore(s1,s0);
         
     <section>
       <h2 class="test" style="background:white; font-size: 35px; margin: 30px;">Struktur Organisasi Unit Klinik Pratama Politeknik Negeri Jember </h2>
-      <img src="strukturOrganisasi.png"    alt="gbr rusak" style="margin:auto; display: block;">
+      <img src="struktur.png"  width="1300px"  alt="gbr rusak" style="margin:auto; display: block;">
     
     </section>
 

@@ -146,6 +146,10 @@ if(isset($_POST["batal"]))
                         <td class="nama"><input type="date" name="TEMPAT_TANGGAL_LAHIR" id="ttl" value="<?= $ang["TANGGAL_LAHIR"]?>"></td>
                 </tr>
                 <tr>
+                        <th>Usia</th>
+                        <td class="nama"><input type="text" name="USIA" id="usia" value="<?= $ang["USIA"]?>"></td>
+                </tr>
+                <tr>
                         <th>Alamat</th>
                         <td class="nama"><input type="text" name="ALAMAT" id="alamat" value="<?= $ang["ALAMAT"]?>"></td>
                 </tr>
