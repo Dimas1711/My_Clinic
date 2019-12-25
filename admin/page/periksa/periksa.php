@@ -149,7 +149,7 @@
                 </div>                  
                 <div class="form-group">
                     <label>Nama</label>
-                    <input class="form-control" type="text" id="NAMA" name="NAMA" readonly />
+                    <input class="form-control" type="text" id="NAMA" name="NAMA_ANGGOTA" readonly />
                 </div>
                 <div class="form-group">
                     <label>Id_Anggota</label>
