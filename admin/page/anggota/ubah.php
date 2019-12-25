@@ -94,6 +94,11 @@ if( isset ($_POST["submit"]) )
 
                 </div>
                 <div class="form-group">
+                    <label>Usia</label>
+                    <input class="form-control" name="USIA" type="text" value="<?= $ang["USIA"]?>"/>
+
+                </div>
+                <div class="form-group">
                     <label>Alamat</label>
                     <input class="form-control" name="ALAMAT" value="<?= $ang["ALAMAT"]?>" />
 

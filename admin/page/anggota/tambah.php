@@ -100,7 +100,7 @@
                     <input class="form-control" name="NAMA_ANGGOTA" />
 
                 </div>
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>Jenis Anggota</label>
                     <select class="form-control" name="JENIS_ANGGOTA">
                         <option value="Umum">Umum</option>
@@ -109,24 +109,21 @@
                         <option value="Keluarga Karyawan">Keluarga Karyawan</option>
                     </select>
                 </div>
-                <div class="form-group">
+         
+             
+                <div class="form-group col-lg-6">
                     <label>Jenis Kelamin</label>
                     <select class="form-control" name="JENIS_KELAMIN">
                         <option value="L">Laki Laki</option>
                         <option value="P">Perempuan</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>Tanggal Lahir</label>
                     <input class="form-control" name="TEMPAT_TANGGAL_LAHIR" type="date"/>
 
                 </div>
-                <div class="form-group">
-                    <label>Alamat</label>
-                    <input class="form-control" name="ALAMAT" />
-
-                </div>
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>Pendidikan Terakhir</label>
                     <select class="form-control" name="PENDIDIKAN_TERAKHIR">
                       <option >- - - - - - -</option>
@@ -141,14 +138,24 @@
                         <option value="S3">S3</option>
                     </select>
                 </div>
+                <div class="form-group col-lg-6">
+                    <label>Pekerjaan Atau Prodi</label>
+                    <input class="form-control" type="text" name="PEKERJAAN_PRODI" />
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Usia</label>
+                    <input class="form-control" type="text" name="USIA" />
+                </div>
+                <div class="form-group">
+                    <label>Alamat</label>
+                    <input class="form-control" name="ALAMAT" />
+
+                </div>
                 <div class="form-group">
                     <label>No.Hp</label>
                     <input class="form-control" type="number" name="NO_HP" />
                 </div>
-                <div class="form-group">
-                    <label>Pekerjaan Atau Prodi</label>
-                    <input class="form-control" type="text" name="PEKERJAAN_PRODI" />
-                </div>
+               
                 <div class="form-group">
                     <label>Email</label>
                     <input class="form-control" type="text" name="EMAIL" />

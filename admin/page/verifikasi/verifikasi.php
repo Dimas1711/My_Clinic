@@ -19,6 +19,7 @@ $anggota = query("select * from tb_anggota  ");
                         <th>Jenis Anggota</th>
                         <th>Jenis Kelamin</th>
                         <th>Tanggal Lahir</th>
+                        <th>Usia</th>
                         <th>Alamat</th>
                         <th>NO.HP</th>
                         <th>Pekerjaan/Prodi</th>
@@ -37,6 +38,7 @@ $anggota = query("select * from tb_anggota  ");
                     <td><?= $row["JENIS_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_KELAMIN"];?></td>
                     <td><?= $row["TANGGAL_LAHIR"];?></td>
+                    <td><?= $row["USIA"];?></td>
                     <td><?= $row["ALAMAT"];?></td>
                     <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
