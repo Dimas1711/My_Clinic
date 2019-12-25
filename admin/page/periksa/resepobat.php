@@ -248,7 +248,10 @@ if (isset ($_POST["update"])){
                             <td><?php echo $data ['DOSIS']; ?></td>
                         <td>
               
-                        <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"];?>&ID_BEROBAT=<?= $berobat["ID_BEROBAT"];?> "onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
+                        <a href="?page=resepobat&aksi=hapus&ID_DETAIL=<?= $data["ID_DETAIL"];?> "onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
+                      
+                        <!-- <a href="home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id_berobat'"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapusaa</a> -->
+                
                     </td>  
                         
                         

@@ -16,7 +16,7 @@ if (hapus_resep($id) > 0)
 {
     echo "<script> 
     alert('Data Berhasil Di Hapus');
-    document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id_berobat'&ID_DETAIL='$id'';
+    document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id_berobat'';
     </script>";
     
 }
