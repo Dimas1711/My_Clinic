@@ -137,8 +137,9 @@
                 <?php
                     include_once "koneksi.php";
                     
-                    $result1 = mysqli_query($koneksi, "SELECT * FROM tb_dokter WHERE NAMA_DOKTER='".$_SESSION['username']."'");
+                    $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
                     $row = mysqli_fetch_array($result1);
+         
                 ?>
 
                 <div class="form-group">
@@ -164,16 +165,14 @@
                     <input class="form-control" type="text" name="JA" id="JA" readonly/>
                 </div>
                 <div class="form-group">
-                    <label>Jenis Poli</label>
-                    <select class="form-control" name="POLI">
-                        <option value="K01">poli umum</option>
-                        <option value="K02">poli gigi</option>
-                        <option value="K03">poli kia</option>
-                    </select>
-                </div>
+                    <label>Klinik</label><br>
+                    <input class="form-control" type="text" id="POLI" name="POLI" value="<?= $row["NAMA_KLINIK"]?>" readonly>
+                    <input type="hidden" name="ID_KLINIK" value="<?= $row["ID_KLINIK"]?>" >
+                </div>    
+              
                 
                 <div class="form-group">
-                    <label>Tensi</label>
+                    <label>Tekanan Darah</label>
                     <input class="form-control" type="text" name="TENSI" id="TENSI" />
                 </div>
 
@@ -192,27 +191,25 @@
                     <input class="form-control" type="text" name="DIAGNOSA" id="DIAGNOSA" />
                 </div>
                 
-                <div class="form-group">
-                    <label>Catatan</label>
-                    <input class="form-control" type="text" name="CATATAN" id="CATATAN" />
-                </div>
+               
 
-                <div class="form-group">
-                    <label>SUHU</label>
+                <div class="form-group col-lg-6">
+                    <label>Suhu</label>
                     <input class="form-control" type="text" name="SUHU" id="SUHU" />
+                
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>NADI</label>
                     <input class="form-control" type="text" name="NADI" id="NADI" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>PERNAPASAN</label>
                     <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>GOLONGAN DARAH</label>
                     <select class="form-control" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH">
                         <option value="A">A</option>
@@ -222,15 +219,19 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>BERAT BADAN</label>
                     <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN"/>
                     
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>TINGGI BADAN</label>
                     <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" />
+                </div>
+                <div class="form-group">
+                    <label>Catatan</label>
+                    <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN"> </Textarea>
                 </div>
                
                     </table>

@@ -56,12 +56,12 @@
                     </div>
              
                 </div>
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>STOK</label>
                     <input class="form-control" name="STOK" type="number"/>
 
                 </div>
-                <div class="form-group">
+                <div class="form-group col-lg-6">
                     <label>EXP</label>
                     <input class="form-control" name="EXP" type="date"  />
 

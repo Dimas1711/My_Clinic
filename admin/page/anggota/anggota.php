@@ -21,6 +21,7 @@ $anggota = query("select * from tb_anggota WHERE STATUS = 'Accept'");
                         <th>Jenis Anggota</th>
                         <th>Jenis Kelamin</th>
                         <th>Alamat</th>
+                        <th>Usia</th>
                         <th>NO.HP</th>
                         <th>Pekerjaan/Prodi</th>
                         <th>Email</th>
@@ -36,6 +37,7 @@ $anggota = query("select * from tb_anggota WHERE STATUS = 'Accept'");
                     <td><?= $row["JENIS_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_KELAMIN"];?></td>
                     <td><?= $row["ALAMAT"];?></td>
+                    <td><?= $row["USIA"];?></td>
                     <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
                     <td><?= $row["EMAIL"];?></td>
