@@ -59,7 +59,13 @@ if (isset ($_POST["submit"]))
     <h1>RUJUKAN</h1>
     <hr>
       <form method ="POST">
-    
+      <?php
+                    include_once "koneksi.php";
+                    
+                    $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
+                    $row = mysqli_fetch_array($result1);
+         
+                ?>
       <div class="form-group">
                     <label>ID_RUJUKAN</label>
                     <input class="form-control" type="text" id="ID_RUJUKAN" name="ID_RUJUKAN"  value="<?php echo $hasilkode ?>" readonly />
@@ -96,6 +102,15 @@ if (isset ($_POST["submit"]))
       <div class="form-group">
                     <label>NAMA_KLINIK</label>
                     <input class="form-control" type="text" id="NAMA_KLINIK" name="NAMA_KLINIK"  value="<?= $qklinik ["NAMA_KLINIK"]?>" readonly />
+      </div>
+      <div class="form-group">
+                    <label>Nama Dokter</label><br>
+                    <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
+                    <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
+                </div>     
+      <div class="form-group">
+                    <label>DOKTER_TUJUAN</label>
+                    <input class="form-control" type="text" id="DOKTER_TUJUAN" name="DOKTER_TUJUAN"   />
       </div>
       <div class="form-group">
                     <label>TUJUAN</label>

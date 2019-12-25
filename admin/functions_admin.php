@@ -405,10 +405,12 @@ function input_rujukan($data){
     $id_rujukan = htmlspecialchars($data["ID_RUJUKAN"]);
     $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
     $id_klinik = htmlspecialchars($data["ID_KLINIK"]);
+    $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
+    $dokter_tujuan = htmlspecialchars($data["DOKTER_TUJUAN"]);
     $tujuan = htmlspecialchars($data["TUJUAN"]);   
    
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')");
+    $qu = mysqli_query($conn, "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik' ,'$id_dokter' , '$dokter_tujuan' , '$tujuan')");
     //echo "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')";
     return $qu;
     
