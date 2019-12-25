@@ -42,13 +42,16 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>ID ANGGOTA</th>
+                                <th>NO</th>
                                 <th>NAMA ANGGOTA</th>
+                                <th>NAMA DOKTER</th>
+                                <th>NAMA KLINIK</th>
                                 <th>TANGGAL BEROBAT</th>
                                 <th>ANAMNESA</th>
                                 <th>DIAGNOSA</th>
-                                <th>OBAT</th>
-                                <th>RUJUKAN</th>
+                                <th>ALERGI OBAT</th>
+                                <th>CATATAN</th>
+                                <th>DOKTER TUJUAN</th>
                                 <th>TUJUAN</th>
                             </tr>
                         </thead>
@@ -57,18 +60,23 @@
 
                       <?php
                       $no = 1;
-                          $sql = $koneksi -> query ("SELECT *FROM tb_anggota WHERE STATUS = 'Accept'");
+                          $sql = $koneksi -> query ("SELECT tb_berobat.NAMA_ANGGOTA, tb_dokter.NAMA_DOKTER, tb_klinik.NAMA_KLINIK, tb_berobat.TANGGAL_BEROBAT, tb_berobat.TENSI, tb_berobat.ANAMNESA, tb_berobat.DIAGNOSA, tb_berobat.ALERGI_OBAT, tb_berobat.CATATAN,tb_rujukan.ID_RUJUKAN, tb_rujukan.DOKTER_TUJUAN, tb_rujukan.TUJUAN FROM tb_berobat, tb_rujukan, tb_dokter, tb_klinik WHERE tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER AND tb_klinik.ID_KLINIK = tb_dokter.ID_KLINIK");
            
                           while ($data=$sql ->fetch_assoc()) {
 
                        ?>
                       <tr>
                         <td><?php  echo $no++; ?></td>
-                        <td><?php echo $data ['ID_ANGGOTA']; ?></td>
-                        <td><?php echo $data ['NO_KTP_NIM_NIP']; ?></td>
                         <td><?php echo $data ['NAMA_ANGGOTA']; ?></td>
-                        <td><?php echo $data ['JENIS_ANGGOTA']; ?></td>
-                        <td><?php echo $data ['JENIS_KELAMIN']; ?></td>
+                        <td><?php echo $data ['NAMA_DOKTER']; ?></td>
+                        <td><?php echo $data ['NAMA_KLINIK']; ?></td>
+                        <td><?php echo $data ['TANGGAL_BEROBAT']; ?></td>
+                        <td><?php echo $data ['ANAMNESA']; ?></td>
+                        <td><?php echo $data ['DIAGNOSA']; ?></td>
+                        <td><?php echo $data ['ALERGI_OBAT']; ?></td>
+                        <td><?php echo $data ['CATATAN']; ?></td>
+                        <td><?php echo $data ['DOKTER_TUJUAN']; ?></td>
+                        <td><?php echo $data ['TUJUAN']; ?></td>
                         
                         
                       </tr>
