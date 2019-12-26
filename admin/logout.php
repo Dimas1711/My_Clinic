@@ -1,9 +1,15 @@
 <?php
-   session_start();
-   session_destroy();
-?>
 
-<div align="center">
-  <h2>Anda telah berhasil logout..</h2>
-  Silahkan klik <a href="index.php">disini</a> untuk login kembali
-</div>
+session_start();
+unset($_SESSION["login"]);
+unset($_SESSION['user']);
+unset($_SESSION['email']);
+
+
+
+session_unset();
+session_destroy();
+
+header("location:index.php");
+
+?>

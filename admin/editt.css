@@ -1,0 +1,68 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+header h1
+{
+    background-color: #EBEEEF;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px;
+}
+header img
+{
+    width: 100px;
+    float: left;
+    padding: 5px;
+}
+body
+{
+    background-image: url(back.jpg);
+}
+section {
+    background-color: rgba(238, 235, 235, 0.836);
+    margin: 30px 250px;
+    padding: 50px;
+    font-size: 15px;
+    margin-left: 300px;
+}
+section input {
+    width: 300px;
+    height: 35px;
+}
+section select {
+    width: 300px;
+    height: 35px;
+}
+section h2 {
+    text-align: center;
+    margin-bottom: 50px ;
+    font-size: 50px;
+}
+section button
+{
+    width: 200px;
+    height: 35px;
+}
+.nama   
+{
+    padding-left: 50px;
+}
+
+.foto
+{
+    margin-left: 45px;
+    border-radius: 50%;
+}
+.btnubah
+{
+    padding-top: 50px;
+    padding-left: 40px;
+}
+.btnbatal
+{
+    padding-top: 50px;
+    padding-left: 120px;
+}

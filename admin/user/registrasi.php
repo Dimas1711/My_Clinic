@@ -184,8 +184,11 @@ else
                         <td>Foto</td>
                         <td class="nama"><input type="file" name="FOTO" id="foto" ></td>
                 </tr>
-                <button type="submit" name="submit" class="kirim">Kirim</button>
-                <button class="batal" name="batal">Batal</button>
+                <button type="submit" name="submit" class="btn btn-info">Kirim</button>
+                <button class="btn btn-danger" type="submit" name="batal" >Batal</button>
+                
+        
+
              </table>
              </form>
         </section>

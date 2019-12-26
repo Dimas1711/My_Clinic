@@ -1,0 +1,54 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+body
+{
+    background-image: url(back.jpg);
+}
+/* NAVIGASI */
+
+nav li {
+    margin-left: 30px;
+}
+
+#text {
+    float: right;
+    margin-left: 30px;
+}
+
+div.macam  {
+  margin-top: 150px;
+  margin-left: 100px;
+  margin-right: 300px;
+  margin-bottom:  100px;
+
+}
+.macam h2 {
+  font-size: 50px;
+  margin-right: 70px;
+}
+
+
+
+#lgn
+{
+    text-decoration: none;
+    color: white;
+}
+
+ul.judul
+{
+    padding-left: 200px;
+}
+
+table
+{
+    background-color: #EBEEEF;
+}
+
+td.tes
+{
+    margin-left: 100px;
+}

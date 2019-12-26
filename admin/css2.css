@@ -1,0 +1,86 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+/* NAVIGASI */
+
+nav li {
+    margin-left: 70px;
+}
+
+#text {
+    float: right;
+    margin-left: 30px;
+}
+
+.macam  {
+  margin-top: 150px;
+  margin-left: 290px;
+  margin-right: 600px;
+  margin-bottom:  100px;
+
+}
+.macam h2 {
+  font-size: 35px;
+}
+/* Card */
+.card {
+  width: 300px;
+  height: 300px;
+margin-left: 250px;
+}
+.tips {
+    width: 1000px;
+    height: 200px;
+    background-color: whitesmoke;
+}
+.card-body {
+   width: 900px;
+
+}
+.card-title{
+    border-bottom :5px solid black;
+
+}
+.card-deck {
+    margin-top: 50px;
+  margin-right: 150px;
+  padding-left: 300px;
+
+}
+.card1{
+    margin-top: 60px;
+    width: 200px;
+    height: 250px;
+    margin-right: 80px;
+
+}
+.movie {
+    margin-top: 50px;
+    margin-right: 25px;
+}
+
+/* row */
+.row {
+    margin-top: 10px;
+}
+/* maps */
+
+.maps {
+
+    background-color: rgba(238, 235, 235, 0.836);
+}
+#info{
+
+    background-color: rgba(238, 235, 235, 0.836);
+
+}
+#info h2{
+    border-bottom :2px solid black;
+}
+footer {
+
+    margin-left: 500px;
+}
