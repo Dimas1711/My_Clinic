@@ -35,7 +35,7 @@ if (isset ($_POST["submit"]))
           $nilaikode = substr($datakode[0], 2);
           $kode = (int) $nilaikode;
           $kode = $kode + 1;
-          $hasilkode = "RJ" .str_pad($kode, 5, "0", STR_PAD_LEFT);
+          $hasilkode = "RJ" .str_pad($kode, 4, "0", STR_PAD_LEFT);
   }
   else
   {
