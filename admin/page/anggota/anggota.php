@@ -42,7 +42,7 @@ $anggota = query("select * from tb_anggota WHERE STATUS = 'Accept'");
                     <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
                     <td><?= $row["EMAIL"];?></td>
-                    <td><img src="img/<?=  $row["FOTO"]; ?>" alt="" width="50px"></td>
+                    <td><img src="../img/<?=  $row["FOTO"]; ?>" alt="" width="50px"></td>
                     <td>
                         <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info">Ubah</a>  
                         <a href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>

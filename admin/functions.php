@@ -93,7 +93,7 @@ function upload()
 
 
 
-    move_uploaded_file($tmpname, '../img/' . $namafilebaru);
+    move_uploaded_file($tmpname, 'img/' . $namafilebaru);
 
     return $namafilebaru;
 
