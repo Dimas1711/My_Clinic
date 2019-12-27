@@ -43,7 +43,7 @@ $anggota = query("select * from tb_anggota  ");
                     <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
                     <td><?= $row["EMAIL"];?></td>
-                    <td><img src="img/<?=  $row["FOTO"]; ?>" alt="" width="50px"></td>
+                    <td><img src="../img/<?=  $row["FOTO"]; ?>" alt="" width="50px"></td>
                     <td><?= $row["STATUS"];?></td>
                     <td>
                         <a href="?page=verifikasi&aksi=accept&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info">Accept</a>  
