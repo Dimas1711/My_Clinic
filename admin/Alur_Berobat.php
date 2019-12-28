@@ -25,7 +25,7 @@ session_start();
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
-      <link rel="stylesheet" href="css/struktur.css" />
+      
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
