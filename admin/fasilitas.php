@@ -260,7 +260,7 @@ s0.parentNode.insertBefore(s1,s0);
 
              
                   <div class="jumbotron">
-                <h1 class="display-5">Apa saja sih fasilitas Klinik Pratama Politeknik Negeri Jember?</h1>
+                <h1 style="font-size:35px;">Apa saja sih fasilitas Klinik Pratama Politeknik Negeri Jember?</h1><br>
                 <p class="lead">Gambar di atas merupakan fasilitas-fasilitas yang ada di Klinik Pratama Politeknik Negeri Jember. Untuk selengkapnya silahkan baca dan simak penjelasan di bawah.</p>
                 <hr class="my-4">
                 <p>Klinik Pratama Politeknik Negeri Jember mempunyai tiga fasilitas utama, yaitu Poli Umum, Poli Gigi, dan Poli KIA. </p>
