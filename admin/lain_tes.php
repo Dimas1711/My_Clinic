@@ -20,7 +20,7 @@
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
-      <link rel="stylesheet" href="css/lain_tes.css" />
+      <!-- <link rel="stylesheet" href="css/lain_tes.css" /> -->
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
@@ -180,8 +180,8 @@ s0.parentNode.insertBefore(s1,s0);
   
 
 <section>
-      <h2 >Tata Tertib</h2>
-      <ul style="background:white; margin-left:200px; margin-right: 100px; list-style-type:square;">
+      <h2 style="text-align: center; background-color: white; margin: 50px 500px; font-size: 50px; opacity: 0.8;">Tata Tertib</h2>
+      <ul style=" background-color: rgb(255, 255, 255); margin-left: 150px; margin-right: 150px; padding-left: 150px; line-height:1.7; opacity: 0.9; font-size: 20px;list-style-type:square;">
                 <p><b>Untuk Pengunjung, Penunggu, dan Pasien :</b></p>
                 <li>Waktu berkunjung : Siang pukul 10.00 - 12.00 & Sore pukul 17.00 - 19.00</li>
                 <li>Dilarang merokok diarea rumah sakit</li>
