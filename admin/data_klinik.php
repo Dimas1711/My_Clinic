@@ -20,7 +20,7 @@
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
-      <link rel="stylesheet" href="css/profil.css"/>
+      <!-- <link rel="stylesheet" href="css/profil.css"/> -->
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
@@ -178,8 +178,8 @@ s0.parentNode.insertBefore(s1,s0);
 
   
     <section>
-    <h2 >Data Klinik</h2>
-      <table style="margin-top:30px; margin-left: 300px; margin-right:100px; margin-bottom:200;font-size:25px; line-height:2">
+    <h2 style=" text-align: center; background-color: white; margin: 50px 500px; font-size: 45px; opacity: 0.9; margin-bottom: 30px;" >Data Klinik</h2>
+      <table style=" margin-top: 30px; margin-left: 350px; margin-right: 200px; margin-bottom: 30px; background-color:white; font-size: 24px; opacity: 0.9; line-height:2">
           <tr>
               <td>Nama Klinik</td>
               <td>:</td>
