@@ -25,7 +25,7 @@ session_start();
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
-      <link rel="stylesheet" href="css/struktur.css" />
+      <!-- <link rel="stylesheet" href="css/struktur.css" /> -->
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
@@ -184,7 +184,7 @@ s0.parentNode.insertBefore(s1,s0);
   <!-- /Banner -->
         
     <section>
-      <h2 class="test" style="background:white; font-size: 35px; margin: 30px;">Struktur Organisasi Unit Klinik Pratama Politeknik Negeri Jember </h2>
+      <h2 class="test" style="background:white; font-size: 35px; margin: 30px; text-align:center;">Struktur Organisasi Unit Klinik Pratama Politeknik Negeri Jember </h2>
       <img src="struktur.png"  width="1300px"  alt="gbr rusak" style="margin:auto; display: block;">
     
     </section>
