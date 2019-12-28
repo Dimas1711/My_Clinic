@@ -88,7 +88,7 @@ $pengumuman = query("SELECT * FROM tb_pengumuman")[0];
                             <a class="dropdown-item" href="struktur_organisasi.php">Struktur Organisasi</a>
                             <a class="dropdown-item" href="civitas.php">Civitas</a>
                             <a class="dropdown-item" href="lain_tes.php">Tata Tertib</a>
-                            <a class="dropdown-item" href="#">Alur Pendaftaran</a>
+                            <a class="dropdown-item" href="Alur_Berobat.php">Alur Berobat</a>
                       </div>
                     </li>
                     <li class="nav-item ">
