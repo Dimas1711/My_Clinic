@@ -23,7 +23,7 @@ session_start();
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<!-- <noscript> -->
-      <link rel="stylesheet" href="css/civitas_tes.css" />
+      <!-- <link rel="stylesheet" href="css/civitas_tes.css" /> -->
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/setel.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
@@ -181,8 +181,8 @@ s0.parentNode.insertBefore(s1,s0);
   <!-- /Banner -->
 
   <section >
-      <h2 class="test">Civitas</h2>
-        <table style="font-size:20px; margin-top: 30px; margin-left: 350px; margin-bottom: 100px; opacity: 0.9; line-height:1.7; background-color: rgb(255, 255, 255);" >
+      <h2 style="font-size: 40px; text-align: center; margin: 30px 400px 20px 350px; background-color: rgb(255, 255, 255); opacity: 0.9;    "class="test">Civitas</h2>
+        <table style="font-size:20px; margin-top: 30px; margin-left: 450px; margin-bottom: 100px; opacity: 0.9; line-height:1.8; background-color: rgb(255, 255, 255);" >
           <tr>
             <th class="dokter">Dokter Umum</th>
             <th class="jarak">:</th>
