@@ -72,7 +72,7 @@ session_start();
                             <a class="dropdown-item" href="struktur_organisasi.php">Struktur Organisasi</a>
                             <a class="dropdown-item" href="civitas.php">Civitas</a>
                             <a class="dropdown-item" href="lain_tes.php">Tata Tertib</a>
-                            <a class="dropdown-item" href="#">Alur Pendaftaran</a>
+                            <a class="dropdown-item" href="Alur_Berobat.php">Alur Berobat</a>
                       </div>
                     </li>
                     <li class="nav-item  ">
@@ -184,10 +184,12 @@ s0.parentNode.insertBefore(s1,s0);
   <!-- /Banner -->
         
     <section>
-      <h2 class="test" style="background:white; font-size: 35px; margin: 30px;">Struktur Organisasi Unit Klinik Pratama Politeknik Negeri Jember </h2>
-      <img src="alur berobat mhs.jpg"  width="1300px"  alt="gbr rusak" style="margin:auto; display: block;">
-      <img src="alur berobat karyawan.jpg"  width="1300px"  alt="gbr rusak" style="margin:auto; display: block;">
-      <img src="alur berobat pasien umum.jpg"  width="1300px"  alt="gbr rusak" style="margin:auto; display: block;">
+      <!-- <h2 class="test" style="background:white; font-size: 35px; margin: 30px;">Struktur Organisasi Unit Klinik Pratama Politeknik Negeri Jember </h2> -->
+      <img src="alur berobat mhs.jpg"  width="500px"  alt="gbr rusak" style="margin:auto; display: block;">
+      <br>
+      <img src="alur berobat karyawan.jpg"  width="700px"  alt="gbr rusak" style="margin:auto; display: block;">
+      <br>
+      <img src="alur berobat pasien umum.jpg"  width="700px"  alt="gbr rusak" style="margin:auto; display: block;">
     
     </section>
 
