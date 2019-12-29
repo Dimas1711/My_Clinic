@@ -18,7 +18,7 @@ if (isset ($_POST["submit"]))
    echo "<script>
    alert('Data Berhasil Ditambahkan');
     
-   document.location.href = 'home1.php?page=laporan';
+   document.location.href = 'page/laporan/cetakrujukan.php?page=laporan';
   
       </script>";
      
