@@ -94,6 +94,9 @@
                           else if ($aksi == "resepobat") {
                             include "page/periksa/resepobat.php";
                           }
+                          elseif ($aksi == "cetak") {
+                            include "page/periksa/cetakrujukan.php";
+                          }
                         
                         }
                         elseif ($page == "resepobat") {

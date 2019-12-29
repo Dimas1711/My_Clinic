@@ -1,3 +1,10 @@
+<?php 
+require 'functions_admin.php';
+$id = $_GET['ID_BEROBAT'];
+$rujukan = query("SELECT * tb_rujukan WHERE ID_BEROBAT = '$id'");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +31,7 @@
         <tr>
             <td>Nama</td>
             <td>:</td>
-            <td style="float: left;">Ryan Hartadi</td>
+            <td style="float: left;"><?php $rujukan['ID_KLINIK'];?></td>
         </tr>
         <tr>
             <td>Usia</td>
@@ -58,8 +65,7 @@
             <td colspan="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque placeat quasi voluptatem facilis impedit voluptatibus natus fugiat accusantium provident saepe laudantium et, soluta vitae! Repudiandae fugit neque nesciunt ipsam.</td>
         </tr>
     </table>
-    <p class="mohon">Mohon periksaan dan penanganan lebih lanjut.</p>
-
+    <p class="mohon ">Mohon periksaan dan penanganan lebih lanjut.</p>
     <p class="btk">BTK,</p>
     <p class="dokter">Dokter yang memeriksa</p>
     <p class="nama">(asdklnaslfkj)</p>

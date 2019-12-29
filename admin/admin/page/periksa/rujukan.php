@@ -1,5 +1,5 @@
 <?php
-require 'functions_admin.php';
+require_once 'functions_admin.php';
 $id = $_GET['ID_BEROBAT'];
 $berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
 $id_anggota = $berobat["ID_ANGGOTA"];
@@ -16,10 +16,9 @@ if (isset ($_POST["submit"]))
  // input_rujukan($_POST);
  if (input_rujukan($_POST) > 0) {
    echo "<script>
-   alert('Data Berhasil Ditambahkan');
-    
-   document.location.href = 'page/laporan/cetakrujukan.php?page=laporan';
-  
+   alert('Data Berhasil Ditambahkan');    
+   document.location.href = 'home1.php?page=periksa&aksi=cetak&ID_BEROBAT='$id'';
+
       </script>";
      
  }
@@ -118,6 +117,7 @@ if (isset ($_POST["submit"]))
       </div>
 
     <div class="form-group">
+    <!-- <button type="submit" name="print"><a href="page/periksa/cetakrujukan.php" target="_blank" >Cetak</a></button> -->
     <input type="submit" name ="submit" class="btn btn-info" value="Print"></input>
     </div>
 </div>
