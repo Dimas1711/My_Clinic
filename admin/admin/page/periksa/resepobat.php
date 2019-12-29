@@ -47,11 +47,11 @@ if( isset ($_POST["tambahkan"]) )
        
 }
 
-if( isset ($_POST["cetak"]))
+if( isset ($_POST["simpan"]))
 {
   echo "<script>
                 alert('Data Berhasil');
-                document.location.href = 'page/periksa/cetakresep.php';
+                document.location.href = 'home1.php?page=laporanberobat';
                 </script>";
 }
 
@@ -293,7 +293,7 @@ if (isset ($_POST["hapus"])){
                   </div>
                   </div>
                   <div class=" col-sm-12 col-xs-12">   
-                  <input  type="submit" name="cetak" value="Cetak Resep Obat" class="btn btn-info">
+                  <input  type="submit" name="simpan" value="Simpan" class="btn btn-info">
                   </form>    
                   <script>
                 var table = document.getElementById('table-beli');

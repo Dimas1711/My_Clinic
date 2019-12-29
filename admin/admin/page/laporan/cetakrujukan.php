@@ -65,5 +65,8 @@
     <p class="nama">(asdklnaslfkj)</p>
 
 
+    <script>
+window.print();
+</script>
 </body>
 </html>
