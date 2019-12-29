@@ -10,7 +10,7 @@ $id_klinik = $berobat["ID_KLINIK"];
 $kliniknya = query("SELECT * FROM tb_klinik WHERE ID_KLINIK ='$id_klinik'")[0];
 $obat = query("SELECT tb_obat.STOK FROM tb_obat");
 // $detailnya = query("SELECT tb_detail_berobat.ID_DETAIL FROM tb_detail_berobat WHERE ID_DETAIL");
-$tanggal = date("d/m/Y H:i:s");
+$tanggal = date("Y/m/d");
 $table = query("SHOW TABLE STATUS LIKE 'tb_detail_berobat'")[0];
 $detailnya = $table["Auto_increment"];
 

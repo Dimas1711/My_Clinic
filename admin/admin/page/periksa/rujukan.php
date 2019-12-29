@@ -2,22 +2,24 @@
 require_once 'functions_admin.php';
 $id = $_GET['ID_BEROBAT'];
 $berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
+
 $id_anggota = $berobat["ID_ANGGOTA"];
 $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0];
+
 $id_klinik = $berobat["ID_KLINIK"];
 $qklinik = query("SELECT * FROM tb_klinik  WHERE ID_KLINIK ='$id_klinik'")[0];
+
 $tanggal = date("Y/m/d");
 $carikode = mysqli_query($conn, "SELECT max(ID_RUJUKAN) FROM tb_rujukan") or die(mysqli_error($conn));
+
 $datakode = mysqli_fetch_array($carikode);
-if($datakode)
-{
+if($datakode){
         $nilaikode = substr($datakode[0], 2);
         $kode = (int) $nilaikode;
         $kode = $kode + 1;
         $hasilkode = "RJ" .str_pad($kode, 4, "0", STR_PAD_LEFT);
 }
-else
-{
+else{
         $hasilkode = "RJ0001";
 }
 
@@ -122,7 +124,7 @@ if (isset ($_POST["submit"]))
 
     <div class="form-group">
     <!-- <button type="submit"><a href="page/periksa/cetakrujukan.php?id=<?= $hasilkode;?>" target="_blank" name="submit" >Cetak</a></button> -->
-    <input type="submit" name ="submit" class="btn btn-primary" value="Print" ></input>
+    <button type="submit" name ="submit" class="btn btn-primary" value="Print" target="_blank">Print</button>
     </div>
 </div>
 </div>
