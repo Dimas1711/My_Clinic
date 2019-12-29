@@ -1,19 +1,7 @@
 <?php 
 require '../../functions_admin.php';
-
 $id = $_GET['id'];
-
-$rujukan = query("SELECT * FROM tb_rujukan WHERE ID_RUJUKAN = '$id'")[0];
-
-$berobat = $rujukan["ID_BEROBAT"];
-$berobat2 = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$berobat'")[0];
-
-$anggota = $berobat2["ID_ANGGOTA"];
-$anggota2 = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$anggota'")[0];
-
-$dokter = $berobat2["ID_DOKTER"];
-$dokter2 = query("SELECT * FROM tb_dokter WHERE ID_DOKTER = '$dokter'")[0];
-
+$rujukan = query("SELECT * tb_rujukan WHERE ID_RUJUKAN = '$id'")[0];
 ?>
 
 
@@ -43,24 +31,24 @@ $dokter2 = query("SELECT * FROM tb_dokter WHERE ID_DOKTER = '$dokter'")[0];
         <tr>
             <td>Nama</td>
             <td>:</td>
-            <td style="float: left;"><?= $anggota2['NAMA_ANGGOTA'];?></td>
+            <td style="float: left;"><?php $rujukan['ID_KLINIK'];?></td>
         </tr>
         <tr>
             <td>Usia</td>
             <td>:</td>
-            <td style="float: left; margin-right:10px"><?= $anggota2['USIA'];?></td>
+            <td style="float: left; margin-right:10px">20</td>
             <td style="float: left;">Tahun</td>
         </tr>
         <tr>
             <td>Keluhan</td>
             <td>:</td>
-            <td style="float: left;"><?= $berobat2['ANAMNESA'];?></td>
+            <td style="float: left;">loro</td>
         </tr>
         <tr>
             <td rowspan="2">Pemeriksaan Fisik</td>
             <td rowspan="2">:</td>
             <td style="float: left; margin-right:10px">TD</td>
-            <td style="float: left; margin-right:10px"><?= $berobat2['TENSI']?></td>
+            <td style="float: left; margin-right:10px">120/90</td>
             <td style="float: left;">mmHg,</td>
             <td style="float: left; margin-right:10px">RR</td>
             <td style="float: left; margin-right:10px">20</td>
@@ -80,7 +68,7 @@ $dokter2 = query("SELECT * FROM tb_dokter WHERE ID_DOKTER = '$dokter'")[0];
     <p class="mohon ">Mohon periksaan dan penanganan lebih lanjut.</p>
     <p class="btk">BTK,</p>
     <p class="dokter">Dokter yang memeriksa</p>
-    <p class="nama">(<?= $dokter2['NAMA_DOKTER'];?>)</p>
+    <p class="nama">(asdklnaslfkj)</p>
 
 
     <script>

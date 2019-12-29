@@ -30,6 +30,7 @@ require 'functions_admin.php';
                                 <th>Id Berobat</th>
                                 <th>Id Klinik</th>
                                 <th>Tujuan</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
 
@@ -48,6 +49,7 @@ require 'functions_admin.php';
                         <td><?php echo $data ['ID_BEROBAT']; ?></td>
                         <td><?php echo $data ['ID_KLINIK']; ?></td>
                         <td><?php echo $data ['TUJUAN']; ?></td>
+                         
                         
                         
                       </tr>

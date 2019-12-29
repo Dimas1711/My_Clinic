@@ -7,7 +7,19 @@ $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0
 $id_klinik = $berobat["ID_KLINIK"];
 $qklinik = query("SELECT * FROM tb_klinik  WHERE ID_KLINIK ='$id_klinik'")[0];
 
-
+$carikode = mysqli_query($conn, "SELECT max(ID_RUJUKAN) FROM tb_rujukan") or die(mysqli_error($conn));
+$datakode = mysqli_fetch_array($carikode);
+if($datakode)
+{
+        $nilaikode = substr($datakode[0], 2);
+        $kode = (int) $nilaikode;
+        $kode = $kode + 1;
+        $hasilkode = "RJ" .str_pad($kode, 4, "0", STR_PAD_LEFT);
+}
+else
+{
+        $hasilkode = "RJ0001";
+}
 
 if (isset ($_POST["submit"])) 
 {
@@ -17,8 +29,7 @@ if (isset ($_POST["submit"]))
  if (input_rujukan($_POST) > 0) {
    echo "<script>
    alert('Data Berhasil Ditambahkan');    
-   document.location.href = 'home1.php?page=periksa&aksi=cetak&ID_BEROBAT='$id'';
-
+   document.location.href = 'page/periksa/cetakrujukan.php?id=$hasilkode';
       </script>";
      
  }
@@ -27,19 +38,7 @@ if (isset ($_POST["submit"]))
  }
 }
 
-  $carikode = mysqli_query($conn, "SELECT max(ID_RUJUKAN) FROM tb_rujukan") or die(mysqli_error($conn));
-  $datakode = mysqli_fetch_array($carikode);
-  if($datakode)
-  {
-          $nilaikode = substr($datakode[0], 2);
-          $kode = (int) $nilaikode;
-          $kode = $kode + 1;
-          $hasilkode = "RJ" .str_pad($kode, 4, "0", STR_PAD_LEFT);
-  }
-  else
-  {
-          $hasilkode = "RJ0001";
-  }
+ 
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +60,7 @@ if (isset ($_POST["submit"]))
       <?php
                     include_once "koneksi.php";
                     
-                    $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
+                    $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , ID_DOKTER , NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
                     $row = mysqli_fetch_array($result1);
          
                 ?>
@@ -76,7 +75,7 @@ if (isset ($_POST["submit"]))
       <div class="form-group">
                     <label>Nama Dokter</label><br>
                     <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
-                    <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
+                    <input type="text" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>
       <div class="form-group">
                     <label>ID_ANGGOTA</label>
@@ -117,7 +116,7 @@ if (isset ($_POST["submit"]))
       </div>
 
     <div class="form-group">
-    <!-- <button type="submit" name="print"><a href="page/periksa/cetakrujukan.php" target="_blank" >Cetak</a></button> -->
+    <!-- <button type="submit"><a href="page/periksa/cetakrujukan.php?id=<?= $hasilkode;?>" target="_blank" name="submit" >Cetak</a></button> -->
     <input type="submit" name ="submit" class="btn btn-info" value="Print"></input>
     </div>
 </div>
