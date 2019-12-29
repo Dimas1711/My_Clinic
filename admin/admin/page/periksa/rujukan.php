@@ -117,7 +117,7 @@ if (isset ($_POST["submit"]))
       </div>
       <div class="form-group">
                     <label>TUJUAN</label>
-                    <input class="form-control" type="text" id="TUJUAN" name="TUJUAN"/>
+                    <input class="form-control" type="text" id="TUJUAN" name="TUJUAN" important/>
       </div>
 
     <div class="form-group">
