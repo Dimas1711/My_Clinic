@@ -122,7 +122,7 @@ if (isset ($_POST["submit"]))
 
     <div class="form-group">
     <!-- <button type="submit"><a href="page/periksa/cetakrujukan.php?id=<?= $hasilkode;?>" target="_blank" name="submit" >Cetak</a></button> -->
-    <input type="submit" name ="submit" class="btn btn-info" value="Print" target="_blank"></input>
+    <input type="submit" name ="submit" class="btn btn-primary" value="Print" ></input>
     </div>
 </div>
 </div>
