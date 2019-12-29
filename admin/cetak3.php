@@ -21,7 +21,10 @@ $id = $_SESSION['user'];
 //query berdasarkan id
 $ang = query("SELECT * FROM tb_anggota WHERE NAMA_ANGGOTA = '$id'")[0];
 	?>
-            <table border ="1">
+            <table border="1">
+                <tr>
+                        <th colspan="2">UNIT POLIKLINIK<br>POLITEKNIK NEGERI<br>JEMBER</th>
+                </tr>
                 <tr>
                         <th colspan="2">Kartu Berobat</th>
                 </tr>     

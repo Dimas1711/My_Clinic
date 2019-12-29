@@ -83,7 +83,7 @@ if(isset($_POST["batal"]))
         <h2 class="edit"> Kartu Berobat</h2>
             <table style="margin-left: 200px; background-color: rgba(250, 250, 23, 0.911); position: relative;" border ="1" >
                 <tr>
-                        <th colspan="2">Kartu Berobat</th>
+                        <th colspan="2"><b>Kartu Berobat<b></th>
                 </tr>     
                 <tr>
                         <td class="judul">ID Anggota</td>
