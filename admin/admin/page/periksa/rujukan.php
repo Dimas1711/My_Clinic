@@ -6,7 +6,7 @@ $id_anggota = $berobat["ID_ANGGOTA"];
 $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0];
 $id_klinik = $berobat["ID_KLINIK"];
 $qklinik = query("SELECT * FROM tb_klinik  WHERE ID_KLINIK ='$id_klinik'")[0];
-
+$tanggal = date("Y/m/d");
 $carikode = mysqli_query($conn, "SELECT max(ID_RUJUKAN) FROM tb_rujukan") or die(mysqli_error($conn));
 $datakode = mysqli_fetch_array($carikode);
 if($datakode)
@@ -30,8 +30,9 @@ if (isset ($_POST["submit"]))
    echo "<script>
    alert('Data Berhasil Ditambahkan');    
    document.location.href = 'page/periksa/cetakrujukan.php?id=$hasilkode';
+   
       </script>";
-     
+      
  }
  else {
   echo "<script>alert('Gagal Menambahkan Data')</script>";
@@ -64,6 +65,10 @@ if (isset ($_POST["submit"]))
                     $row = mysqli_fetch_array($result1);
          
                 ?>
+                 <div class="form-group">
+    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
+    </br>
+    </div>
       <div class="form-group">
                     <label>ID_RUJUKAN</label>
                     <input class="form-control" type="text" id="ID_RUJUKAN" name="ID_RUJUKAN"  value="<?php echo $hasilkode ?>" readonly />
@@ -75,7 +80,7 @@ if (isset ($_POST["submit"]))
       <div class="form-group">
                     <label>Nama Dokter</label><br>
                     <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
-                    <input type="text" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
+                    <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>
       <div class="form-group">
                     <label>ID_ANGGOTA</label>
@@ -117,7 +122,7 @@ if (isset ($_POST["submit"]))
 
     <div class="form-group">
     <!-- <button type="submit"><a href="page/periksa/cetakrujukan.php?id=<?= $hasilkode;?>" target="_blank" name="submit" >Cetak</a></button> -->
-    <input type="submit" name ="submit" class="btn btn-info" value="Print"></input>
+    <input type="submit" name ="submit" class="btn btn-info" value="Print" target="_blank"></input>
     </div>
 </div>
 </div>
