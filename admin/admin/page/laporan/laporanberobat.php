@@ -28,13 +28,10 @@ if(!isset($_SESSION["status"])){
 
             <div id="myOverlay" class="overlay">
               <div class="overlay-content">
-           <form action="" method="POST">
-           <input type="text" placeholder="Cari.." name="cari">
-           <button type="submit" name="btn_cari"><i class="fa fa-search"></i></button>
            <?php
              $sql = $koneksi -> query ("SELECT tb_anggota.NAMA_ANGGOTA FROM tb_anggota, tb_rujukan, tb_berobat WHERE tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA AND tb_berobat.ID_BEROBAT = tb_rujukan.ID_BEROBAT")
             ?>
-           </form>
+           
               </div>
             </div>
            
@@ -64,14 +61,13 @@ if(!isset($_SESSION["status"])){
                     <tbody>
 
                       <?php
-                      if (isset($_POST['btn_cari'])){
+                     
                           $sql = $koneksi -> query ("SELECT tb_berobat.ID_BEROBAT, tb_anggota.NAMA_ANGGOTA, tb_dokter.NAMA_DOKTER, tb_klinik.NAMA_KLINIK, tb_berobat.ANAMNESA, tb_berobat.DIAGNOSA, tb_berobat.ALERGI_OBAT, tb_obat.NAMA_OBAT ,tb_berobat.TANGGAL_BEROBAT FROM tb_berobat, tb_anggota, tb_dokter, tb_detail_berobat, tb_obat, tb_klinik WHERE 
                           tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA 
                           AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER 
                           AND tb_berobat.ID_BEROBAT = tb_detail_berobat.ID_BEROBAT 
                           AND tb_obat.ID_OBAT = tb_detail_berobat.ID_OBAT 
-                          AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK 
-                          AND NAMA_ANGGOTA='".$_POST['cari']."'") or die(mysqli_error($koneksi));
+                          AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -91,7 +87,7 @@ if(!isset($_SESSION["status"])){
 
                       </tr>
 
-                      <?php } }?>
+                      <?php  }?>
                     </tbody>
                     </table>
 
