@@ -1,12 +1,20 @@
 <?php
           require 'functions_admin.php';
-
+       
           //cek tombol sudah ditekan atau belum
           if( isset ($_POST["submit"]) )
           {
-           
+                $pass = $_POST["PASSWORD"];
+                $ktp = $_POST["NO_KTP_NIM_NIP"];
+                $nama = $_POST["NAMA_ADMIN"];
+                $ttl = $_POST["TEMPAT_TANGGAL_LAHIR"];
+                $alamat = $_POST["ALAMAT"];
+                $no = $_POST["NO_HP"];
+                if (empty($pass && $ktp && $nama && $ttl && $alamat && $no)) {
+                    echo"<script> alert ('Field tidak boleh kosong')</script>";
+                }
                   //cek data berhasil ditambah?
-                  if( tambahadmin($_POST) > 0 )
+                elseif( tambahadmin($_POST) > 0 )
                   {
                           echo "<script>
                           alert('Data Berhasil Ditambahkan');
@@ -37,7 +45,6 @@
           }
 
 ?>
-
 
 
 <div class="panel panel-default">
