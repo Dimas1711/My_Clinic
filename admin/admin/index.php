@@ -47,6 +47,8 @@
                                         </div>
 
                                     <input type="submit" name="login" value="Login Now" class="btn btn-primary">
+                                    <br>
+                                    <a style="margin-left:190px;" href="../index.php">Login Sebagai User</a>
                                     <?php 
 	                                    /*if(isset($_GET['pesan'])){
                                         if($_GET['pesan'] == "gagal"){
