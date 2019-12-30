@@ -18,7 +18,11 @@ if(isset($_POST["login"])){
     $_SESSION['user'] = $row ["NAMA_ANGGOTA"];
     $_SESSION['email'] = $row ["EMAIL"];
     $_SESSION['id'] = $row["ID_ANGGOTA"];
-    header("location: index.php");
+    echo "<script>
+                alert('Berhasil Login');
+                document.location.href = 'index.php';
+          </script>";
+    //header("location: index.php");
     
   }
   else
@@ -109,8 +113,17 @@ if( isset($_POST["cancel"]) )
             <th class="pass">PASSWORD</th>
             <td class="pass"><input type="password" name="PASSWORD" id="password"></td>
           </tr>
+
+          
         </table>
-        
+
+        <?php if(isset($_GET["gagal"])){?>
+        echo "<script>
+                alert('ID anggota dan password tidak sesuai');
+                document.location.href = 'index.php';
+                </script>";
+
+        <?php }?>
         <button style="margin-left:200px;" type="submit" name="login" class="btn btn-info" style="margin-left:200px; margin-right:20px;">Login</button>  
         <button type="submit" name="cancel"class="btn btn-danger">Cancel</button>
        

@@ -19,12 +19,6 @@ if( isset ($_POST["submit"]) )
         }
        
 }
-if(isset($_POST["batal"]))
-{
-        header("Location: index.php");
-        exit;
-}
-
 
 
 $carikode = mysqli_query($conn, "SELECT max(ID_ANGGOTA) FROM tb_anggota") or die(mysqli_error($conn));
@@ -110,20 +104,20 @@ else
                 </tr>
                 <tr>
                         <td>Password</td>
-                        <td class="nama"><input type="password" name="PASSWORD" id="password" ></td>
+                        <td class="nama"><input type="password" name="PASSWORD" id="password" required></td>
                 </tr>
                 <tr>
                         <td>No.KTP/NIM/NIP</td>
-                        <td class="nama"><input type="text" name="NO_KTP_NIM_NIP" id="ktp"></td>
+                        <td class="nama"><input type="text" name="NO_KTP_NIM_NIP" id="ktp" required></td>
                 </tr>
                 <tr>
                         <td>Nama Anggota</td>
-                        <td class="nama"><input type="text" name="NAMA_ANGGOTA" id="nama" ></td>
+                        <td class="nama"><input type="text" name="NAMA_ANGGOTA" id="nama" required></td>
                 </tr>
                 <tr>
                         <td>Jenis Anggota</td>
                         <td class="nama">
-                                <select name="JENIS_ANGGOTA" id="jenis" >
+                                <select name="JENIS_ANGGOTA" id="jenis" required>
                                         <option value="">Silahkan Pilih</option>
                                         <option value="umum">Umum</option>
                                         <option value="mahasiswa">Mahasiswa</option>
@@ -135,7 +129,7 @@ else
                 <tr>
                         <td>Jenis Kelamin</td>
                         <td class="nama">
-                        <select name="JENIS_KELAMIN" id="jenis_kelamin" >
+                        <select name="JENIS_KELAMIN" id="jenis_kelamin" required>
                                 <option value="">Silahkan Pilih</option>
                                 <option value="l">L</option>
                                 <option value="p">P</option>
@@ -144,20 +138,20 @@ else
                 </tr>
                 <tr>
                         <td>Tanggal Lahir</td>
-                        <td class="nama"><input type="date" name="TEMPAT_TANGGAL_LAHIR"></td>
+                        <td class="nama"><input type="date" name="TEMPAT_TANGGAL_LAHIR" required></td>
                 </tr>
                 <tr>
                         <td>Usia</td>
-                        <td class="nama"><input type="text" name="USIA"></td>
+                        <td class="nama"><input type="text" name="USIA" required></td>
                 </tr>
                 <tr>
                         <td>Alamat</td>
-                        <td class="nama"><input type="text" name="ALAMAT" id="alamat" ></td>
+                        <td class="nama"><input type="text" name="ALAMAT" id="alamat" required></td>
                 </tr>
                 <tr>
                         <td>Pendidikan Terakhir</td>
                         <td class="nama">
-                        <select name="PENDIDIKAN_TERAKHIR" id="pendidikan" >
+                        <select name="PENDIDIKAN_TERAKHIR" id="pendidikan" required>
                                 <option value="">Silahkan Pilih</option>
                                 <option value="SD">SD</option>
                                 <option value="SMP">SMP</option>
@@ -170,22 +164,22 @@ else
                 </tr>
                 <tr>
                         <td>NO.HP</td>
-                        <td class="nama"><input type="text" name="NO_HP" id="nohp" ></td>
+                        <td class="nama"><input type="text" name="NO_HP" id="nohp" required></td>
                 </tr>
                 <tr>
                         <td>Pekerjaan / Prodi</td>
-                        <td class="nama"><input type="text" name="PEKERJAAN_PRODI" id="pekerjaan" ></td>
+                        <td class="nama"><input type="text" name="PEKERJAAN_PRODI" id="pekerjaan" required></td>
                 </tr>
                 <tr>
                         <td>Email</td>
-                        <td class="nama"><input type="text" name="EMAIL" id="email" placeholder="contoh@gmail.com"></td>
+                        <td class="nama"><input type="email" name="EMAIL" id="email" placeholder="contoh@gmail.com" required></td>
                 </tr>
                 <tr>
                         <td>Foto</td>
                         <td class="nama"><input type="file" name="FOTO" id="foto" ></td>
                 </tr>
                 <button type="submit" name="submit" class="kirim">Kirim</button>
-                <button class="batal" name="batal">Batal</button>
+                <button class="batal" name="batal" onclick="window.location.href='index.php'">Batal</button>
              </table>
              </form>
         </section>
