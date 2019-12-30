@@ -118,7 +118,7 @@ if( isset($_POST["cancel"]) )
         <p style="margin-top:30px; text-align:center; font-size:23px;">Belum Punya Akun ? <a class="link" href="registrasi.php">Daftar Sekarang</a></p>
         
         <p style="font-size:23px;"class="p2"><a class="link" href="lupapass.php">Lupa Password</a> ? </p>
-        <a style="margin-left:450px;" href="admin/index.php">Login Sebagai Admin / Dokter</a>
+        <a style="margin-left:350px;" href="admin/index.php">Login Sebagai Admin / Dokter</a>
         
        </form>
        

@@ -19,7 +19,22 @@
         
         if (isset ($_POST["resep"]))
         {
-            if (input_periksa($_POST) > 0){
+            $td = $_POST["TENSI"];
+            $anamnesa = $_POST["ANAMNESA"];
+            $alergi = $_POST["ALERGI"];
+            $diagnosa = $_POST["DIAGNOSA"];
+            $suhu = $_POST["SUHU"];
+            $nadi = $_POST["NADI"];
+            $pernapasan = $_POST["PERNAPASAN"];
+            $berat = $_POST["BERAT_BADAN"];
+            $tinggi = $_POST["TINGGI_BADAN"];
+           
+            if (empty($td && $anamnesa && $alergi && $diagnosa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
+                echo "<script>
+                alert('Field Tidak Boleh Kosong');
+                </script>"; 
+            }
+            else if (input_periksa($_POST) > 0){
                 echo "<script>
                 alert('Data Berhasil Ditambahkan');
                 document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT=$hasilkode';
@@ -31,8 +46,24 @@
             }
         }
        elseif (isset ($_POST["rujukan"]))
-        {
-            if (input_periksa($_POST) > 0){
+        { 
+            $td = $_POST["TENSI"];
+            $anamnesa = $_POST["ANAMNESA"];
+         
+            $diagnosa = $_POST["DIAGNOSA"];
+            $suhu = $_POST["SUHU"];
+            $nadi = $_POST["NADI"];
+            $pernapasan = $_POST["PERNAPASAN"];
+            $berat = $_POST["BERAT_BADAN"];
+            $tinggi = $_POST["TINGGI_BADAN"];
+           
+            if (empty($td && $anamnesa && $diagnosa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
+                echo "<script>
+                alert('Field Tidak Boleh Kosong');
+                </script>"; 
+            }
+
+            else if (input_periksa($_POST) > 0){
                 echo "<script>
                 alert('Data Berhasil Ditambahkan');
                 document.location.href = 'home1.php?page=periksa&aksi=input&ID_BEROBAT=$hasilkode';

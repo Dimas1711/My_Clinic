@@ -26,9 +26,19 @@ else{
 if (isset ($_POST["submit"])) 
 {
 
+  $dokter = $_POST["DOKTER_TUJUAN"];
+  $tujuan = $_POST["TUJUAN"];
+
+  if (empty($dokter && $tujuan)) {
+    echo "<script>
+    alert('Field Tidak Boleh Kosong');    
+    
+       </script>";
+       
+  }
 
  // input_rujukan($_POST);
- if (input_rujukan($_POST) > 0) {
+ else if(input_rujukan($_POST) > 0) {
    echo "<script>
    alert('Data Berhasil Ditambahkan');    
    document.location.href = 'page/periksa/cetakrujukan.php?id=$hasilkode';
