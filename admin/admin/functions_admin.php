@@ -311,7 +311,7 @@ function tambahobat($data)
         
 
         $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$stok','$exp')");
-
+        
         return $qu;
 }
 
