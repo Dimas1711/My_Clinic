@@ -4,9 +4,16 @@
           //cek tombol sudah ditekan atau belum
           if( isset ($_POST["submit"]) )
           {
-           
+                $exp = $_POST["EXP"];
+                $stok = $_POST["STOK"];
+                $nama = $_POST["NAMA_OBAT"];
                   //cek data berhasil ditambah?
-                  if( tambahobat($_POST) > 0 )
+                  if (empty($exp && $stok && $nama)) {
+                    echo "<script>
+                    alert('Fields tidak boleh kosong');
+                    </script>";
+                  }
+                  elseif( tambahobat($_POST) > 0 )
                   {
                           echo "<script>
                           alert('Data Berhasil Ditambahkan');

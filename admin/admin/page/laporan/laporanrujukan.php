@@ -28,8 +28,12 @@ require 'functions_admin.php';
                               
                                 <th>Id Rujukan</th>
                                 <th>Id Berobat</th>
-                                <th>Id Klinik</th>
+                                <th>Nama Anggota</th>
+                                <th>Nama Dokter</th>
+                                <th>Diagnosa</th>
+                                <th>Dokter Tujuan</th>
                                 <th>Tujuan</th>
+                                <th>Tanggal Rujukan</th>
                             </tr>
                         </thead>
 
@@ -37,7 +41,11 @@ require 'functions_admin.php';
 
                       <?php
                      
-                          $sql = $koneksi -> query ("SELECT *FROM tb_rujukan");
+                          $sql = $koneksi -> query ("SELECT tb_rujukan.ID_RUJUKAN, tb_berobat.ID_BEROBAT, tb_anggota.NAMA_ANGGOTA, tb_dokter.NAMA_DOKTER, tb_berobat.DIAGNOSA, tb_rujukan.DOKTER_TUJUAN, tb_rujukan.TUJUAN, tb_rujukan.TANGGAL_RUJUKAN
+                          FROM tb_rujukan, tb_dokter, tb_anggota, tb_berobat
+                          WHERE tb_berobat.ID_BEROBAT = tb_rujukan.ID_BEROBAT
+                          AND tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA
+                          AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -46,8 +54,13 @@ require 'functions_admin.php';
                         
                         <td><?php echo $data ['ID_RUJUKAN']; ?></td>
                         <td><?php echo $data ['ID_BEROBAT']; ?></td>
-                        <td><?php echo $data ['ID_KLINIK']; ?></td>
+                        <td><?php echo $data ['NAMA_ANGGOTA']; ?></td>
+                        <td><?php echo $data ['NAMA_DOKTER']; ?></td>
+                        <td><?php echo $data ['DIAGNOSA']; ?></td>
+                        <td><?php echo $data ['DOKTER_TUJUAN']; ?></td>
                         <td><?php echo $data ['TUJUAN']; ?></td>
+                        <td><?php echo $data ['TANGGAL_RUJUKAN']; ?></td>
+                         
                         
                         
                       </tr>

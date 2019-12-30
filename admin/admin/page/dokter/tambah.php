@@ -4,9 +4,20 @@
           //cek tombol sudah ditekan atau belum
           if( isset ($_POST["submit"]) )
           {
-           
+            $pass = $_POST["PASSWORD"];
+                $ktp = $_POST["NO_KTP_NIM_NIP"];
+                $nama = $_POST["NAMA_DOKTER"];
+                $ttl = $_POST["TEMPAT_TANGGAL_LAHIR"];
+                $alamat = $_POST["ALAMAT"];
+                $no = $_POST["NO_HP"];
+
+                if (empty($pass && $ktp && $nama && $ttl && $alamat && $no)) {
+                    echo "<script>
+                          alert('Fields Tidak Boleh Kosong');
+                          </script>";
+                }
                   //cek data berhasil ditambah?
-                  if( tambahdokter($_POST) > 0 )
+                 elseif( tambahdokter($_POST) > 0 )
                   {
                           echo "<script>
                           alert('Data Berhasil Ditambahkan');

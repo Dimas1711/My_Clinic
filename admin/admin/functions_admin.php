@@ -311,7 +311,7 @@ function tambahobat($data)
         
 
         $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$stok','$exp')");
-
+        
         return $qu;
 }
 
@@ -408,10 +408,11 @@ function input_rujukan($data){
     $id_klinik = htmlspecialchars($data["ID_KLINIK"]);
     $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
     $dokter_tujuan = htmlspecialchars($data["DOKTER_TUJUAN"]);
-    $tujuan = htmlspecialchars($data["TUJUAN"]);   
+    $tujuan = htmlspecialchars($data["TUJUAN"]);
+    $tanggal = htmlspecialchars($data["TANGGAL"]);   
    
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik' ,'$id_dokter' , '$dokter_tujuan' , '$tujuan')");
+    $qu = mysqli_query($conn, "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik' ,'$id_dokter' , '$dokter_tujuan' , '$tujuan','$tanggal')");
     //echo "INSERT INTO tb_rujukan VALUES ('$id_rujukan', '$id_berobat', '$id_klinik'  , '$tujuan')";
     return $qu;
     

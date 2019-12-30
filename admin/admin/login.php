@@ -43,8 +43,9 @@
                                         </div>
 
                                     <input type="submit" name="login" value="Login Now" class="btn btn-primary">
+                                   
                                     <hr />
-
+                                  
                                     </form>
                             </div>
 

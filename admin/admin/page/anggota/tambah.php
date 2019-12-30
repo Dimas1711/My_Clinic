@@ -4,9 +4,21 @@
           //cek tombol sudah ditekan atau belum
           if( isset ($_POST["submit"]) )
           {
-           
+                $pass = $_POST["PASSWORD"];
+                $ktp = $_POST["NO_KTP_NIM_NIP"];
+                $nama = $_POST["NAMA_ANGGOTA"];
+                $ttl = $_POST["TEMPAT_TANGGAL_LAHIR"];
+                $alamat = $_POST["ALAMAT"];
+                $pekerjaan = $_POST["PEKERJAAN_PRODI"];
+                $usia = $_POST["USIA"];
+                $alamat = $_POST["ALAMAT"];
+                $no = $_POST["NO_HP"];
+
+                if (empty($pass && $ktp && $nama && $ttl && $alamat && $pekerjaan && $usia && $alamat && $no)) {
+                    echo"<script> alert ('Field tidak boleh kosong')</script>";
+                }
                   //cek data berhasil ditambah?
-                  if( tambah($_POST) > 0 )
+                 elseif( tambah($_POST) > 0 )
                   {
                           echo "<script>
                           alert('Data Berhasil Ditambahkan');
@@ -158,7 +170,7 @@
                
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="text" name="EMAIL" />
+                    <input class="form-control" type="email" name="EMAIL" />
                 </div>
                 <div class="form-group">
                     <label>Foto</label>

@@ -62,9 +62,6 @@
                     <li>
                         <a  href="?page=laporanberobat"> Laporan Berobat</a>
                     </li>
-                    <li>
-                        <a  href="?page=laporananggota"> Laporan Anggota</a>
-                    </li>
                 </ul>
 
             </div>
@@ -93,6 +90,9 @@
                           }
                           else if ($aksi == "resepobat") {
                             include "page/periksa/resepobat.php";
+                          }
+                          elseif ($aksi == "cetak") {
+                            include "page/periksa/cetakrujukan.php";
                           }
                         
                         }
@@ -123,11 +123,6 @@
                         elseif ($page == "laporanberobat") {
                           if ($aksi == "") {
                             include "page/laporan/laporanberobat.php";
-                          }
-                        }
-                        elseif ($page == "laporananggota") {
-                          if ($aksi == "") {
-                            include "page/laporan/laporananggota.php";
                           }
                         }
                         

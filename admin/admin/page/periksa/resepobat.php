@@ -10,7 +10,7 @@ $id_klinik = $berobat["ID_KLINIK"];
 $kliniknya = query("SELECT * FROM tb_klinik WHERE ID_KLINIK ='$id_klinik'")[0];
 $obat = query("SELECT tb_obat.STOK FROM tb_obat");
 // $detailnya = query("SELECT tb_detail_berobat.ID_DETAIL FROM tb_detail_berobat WHERE ID_DETAIL");
-$tanggal = date("d/m/Y H:i:s");
+$tanggal = date("Y/m/d");
 $table = query("SHOW TABLE STATUS LIKE 'tb_detail_berobat'")[0];
 $detailnya = $table["Auto_increment"];
 
@@ -24,17 +24,17 @@ $detailnya = $table["Auto_increment"];
 if( isset ($_POST["tambahkan"]) )
 {
         //cek data berhasil ditambah?
-      // input_detail($_POST);
-      // ($detail_berobat > $obat);
-      // if ($detail_berobat > $obat) 
-      // {
-      //  echo "<script> 
-      //  alert('Stok Tidak Mencukupi');
-      //  </script>";
-      // } 
-      
-       if( input_detail($_POST) > 0 )
+    $nama = $_POST["NAMA_OBAT"];
+    $jumlah = $_POST["JUMLAH"];
+    $dosis = $_POST["CATATAN"];
+      if (empty($nama && $jumlah && $dosis)) {
+        echo "<script>
+        alert('Fields Tidak Boleh Kosong');
+        </script>";
+      }
+       else if( input_detail($_POST) > 0 )
         {
+
             echo "<script>
                 alert('Data Berhasil');
                 document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
@@ -57,15 +57,23 @@ if( isset ($_POST["simpan"]))
 
 if (isset ($_POST["update"])){
   // update_data($_POST);
-  if (update_data($_POST) > 0) {
-    echo "<script>
-    alert('Data Berhasil');
-    document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
-    </script>";
-  }  
-  else{
+    $nama = $_POST["NAMA_OBAT"];
+    $jumlah = $_POST["JUMLAH"];
+    $dosis = $_POST["CATATAN"];
+      if (empty($nama && $jumlah && $dosis)) {
+        echo "<script>
+        alert('Fields Tidak Boleh Kosong');
+        </script>";
+      }
+      else if (update_data($_POST) > 0) {
+        echo "<script>
+        alert('Data Berhasil');
+        document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+        </script>";
+      }  
+      else{
           echo "<script>alert('Gagal Mengubah Data')</script>";
-  }
+      }
 }
 if (isset ($_POST["hapus"])){
   // update_data($_POST);
@@ -181,12 +189,8 @@ if (isset ($_POST["hapus"])){
     </br>
     </div>
     <div class="form-group">
-    <label for=">ID_OBAT"><b>Id Obat</b></label> <input type="text" name="ID_OBAT" id="ID_OBAT"  readonly>
-    </br>
-    </div>
-    <div class="form-group">
     <label for=">NAMA_OBAT"><b>Nama Obat</b></label> <input type="text" name="NAMA_OBAT" id="NAMA_OBAT"  readonly>
-    
+    <input type="hidden" name="ID_OBAT" id="ID_OBAT"  readonly>
     </div>
     <div class="form-group">
     <input type="number" name="STOK" id="STOK" hidden>
