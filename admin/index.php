@@ -258,16 +258,12 @@ s0.parentNode.insertBefore(s1,s0);
   <div class="row">
     <section class="4u" > 
       <a href="#" class="image full"><img src="gigi.png" alt="" style="width : 70%;"></a>
-      <p>Manfaat Sarang Madu bagi kesehatan.</p>
-      Tahukah Anda sarang madu sangat berguna bagi kesehatan. Apa saja sih kegunaan sarang madu? Yuk kita intip!
     </section>
     <section class="4u">
       <a href="#" class="image full"><img src="ini yg umum.png" alt="" style="width : 70%;"></a>
-      <p>Bagaimana cara menyimpan madu yang baik dan tepat di dalam kulkas?</p>
     </section>
     <section class="4u">
       <a href="#" class="image full"><img src="umum.png" alt="" style="width : 70%;"></a>
-      <p>Berikut merupakan tips dan trik menyimpan madu yang baik dan benar agar tidak hilang khasiatnya</p>
     </section>
   </div>
 </div>
