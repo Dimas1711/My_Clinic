@@ -34,12 +34,6 @@ if(!isset($_SESSION["status"])){
            
               </div>
             </div>
-           
-            <script>
-              function openSearch() {
-              document.getElementById("myOverlay").style.display = "block";
-                  }
-            </script>
 
             <div class="panel-body">
                 <div class="table-responsive">
