@@ -2,7 +2,7 @@
   include_once "koneksi.php";
   $result1 = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE NAMA_ADMIN='".$_SESSION['username']."'");
   $row = mysqli_fetch_array($result1);
-  $totalanggota = mysqli_query($koneksi , "SELECT * FROM tb_anggota");
+  $totalanggota = mysqli_query($koneksi , "SELECT * FROM tb_anggota WHERE STATUS = 'ACCEPT'");
   $d = mysqli_num_rows($totalanggota);
 
   $totaldokter = mysqli_query($koneksi , "SELECT * FROM tb_dokter");
@@ -10,6 +10,12 @@
 
   $totalverifikasi = mysqli_query($koneksi , "SELECT * FROM tb_anggota WHERE STATUS = 'PENDING'");
   $f = mysqli_num_rows($totalverifikasi);
+  
+if(!isset($_SESSION["status"])){
+    echo "<script>alert('login sek boss')</script>";
+    
+    header("location:index.php");
+  }
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

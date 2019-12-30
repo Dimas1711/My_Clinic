@@ -2,7 +2,11 @@
         require 'functions_admin.php';
         
 
-        
+        if(!isset($_SESSION["status"])){
+          echo "<script>alert('login sek boss')</script>";
+          
+          header("location:index.php");
+        }
 ?>
 
 <!DOCTYPE html>

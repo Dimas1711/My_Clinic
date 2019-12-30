@@ -16,6 +16,7 @@ $dokter2 = query("SELECT * FROM tb_dokter WHERE ID_DOKTER = '$dokter'")[0];
 
 $yo = query("SELECT TANGGAL_BEROBAT , TUJUAN , DOKTER_TUJUAN , NAMA_ANGGOTA , USIA , ANAMNESA , DIAGNOSA , TENSI , NADI , PERNAPASAN , NAMA_DOKTER FROM tb_rujukan , tb_berobat , tb_anggota , tb_dokter WHERE tb_rujukan.ID_BEROBAT = tb_berobat.ID_BEROBAT 
 AND tb_rujukan.ID_DOKTER = tb_dokter.ID_DOKTER AND tb_berobat.ID_ANGGOTA = tb_anggota.ID_ANGGOTA AND tb_rujukan.ID_RUJUKAN='$id'")
+
 ?>
 
 

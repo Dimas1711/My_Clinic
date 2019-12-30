@@ -54,7 +54,7 @@
                         <a  href="?page=dashborddokter"> Dashboard</a>
                     </li>
                     <li>
-                        <a  href="?page=periksa"> Periksa</a>
+                        <a  href="?page=periksa"> Berobat</a>
                     </li>
                     <li>
                         <a  href="?page=laporan"> Laporan Rujukan</a>

@@ -13,6 +13,11 @@
 
   $totalperiksa = mysqli_query($koneksi , "SELECT * FROM tb_berobat");
   $g = mysqli_num_rows($totalperiksa);
+  if(!isset($_SESSION["status"])){
+    echo "<script>alert('login sek boss')</script>";
+    
+    header("location:index.php");
+  }
 ?>
 <!-- sedfgtyhuny -->
 

@@ -2,6 +2,11 @@
 require '../../functions_admin.php';
 $id = $_GET['id'];
 $rujukan = query("SELECT * tb_rujukan WHERE ID_RUJUKAN = '$id'")[0];
+if(!isset($_SESSION["status"])){
+    echo "<script>alert('login sek boss')</script>";
+    
+    header("location:index.php");
+  }
 ?>
 
 

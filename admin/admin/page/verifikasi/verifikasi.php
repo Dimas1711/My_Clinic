@@ -1,6 +1,11 @@
 <?php
 require 'functions_admin.php';
-$anggota = query("select * from tb_anggota  ");
+$anggota = query("select * from tb_anggota");
+if(!isset($_SESSION["status"])){
+    echo "<script>alert('login sek boss')</script>";
+    
+    header("location:index.php");
+  }
 ?>
 <div class="row">
     <div class="col-md-12">

@@ -1,6 +1,12 @@
 <?php
 require 'functions_admin.php';
 $dokter = query("SELECT tb_dokter.ID_DOKTER , tb_dokter.NO_KTP_NIM_NIP , tb_dokter.NAMA_DOKTER , tb_dokter.JENIS_KELAMIN ,tb_dokter.TANGGAL_LAHIR , tb_dokter.ALAMAT , tb_dokter.PENDIDIKAN_TERAKHIR , tb_dokter.NO_HP , tb_klinik.NAMA_KLINIK FROM tb_dokter , tb_klinik WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK");
+
+if(!isset($_SESSION["status"])){
+    echo "<script>alert('login sek boss')</script>";
+    
+    header("location:index.php");
+  }
 ?>
 <div class="row">
     <div class="col-md-12">

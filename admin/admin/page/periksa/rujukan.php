@@ -51,6 +51,7 @@ if (isset ($_POST["submit"]))
  }
 }
 
+
  
 ?>
 
@@ -89,7 +90,8 @@ if (isset ($_POST["submit"]))
                     <label>ID_BEROBAT</label>
                     <input class="form-control" type="text" id="ID_BEROBAT" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly />
       </div>
-      <div class="form-group">
+      <div class="form-
+      ">
                     <label>Nama Dokter</label><br>
                     <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
                     <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
@@ -134,7 +136,7 @@ if (isset ($_POST["submit"]))
 
     <div class="form-group">
     <!-- <button type="submit"><a href="page/periksa/cetakrujukan.php?id=<?= $hasilkode;?>" target="_blank" name="submit" >Cetak</a></button> -->
-    <button type="submit" name ="submit" class="btn btn-primary" value="Print" target="_blank">Print</button>
+    <button type="submit" name ="submit" class="btn btn-primary" value="Print" target="_blank">Cetak</button>
     </div>
 </div>
 </div>

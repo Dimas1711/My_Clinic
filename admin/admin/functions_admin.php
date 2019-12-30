@@ -437,6 +437,7 @@ function hapus_anggota($id){
     // $id = $_GET["ID_ANGGOTA"];
     //$koneksi->query ("delete from tb_anggota where ID_ANGGOTA = '$id'");
     mysqli_query($conn, "DELETE FROM tb_anggota WHERE ID_ANGGOTA = '$id'");
+    //echo "DELETE FROM tb_anggota WHERE ID_ANGGOTA = '$id'";
     return mysqli_affected_rows($conn);
 }
 

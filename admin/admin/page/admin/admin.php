@@ -1,6 +1,11 @@
 <?php
 require 'functions_admin.php';
 $admin = query("select * from tb_admin");
+if(!isset($_SESSION["status"])){
+    echo "<script>alert('login sek boss')</script>";
+    
+    header("location:index.php");
+  }
 ?>
 <div class="row">
     <div class="col-md-12">
