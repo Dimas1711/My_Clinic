@@ -49,9 +49,9 @@ if(isset($_POST["login"])){
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
         <meta name="author" content="Codrops" />
         <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="demo.css" />
-        <link rel="stylesheet" type="text/css" href="style.css" />
-		<link rel="stylesheet" type="text/css" href="animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
     </head>
     <body>
         <div class="container">
@@ -82,7 +82,7 @@ if(isset($_POST["login"])){
                                 </p>
                                 <p class="change_link">
 									Belum Punya Akun ?
-									<a href="registrasi.php">Daftar Sekarang</a>
+									<a href="registrasi2.php">Daftar Sekarang</a>
 								</p>
                             </form>
                         </div>
