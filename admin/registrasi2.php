@@ -14,8 +14,8 @@ if( isset ($_POST["submit"]) )
                 </script>";
         }
         else
-        {
-                echo "<script>alert('Gagal Menambahkan Data')</script>";
+        {    
+            echo "<script>alert('Gagal Menambahkan Data')</script>";
         }
        
 }
@@ -81,6 +81,7 @@ else
                     <h2 class="title">Form Registrasi</h2>
                     <form action="" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="STATUS" value="Pending">
+                        <input type="hidden" name="USIA" value="0">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
@@ -156,13 +157,7 @@ else
                                 </div>
                             </div>
                         </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Usia</label>
-                                    <input class="input--style-4" type="text" name="USIA">
-                                </div>
-                            </div>
+                       
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
