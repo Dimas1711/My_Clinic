@@ -20,7 +20,7 @@ if(!isset($_SESSION["status"])){
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                               
+                        <th>ID Anggota</th>
                         <th>NO.KTP/NIM/NIP</th>
                         <th>Nama Anggota</th>
                         <th>Jenis Anggota</th>
@@ -37,7 +37,7 @@ if(!isset($_SESSION["status"])){
 
             <?php foreach ($anggota as $row ) :  ?>
                 <tr>
-                    
+                    <td><?= $row["ID_ANGGOTA"];?></td>
                     <td><?= $row["NO_KTP_NIM_NIP"];?></td>
                     <td><?= $row["NAMA_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_ANGGOTA"];?></td>

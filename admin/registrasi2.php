@@ -15,7 +15,9 @@ if( isset ($_POST["submit"]) )
         }
         else
         {    
-            echo "<script>alert('Gagal Menambahkan Data')</script>";
+            echo "<script>alert('Gagal Menambahkan Data');
+            window.history.back();
+            </script>";
         }
        
 }
