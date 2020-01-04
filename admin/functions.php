@@ -40,6 +40,7 @@ function tambah($data)
         }
 
         $qu = mysqli_query($conn, "INSERT INTO tb_anggota VALUES ('$id_anggota','$password','$ktp','$nama','$jenis','$jenis_kelamin','$ttl','$usia','$alamat','$pendidikan','$nohp','$pekerjaan','$email','$foto','$status')");
+       
 
         return $qu;
 

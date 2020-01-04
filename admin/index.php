@@ -110,14 +110,14 @@ $pengumuman = query("SELECT * FROM tb_pengumuman")[0];
                           User
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Edit Profil');">Edit Profil</a>
-                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Cetak Kartu Berobat');">Cetak Kartu Berobat</a>
-                            <a class="dropdown-item" href="login.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Ubah Password');">Ubah Password</a>
+                            <a class="dropdown-item" href="login2.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Edit Profil');">Edit Profil</a>
+                            <a class="dropdown-item" href="login2.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Cetak Kartu Berobat');">Cetak Kartu Berobat</a>
+                            <a class="dropdown-item" href="login2.php"onclick="return confirm('Lakukan Login Terlebih Dahulu Untuk Mengakses Ubah Password');">Ubah Password</a>
                       </div>
                     </li>
     
     <li class="nav-item ">
-    <a href="login.php">login</a>
+    <a href="login2.php">login</a>
     <!-- <button type="button" name="login" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="login.php">Login</a>
     </button> -->
     </li>
@@ -258,16 +258,12 @@ s0.parentNode.insertBefore(s1,s0);
   <div class="row">
     <section class="4u" > 
       <a href="#" class="image full"><img src="gigi.png" alt="" style="width : 70%;"></a>
-      <p>Manfaat Sarang Madu bagi kesehatan.</p>
-      Tahukah Anda sarang madu sangat berguna bagi kesehatan. Apa saja sih kegunaan sarang madu? Yuk kita intip!
     </section>
     <section class="4u">
       <a href="#" class="image full"><img src="ini yg umum.png" alt="" style="width : 70%;"></a>
-      <p>Bagaimana cara menyimpan madu yang baik dan tepat di dalam kulkas?</p>
     </section>
     <section class="4u">
       <a href="#" class="image full"><img src="umum.png" alt="" style="width : 70%;"></a>
-      <p>Berikut merupakan tips dan trik menyimpan madu yang baik dan benar agar tidak hilang khasiatnya</p>
     </section>
   </div>
 </div>

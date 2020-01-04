@@ -28,21 +28,12 @@ if(!isset($_SESSION["status"])){
 
             <div id="myOverlay" class="overlay">
               <div class="overlay-content">
-           <form action="" method="POST">
-           <input type="text" placeholder="Cari.." name="cari">
-           <button type="submit" name="btn_cari"><i class="fa fa-search"></i></button>
            <?php
              $sql = $koneksi -> query ("SELECT tb_anggota.NAMA_ANGGOTA FROM tb_anggota, tb_rujukan, tb_berobat WHERE tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA AND tb_berobat.ID_BEROBAT = tb_rujukan.ID_BEROBAT")
             ?>
-           </form>
+           
               </div>
             </div>
-           
-            <script>
-              function openSearch() {
-              document.getElementById("myOverlay").style.display = "block";
-                  }
-            </script>
 
             <div class="panel-body">
                 <div class="table-responsive">

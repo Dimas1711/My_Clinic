@@ -119,10 +119,10 @@ else
                         <td class="nama">
                                 <select name="JENIS_ANGGOTA" id="jenis" required>
                                         <option value="">Silahkan Pilih</option>
-                                        <option value="umum">Umum</option>
-                                        <option value="mahasiswa">Mahasiswa</option>
-                                        <option value="karyawan">Karyawan</option>
-                                        <option value="keluarga Karyawan">Keluarga Karyawan</option>
+                                        <option value="Umum">Umum</option>
+                                        <option value="Mahasiswa">Mahasiswa</option>
+                                        <option value="Karyawan">Karyawan</option>
+                                        <option value="Keluarga Karyawan">Keluarga Karyawan</option>
                                 </select>
                         </td>
                 </tr>
