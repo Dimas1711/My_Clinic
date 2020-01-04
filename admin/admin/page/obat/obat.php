@@ -36,8 +36,8 @@ if(!isset($_SESSION["status"])){
                     <td><?= $row["EXP"]?></td>
                     
                     <td>
-                        <a href="?page=obat&aksi=ubah&ID_OBAT=<?= $row["ID_OBAT"];?>" class="btn btn-info">Ubah</a>  
-                        <a href="?page=obat&aksi=hapus&ID_OBAT=<?= $row["ID_OBAT"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
+                        <a href="?page=obat&aksi=ubah&ID_OBAT=<?= $row["ID_OBAT"];?>" class="btn btn-info"><i class="fa fa-edit"></i></a>  
+                        <a href="?page=obat&aksi=hapus&ID_OBAT=<?= $row["ID_OBAT"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger"><i class="fa fa-close"></i></a>
                     </td>     
                 </tr>
                 <?php endforeach; ?>
