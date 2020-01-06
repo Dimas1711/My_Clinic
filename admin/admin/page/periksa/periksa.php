@@ -19,7 +19,8 @@
         
         if (isset ($_POST["resep"]))
         {
-            $td = $_POST["TENSI"];
+            $sistole = $_POST["SISTOLE"];
+            $diastole = $_POST["DIASTOLE"];
             $anamnesa = $_POST["ANAMNESA"];
             $alergi = $_POST["ALERGI"];
             $diagnosa = $_POST["DIAGNOSA"];
@@ -29,7 +30,7 @@
             $berat = $_POST["BERAT_BADAN"];
             $tinggi = $_POST["TINGGI_BADAN"];
            
-            if (empty($td && $anamnesa && $alergi && $diagnosa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
+            if (empty($sistole && $diastole && $anamnesa && $alergi && $diagnosa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
                 echo "<script>
                 alert('Field Tidak Boleh Kosong');
                 </script>"; 
@@ -47,7 +48,8 @@
         }
        elseif (isset ($_POST["rujukan"]))
         { 
-            $td = $_POST["TENSI"];
+            $sistole = $_POST["SISTOLE"];
+            $diastole = $_POST["DIASTOLE"];
             $anamnesa = $_POST["ANAMNESA"];
          
             $diagnosa = $_POST["DIAGNOSA"];
@@ -57,7 +59,7 @@
             $berat = $_POST["BERAT_BADAN"];
             $tinggi = $_POST["TINGGI_BADAN"];
            
-            if (empty($td && $anamnesa && $diagnosa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
+            if (empty($sistole && $diastole && $anamnesa && $diagnosa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
                 echo "<script>
                 alert('Field Tidak Boleh Kosong');
                 </script>"; 
@@ -207,8 +209,13 @@
               
                 
                 <div class="form-group">
-                    <label>Tekanan Darah</label>
-                    <input class="form-control" type="text" name="TENSI" id="TENSI" />
+                    <label>Sistole</label>
+                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" />
+                </div>
+
+                <div class="form-group">
+                    <label>Diastole</label>
+                    <input class="form-control" type="text" name="DIASTOLE" id="DIASTOLE" />
                 </div>
 
                 <div class="form-group">
