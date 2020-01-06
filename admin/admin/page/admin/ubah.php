@@ -32,6 +32,7 @@ if( isset ($_POST["submit"]) )
         <div class="col-md-12">
 
             <form method="post">
+            <input class="form-control" type="hidden" name="STATUS" value="Karyawan" />
                 <div class="form-group">
                     <label>ID ADMIN</label>
                     <input class="form-control" name="ID_ADMIN"  value="<?= $adm["ID_ADMIN"];?>" readonly/>

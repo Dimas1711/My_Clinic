@@ -96,7 +96,7 @@ session_start();
                     </li>
     
     <li class="nav-item ">
-    <a href="login.php">login</a>
+    <a href="login2.php">login</a>
     <!-- <button type="button" name="login" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="login.php">Login</a>
     </button> -->
     </li>
