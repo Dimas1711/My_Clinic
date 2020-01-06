@@ -259,9 +259,9 @@ function tambahadmin($data)
         $alamat = htmlspecialchars($data["ALAMAT"]);
         $pendidikan = htmlspecialchars($data["PENDIDIKAN_TERAKHIR"]);
         $nohp = htmlspecialchars($data["NO_HP"]);
-        
+        $status = htmlspecialchars($data["STATUS"]);
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_admin VALUES ('$id_admin','$password','$ktp','$nama','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_admin VALUES ('$id_admin','$password','$ktp','$nama','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$status')");
 
         return $qu;
 }
@@ -279,6 +279,7 @@ function ubahadmin($data)
     $alamat = htmlspecialchars($data["ALAMAT"]);
     $pendidikan = htmlspecialchars($data["PENDIDIKAN_TERAKHIR"]);
     $nohp = htmlspecialchars($data["NO_HP"]);
+    $status = htmlspecialchars($data["STATUS"]);
 
                
 
@@ -291,7 +292,8 @@ function ubahadmin($data)
                 TANGGAL_LAHIR = '$ttl',
                 ALAMAT = '$alamat',
                 PENDIDIKAN_TERAKHIR = '$pendidikan',
-                NO_HP = '$nohp'
+                NO_HP = '$nohp',
+                STATUS = '$status'
                 WHERE ID_ADMIN = '$id_admin'
                 ";
 

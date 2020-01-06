@@ -10,7 +10,8 @@
                 $ttl = $_POST["TEMPAT_TANGGAL_LAHIR"];
                 $alamat = $_POST["ALAMAT"];
                 $no = $_POST["NO_HP"];
-                if (empty($pass && $ktp && $nama && $ttl && $alamat && $no)) {
+                $status = $_POST["STATUS"];
+                if (empty($pass && $ktp && $nama && $ttl && $alamat && $no && $status)) {
                     echo"<script> alert ('Field tidak boleh kosong')</script>";
                 }
                   //cek data berhasil ditambah?
@@ -56,6 +57,7 @@
         <div class="col-md-12">
 
             <form method="post">
+            <input class="form-control" type="hidden" name="STATUS" value="Karyawan" />
                 <div class="form-group">
                     <label>ID ADMIN</label>
                     <input class="form-control" name="ID_ADMIN" value="<?php echo $hasilkode ?>" readonly/>
