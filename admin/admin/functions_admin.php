@@ -426,12 +426,27 @@ function input_detail($data){
     $jumlah = htmlspecialchars($data["JUMLAH"]);
     $catatan = htmlspecialchars($data["CATATAN"]);
 
- $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ('','$id_berobat','$id_obat','$jumlah' ,'$catatan')");
+ $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ('','$id_berobat','$id_obat','$jumlah' ,'$catatan' ,'Obat')");
   // echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian', '$catatan')";
   return $qu;
     
     
 }
+function racikan($data){
+    global $conn;
+    $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
+    $nama_obat = htmlspecialchars($data["NAMA_OBAT"]);
+    $id_obat = htmlspecialchars($data["ID_OBAT"]);
+    $jumlah = htmlspecialchars($data["JUMLAH"]);
+    $catatan = htmlspecialchars($data["CATATAN"]);
+
+ $qu = mysqli_query($conn, "INSERT INTO tb_detail_berobat VALUES ('','$id_berobat','$id_obat','$jumlah' ,'$catatan' ,'Racikan')");
+  // echo "INSERT INTO tb_detail_berobat VALUES ( '','$id_berobat', '$id_obat'  , '$jumlah' , '$perkalian', '$catatan')";
+  return $qu;
+    
+    
+}
+
 function hapus_anggota($id){
     global $conn;
     // $id = $_GET["ID_ANGGOTA"];
