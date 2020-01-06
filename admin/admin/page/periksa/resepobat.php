@@ -102,7 +102,7 @@ if (isset ($_POST["hapus"])){
 </head>
 <body>
 <div class=" col-sm-12 col-xs-12">                     
-<div class="panel panel-default">
+<div class="col-md-12">
     <h1>Resep Obat</h1>
     <hr>
     <form method ="POST">
@@ -180,7 +180,7 @@ if (isset ($_POST["hapus"])){
                   </div>
                   <div class=" col-sm-12 col-xs-12">     
                 
-<div class="panel panel-default">
+<div class="col-md-12">
     <h1>Resep Obat</h1>
     <hr>
     <form method ="POST">
@@ -322,35 +322,3 @@ if (isset ($_POST["hapus"])){
     }
 
 </script>
-            <div class=" col-sm-12 col-xs-12">     
-                
-                <div class="panel panel-default">
-                    <h1>Resep Obat</h1>
-                    <hr>
-                    <form method ="POST">
-                    <div class="form-group">
-                    <label for=">ID_DETAIL"><b>Id Detail</b></label> <input type="text" name="ID_DETAIL" id="ID_DETAIL" value="<?= $detailnya;?>"  readonly>
-                    </br>
-                    </div>
-                    <div class="form-group">
-                    <label for=">NAMA_OBAT"><b>Nama Obat</b></label> <input type="text" name="NAMA_OBAT" id="NAMA_OBAT"  readonly>
-                    <input type="hidden" name="ID_OBAT" id="ID_OBAT"  readonly>
-                    </div>
-                    <div class="form-group">
-                    <input type="number" name="STOK" id="STOK" hidden>
-                  
-                    </div>
-                    <div class="form-group">
-                    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH">
-                    </br>
-                    </div>
-                    <div class="form-group">
-                    <label for="CATATAN"><b>Dosis</b></label><input type="text" name="CATATAN" id="CATATAN" ></textarea>
-                    </br>
-                    </div>
-                    <div class="form-group">
-                    <input  type="submit" name="racikan" value="Tambahkan Racikan" id="racikan" class="btn btn-info">
-                    <input  type="submit" name="update" value="update" id="update" class="btn btn-info" disabled> 
-                    </div>
-                </div>
-                </div>
