@@ -46,8 +46,8 @@ if(!isset($_SESSION["status"])){
                     <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["NAMA_KLINIK"];?></td>
                     <td>
-                        <a href="?page=dokter&aksi=ubah&ID_DOKTER=<?= $row["ID_DOKTER"];?>" class="btn btn-info">Ubah</a>  
-                        <a href="?page=dokter&aksi=hapus&ID_DOKTER=<?= $row["ID_DOKTER"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapus</a>
+                        <a href="?page=dokter&aksi=ubah&ID_DOKTER=<?= $row["ID_DOKTER"];?>" class="btn btn-info"><i class="fa fa-edit"></i></a>  
+                        <a href="?page=dokter&aksi=hapus&ID_DOKTER=<?= $row["ID_DOKTER"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger"><i class="fa fa-close"></i></a>
                     </td>     
                 </tr>
 <?php endforeach; ?>

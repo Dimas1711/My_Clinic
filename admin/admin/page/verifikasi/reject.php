@@ -4,7 +4,7 @@ require 'functions_admin.php';
 
 $id = $_GET['ID_ANGGOTA'];
 
-if (reject($id) > 0) 
+if (hapus_anggota($id) > 0) 
 {
     echo "<script> 
     alert('Data Berhasil Di Ubah');

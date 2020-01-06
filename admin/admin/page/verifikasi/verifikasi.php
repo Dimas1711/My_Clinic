@@ -1,6 +1,6 @@
 <?php
 require 'functions_admin.php';
-$anggota = query("select * from tb_anggota");
+$anggota = query("select * from tb_anggota WHERE STATUS='Reject' OR STATUS='Pending'");
 if(!isset($_SESSION["status"])){
     echo "<script>alert('login sek boss')</script>";
     
@@ -25,7 +25,6 @@ if(!isset($_SESSION["status"])){
                         <th>Jenis Anggota</th>
                         <th>Jenis Kelamin</th>
                         <th>Tanggal Lahir</th>
-                        <th>Usia</th>
                         <th>Alamat</th>
                         <th>NO.HP</th>
                         <th>Pekerjaan/Prodi</th>
@@ -44,7 +43,6 @@ if(!isset($_SESSION["status"])){
                     <td><?= $row["JENIS_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_KELAMIN"];?></td>
                     <td><?= $row["TANGGAL_LAHIR"];?></td>
-                    <td><?= $row["USIA"];?></td>
                     <td><?= $row["ALAMAT"];?></td>
                     <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
@@ -52,8 +50,8 @@ if(!isset($_SESSION["status"])){
                     <td><img src="../img/<?=  $row["FOTO"]; ?>" alt="" width="50px"></td>
                     <td><?= $row["STATUS"];?></td>
                     <td>
-                        <a href="?page=verifikasi&aksi=accept&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info">Accept</a>  
-                        <a href="?page=verifikasi&aksi=reject&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Reject Data Ini ?');" class="btn btn-danger">Reject</a>
+                        <a href="?page=verifikasi&aksi=accept&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info"><i class="fa fa-check"></i></a>  
+                        <a href="?page=verifikasi&aksi=reject&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Reject Data Ini ?');" class="btn btn-danger"><i class="fa fa-times"></i></a>
                     </td>     
                 </tr>
 <?php endforeach; ?>
