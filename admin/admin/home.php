@@ -1,8 +1,6 @@
 <?php
   include_once "koneksi.php";
   session_start();
-  $result1 = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE NAMA_ADMIN='".$_SESSION['username']."'");
-  $row = mysqli_fetch_array($result1);
 ?>
 <!-- sedfgtyhuny -->
 
@@ -37,10 +35,10 @@
                 <a class="navbar-brand" href="home.php" >Klinik Pratama</a>
             </div>
             <?php
-                if ($row!=""){
-                  echo '<div style="color: white; padding: 15px 50px 5px 50px; float: left; font-size: 16px;">'.$row['NAMA_ADMIN'].'</div>';
+                
+                  echo '<div style="color: white; padding: 15px 50px 5px 50px; float: left; font-size: 16px;">ADMIN</div>';
                   echo '<div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"><a href="logout.php" class="btn btn-danger square-btn-adjust">Log Out</a></div>';
-                }
+                
             ?>
             </nav>
            <!-- /. NAV TOP  -->
@@ -51,7 +49,7 @@
                     <img src="assets/img/user.png" class="user-image img-responsive"/>
 					             </li>
                     <li>
-                        <a  href="?page=dashbord"> Dashboard</a>
+                        <a  href="?page=dashbordadm"> Dashboard</a>
                     </li>
                     <li>
                         <a  href="?page=verifikasi"> Verifikasi Akun Anggota</a>
@@ -91,8 +89,8 @@
                       $page = @$_GET['page'];
                       $aksi = @$_GET['aksi'];
 
-                      if ($page == "dashbord") {
-                        include "page/dashbord.php";
+                      if ($page == "dashbordadm") {
+                        include "page/dashbordadm.php";
                       }
                       elseif ($page == "anggota") {
                         if ($aksi == "") {
