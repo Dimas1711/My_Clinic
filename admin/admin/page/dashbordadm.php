@@ -1,10 +1,14 @@
 <?php
   include_once "koneksi.php";
-  $result1 = mysqli_query($koneksi, "SELECT * FROM tb_karyawan WHERE NAMA_KARYAWAN='".$_SESSION['username']."'");
-  $row = mysqli_fetch_array($result1);
+  
+  $totalanggota = mysqli_query($koneksi , "SELECT * FROM tb_anggota WHERE STATUS = 'ACCEPT'");
+  $d = mysqli_num_rows($totalanggota);
 
-  $totalperiksa = mysqli_query($koneksi , "SELECT * FROM tb_berobat");
-  $d = mysqli_num_rows($totalperiksa);
+  $totaldokter = mysqli_query($koneksi , "SELECT * FROM tb_dokter");
+  $e = mysqli_num_rows($totaldokter);
+
+  $totalverifikasi = mysqli_query($koneksi , "SELECT * FROM tb_anggota WHERE STATUS = 'PENDING'");
+  $f = mysqli_num_rows($totalverifikasi);
   
 if(!isset($_SESSION["status"])){
     echo "<script>alert('login sek boss')</script>";
@@ -33,34 +37,49 @@ if(!isset($_SESSION["status"])){
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0 ; background-color : white">
          
-            <?php
-                if ($row!=""){
-                  echo 
-                   '<div style="color: black; padding: 15px 50px 5px 50px; float: left; font-size: 32px;  font-family: "Arial, Helvetica, sans-serif";>
-                   Anda Memiliki Hak Akses Sebagai Karyawan
-                   </br>
+            
+                
+                   
+                   <div style="color: black; padding: 15px 50px 5px 50px; float: left; font-size: 32px;  font-family: Arial, Helvetica, sans-serif">
                    Selamat Datang  
-                   ' .$row['NAMA_KARYAWAN'].'
+                   ADMIN
                    
                    </div>';
                    
-            }
-            ?>
             </nav>
           
         <!-- /. NAV SIDE  -->
        
                  <!-- /. ROW  -->
-                 <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
+                 <div class="col-md-3 col-sm-6 col-xs-6">     
+                 <div class="panel panel-back noti-box">
+            
                 <div class="text-box" >
-                <img src="assets/img/periksa.jpg" class="user-image img-responsive"/>
-                    <p class="text-muted">Total Berobat</p>
-                    <p class="main-text"><?php echo "$d";?></p>
+                <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+                    <p class="text-muted"><b>Total Anggota</b></p>
+                    <p class="main-text"><?php echo "$d";?>
                 </div>
              </div>
 		     </div>
-                    
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                
+                <div class="text-box" >
+                <img src="assets/img/verif.png" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Verifikasi Anggota</p>
+                    <p class="main-text"><?php echo "$f";?></p>
+                </div>
+             </div>
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <div class="text-box" >
+                <img src="assets/img/dokter.jpg" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Total Dokter</p>
+                    <p class="main-text"><?php echo "$e";?></p>
+                </div>
+             </div>
+		     </div>
                       </div>
              <!-- /. PAGE INNER  -->
             </div>
