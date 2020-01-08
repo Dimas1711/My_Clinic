@@ -32,7 +32,7 @@ if( isset ($_POST["tambahkan"]) )
         alert('Fields Tidak Boleh Kosong');
         </script>";
       }
-       else if( input_detail($_POST) > 0 )
+       else if( racikan($_POST) > 0 )
         {
 
             echo "<script>
@@ -89,11 +89,7 @@ if (isset ($_POST["hapus"])){
           echo "<script>alert('Gagal Mengubah Data')</script>";
   }
 }
-if (isset($_POST["racikan"])){
-  echo "<script>
-  document.location.href = 'home1.php?page=periksa&aksi=racikan&ID_BEROBAT='$id'';
-  </script>";
-}
+
 
 ?>
 
@@ -110,7 +106,7 @@ if (isset($_POST["racikan"])){
 <div class=" col-sm-12 col-xs-12">
                      
 <div class="col-md-12">
-    <h1>Resep Obat</h1>
+    <h1>Resep Racikan</h1>
     <hr>
     <form method ="POST">
     <div class="form-group">
@@ -245,7 +241,6 @@ if (isset($_POST["racikan"])){
     <div class="form-group">
     <input  type="submit" name="tambahkan" value="Tambahkan" id="tambahkan" class="btn btn-info">
     <input  type="submit" name="update" value="update" id="update" class="btn btn-info" disabled>
-    <input  type="submit" name="racikan" value="Resep Racikan" class="btn btn-primary">
     <!-- <input  type="submit" name="racikan" value="Racikan" id="racikan" class="btn btn-info">
     <input  type="submit" name="obat" value="Obat" id="obat" class="btn btn-info">  -->
     </div>

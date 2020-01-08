@@ -361,6 +361,7 @@ function ubahpengumuman($data)
 
         return mysqli_affected_rows($conn);
 }
+
 function input_periksa($data){
 
     global $conn;
@@ -389,7 +390,6 @@ function input_periksa($data){
     return $qu;
     
 }
-
 function tambahpengumuman($data)
 {
     global $conn;
@@ -435,6 +435,7 @@ function input_detail($data){
     
     
 }
+
 function racikan($data){
     global $conn;
     $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);

@@ -77,7 +77,22 @@
                 echo "<script>alert('Gagal Menambahkan Data')</script>";
             }
         }
-        
+        elseif (isset ($_POST["racikan"]))
+        { 
+
+
+           if (input_periksa($_POST) > 0){
+                echo "<script>
+                alert('Data Berhasil Ditambahkan');
+                document.location.href = 'home1.php?page=periksa&aksi=racikan&ID_BEROBAT=$hasilkode';
+                </script>";   
+            
+                
+            }
+            else {
+                echo "<script>alert('Gagal Menambahkan Data')</script>";
+            }
+        }
         if(!isset($_SESSION["status"])){
             echo "<script>alert('login sek boss')</script>";
             
@@ -283,6 +298,7 @@
             
                 <input  type="submit" name="resep" value="Resep Obat" class="btn btn-info">
                 <input  type="submit" name="rujukan" value="Rujukan" class="btn btn-primary">
+                <input  type="submit" name="racikan" value="racikan" class="btn btn-primary">
                 </form>
                 <script>
                 var table = document.getElementById('dataTables-example');

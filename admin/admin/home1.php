@@ -94,12 +94,15 @@
                           elseif ($aksi == "cetak") {
                             include "page/periksa/cetakrujukan.php";
                           }
-                        
+                          elseif ($aksi == "racikan") {
+                            include "page/periksa/resepracikan.php";
+                          }
                         }
                         elseif ($page == "resepobat") {
                           if ($aksi == "hapus") {
                             include "page/periksa/hapus.php";
                           }
+                      
                         }
                         elseif ($page == "obat") {
                           if ($aksi == "") {
