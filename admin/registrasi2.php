@@ -4,21 +4,22 @@ require 'functions.php';
 //cek tombol sudah ditekan atau belum
 if( isset ($_POST["submit"]) )
 {
- 
-        //cek data berhasil ditambah?
-        if( tambah($_POST) > 0 )
-        {
-                echo "<script>
-                alert('Terima Kasih Sudah Mendaftar, Silahkan tunggu verifikasi dari admin');
-                document.location.href = 'index.php';
-                </script>";
-        }
-        else
-        {    
-            echo "<script>alert('Gagal Menambahkan Data');
-            window.history.back();
-            </script>";
-        }
+   //cek data berhasil ditambah?
+   if( tambah($_POST) > 0 )
+   {
+           echo "<script>
+           alert('Terima Kasih Sudah Mendaftar, Silahkan tunggu verifikasi dari admin');
+           document.location.href = 'index.php';
+           </script>";
+   }
+   else
+   {    
+       echo "<script>alert('Gagal Menambahkan Data');
+       window.history.back();
+       </script>";
+   }
+  
+        
        
 }
 
@@ -101,21 +102,21 @@ else
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="PASSWORD" >
+                                    <input class="input--style-4" type="password" name="PASSWORD" required>
                                 </div>
                             </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">NO.KTP/NIM/NIP</label>
-                                    <input class="input--style-4" type="text" name="NO_KTP_NIM_NIP" >
+                                    <input class="input--style-4" type="text" name="NO_KTP_NIM_NIP" required>
                                 </div>
                             </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nama Anggota</label>
-                                    <input class="input--style-4" type="text" name="NAMA_ANGGOTA" >
+                                    <input class="input--style-4" type="text" name="NAMA_ANGGOTA" required>
                                 </div>
                         </div>
                         <div class="col-2">
@@ -164,7 +165,7 @@ else
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Alamat</label>
-                                    <input class="input--style-4" type="text" name="ALAMAT">
+                                    <input class="input--style-4" type="text" name="ALAMAT" required>
                                 </div>
                             </div>
                         <div class="row row-space">
@@ -192,20 +193,20 @@ else
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Pekerjaan / Prodi</label>
-                                    <input class="input--style-4" type="text" name="PEKERJAAN_PRODI">
+                                    <input class="input--style-4" type="text" name="PEKERJAAN_PRODI" required>
                                 </div>
                             </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="EMAIL">
+                                    <input class="input--style-4" type="email" name="EMAIL" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">NO.HP</label>
-                                    <input class="input--style-4" type="text" name="NO_HP">
+                                    <input class="input--style-4" type="text" name="NO_HP"  pattern=”[0-9]{12}” title="gunakan angka dan maksimal 12 angka" required>
                                 </div>
                             </div>
                         </div>
