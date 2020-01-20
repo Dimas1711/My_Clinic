@@ -27,7 +27,7 @@ if(isset($_POST["login"])){
   }
   else
   {
-    header("location: login.php?gagal");
+    header("location: login2.php?gagal");
   }
 
 }
@@ -74,7 +74,7 @@ if(isset($_POST["login"])){
                                     <label for="password" class="youpasswd" data-icon="p">Password </label>
                                     <input id="password" name="PASSWORD" required="required" type="password" /> 
                                 </p>
-                                <p><a href="lupapass.php">Lupa Password?</a></p>
+                                <p><a href="lupapass2.php">Lupa Password?</a></p>
                                 <p style="text-align:right"><a href="admin/index.php">Login Sebagai Admin/Dokter</a></p>
                                 <p class="login button"> 
                                     <input type="submit" value="Login" name="login"> 
@@ -86,6 +86,13 @@ if(isset($_POST["login"])){
 								</p>
                             </form>
                         </div>
+                        <?php if(isset($_GET["gagal"])){?>
+        echo "<script>
+                alert('ID anggota dan password tidak sesuai');
+                document.location.href = 'index.php';
+                </script>";
+
+        <?php }?>
 						
                     </div>
                 </div>  
