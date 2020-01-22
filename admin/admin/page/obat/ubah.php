@@ -50,6 +50,10 @@ if( isset ($_POST["submit"]) )
                     <label>EXP</label>
                     <input class="form-control"  name="EXP" type="date" value="<?= $obat["EXP"];?>"/>
                 </div>
+                <div class="form-group">
+                    <label>BENTUK</label>
+                    <input class="form-control"  name="EXP" type="text" value="<?= $obat["BENTUK"];?>"/>
+                </div>
                 <div>
                   <button  type="submit" name="submit" value="simpan" class="btn btn-primary">Ubah</button>
                 </div>
