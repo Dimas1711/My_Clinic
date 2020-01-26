@@ -223,16 +223,16 @@
                 </div>    
               
                 
-                <div class="form-group">
+                <div class="form-group"> 
                     <label>Sistole</label>
-                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" />
+                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" /> 
                 </div>
-
+                                
                 <div class="form-group">
                     <label>Diastole</label>
                     <input class="form-control" type="text" name="DIASTOLE" id="DIASTOLE" />
                 </div>
-
+                   
                 <div class="form-group">
                     <label>Anamanesa</label>
                     <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" />

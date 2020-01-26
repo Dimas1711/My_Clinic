@@ -73,17 +73,6 @@ function upload()
               </script>";
         return false;
     }
-
-    // $ukurangambar = ['> 2097152'];
-    // if( in_array($ukuranfile, $ukurangambar) )
-    // {
-    //     echo "<script>
-    //             alert('Ukuran Foto Terlalu Besar, Gunakan Maksimal 2MB');
-    //           </script>";
-    //     return false;
-
-    // }
-
     //foto lolos
     //generate nama baru
     $namafilebaru = uniqid();

@@ -173,6 +173,9 @@
                         elseif ($aksi == "accept") {
                           include "page/verifikasi/accept.php";
                         }
+                        elseif ($aksi == "detail") {
+                          include "page/verifikasi/detail.php";
+                        }
                         elseif ($aksi == "reject") {
                           include "page/verifikasi/reject.php";
                         }
