@@ -31,7 +31,7 @@
           
           
           
-          $carikode = mysqli_query($conn, "SELECT max(ID_ADMIN) FROM tb_admin") or die(mysqli_error($conn));
+          $carikode = mysqli_query($conn, "SELECT max(ID_KARYAWAN) FROM tb_karyawan") or die(mysqli_error($conn));
           $datakode = mysqli_fetch_array($carikode);
           if($datakode)
           {
@@ -59,8 +59,8 @@
             <form method="post">
             <input class="form-control" type="hidden" name="STATUS" value="Karyawan" />
                 <div class="form-group">
-                    <label>ID ADMIN</label>
-                    <input class="form-control" name="ID_ADMIN" value="<?php echo $hasilkode ?>" readonly/>
+                    <label>ID KARYAWAN</label>
+                    <input class="form-control" name="ID_KARYAWAN" value="<?php echo $hasilkode ?>" readonly/>
 
                 </div>
                 <div class="form-group">
@@ -74,12 +74,12 @@
 
                 </div>
                 <div class="form-group">
-                    <label>NAMA ADMIN</label>
-                    <input class="form-control" name="NAMA_ADMIN" />
+                    <label>NAMA KARYAWAN</label>
+                    <input class="form-control" name="NAMA_KARYAWAN" />
 
                 </div>
                 <div class="form-group">
-                    <label>Jenis Kelamin</label>
+                    <label>JENIS KELAMIN</label>
                     <select class="form-control" name="JENIS_KELAMIN">
                         <option value="L" >Laki Laki</option>
                         <option value="P">Perempuan</option>

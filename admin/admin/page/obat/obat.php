@@ -24,6 +24,7 @@ if(!isset($_SESSION["status"])){
                                 <th>NAMA OBAT</th>
                                 <th>STOK</th>
                                 <th>EXP</th>
+                                <th>BENTUK</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -34,6 +35,7 @@ if(!isset($_SESSION["status"])){
                     <td><?= $row["NAMA_OBAT"];?></td>
                     <td><?= $row["STOK"];?></td>
                     <td><?= $row["EXP"]?></td>
+                    <td><?= $row["BENTUK"];?></td>
                     
                     <td>
                         <a href="?page=obat&aksi=ubah&ID_OBAT=<?= $row["ID_OBAT"];?>" class="btn btn-info"><i class="fa fa-edit"></i></a>  

@@ -1,6 +1,6 @@
 <?php
 require 'functions_admin.php';
-$admin = query("select * from tb_admin");
+$admin = query("select * from tb_karyawan Where STATUS = 'Karyawan' ");
 if(!isset($_SESSION["status"])){
     echo "<script>alert('login sek boss')</script>";
     
@@ -12,9 +12,9 @@ if(!isset($_SESSION["status"])){
         <!-- Advanced Tables -->
         <div class="panel panel-default">
             <div class="panel-heading">
-              Data Admin
+              Data Karyawan
             </div>
-            <a href="?page=admin&aksi=tambah" class="btn btn-primary" style=" margin-top:10px; margin-left:10px;">Tambah Admin</a>
+            <a href="?page=admin&aksi=tambah" class="btn btn-primary" style=" margin-top:10px; margin-left:10px;">Tambah Karyawan</a>
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -37,15 +37,15 @@ if(!isset($_SESSION["status"])){
                 <tr>
                     
                     <td><?= $row["NO_KTP_NIM_NIP"];?></td>
-                    <td><?= $row["NAMA_ADMIN"];?></td>
+                    <td><?= $row["NAMA_KARYAWAN"];?></td>
                     <td><?= $row["JENIS_KELAMIN"];?></td>
                     <td><?= $row["TANGGAL_LAHIR"];?></td>
                     <td><?= $row["ALAMAT"];?></td>
                     <td><?= $row["PENDIDIKAN_TERAKHIR"];?></td>
                     <td><?= $row["NO_HP"];?></td>
                     <td>
-                        <a href="?page=admin&aksi=ubah&ID_ADMIN=<?= $row["ID_ADMIN"];?>" class="btn btn-info"><i class="fa fa-edit"></i></a>  
-                        <a href="?page=admin&aksi=hapus&ID_ADMIN=<?= $row["ID_ADMIN"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger"><i class="fa fa-close"></i></a>
+                        <a href="?page=admin&aksi=ubah&ID_KARYAWAN=<?= $row["ID_KARYAWAN"];?>" class="btn btn-info"><i class="fa fa-edit"></i></a>  
+                        <a href="?page=admin&aksi=hapus&ID_KARYAWAN=<?= $row["ID_KARYAWAN"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger"><i class="fa fa-close"></i></a>
                     </td>     
                 </tr>
 <?php endforeach; ?>

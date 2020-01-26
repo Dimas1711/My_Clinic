@@ -1,7 +1,7 @@
 <?php
 require 'functions_admin.php';
-$id = $_GET['ID_ADMIN'];
-$adm = query("SELECT * FROM tb_admin WHERE ID_ADMIN = '$id'")[0];
+$id = $_GET['ID_KARYAWAN'];
+$adm = query("SELECT * FROM tb_karyawan WHERE ID_KARYAWAN = '$id'")[0];
 
 //cek tombol sudah ditekan atau belum
 if( isset ($_POST["submit"]) )
@@ -34,8 +34,8 @@ if( isset ($_POST["submit"]) )
             <form method="post">
             <input class="form-control" type="hidden" name="STATUS" value="Karyawan" />
                 <div class="form-group">
-                    <label>ID ADMIN</label>
-                    <input class="form-control" name="ID_ADMIN"  value="<?= $adm["ID_ADMIN"];?>" readonly/>
+                    <label>ID KARYAWAN</label>
+                    <input class="form-control" name="ID_KARYAWAN"  value="<?= $adm["ID_KARYAWAN"];?>" readonly/>
 
                 </div>
                 <div class="form-group">
@@ -49,8 +49,8 @@ if( isset ($_POST["submit"]) )
 
                 </div>
                 <div class="form-group">
-                    <label>NAMA ADMIN</label>
-                    <input class="form-control" name="NAMA_ADMIN"  value="<?= $adm["NAMA_ADMIN"]?>"/>
+                    <label>NAMA kARYAWAN</label>
+                    <input class="form-control" name="NAMA_ADMIN"  value="<?= $adm["NAMA_KARYAWAN"]?>"/>
 
                 </div>
                 <div class="form-group">

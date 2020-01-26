@@ -239,7 +239,7 @@ function ubahdokter($data)
 function tambahadmin($data)
 {
     global $conn;
-        $id_admin = htmlspecialchars($data["ID_ADMIN"]);
+        $id_karyawan = htmlspecialchars($data["ID_KARYAWAN"]);
         $password = htmlspecialchars($data["PASSWORD"]);
         $ktp = htmlspecialchars($data["NO_KTP_NIM_NIP"]);
         $nama = htmlspecialchars($data["NAMA_ADMIN"]);
@@ -250,7 +250,7 @@ function tambahadmin($data)
         $nohp = htmlspecialchars($data["NO_HP"]);
         $status = htmlspecialchars($data["STATUS"]);
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_admin VALUES ('$id_admin','$password','$ktp','$nama','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$status')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_karyawan VALUES ('$id_karyawan','$password','$ktp','$nama','$jenis_kelamin','$ttl','$alamat','$pendidikan','$nohp','$status')");
 
         return $qu;
 }
@@ -259,7 +259,7 @@ function tambahadmin($data)
 function ubahadmin($data)
 {
     global $conn;
-    $id_admin = htmlspecialchars($data["ID_ADMIN"]);
+    $id_karyawan = htmlspecialchars($data["ID_KARYAWAN"]);
     $password = htmlspecialchars($data["PASSWORD"]);
     $ktp = htmlspecialchars($data["NO_KTP_NIM_NIP"]);
     $nama = htmlspecialchars($data["NAMA_ADMIN"]);
@@ -272,7 +272,7 @@ function ubahadmin($data)
 
                
 
-        $query="UPDATE tb_admin SET
+        $query="UPDATE tb_karyawan SET
 
                 PASSWORD = '$password',
                 NO_KTP_NIM_NIP = '$ktp',
@@ -283,7 +283,7 @@ function ubahadmin($data)
                 PENDIDIKAN_TERAKHIR = '$pendidikan',
                 NO_HP = '$nohp',
                 STATUS = '$status'
-                WHERE ID_ADMIN = '$id_admin'
+                WHERE ID_KARYAWAN = '$id_karyawan'
                 ";
 
         $sql= mysqli_query($conn, $query);
@@ -299,9 +299,10 @@ function tambahobat($data)
         $nama = htmlspecialchars($data["NAMA_OBAT"]);
         $stok = htmlspecialchars($data["STOK"]);
         $exp = htmlspecialchars($data["EXP"]);
+        $bentuk = htmlspecialchars($data["BENTUK"]);
         
 
-        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$stok','$exp')");
+        $qu = mysqli_query($conn, "INSERT INTO tb_obat VALUES ('$id_obat','$nama','$stok','$exp','$bentuk')");
         
         return $qu;
 }
@@ -314,14 +315,15 @@ function ubahobat($data)
         $nama = htmlspecialchars($data["NAMA_OBAT"]);
         $stok = htmlspecialchars($data["STOK"]);
         $exp = htmlspecialchars($data["EXP"]);
-
+        $bentuk = htmlspecialchars($data["BENTUK"]);
                
 
         $query="UPDATE tb_obat SET
 
                 NAMA_OBAT = '$nama',
                 STOK = '$stok',
-                EXP = '$exp'
+                EXP = '$exp',
+                BENTUK = '$bentuk'
                 WHERE ID_OBAT = '$id_obat'
                 ";
 

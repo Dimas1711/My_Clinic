@@ -2,14 +2,14 @@
 require 'functions.php';
 session_start();
 
-$_SESSION['user'];
+$_SESSION['id'];
 
 //ambil data di url
-$id = $_SESSION['user'];
+$id = $_SESSION['id'];
 
 
 //query berdasarkan id
-$ang = query("SELECT * FROM tb_anggota WHERE NAMA_ANGGOTA = '$id'")[0];
+$ang = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id'")[0];
 
 //cek tombol sudah ditekan atau belum
 if( isset ($_POST["submit"]) )

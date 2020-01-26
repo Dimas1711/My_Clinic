@@ -7,8 +7,9 @@
                 $exp = $_POST["EXP"];
                 $stok = $_POST["STOK"];
                 $nama = $_POST["NAMA_OBAT"];
+                $bentuk = $_POST["BENTUK"];
                   //cek data berhasil ditambah?
-                  if (empty($exp && $stok && $nama)) {
+                  if (empty($exp && $stok && $nama && $bentuk)) {
                     echo "<script>
                     alert('Fields tidak boleh kosong');
                     </script>";
@@ -60,8 +61,12 @@
                     <label>NAMA OBAT</label>
                     <input class="form-control" name="NAMA_OBAT" />
 
-                    </div>
-             
+                </div>
+                <div class="form-group">
+                    <label>BENTUK</label>
+                    <input class="form-control" name="BENTUK" type="text"  />
+
+                </div> 
                 </div>
                 <div class="form-group col-lg-6">
                     <label>STOK</label>
@@ -72,7 +77,9 @@
                     <label>EXP</label>
                     <input class="form-control" name="EXP" type="date"  />
 
-                </div>  
+                </div> 
+                
+                 
                 <div>
                   <input  type="submit" name="submit" value="simpan" class="btn btn-primary">
                 </div>
