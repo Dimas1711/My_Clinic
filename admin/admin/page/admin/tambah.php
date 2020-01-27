@@ -6,7 +6,7 @@
           {
                 $pass = $_POST["PASSWORD"];
                 $ktp = $_POST["NO_KTP_NIM_NIP"];
-                $nama = $_POST["NAMA_ADMIN"];
+                $nama = $_POST["NAMA_KARYAWAN"];
                 $ttl = $_POST["TEMPAT_TANGGAL_LAHIR"];
                 $alamat = $_POST["ALAMAT"];
                 $no = $_POST["NO_HP"];
