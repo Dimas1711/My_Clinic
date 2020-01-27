@@ -17,18 +17,20 @@
         }
 
         
-        if (isset ($_POST["Simpan"]))
+        if (isset ($_POST["resep"]))
         {
             $sistole = $_POST["SISTOLE"];
             $diastole = $_POST["DIASTOLE"];
             $anamnesa = $_POST["ANAMNESA"];
+            $alergi = $_POST["ALERGI"];
+            $diagnosa = $_POST["DIAGNOSA"];
             $suhu = $_POST["SUHU"];
             $nadi = $_POST["NADI"];
             $pernapasan = $_POST["PERNAPASAN"];
             $berat = $_POST["BERAT_BADAN"];
             $tinggi = $_POST["TINGGI_BADAN"];
            
-            if (empty($sistole && $diastole && $anamnesa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
+            if (empty($sistole && $diastole && $anamnesa && $alergi && $diagnosa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
                 echo "<script>
                 alert('Field Tidak Boleh Kosong');
                 </script>"; 
@@ -44,7 +46,7 @@
                 echo "<script>alert('Gagal Menambahkan Data')</script>";
             }
         }
-       elseif (isset ($_POST["Reset"]))
+       elseif (isset ($_POST["rujukan"]))
         { 
             $sistole = $_POST["SISTOLE"];
             $diastole = $_POST["DIASTOLE"];
@@ -67,6 +69,22 @@
                 echo "<script>
                 alert('Data Berhasil Ditambahkan');
                 document.location.href = 'home1.php?page=periksa&aksi=input&ID_BEROBAT=$hasilkode';
+                </script>";   
+            
+                
+            }
+            else {
+                echo "<script>alert('Gagal Menambahkan Data')</script>";
+            }
+        }
+        elseif (isset ($_POST["racikan"]))
+        { 
+
+
+           if (input_periksa($_POST) > 0){
+                echo "<script>
+                alert('Data Berhasil Ditambahkan');
+                document.location.href = 'home1.php?page=periksa&aksi=racikan&ID_BEROBAT=$hasilkode';
                 </script>";   
             
                 
@@ -177,9 +195,9 @@
                 ?>
 
                 <div class="form-group">
-                    <label>Nama Perawat</label><br>
-                    <input class="form-control" type="text" id="NAMA_KARYAWAN" name="NAMA_KARYAWAN" value="<?= $row["NAMA_KARYAWAN"]?>" readonly>
-                    <input type="hidden" name="ID_KARYAWAN" value="<?= $row["ID_KARYAWAN"]?>" >
+                    <label>Nama Dokter</label><br>
+                    <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
+                    <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>                  
                 <div class="form-group">
                     <label>Nama</label>
@@ -219,6 +237,13 @@
                     <label>Anamanesa</label>
                     <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" />
                 </div>
+               
+                <div class="form-group">
+                    <label>Diagnosa</label>
+                    <input class="form-control" type="text" name="DIAGNOSA" id="DIAGNOSA" />
+                </div>
+                
+               
 
                 <div class="form-group col-lg-6">
                     <label>Suhu</label>
@@ -257,22 +282,22 @@
                     <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" />
                 </div>
                 <div class="form-group">
+                    <label>Alergi Obat</label>
+                    <input class="form-control" type="text" name="ALERGI" id="ALERGI" />
+                </div>
+                <div class="form-group">
                     <label>Catatan</label>
                     <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN"> </Textarea>
                 </div>
-                <div class="form-group">
-                    <label>Alergi Obat</label>
-                    <input class="form-control" type="text" name="ALERGI" id="ALERGI" readonly />
-                </div>
-               
                
                     </table>
                         </div>
                     </div>            
                 </div>
             
-                <input  type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-                <input  type="submit" name="Reset" value="Reset" class="btn btn-info">
+                <input  type="submit" name="resep" value="Resep Obat" class="btn btn-info">
+                <input  type="submit" name="rujukan" value="Rujukan" class="btn btn-primary">
+                <input  type="submit" name="racikan" value="racikan" class="btn btn-primary">
                 </form>
                 <script>
                 var table = document.getElementById('dataTables-example');

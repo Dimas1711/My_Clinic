@@ -56,6 +56,9 @@
                     <li>
                         <a  href="?page=periksa"> Berobat</a>
                     </li>
+                    <li>
+                          <a href="?page=laporan">Laporan Berobat</a>
+                    </li>
                 </ul>
 
             </div>
@@ -88,8 +91,13 @@
                           elseif ($aksi == "cetak") {
                             include "page/periksa/cetakrujukan.php";
                           }
-                        
                         }
+                         elseif ($page == "laporan") {
+                          If ($aksi =="") {
+                          Include "page/laporan/laporanberobatadm.php"; 
+                          }
+                          }
+                      
 
                      ?>
 
@@ -123,6 +131,5 @@
     </script>
          <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-
 </body>
 </html>
