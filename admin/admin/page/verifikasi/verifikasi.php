@@ -1,6 +1,6 @@
 <?php
 require 'functions_admin.php';
-$anggota = query("select * from tb_anggota WHERE STATUS='Reject' OR STATUS='Pending'");
+$anggota = query("select * from tb_anggota WHERE STATUS='Pending'");
 if(!isset($_SESSION["status"])){
     echo "<script>alert('login sek boss')</script>";
     
@@ -24,7 +24,6 @@ if(!isset($_SESSION["status"])){
                         <th>Nama Anggota</th>
                         <th>Jenis Anggota</th>
                         <th>Jenis Kelamin</th>
-                        <th>Tanggal Lahir</th>
                         <th>Aksi</th>
                             </tr>
                         </thead>
@@ -36,7 +35,6 @@ if(!isset($_SESSION["status"])){
                     <td><?= $row["NAMA_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_KELAMIN"];?></td>
-                    <td><?= $row["TANGGAL_LAHIR"];?></td>
                     <td>
                         <!-- <a href="?page=verifikasi&aksi=accept&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info"><i class="fa fa-check"></i></a>  
                         <a href="?page=verifikasi&aksi=reject&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Reject Data Ini ?');" class="btn btn-danger"><i class="fa fa-times"></i></a>
