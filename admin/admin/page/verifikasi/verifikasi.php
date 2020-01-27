@@ -1,6 +1,6 @@
 <?php
 require 'functions_admin.php';
-$anggota = query("select * from tb_anggota WHERE STATUS='Reject' OR STATUS='Pending'");
+$anggota = query("select * from tb_anggota WHERE STATUS='Pending'");
 if(!isset($_SESSION["status"])){
     echo "<script>alert('login sek boss')</script>";
     

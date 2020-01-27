@@ -55,48 +55,48 @@ if( isset ($_POST["ban"]))
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group col-lg-6">
                     <label>NO.KTP_NIM_NIP</label>
-                    <p class="form-control" name="NO_KTP_NIM_NIP"><?=  $ang["NO_KTP_NIM_NIP"]?></p>
+                    <p class="form-control"><?=  $ang["NO_KTP_NIM_NIP"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Nama Anggota</label>  
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["NAMA_ANGGOTA"]?></p>
+                    <p class="form-control"><?=  $ang["NAMA_ANGGOTA"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Jenis Anggota</label>
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["JENIS_ANGGOTA"]?></p>
+                    <p class="form-control"><?=  $ang["JENIS_ANGGOTA"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Jenis Kelamin</label>
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["JENIS_KELAMIN"]?></p>
+                    <p class="form-control"><?=  $ang["JENIS_KELAMIN"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Tanggal Lahir</label>
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["TANGGAL_LAHIR"]?></p>
+                    <p class="form-control"><?=  $ang["TANGGAL_LAHIR"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Usia</label>
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["USIA"]?></p>
+                    <p class="form-control"><?=  $ang["USIA"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Alamat</label>
-                   <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["ALAMAT"]?></p>
+                   <p class="form-control"><?=  $ang["ALAMAT"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Pendidikan Terakhir</label>
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["PENDIDIKAN_TERAKHIR"]?></p>
+                    <p class="form-control"><?=  $ang["PENDIDIKAN_TERAKHIR"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>No.Hp</label>
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["NO_HP"]?></p>
+                    <p class="form-control"><?=  $ang["NO_HP"]?></p>
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Pekerjaan Prodi</label>
               
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["PEKERJAAN_PRODI"]?></p>
+                    <p class="form-control"><?=  $ang["PEKERJAAN_PRODI"]?></p>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <p class="form-control" name="NAMA_ANGGOTA"><?=  $ang["EMAIL"]?></p>
+                    <p class="form-control"><?=  $ang["EMAIL"]?></p>
                 </div>
              
                 <div class="form-group">

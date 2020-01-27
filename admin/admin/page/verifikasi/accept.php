@@ -14,14 +14,14 @@ $id = $_GET['ID_ANGGOTA'];
 if (acc($id) > 0) 
 {
     echo "<script> 
-    alert('Data Berhasil Di Ubah');
+    alert('Data Berhasil Di Terima');
     document.location.href = '?page=verifikasi';
     </script>";
     
 }
 else {
     echo "<script> 
-    alert('Gagal Ubah Data');
+    alert('Gagal Terima Data');
     document.location.href = '?page=verifikasi';
     </script>";
 
