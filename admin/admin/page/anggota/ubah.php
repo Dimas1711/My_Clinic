@@ -48,7 +48,7 @@ if( isset ($_POST["submit"]) )
         <div class="col-md-12">
 
             <form method="post" enctype="multipart/form-data">
-            <input type="hidden" name="GAMBARLAMA" id="password" value="<?= $ang["FOTO"];?>">
+            <input type="hidden" name="GAMBARLAMA" value="<?= $ang["FOTO"];?>">
 
                 <div class="form-group">
                     <label>Id_Anggota</label>

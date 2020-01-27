@@ -1,6 +1,6 @@
 <?php
-
 require 'functions_admin.php';
+
 $id = $_GET['ID_ANGGOTA'];
 $ang = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id'")[0];
 
@@ -10,6 +10,7 @@ if( isset ($_POST["submit"]))
         //cek data berhasil ditambah? 
             if (acc($_POST) > 0) 
             {
+                
                 echo "<script> 
                 alert('Data Berhasil Di Ubah');
                 document.location.href = '?page=verifikasi';
@@ -102,9 +103,7 @@ if( isset ($_POST["ban"]))
                 <div class="form-group">
                     <label>Foto</label>
                     <br>
-                    <input type="hidden" name="GAMBARLAMA" value="<?= $ang["FOTO"];?>"> 
-                    <img class="foto" src="img/<?= $ang["FOTO"];?>" alt="" width="150px">
-                     <input class="form-control" type="file" name="FOTO" value="img/<?= $ang["FOTO"];?>" />
+                    <img class="foto" src="../img/<?= $ang["FOTO"];?>" alt="tidak ada gambar" width="150px">
                 </div>
                 <div>
                   <a href="?page=verifikasi&aksi=accept&ID_ANGGOTA=<?= $ang["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info"><i class="fa fa-check"></i>Terima</a>  
