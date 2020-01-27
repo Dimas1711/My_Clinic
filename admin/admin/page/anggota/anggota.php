@@ -21,12 +21,10 @@ if(!isset($_SESSION["status"])){
                         <thead>
                             <tr>
                         <th>ID Anggota</th>
-                        <th>NO.KTP/NIM/NIP</th>
                         <th>Nama Anggota</th>
                         <th>Jenis Anggota</th>
                         <th>Jenis Kelamin</th>
                         <th>Alamat</th>
-                        <th>Usia</th>
                         <th>NO.HP</th>
                         <th>Pekerjaan/Prodi</th>
                         <th>Email</th>
@@ -38,12 +36,10 @@ if(!isset($_SESSION["status"])){
             <?php foreach ($anggota as $row ) :  ?>
                 <tr>
                     <td><?= $row["ID_ANGGOTA"];?></td>
-                    <td><?= $row["NO_KTP_NIM_NIP"];?></td>
                     <td><?= $row["NAMA_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_KELAMIN"];?></td>
                     <td><?= $row["ALAMAT"];?></td>
-                    <td><?= $row["USIA"];?></td>
                     <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
                     <td><?= $row["EMAIL"];?></td>
