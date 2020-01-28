@@ -36,7 +36,7 @@
             else if (input_periksa($_POST) > 0){
                 echo "<script>
                 alert('Data Berhasil Ditambahkan');
-                document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT=$hasilkode';
+                document.location.href = 'home2.php?page=periksa';
                 </script>";   
                 
             }
@@ -44,37 +44,8 @@
                 echo "<script>alert('Gagal Menambahkan Data')</script>";
             }
         }
-       elseif (isset ($_POST["Reset"]))
-        { 
-            $sistole = $_POST["SISTOLE"];
-            $diastole = $_POST["DIASTOLE"];
-            $anamnesa = $_POST["ANAMNESA"];
-         
-            $diagnosa = $_POST["DIAGNOSA"];
-            $suhu = $_POST["SUHU"];
-            $nadi = $_POST["NADI"];
-            $pernapasan = $_POST["PERNAPASAN"];
-            $berat = $_POST["BERAT_BADAN"];
-            $tinggi = $_POST["TINGGI_BADAN"];
-           
-            if (empty($sistole && $diastole && $anamnesa && $diagnosa && $suhu && $nadi && $pernapasan && $berat && $tinggi)) {
-                echo "<script>
-                alert('Field Tidak Boleh Kosong');
-                </script>"; 
-            }
-
-            else if (input_periksa($_POST) > 0){
-                echo "<script>
-                alert('Data Berhasil Ditambahkan');
-                document.location.href = 'home1.php?page=periksa&aksi=input&ID_BEROBAT=$hasilkode';
-                </script>";   
-            
-                
-            }
-            else {
-                echo "<script>alert('Gagal Menambahkan Data')</script>";
-            }
-        }
+       
+        
         if(!isset($_SESSION["status"])){
             echo "<script>alert('login sek boss')</script>";
             
@@ -173,13 +144,16 @@
                     
                     $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , tb_dokter.ID_DOKTER, NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
                     $row = mysqli_fetch_array($result1);
+
+                    $result2 = mysqli_query($koneksi, "SELECT * FROM tb_karyawan WHERE NAMA_KARYAWAN='".$_SESSION['username']."'");
+                    $row2 = mysqli_fetch_array($result2);
          
                 ?>
 
                 <div class="form-group">
                     <label>Nama Perawat</label><br>
-                    <input class="form-control" type="text" id="NAMA_KARYAWAN" name="NAMA_KARYAWAN" value="<?= $row["NAMA_KARYAWAN"]?>" readonly>
-                    <input type="hidden" name="ID_KARYAWAN" value="<?= $row["ID_KARYAWAN"]?>" >
+                    <input class="form-control" type="text" id="NAMA_KARYAWAN" name="NAMA_KARYAWAN" value="<?= $row2["NAMA_KARYAWAN"]?>" readonly>
+                    <input type="hidden" name="ID_KARYAWAN" value="<?= $row2["ID_KARYAWAN"]?>" >
                 </div>                  
                 <div class="form-group">
                     <label>Nama</label>
@@ -198,12 +172,14 @@
                     <label>Jenis Anggota</label>
                     <input class="form-control" type="text" name="JA" id="JA" readonly/>
                 </div>
+
+                <!--
                 <div class="form-group">
                     <label>Klinik</label>
-                    <input class="form-control" type="text" id="POLI" name="POLI" value="<?= $row["NAMA_KLINIK"]?>" readonly>
-                    <input type="hidden" name="ID_KLINIK" value="<?= $row["ID_KLINIK"]?>" >
+                    <input class="form-control" type="text" id="POLI" name="POLI" value="<//?= $row["NAMA_KLINIK"]?>" readonly>
+                    <input type="hidden" name="ID_KLINIK" value="<//?= $row["ID_KLINIK"]?>" >
                 </div>    
-              
+                -->
                 
                 <div class="form-group"> 
                     <label>Sistole</label>
@@ -255,16 +231,9 @@
                 <div class="form-group col-lg-6">
                     <label>TINGGI BADAN</label>
                     <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" />
+                    
                 </div>
-                <div class="form-group">
-                    <label>Catatan</label>
-                    <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN"> </Textarea>
-                </div>
-                <div class="form-group">
-                    <label>Alergi Obat</label>
-                    <input class="form-control" type="text" name="ALERGI" id="ALERGI" readonly />
-                </div>
-               
+                <input class="form-control" type="hidden" name="STATUS" id="STATUS" value="pending"/>
                
                     </table>
                         </div>
@@ -272,7 +241,7 @@
                 </div>
             
                 <input  type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-                <input  type="submit" name="Reset" value="Reset" class="btn btn-info">
+                <input  type="submit" name="Reset" value="Reset" class="btn btn-info" href='home1.php?page=periksa'>
                 </form>
                 <script>
                 var table = document.getElementById('dataTables-example');

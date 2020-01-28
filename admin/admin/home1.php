@@ -54,7 +54,7 @@
                         <a  href="?page=dashborddokter"> Dashboard</a>
                     </li>
                     <li>
-                        <a  href="?page=periksa"> Berobat</a>
+                        <a  href="?page=periksadokter"> Berobat</a>
                     </li>
                     <li>
                         <a  href="?page=laporan"> Laporan Rujukan</a>
@@ -81,9 +81,9 @@
                       if ($page == "dashborddokter") {
                         include "page/dashborddokter.php";
                       }
-                        elseif ($page == "periksa") {
+                        elseif ($page == "periksadokter") {
                         if ($aksi == "") {
-                          include "page/periksa/periksa.php";
+                          include "page/periksa/periksadokter.php";
                           }
                           if ($aksi == "input") {
                            include "page/periksa/rujukan.php";

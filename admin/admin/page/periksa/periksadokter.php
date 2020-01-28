@@ -1,22 +1,6 @@
 <?php 
         require 'functions_admin.php';
         
-
-        $carikode = mysqli_query($conn, "SELECT max(ID_BEROBAT) FROM tb_berobat") or die(mysqli_error($conn));
-        $datakode = mysqli_fetch_array($carikode);
-        if($datakode)
-        {
-                $nilaikode = substr($datakode[0], 2);
-                $kode = (int) $nilaikode;
-                $kode = $kode + 1;
-                $hasilkode = "B" .str_pad($kode, 5, "0", STR_PAD_LEFT);
-        }
-        else
-        {
-                $hasilkode = "B00001";
-        }
-
-        
         if (isset ($_POST["resep"]))
         {
             $sistole = $_POST["SISTOLE"];
@@ -114,17 +98,7 @@
 </head>
 <body>
   <form  method="post" action="">
-<h3 style="margin-left:2.5% ; font-size:20px"> 
-  <tr>                
-        <td>Id Berobat</td>
-        <td><input type="text" name="ID_BEROBAT"  value="<?php echo $hasilkode ?>" readonly></td>
-  </tr> 
-
-  <tr>
-        <td name="TGL">Tanggal</td>
-        <label for="TGL" name="TGL"><?php echo date("Y/m/d") ;?>     </label>
-        <input type="hidden" name="TGL" value="<?php echo date("Y/m/d") ;?>">
-  </tr> 
+<h3 style="margin-left:2.5% ; font-size:20px">
 
 </h3>
 <div class="row">
@@ -132,7 +106,7 @@
         <!-- Advanced Tables -->
         <div class="panel panel-default">
             <div class="panel-heading">
-              Data Anggota
+              Data Berobat
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
@@ -140,11 +114,20 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>ID_ANGGOTA</th>
-                                <th>NO.KTP/NIM/NIP</th>
-                                <th>NAMA ANGGOTA</th>
-                                <th>JENIS ANGGOTA</th>
-                                <th>JENIS KELAMIN</th>
+                                <th>ID BEROBAT</th>
+                                <th>ID ANGGOTA</th>
+                                <th>ID PERAWAT</th>
+                                <th>TANGGAL BEROBAT</th>
+                                <th>SISTOLE</th>
+                                <th>DIASTOLE</th>
+                                <th>ANAMNESA</th>
+                                <th>SUHU</th>
+                                <th>NADI</th>
+                                <th>PERNAPASAN</th>
+                                <th>GOLONGAN DARAH</th>
+                                <th>BERAT BADAN</th>
+                                <th>TINGGI BADAN</th>
+                                <th>STATUS</th>
                             </tr>
                         </thead>
 
@@ -152,20 +135,29 @@
 
                       <?php
                       $no = 1;
-                          $sql = $koneksi -> query ("SELECT *FROM tb_anggota WHERE STATUS = 'Accept'");
+                          $sql = $koneksi -> query ("SELECT * FROM tb_berobat WHERE STATUS = 'pending'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
                        ?>
                       <tr>
                         <td><?php  echo $no++; ?></td>
+                        <td><?php echo $data ['ID_BEROBAT']; ?></td>
                         <td><?php echo $data ['ID_ANGGOTA']; ?></td>
-                        <td><?php echo $data ['NO_KTP_NIM_NIP']; ?></td>
-                        <td><?php echo $data ['NAMA_ANGGOTA']; ?></td>
-                        <td><?php echo $data ['JENIS_ANGGOTA']; ?></td>
-                        <td><?php echo $data ['JENIS_KELAMIN']; ?></td>
+                        <td><?php echo $data ['ID_KARYAWAN']; ?></td>
+                        <td><?php echo $data ['TANGGAL_BEROBAT']; ?></td>
+                        <td><?php echo $data ['SISTOLE']; ?></td>
+                        <td><?php echo $data ['DIASTOLE']; ?></td>
+                        <td><?php echo $data ['ANAMNESA']; ?></td>
+                        <td><?php echo $data ['SUHU']; ?></td>
+                        <td><?php echo $data ['NADI']; ?></td>
+                        <td><?php echo $data ['PERNAPASAN']; ?></td>
+                        <td><?php echo $data ['GOLONGAN DARAH']; ?></td>
+                        <td><?php echo $data ['BERAT BADAN']; ?></td>
+                        <td><?php echo $data ['TINGGI BADAN']; ?></td>
+                        <td><?php echo $data ['STATUS']; ?></td>
                         
-                        
+
                       </tr>
 
                       <?php } ?>
@@ -198,44 +190,48 @@
                     <label>Nama Dokter</label><br>
                     <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
                     <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
-                </div>                  
-                <div class="form-group">
-                    <label>Nama</label>
-                    <input class="form-control" type="text" id="NAMA" name="NAMA_ANGGOTA" readonly />
-                </div>
-                <div class="form-group">
-                    <label>Id_Anggota</label>
-                    <input class="form-control" type="text" id="ID_ANGGOTA" name="ID_ANGGOTA" readonly />
-                </div>
-                <div class="form-group">
-                    <label>No.KTP/NIM/NIP</label>
-                    <input class="form-control" type="text" name="NO" id="NO" readonly/>
-                </div>
+                </div>     
                 
-                <div class="form-group">
-                    <label>Jenis Anggota</label>
-                    <input class="form-control" type="text" name="JA" id="JA" readonly/>
-                </div>
                 <div class="form-group">
                     <label>Klinik</label>
                     <input class="form-control" type="text" id="POLI" name="POLI" value="<?= $row["NAMA_KLINIK"]?>" readonly>
                     <input type="hidden" name="ID_KLINIK" value="<?= $row["ID_KLINIK"]?>" >
-                </div>    
-              
-                
-                <div class="form-group"> 
-                    <label>Sistole</label>
-                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" /> 
+                </div> 
+
+                <div class="form-group">
+                    <label>Id Berobat</label>
+                    <input class="form-control" type="text" id="ID_BEROBAT" name="ID_BEROBAT" readonly />
                 </div>
+                
+                <div class="form-group">
+                    <label>Id_Anggota</label>
+                    <input class="form-control" type="text" name="ID_ANGGOTA" id="ID_ANGGOTA" readonly/>
+                </div>
+
+                <div class="form-group">
+                    <label>Id Perawat</label>
+                    <input class="form-control" type="text" id="ID_KARYAWAN" name="ID_KARYAWAN" readonly />
+                </div>
+
+                
+                <div class="form-group">
+                    <label>Tanggal Berobat</label>
+                    <input class="form-control" type="text" name="TANGGAL_BEROBAT" id="TANGGAL_BEROBAT" readonly/>
+                </div>   
+              
+                <div class="form-group">
+                    <label>Sistole</label>
+                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" readonly/>
+                </div> 
                                 
                 <div class="form-group">
                     <label>Diastole</label>
-                    <input class="form-control" type="text" name="DIASTOLE" id="DIASTOLE" />
+                    <input class="form-control" type="text" name="DIASTOLE" id="DIASTOLE" readonly/>
                 </div>
                    
                 <div class="form-group">
                     <label>Anamanesa</label>
-                    <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" />
+                    <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" readonly/>
                 </div>
                
                 <div class="form-group">
@@ -247,39 +243,34 @@
 
                 <div class="form-group col-lg-6">
                     <label>Suhu</label>
-                    <input class="form-control" type="text" name="SUHU" id="SUHU" />
+                    <input class="form-control" type="text" name="SUHU" id="SUHU" readonly/>
                 
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label>NADI</label>
-                    <input class="form-control" type="text" name="NADI" id="NADI" />
+                    <input class="form-control" type="text" name="NADI" id="NADI" readonly/>
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label>PERNAPASAN</label>
-                    <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" />
+                    <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" readonly/>
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label>GOLONGAN DARAH</label>
-                    <select class="form-control" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="O">O</option>
-                        <option value="AB">AB</option>
-                    </select>
+                    <input class="form-control" type="text" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH" readonly/>
                 </div>
                 
                 <div class="form-group col-lg-6">
                     <label>BERAT BADAN</label>
-                    <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN"/>
+                    <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN" readonly/>
                     
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label>TINGGI BADAN</label>
-                    <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" />
+                    <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" readonly/>
                 </div>
                 <div class="form-group">
                     <label>Alergi Obat</label>
@@ -307,10 +298,19 @@
         table.rows[i].onclick = function()
         {
              //rIndex = this.rowIndex;
-             document.getElementById("ID_ANGGOTA").value = this.cells[1].innerHTML;
-             document.getElementById("NAMA").value = this.cells[3].innerHTML;
-             document.getElementById("NO").value = this.cells[2].innerHTML;
-             document.getElementById("JA").value = this.cells[4].innerHTML;
+             document.getElementById("ID_BEROBAT").value = this.cells[1].innerHTML;
+             document.getElementById("ID_ANGGOTA").value = this.cells[2].innerHTML;
+             document.getElementById("ID_KARYAWAN").value = this.cells[3].innerHTML;
+             document.getElementById("TANGGAL_BEROBAT").value = this.cells[4].innerHTML;
+             document.getElementById("SISTOLE").value = this.cells[5].innerHTML;
+             document.getElementById("DIASTOLE").value = this.cells[6].innerHTML;
+             document.getElementById("ANAMNESA").value = this.cells[7].innerHTML;
+             document.getElementById("SUHU").value = this.cells[8].innerHTML;
+             document.getElementById("NADI").value = this.cells[9].innerHTML;
+             document.getElementById("PERNAPASAN").value = this.cells[10].innerHTML;
+             document.getElementById("GOLONGAN_DARAH").value = this.cells[11].innerHTML;
+             document.getElementById("BERAT_BADAN").value = this.cells[12].innerHTML;
+             document.getElementById("TINGGI_BADAN").value = this.cells[13].innerHTML;
         };
     }
 

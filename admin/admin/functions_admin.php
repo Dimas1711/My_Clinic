@@ -358,23 +358,24 @@ function input_periksa($data){
 
     global $conn;
     $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
-    $id_klinik = htmlspecialchars($data["ID_KLINIK"]);
+    $id_karyawan = htmlspecialchars($data["ID_KARYAWAN"]);
     $id_anggota = htmlspecialchars($data["ID_ANGGOTA"]);
-    $nama_agt = htmlspecialchars($data["NAMA_ANGGOTA"]);
-    $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
     $sistole = htmlspecialchars($data["SISTOLE"]);
     $diastole = htmlspecialchars($data["DIASTOLE"]);   
-    $anamnesa = htmlspecialchars($data["ANAMNESA"]);     
-    $catatan = htmlspecialchars($data["CATATAN"]);                  
-    $suhu = htmlspecialchars($data["SUHU"]);
+    $anamnesa = htmlspecialchars($data["ANAMNESA"]);         
+    $suhu = htmlspecialchars($data["SUHU"]);     
     $nadi = htmlspecialchars($data["NADI"]);
     $pernapasan = htmlspecialchars($data["PERNAPASAN"]);
     $goldar = htmlspecialchars($data["GOLONGAN_DARAH"]);
     $berat = htmlspecialchars($data["BERAT_BADAN"]);
     $tinggi = htmlspecialchars($data["TINGGI_BADAN"]);
+    $k = htmlspecialchars($data["STATUS"]);
+    $tglku = date('Y-m-d');
 
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat','$id_klinik','$id_dokter','$id_anggota','$sistole','$diastole','$anamnesa','$catatan','$alergi','$suhu','$nadi','$pernapasan','$goldar','$berat','$tinggi')");
+
+    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat','$id_karyawan','$id_anggota','$sistole','$diastole','$tglku',
+    '$anamnesa','$suhu','$nadi','$pernapasan','$goldar','$berat','$tinggi','$k')");
     // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
     return $qu;
     
