@@ -57,7 +57,7 @@
                         <td><?php echo $data ['ID_KARYAWAN']; ?></td>
                         <td><?php echo $data ['STATUS']; ?></td>
                         <td>
-                        <a href="?page=periksadokter&aksi=detail&ID_ANGGOTA=<?= $data["ID_ANGGOTA"];?>" name="hapus" class="btn btn-primary"><i class="fa fa-search"></i></a>  
+                        <a href="?page=periksadokter&aksi=detail&ID_BEROBAT=<?= $data["ID_BEROBAT"];?>" name="detail" class="btn btn-primary"><i class="fa fa-search"></i></a>  
                     </td>
 
                       </tr>
@@ -71,33 +71,6 @@
                   </div>
                   </div>
                   </div>
-            
-       
-                <script>
-                var table = document.getElementById('dataTables-example');
-    
-               for(var i = 1; i < table.rows.length; i++)
-    {
-        table.rows[i].onclick = function()
-        {
-             //rIndex = this.rowIndex;
-             document.getElementById("ID_BEROBAT").value = this.cells[1].innerHTML;
-             document.getElementById("ID_ANGGOTA").value = this.cells[2].innerHTML;
-             document.getElementById("ID_KARYAWAN").value = this.cells[3].innerHTML;
-             document.getElementById("TANGGAL_BEROBAT").value = this.cells[4].innerHTML;
-             document.getElementById("SISTOLE").value = this.cells[5].innerHTML;
-             document.getElementById("DIASTOLE").value = this.cells[6].innerHTML;
-             document.getElementById("ANAMNESA").value = this.cells[7].innerHTML;
-             document.getElementById("SUHU").value = this.cells[8].innerHTML;
-             document.getElementById("NADI").value = this.cells[9].innerHTML;
-             document.getElementById("PERNAPASAN").value = this.cells[10].innerHTML;
-             document.getElementById("GOLONGAN_DARAH").value = this.cells[11].innerHTML;
-             document.getElementById("BERAT_BADAN").value = this.cells[12].innerHTML;
-             document.getElementById("TINGGI_BADAN").value = this.cells[13].innerHTML;
-        };
-    }
-
-</script>
 
 
   

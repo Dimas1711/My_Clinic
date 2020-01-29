@@ -40,7 +40,8 @@ if(!isset($_SESSION["status"])){
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>ID Berobat</th>
+                            <th>Tanggal Berobat</th>
+                              
                                 <th>Nama Anggota</th>
                                 <th>Nama Perawat</th>
                                 <th>Nama Klinik</th>
@@ -57,7 +58,7 @@ if(!isset($_SESSION["status"])){
 
                       <?php
                      
-                          $sql = $koneksi -> query ("SELECT tb_berobat.ID_BEROBAT, tb_anggota.NAMA_ANGGOTA, tb_karyawan.NAMA_KARYAWAN, tb_klinik.NAMA_KLINIK, tb_berobat.SISTOLE, tb_berobat.DIASTOLE, tb_berobat.ANAMNESA, tb_berobat.SUHU, tb_berobat.PERNAPASAN, tb_berobat.NADI, tb_berobat.CATATAN
+                          $sql = $koneksi -> query ("SELECT tb_berobat.ID_BEROBAT,tb_berobat.TANGGAL_BEROBAT, tb_anggota.NAMA_ANGGOTA, tb_karyawan.NAMA_KARYAWAN, tb_klinik.NAMA_KLINIK, tb_berobat.SISTOLE, tb_berobat.DIASTOLE, tb_berobat.ANAMNESA, tb_berobat.SUHU, tb_berobat.PERNAPASAN, tb_berobat.NADI, tb_berobat.CATATAN
                           FROM tb_berobat, tb_anggota, tb_klinik, tb_karyawan
                           WHERE tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA   
                           AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK
@@ -68,12 +69,12 @@ if(!isset($_SESSION["status"])){
                        ?>
                       <tr>
                         
-                        <td><?php echo $data ['ID_BEROBAT']; ?></td>
+                        <td><?php echo $data ['TANGGAL_BEROBAT']; ?></td>
                         <td><?php echo $data ['NAMA_ANGGOTA']; ?></td>
                         <td><?php echo $data ['NAMA_KARYAWAN']; ?></td>
                         <td><?php echo $data ['NAMA_KLINIK']; ?></td>
                         <td><?php echo $data ['SISTOLE']; ?></td>
-                        <td><?php echo $data ['DISTOLE']; ?></td>
+                        <td><?php echo $data ['DIASTOLE']; ?></td>
                         <td><?php echo $data ['ANAMNESA']; ?></td>
                         <td><?php echo $data ['SUHU']; ?></td>
                         <td><?php echo $data ['PERNAPASAN']; ?></td>

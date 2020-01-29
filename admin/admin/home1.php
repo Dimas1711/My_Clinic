@@ -77,7 +77,6 @@
 
                       $page = @$_GET['page'];
                       $aksi = @$_GET['aksi'];
-
                       if ($page == "dashborddokter") {
                         include "page/dashborddokter.php";
                       }
@@ -88,9 +87,6 @@
                           if ($aksi == "input") {
                            include "page/periksa/rujukan.php";
                           }
-                          else if ($aksi == "resepobat") {
-                            include "page/periksa/resepobat.php";
-                          }
                           elseif ($aksi == "cetak") {
                             include "page/periksa/cetakrujukan.php";
                           }
@@ -99,6 +95,11 @@
                           }
                           else if ($aksi == "detail") {
                             include "page/periksa/detail.php";
+                          }
+                        }
+                        elseif ($page == "detail") {
+                           if ($aksi == "resepobat") {
+                            include "page/periksa/resep/resepobat.php";
                           }
                         }
                         elseif ($page == "resepobat") {

@@ -1,7 +1,7 @@
 <?php
 require 'functions_admin.php';
 $id = $_GET['ID_BEROBAT'];
-$berobat = query("SELECT * FROM tb_detail_periksa WHERE ID_BEROBAT = '$id'")[0];
+$berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
 $id_anggota = $berobat["ID_ANGGOTA"];
 //memanggil nama dari anggota
 $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0];
@@ -61,7 +61,7 @@ if (isset ($_POST["update"])){
       else if (update_data($_POST) > 0) {
         echo "<script>
         alert('Data Berhasil');
-        document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+        document.location.href = 'home1.php?page=detail&aksi=resepobat&ID_BEROBAT='$id'';
         </script>";
       }  
       else{
@@ -71,20 +71,20 @@ if (isset ($_POST["update"])){
 
 if (isset ($_POST["hapus"])){
   // update_data($_POST);
-  //hapus_resep($_POST);
-  if (hapus_resep($_POST) > 0) {
-    echo "<script>
-    alert('Data Berhasil');
-    document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
-    </script>";
-  }  
-  else{
-          echo "<script>alert('Gagal Mengubah Data')</script>";
-  }
+  hapus_resep($_POST);
+  // if (hapus_resep($_POST) > 0) {
+  //   echo "<script>
+  //   alert('Data Berhasil');
+  //   document.location.href = 'home1.php?page=detail&aksi=resepobat&ID_BEROBAT='$id'';
+  //   </script>";
+  // }  
+  // else{
+  //         echo "<script>alert('Gagal Mengubah Data')</script>";
+  // }
 }
 if (isset($_POST["racikan"])){
   echo "<script>
-  document.location.href = 'home1.php?page=periksa&aksi=racikan&ID_BEROBAT='$id'';
+  document.location.href = 'home1.php?page=detail&aksi=racikan&ID_BEROBAT='$id'';
   </script>";
 }
 
@@ -149,7 +149,7 @@ if (isset($_POST["racikan"])){
                                 <th>Nama Obat</th>
                                 <th>Stok</th>
                                 <th>Exp</th>
-                                <th>Aksi</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
 
@@ -167,7 +167,7 @@ if (isset($_POST["racikan"])){
                         <td><?php echo $data ['NAMA_OBAT']; ?></td>
                         <td><?php echo $data ['STOK']; ?></td>
                         <td><?php echo $data ['EXP']; ?></td>
-                        <td><button>Obat</button> <button>Racikan</button></td>
+                        <td><?php echo $data ['BENTUK']; ?></td>
                         
                       </tr>
 
@@ -272,13 +272,9 @@ if (isset($_POST["racikan"])){
                             <td hidden><?php echo $data ['STOK']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['DOSIS']; ?></td>
-                        <td>
-              
-                       
+                        <td>          
                         <input  type="submit" name="hapus" value="Hapus" id="hapus" class="btn btn-info"> 
-                        <!-- <a href="home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id_berobat'"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapusaa</a> -->
-                
-                    </td>  
+                      </td>  
                         
                         
                         
@@ -306,17 +302,13 @@ if (isset($_POST["racikan"])){
                 var table = document.getElementById('table-beli');
                 var button = document.getElementById("update");
                 var button2 = document.getElementById("tambahkan");
-                // var racikan = document.getElementById("btn_racikan");
-                // var resep = document.getElementById("btn_obat");
-
 }
     
                for(var i = 1; i < table.rows.length; i++)
     {
         table.rows[i].onclick = function()
         {
-             //rIndex = this.rowIndex;
-            
+
              document.getElementById("ID_DETAIL").value = this.cells[0].innerHTML;
              document.getElementById("ID_OBAT").value = this.cells[1].innerHTML;
              document.getElementById("NAMA_OBAT").value = this.cells[2].innerHTML;
@@ -328,23 +320,5 @@ if (isset($_POST["racikan"])){
         
     }
     
-    // function disable_form_racikan(form)
-    // {
-    //               var detail = form.getElementsByTagName("ID_DETAIL_RACIKAN"),
-    //               nama = form.getElementsByTagName("NAMA_OBAT_RACIKAN"),
-    //               jumlah = form.getElementsByTagName("JUMLAH_RACIKAN"),
-    //               dosis = form.getElementsByTagName("CATATAN_RACIKAN");
 
-    //               disable_elements(detail);
-    //               disable_elements(nama);
-    //               disable_elements(jumlah);
-    //               disable_elements(dosis);
-    //               racikan.disabled = true;
-    //     // function disable_elements(elements) {
-    //     // var length = elements.length;
-    //     // while(length--) {
-    //     //     elements[length].disabled = true;
-    //     //     }
-    //     // }
-    // }   
 </script>

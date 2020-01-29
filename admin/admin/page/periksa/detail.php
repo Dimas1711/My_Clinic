@@ -3,12 +3,12 @@
             
                     include_once "koneksi.php";
                     include 'functions_admin.php';
-                    $id = $_GET['ID_ANGGOTA'];
+                    $id = $_GET['ID_BEROBAT'];
                     // $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , tb_dokter.ID_DOKTER, NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
                     // $row = mysqli_fetch_array($result1);
 
                     $getdata = query("SELECT * FROM tb_karyawan , tb_berobat , tb_klinik , tb_dokter , tb_anggota
-                     WHERE tb_karyawan.ID_KARYAWAN = tb_berobat.ID_KARYAWAN AND tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER AND tb_berobat.ID_ANGGOTA ='$id'")[0];
+                     WHERE tb_karyawan.ID_KARYAWAN = tb_berobat.ID_KARYAWAN AND tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER AND tb_berobat.ID_BEROBAT ='$id'")[0];
  
  if (isset ($_POST["resep"]))
   {
@@ -31,7 +31,7 @@
       else if (update_detail($_POST) > 0){
           echo "<script>
           alert('Data Berhasil Ditambahkan');
-          document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT=$id';
+          document.location.href = 'home1.php?page=detail&aksi=resepobat&ID_BEROBAT=$id';
           </script>";   
           
       }
@@ -61,7 +61,7 @@
       else if (update_detail($_POST) > 0){
           echo "<script>
           alert('Data Berhasil Ditambahkan');
-          document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT=$id';
+          document.location.href = 'home1.php?page=periksa&aksi=resepobat&detail=resepobat&ID_BEROBAT=$id';
           </script>";   
       
           

@@ -363,7 +363,8 @@ function input_periksa($data){
     $id_dokter = htmlspecialchars($data["DOKTER"]);
     $id_klinik = htmlspecialchars($data["KLINIK"]);
     $sistole = htmlspecialchars($data["SISTOLE"]);
-    $diastole = htmlspecialchars($data["DIASTOLE"]);   
+    $diastole = htmlspecialchars($data["DIASTOLE"]);
+    $tglku = date('Y-m-d');
     $anamnesa = htmlspecialchars($data["ANAMNESA"]);         
     $suhu = htmlspecialchars($data["SUHU"]);     
     $nadi = htmlspecialchars($data["NADI"]);
@@ -371,10 +372,10 @@ function input_periksa($data){
     $goldar = htmlspecialchars($data["GOLONGAN_DARAH"]);
     $berat = htmlspecialchars($data["BERAT_BADAN"]);
     $tinggi = htmlspecialchars($data["TINGGI_BADAN"]);
+    
     $ctt = htmlspecialchars($data["CATATAN"]);
     $k = htmlspecialchars($data["STATUS"]);
-    $tglku = date('Y-m-d');
-
+  
 
 
     $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat','$id_karyawan','$id_anggota','$id_dokter','$id_klinik','$sistole','$diastole','$tglku',
@@ -394,7 +395,8 @@ function update_detail($data)
 
                 DIAGNOSA = '$diagnosa',
                 ALERGI_OBAT = '$alergi_obat',
-                CATATAN = '$catatan'
+                CATATAN = '$catatan' , 
+                STATUS = 'Accept'
                 WHERE ID_BEROBAT = '$id'
                 ";
 
@@ -525,9 +527,9 @@ function hapus_resep($id){
     // $jumlah = htmlspecialchars($data["JUMLAH"]);
     // $id_obat = htmlspecialchars($data["ID_OBAT"]);
     // $total = $stok + $jumlah;
-    mysqli_query($conn , "DELETE FROM tb_detail_berobat WHERE ID_DETAIL = '$id_d'");
+    mysqli_query($conn , "DELETE FROM tb_detail_berobat WHERE ID_DETAIL = '$id'");
 //     $query="UPDATE tb_obat SET STOK = '$total' WHERE ID_OBAT = '$id_obat'";
-//    // echo"DELETE FROM tb_detail_berobat WHERE ID_DETAIL = '$id_d'";
+ echo"DELETE FROM tb_detail_berobat WHERE ID_DETAIL = '$id'";
 //    $sql= mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
