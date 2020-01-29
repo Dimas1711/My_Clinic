@@ -97,6 +97,9 @@
                           elseif ($aksi == "racikan") {
                             include "page/periksa/resepracikan.php";
                           }
+                          else if ($aksi == "detail") {
+                            include "page/periksa/detail.php";
+                          }
                         }
                         elseif ($page == "resepobat") {
                           if ($aksi == "hapus") {

@@ -14,13 +14,6 @@ $tanggal = date("Y/m/d");
 $table = query("SHOW TABLE STATUS LIKE 'tb_detail_berobat'")[0];
 $detailnya = $table["Auto_increment"];
 
-
-
-//$stok = $obat["STOK"];
-//$detail_berobat = query("SELECT tb_detail_berobat.JUMLAH FROM tb_detail_berobat");
-// $jumlah = $detail_berobat["JUMLAH"];
-//cek tombol sudah ditekan atau belum
-
 if( isset ($_POST["tambahkan"]) )
 {
         //cek data berhasil ditambah?

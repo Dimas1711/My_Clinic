@@ -52,7 +52,11 @@
             header("location:index.php");
           }
          
-        
+          $query = "SELECT * FROM tb_dokter ORDER BY ID_DOKTER ASC";
+          $result = mysqli_query($conn, $query);
+          
+          $query2 = "SELECT * FROM tb_klinik ORDER BY ID_KLINIK ASC";
+          $result4 = mysqli_query($conn, $query2);
 ?>
 
 <!DOCTYPE html>
@@ -163,6 +167,24 @@
                     <label>Id_Anggota</label>
                     <input class="form-control" type="text" id="ID_ANGGOTA" name="ID_ANGGOTA" readonly />
                 </div>
+              
+                <div class="form-group">
+                    <label>Klinik : </label>
+                    <select class="form-control" name="KLINIK">
+                    <?php while($data = mysqli_fetch_assoc($result4) ){?>
+                    <option name="KLINIK" value="<?php echo $data['ID_KLINIK']; ?>"><?php echo $data['NAMA_KLINIK']; ?>
+                    <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Dokter : </label>
+                    <select class="form-control" name="DOKTER">
+                    <?php while($data = mysqli_fetch_assoc($result) ){?>
+                    <option name="DOKTER" value="<?php echo $data['ID_DOKTER']; ?>"><?php echo $data['NAMA_DOKTER']; ?>
+                    <?php } ?>
+                    </select>
+                </div>
+                
                 <div class="form-group">
                     <label>No.KTP/NIM/NIP</label>
                     <input class="form-control" type="text" name="NO" id="NO" readonly/>
@@ -171,16 +193,7 @@
                 <div class="form-group">
                     <label>Jenis Anggota</label>
                     <input class="form-control" type="text" name="JA" id="JA" readonly/>
-                </div>
-
-                <!--
-                <div class="form-group">
-                    <label>Klinik</label>
-                    <input class="form-control" type="text" id="POLI" name="POLI" value="<//?= $row["NAMA_KLINIK"]?>" readonly>
-                    <input type="hidden" name="ID_KLINIK" value="<//?= $row["ID_KLINIK"]?>" >
-                </div>    
-                -->
-                
+                </div>               
                 <div class="form-group"> 
                     <label>Sistole</label>
                     <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" /> 
@@ -199,7 +212,6 @@
                 <div class="form-group col-lg-6">
                     <label>Suhu</label>
                     <input class="form-control" type="text" name="SUHU" id="SUHU" />
-                
                 </div>
 
                 <div class="form-group col-lg-6">
@@ -231,10 +243,12 @@
                 <div class="form-group col-lg-6">
                     <label>TINGGI BADAN</label>
                     <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" />
-                    
                 </div>
                 <input class="form-control" type="hidden" name="STATUS" id="STATUS" value="pending"/>
-               
+                <div class="form-group">
+                    <label>Catatan</label>
+                    <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN"></Textarea>
+                </div>
                     </table>
                         </div>
                     </div>            
