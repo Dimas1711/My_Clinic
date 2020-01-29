@@ -377,9 +377,26 @@ function input_periksa($data){
     $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat','$id_karyawan','$id_anggota','$sistole','$diastole','$tglku',
     '$anamnesa','$suhu','$nadi','$pernapasan','$goldar','$berat','$tinggi','$k')");
     // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
-    return $qu;
-    
+    return $qu;   
 }
+
+function input_detail_periksa($data){
+
+    global $conn;
+    $id_det_periksa = htmlspecialchars($data["ID_DET_PERIKSA"]);
+    $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
+    $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
+    $id_klinik = htmlspecialchars($data["ID_KLINIK"]);
+    $diagnosa = htmlspecialchars($data["DIAGNOSA"]);
+    $alergi_obat = htmlspecialchars($data["ALERGI"]);   
+    $catatan = htmlspecialchars($data["CATATAN"]);
+
+
+
+    $qu = mysqli_query($conn, "INSERT INTO tb_detail_periksa VALUES ('$id_det_periksa' , '$id_berobat' , '$id_dokter' , '$id_klinik' , '$diagnosa' , '$alergi_obat' , '$catatan')");
+    return $qu;
+}
+
 function tambahpengumuman($data)
 {
     global $conn;
