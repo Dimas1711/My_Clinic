@@ -38,11 +38,11 @@ if($datakode)
         $nilaikode = substr($datakode[0], 2);
         $kode = (int) $nilaikode;
         $kode = $kode + 1;
-        $hasilkode = "AG" .str_pad($kode, 4, "0", STR_PAD_LEFT);
+        $hasilkode = "" .str_pad($kode, 6, "0", STR_PAD_LEFT);
 }
 else
 {
-        $hasilkode = "AG0001";
+        $hasilkode = "000001";
 }
 
 
