@@ -200,13 +200,13 @@ else
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="EMAIL" required>
+                                    <input class="input--style-4" type="email" name="EMAIL">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">NO.HP</label>
-                                    <input class="input--style-4" type="text" name="NO_HP"  pattern=”[0-9]{12}” title="gunakan angka dan maksimal 12 angka" required>
+                                    <input class="input--style-4" type="text" name="NO_HP"  pattern=”[0-9]{12}” title="gunakan angka dan maksimal 12 angka" >
                                 </div>
                             </div>
                         </div>

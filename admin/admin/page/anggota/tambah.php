@@ -14,7 +14,7 @@
                 $alamat = $_POST["ALAMAT"];
                 $no = $_POST["NO_HP"];
 
-                if (empty($pass && $ktp && $nama && $ttl && $alamat && $pekerjaan && $usia && $alamat && $no)) {
+                if (empty($pass && $ktp && $nama && $ttl && $alamat && $pekerjaan && $alamat && $no)) {
                     echo"<script> alert ('Field tidak boleh kosong')</script>";
                 }
                   //cek data berhasil ditambah?
@@ -92,6 +92,7 @@
             include_once "koneksi.php";
           ?>  
             <form method="post" enctype="multipart/form-data">
+            <input class="form-control" type="hidden" name="USIA" value='0'/>
                 <div class="form-group">
                     <label>Id Anggota</label>
                     <input type="text" class="form-control" name="ID_ANGGOTA" value="<?php echo $hasilkode ?>" readonly />
@@ -150,13 +151,9 @@
                         <option value="S3">S3</option>
                     </select>
                 </div>
-                <div class="form-group col-lg-6">
+                <div class="form-group">
                     <label>Pekerjaan Atau Prodi</label>
                     <input class="form-control" type="text" name="PEKERJAAN_PRODI" />
-                </div>
-                <div class="form-group col-lg-6">
-                    <label>Usia</label>
-                    <input class="form-control" type="text" name="USIA" />
                 </div>
                 <div class="form-group">
                     <label>Alamat</label>
