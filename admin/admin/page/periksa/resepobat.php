@@ -1,7 +1,7 @@
 <?php
 require 'functions_admin.php';
 $id = $_GET['ID_BEROBAT'];
-$berobat = query("SELECT * FROM tb_berobat WHERE ID_BEROBAT = '$id'")[0];
+$berobat = query("SELECT * FROM tb_detail_periksa WHERE ID_BEROBAT = '$id'")[0];
 $id_anggota = $berobat["ID_ANGGOTA"];
 //memanggil nama dari anggota
 $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0];
