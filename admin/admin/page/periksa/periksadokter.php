@@ -1,6 +1,20 @@
 <?php 
         require 'functions_admin.php';
         
+        $carikode = mysqli_query($conn, "SELECT max(ID_DET_PERIKSA) FROM tb_detail_periksa") or die(mysqli_error($conn));
+        $datakode = mysqli_fetch_array($carikode);
+        if($datakode)
+        {
+                $nilaikode = substr($datakode[0], 2);
+                $kode = (int) $nilaikode;
+                $kode = $kode + 1;
+                $hasilkode = "Z" .str_pad($kode, 5, "0", STR_PAD_LEFT);
+        }
+        else
+        {
+                $hasilkode = "Z00001";
+        }
+
         if (isset ($_POST["resep"]))
         {
             $sistole = $_POST["SISTOLE"];
@@ -19,7 +33,7 @@
                 alert('Field Tidak Boleh Kosong');
                 </script>"; 
             }
-            else if (input_periksa($_POST) > 0){
+            else if (input_detail_periksa($_POST) > 0){
                 echo "<script>
                 alert('Data Berhasil Ditambahkan');
                 document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT=$hasilkode';
@@ -49,7 +63,7 @@
                 </script>"; 
             }
 
-            else if (input_periksa($_POST) > 0){
+            else if (input_detail_periksa($_POST) > 0){
                 echo "<script>
                 alert('Data Berhasil Ditambahkan');
                 document.location.href = 'home1.php?page=periksa&aksi=input&ID_BEROBAT=$hasilkode';
@@ -65,7 +79,7 @@
         { 
 
 
-           if (input_periksa($_POST) > 0){
+           if (input_detail_periksa($_POST) > 0){
                 echo "<script>
                 alert('Data Berhasil Ditambahkan');
                 document.location.href = 'home1.php?page=periksa&aksi=racikan&ID_BEROBAT=$hasilkode';
@@ -186,9 +200,11 @@
          
                 ?>
 
+
                 <div class="form-group">
                     <label>Nama Dokter</label><br>
                     <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
+                    <input type="hidden" name="ID_DET_PERIKSA" value="<?php echo $hasilkode ?>" >
                     <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>     
                 
@@ -233,14 +249,7 @@
                     <label>Anamanesa</label>
                     <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" readonly/>
                 </div>
-               
-                <div class="form-group">
-                    <label>Diagnosa</label>
-                    <input class="form-control" type="text" name="DIAGNOSA" id="DIAGNOSA" />
-                </div>
                 
-               
-
                 <div class="form-group col-lg-6">
                     <label>Suhu</label>
                     <input class="form-control" type="text" name="SUHU" id="SUHU" readonly/>
@@ -272,10 +281,17 @@
                     <label>TINGGI BADAN</label>
                     <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" readonly/>
                 </div>
+                
+                <div class="form-group">
+                    <label>Diagnosa</label>
+                    <input class="form-control" type="text" name="DIAGNOSA" id="DIAGNOSA" />
+                </div>
+
                 <div class="form-group">
                     <label>Alergi Obat</label>
                     <input class="form-control" type="text" name="ALERGI" id="ALERGI" />
                 </div>
+
                 <div class="form-group">
                     <label>Catatan</label>
                     <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN"> </Textarea>
