@@ -77,7 +77,7 @@
      if (update_detail($_POST) > 0){
           echo "<script>
           alert('Data Berhasil Ditambahkan');
-          document.location.href = 'home1.php?page=detail&aksi=racikan&ID_BEROBAT=$hasilkode';
+          document.location.href = 'home1.php?page=detail&aksi=racikan&ID_BEROBAT=$id';
           </script>";   
       
           

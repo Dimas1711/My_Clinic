@@ -84,7 +84,7 @@ if (isset ($_POST["hapus"])){
 }
 if (isset($_POST["racikan"])){
   echo "<script>
-  document.location.href = 'home1.php?page=detail&aksi=racikan&ID_BEROBAT='$id'';
+  document.location.href = 'home1.php?page=detail&aksi=racikan&ID_BEROBAT=$id';
   </script>";
 }
 
@@ -251,6 +251,7 @@ if (isset($_POST["racikan"])){
                                 <th hidden>Stok</th>
                                 <th>Jumlah</th>
                                 <th>Catatan</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
             
@@ -261,7 +262,7 @@ if (isset($_POST["racikan"])){
                       <?php
                      
                        // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , STOK , JUMLAH  , DOSIS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
+                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , STOK , JUMLAH  , DOSIS ,STATUS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -272,6 +273,7 @@ if (isset($_POST["racikan"])){
                             <td hidden><?php echo $data ['STOK']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['DOSIS']; ?></td>
+                            <td><?php echo $data ['STATUS']; ?></td>
                         <td>          
                         <input  type="submit" name="hapus" value="Hapus" id="hapus" class="btn btn-info"> 
                       </td>  

@@ -37,7 +37,7 @@ if( isset ($_POST["tambahkan"]) )
 
             echo "<script>
                 alert('Data Berhasil');
-                document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+                document.location.href = 'home1.php?page=detail&aksi=resepracikan&ID_BEROBAT='$id'';
                 </script>";
         }
         else
@@ -68,7 +68,7 @@ if (isset ($_POST["update"])){
       else if (update_data($_POST) > 0) {
         echo "<script>
         alert('Data Berhasil');
-        document.location.href = 'home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id'';
+        document.location.href = 'home1.php?page=detail&aksi=resepracikan&ID_BEROBAT='$id'';
         </script>";
       }  
       else{
@@ -89,7 +89,12 @@ if (isset ($_POST["hapus"])){
           echo "<script>alert('Gagal Mengubah Data')</script>";
   }
 }
-
+if (isset($_POST["biasa"])) {
+  echo "<script> 
+  document.location.href = 'home1.php?page=detail&aksi=resepobat&ID_BEROBAT=$id';
+  </script>";
+ 
+}
 
 ?>
 
@@ -215,6 +220,7 @@ if (isset ($_POST["hapus"])){
     <div class="form-group">
     <input  type="submit" name="tambahkan" value="Tambahkan" id="tambahkan" class="btn btn-info">
     <input  type="submit" name="update" value="update" id="update" class="btn btn-info" disabled>
+    <input  type="submit" name="biasa" id="biasa" value="Resep Biasa" class="btn btn-primary">
     <!-- <input  type="submit" name="racikan" value="Racikan" id="racikan" class="btn btn-info">
     <input  type="submit" name="obat" value="Obat" id="obat" class="btn btn-info">  -->
     </div>
@@ -254,6 +260,7 @@ if (isset ($_POST["hapus"])){
                                 <th hidden>Stok</th>
                                 <th>Jumlah</th>
                                 <th>Catatan</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
             
@@ -264,7 +271,7 @@ if (isset ($_POST["hapus"])){
                       <?php
                      
                        // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , STOK , JUMLAH  , DOSIS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
+                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , STOK , JUMLAH  , DOSIS , STATUS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -275,6 +282,7 @@ if (isset ($_POST["hapus"])){
                             <td hidden><?php echo $data ['STOK']; ?></td>
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['DOSIS']; ?></td>
+                            <td><?php echo $data ['STATUS']; ?></td>
                         <td>
               
                        
