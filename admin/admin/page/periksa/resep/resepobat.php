@@ -71,16 +71,16 @@ if (isset ($_POST["update"])){
 
 if (isset ($_POST["hapus"])){
   // update_data($_POST);
-  hapus_resep($_POST);
-  // if (hapus_resep($_POST) > 0) {
-  //   echo "<script>
-  //   alert('Data Berhasil');
-  //   document.location.href = 'home1.php?page=detail&aksi=resepobat&ID_BEROBAT='$id'';
-  //   </script>";
-  // }  
-  // else{
-  //         echo "<script>alert('Gagal Mengubah Data')</script>";
-  // }
+  //hapus_resep($id);
+  if (hapus_resep($_POST) > 0) {
+    echo "<script>
+    alert('Data Berhasil');
+    document.location.href = 'home1.php?page=detail&aksi=resepobat&ID_BEROBAT='$id'';
+    </script>";
+  }  
+  else{
+          echo "<script>alert('Gagal Mengubah Data')</script>";
+  }
 }
 if (isset($_POST["racikan"])){
   echo "<script>
@@ -187,7 +187,7 @@ if (isset($_POST["racikan"])){
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for=">ID_DETAIL"><b>Id Detail</b></label> <input type="text" name="ID_DETAIL" id="ID_DETAIL" value="<?= $detailnya;?>"  readonly>
+    <label for=">ID_DETAIL"><b>Id Detail</b></label> <input type="text" name="ID_DETAILNYA" id="ID_DETAIL" value="<?= $detailnya;?>"  readonly>
     </br>
     </div>
     <div class="form-group">
@@ -243,6 +243,7 @@ if (isset($_POST["racikan"])){
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover" id="table-beli" >
+                    
                         <thead>
                             <tr>
                             <th>Id Detail</th>
@@ -258,11 +259,11 @@ if (isset($_POST["racikan"])){
             
                         </thead>
                         <tbody>
-
+                        <form action="" method="post">
                       <?php
                      
                        // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
-                     $sql = $koneksi-> query ("SELECT ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , STOK , JUMLAH  , DOSIS ,STATUS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
+                     $sql = $koneksi-> query ("SELECT ID_BEROBAT, ID_DETAIL , tb_detail_berobat.ID_OBAT , NAMA_OBAT , STOK , JUMLAH  , DOSIS ,STATUS FROM tb_detail_berobat , tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND ID_BEROBAT ='$id'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -274,8 +275,11 @@ if (isset($_POST["racikan"])){
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['DOSIS']; ?></td>
                             <td><?php echo $data ['STATUS']; ?></td>
+                            <td hidden><?php echo $data['ID_BEROBAT'];?></td>
                         <td>          
                         <input  type="submit" name="hapus" value="Hapus" id="hapus" class="btn btn-info"> 
+                        <input type="hidden" name="ID_DETAILNYA" value="<?= $data['ID_DETAIL'];?>">
+            
                       </td>  
                         
                         
@@ -284,7 +288,7 @@ if (isset($_POST["racikan"])){
 
                       <?php } ?>
                     </tbody>
-
+                    </form>
                     <tbody>
                     
                    

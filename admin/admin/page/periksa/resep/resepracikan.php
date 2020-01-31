@@ -267,7 +267,7 @@ if (isset($_POST["biasa"])) {
             
                         </thead>
                         <tbody>
-
+                        <form action="" method="post">
                       <?php
                      
                        // $sql = $koneksi -> query ("SELECT tb_detail_berobat.ID_BEROBAT , tb_detail_berobat.ID_OBAT , tb_obat.NAMA_OBAT , tb_detail_berobat.JUMLAH FROM tb_detail_berobat,tb_obat WHERE tb_detail_berobat.ID_OBAT = tb_obat.ID_OBAT AND tb_detail_berobat.ID_BEROBAT ='$id'");
@@ -283,10 +283,12 @@ if (isset($_POST["biasa"])) {
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['DOSIS']; ?></td>
                             <td><?php echo $data ['STATUS']; ?></td>
+                            
                         <td>
               
                        
                         <input  type="submit" name="hapus" value="Hapus" id="hapus" class="btn btn-info"> 
+                        <input type="hidden" name="ID_DETAILNYA" value="<?= $data['ID_DETAIL'];?>">
                         <!-- <a href="home1.php?page=periksa&aksi=resepobat&ID_BEROBAT='$id_berobat'"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger">Hapusaa</a> -->
                 
                     </td>  
@@ -297,7 +299,7 @@ if (isset($_POST["biasa"])) {
 
                       <?php } ?>
                     </tbody>
-
+                    </form>
                     <tbody>
                     
                    
