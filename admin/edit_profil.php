@@ -161,7 +161,9 @@ if(isset($_POST["batal"]))
                                 <option value="SD" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SD') {echo "selected";} ?> >SD</option>
                                 <option value="SMP" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SMP') {echo "selected";} ?> >SMP</option>
                                 <option value="SMA" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'SMA') {echo "selected";} ?> >SMA</option>
-                                <option value="S1" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S1') {echo "selected";} ?> >S1</option>
+                                <option value="SMA" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'D1') {echo "selected";} ?> >D1</option>
+                                <option value="SMA" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'D3') {echo "selected";} ?> >D3</option>
+                                <option value="S1" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'D4 / S1') {echo "selected";} ?> >D4 / S1</option>
                                 <option value="S2" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S2') {echo "selected";} ?> >S2</option>
                                 <option value="S3" <?php if ($ang["PENDIDIKAN_TERAKHIR"] == 'S3') {echo "selected";} ?> >S3</option>
                         </select>
