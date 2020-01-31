@@ -40,15 +40,13 @@ if(!isset($_SESSION["status"])){
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
+                            
+                            <th>Tanggal Berobat</th>
                                 <th>ID Berobat</th>
                                 <th>Nama Anggota</th>
                                 <th>Nama Dokter</th>
                                 <th>Nama Klinik</th>
-                                <th>Anamnesa</th>
-                                <th>Diagnosa</th>
-                                <th>Alergi Obat</th>
-                                <th>Nama Obat</th>
-                                <th>Tanggal Berobat</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
 
@@ -68,15 +66,14 @@ if(!isset($_SESSION["status"])){
                        ?>
                       <tr>
                         
+                      <td><?php echo $data ['TANGGAL_BEROBAT']; ?></td>
                         <td><?php echo $data ['ID_BEROBAT']; ?></td>
                         <td><?php echo $data ['NAMA_ANGGOTA']; ?></td>
                         <td><?php echo $data ['NAMA_DOKTER']; ?></td>
                         <td><?php echo $data ['NAMA_KLINIK']; ?></td>
-                        <td><?php echo $data ['ANAMNESA']; ?></td>
-                        <td><?php echo $data ['DIAGNOSA']; ?></td>
-                        <td><?php echo $data ['ALERGI_OBAT']; ?></td>
-                        <td><?php echo $data ['NAMA_OBAT']; ?></td>
-                        <td><?php echo $data ['TANGGAL_BEROBAT']; ?></td>
+                        <td>
+                        <a href="?page=laporanberobat&aksi=detail&ID_BEROBAT=<?= $data["ID_BEROBAT"];?>" name="detail" class="btn btn-primary"><i class="fa fa-plus"></i></a>  
+                    </td>
                         
 
                       </tr>

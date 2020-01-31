@@ -199,5 +199,4 @@
             
                 <input  type="submit" name="resep" value="Resep Obat" class="btn btn-info">
                 <input  type="submit" name="rujukan" value="Rujukan" class="btn btn-primary">
-                <input  type="submit" name="racikan" value="racikan" class="btn btn-primary">
                 </form>

@@ -132,6 +132,9 @@
                           if ($aksi == "") {
                             include "page/laporan/laporanberobat.php";
                           }
+                          elseif ($aksi == "detail") {
+                            include "page/laporan/detail.php";
+                          }
                         }
                         
                       

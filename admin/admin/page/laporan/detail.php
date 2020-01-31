@@ -44,7 +44,7 @@ if( isset ($_POST["simpan"]))
 {
   echo "<script>
                 alert('Data Berhasil');
-                document.location.href = '?page=laporanberobat&aksi=detail&ID_BEROBAT='$id'';
+                document.location.href = 'home1.php?page=laporanberobat';
                 </script>";
 }
 
@@ -103,7 +103,7 @@ if (isset($_POST["racikan"])){
 <div class=" col-sm-12 col-xs-12">
                      
 <div class="col-md-12">
-    <h1>Resep Obat</h1>
+    <h1>Detail Berobat </h1>
     <hr>
     <form method ="POST">
     <div class="form-group">
@@ -128,111 +128,47 @@ if (isset($_POST["racikan"])){
     </br>
     </div>
     <div class="form-group">
+    <label for="ALERGI"><b>SISTOLE</b></label> <input type="text" name="ALERGI" value="<?= $berobat["SISTOLE"];?>" readonly>
+    </br>
+    </div>
+    <div class="form-group">
+    <label for="ALERGI"><b>DIASTOLE</b></label> <input type="text" name="ALERGI" value="<?= $berobat["DIASTOLE"];?>" readonly>
+    </br>
+    </div>
+    <div class="form-group">
+    <label for="ALERGI"><b>ANAMNESA</b></label> <input type="text" name="ALERGI" value="<?= $berobat["ANAMNESA"];?>" readonly>
+    </br>
+    </div>
+    <div class="form-group">
+    <label for="ALERGI"><b>SUHU</b></label> <input type="text" name="ALERGI" value="<?= $berobat["SUHU"];?>" readonly>
+    </br>
+    </div>
+    <div class="form-group">
+    <label for="ALERGI"><b>NADI</b></label> <input type="text" name="ALERGI" value="<?= $berobat["NADI"];?>" readonly>
+    </br>
+    </div> <div class="form-group">
+    <label for="ALERGI"><b>PERNAPASAN</b></label> <input type="text" name="ALERGI" value="<?= $berobat["PERNAPASAN"];?>" readonly>
+    </br>
+    </div>
+    <div class="form-group">
+    <label for="ALERGI"><b>DIAGNOSA</b></label> <input type="text" name="ALERGI" value="<?= $berobat["DIAGNOSA"];?>" readonly>
+    </br>
+    </div>
+    <div class="form-group">
     <label for="ALERGI"><b>ALERGI OBAT</b></label> <input type="text" name="ALERGI" value="<?= $berobat["ALERGI_OBAT"];?>" readonly>
     </br>
     </div>
+    <div class="form-group">
+    <label for="ALERGI"><b>CATATAN</b></label> <input type="text" name="ALERGI" value="<?= $berobat["CATATAN"];?>" readonly>
+    </br>
+    </div>
+   
 </div>
 </div>
 <div class="row">
     <div class="col-md-12">
         <!-- Advanced Tables -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-              Data Obat
-            </div>
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                        <thead>
-                            <tr>
-                                <th>Id Obat</th>
-                                <th>Nama Obat</th>
-                                <th>Stok</th>
-                                <th>Exp</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-
-                    <tbody>
-
-                      <?php
-                     
-                          $sql = $koneksi -> query ("SELECT * FROM tb_obat");
-           
-                          while ($data=$sql ->fetch_assoc()) {
-
-                       ?>
-                      <tr>
-                        <td><?php echo $data ['ID_OBAT']; ?></td>
-                        <td><?php echo $data ['NAMA_OBAT']; ?></td>
-                        <td><?php echo $data ['STOK']; ?></td>
-                        <td><?php echo $data ['EXP']; ?></td>
-                        <td><?php echo $data ['BENTUK']; ?></td>
-                        
-                      </tr>
-
-                      <?php } ?>
-                    </tbody>
-                    </table>
-
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-                  <div class=" col-sm-12 col-xs-12">     
-          
-<div class="col-md-12">
-    <h1>Resep Obat</h1>
-    <hr>
-    <form method ="POST">
-    <div class="form-group">
-    <label for=">ID_DETAIL"><b>Id Detail</b></label> <input type="text" name="ID_DETAIL" id="ID_DETAIL" value="<?= $detailnya;?>"  readonly>
-    </br>
-    </div>
-    <div class="form-group">
-    <label for=">NAMA_OBAT"><b>Nama Obat</b></label> <input type="text" name="NAMA_OBAT" id="NAMA_OBAT"  readonly>
-    <input type="hidden" name="ID_OBAT" id="ID_OBAT"  readonly>
-    </div>
-    <div class="form-group">
-    <input type="number" name="STOK" id="STOK" hidden>
-  
-    </div>
-    <div class="form-group">
-    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH">
-    </br>
-    </div>
-    <div class="form-group">
-    <label for="CATATAN"><b>Dosis</b></label><input type="text" name="CATATAN" id="CATATAN" ></textarea>
-    </br>
-    </div>
-
-    
-    <div class="form-group">
-    <input  type="submit" name="tambahkan" value="Tambahkan" id="tambahkan" class="btn btn-info">
-    <input  type="submit" name="update" value="update" id="update" class="btn btn-info" disabled>
-    <input  type="submit" name="racikan" value="Resep Racikan" class="btn btn-primary">
-    <!-- <input  type="submit" name="racikan" value="Racikan" id="racikan" class="btn btn-info">
-    <input  type="submit" name="obat" value="Obat" id="obat" class="btn btn-info">  -->
-    </div>
-</div>
-</div>
-<!-- </form>  -->
-</body>
- <script>
-                var table = document.getElementById('dataTables-example');
-    
-               for(var i = 1; i < table.rows.length; i++)
-    {
-        table.rows[i].onclick = function()
-        {
-             //rIndex = this.rowIndex;
-             document.getElementById("ID_OBAT").value = this.cells[0].innerHTML;
-             document.getElementById("NAMA_OBAT").value = this.cells[1].innerHTML;
-        };
-    }
-
-</script>
+       
 <div class="row">
     <div class="col-md-12">
         <!-- Advanced Tables -->
@@ -252,7 +188,6 @@ if (isset($_POST["racikan"])){
                                 <th>Jumlah</th>
                                 <th>Catatan</th>
                                 <th>Status</th>
-                                <th>Aksi</th>
                             </tr>
             
             
@@ -274,9 +209,7 @@ if (isset($_POST["racikan"])){
                             <td><?php echo $data ['JUMLAH']; ?></td>
                             <td><?php echo $data ['DOSIS']; ?></td>
                             <td><?php echo $data ['STATUS']; ?></td>
-                        <td>          
-                        <input  type="submit" name="hapus" value="Hapus" id="hapus" class="btn btn-info"> 
-                      </td>  
+                        
                         
                         
                         
@@ -298,29 +231,5 @@ if (isset($_POST["racikan"])){
                   </div>
                   </div>
                   <div class=" col-sm-12 col-xs-12">   
-                  <input  type="submit" name="simpan" value="Simpan" class="btn btn-info">
                   </form>    
-                  <script>
-                var table = document.getElementById('table-beli');
-                var button = document.getElementById("update");
-                var button2 = document.getElementById("tambahkan");
-}
-    
-               for(var i = 1; i < table.rows.length; i++)
-    {
-        table.rows[i].onclick = function()
-        {
-
-             document.getElementById("ID_DETAIL").value = this.cells[0].innerHTML;
-             document.getElementById("ID_OBAT").value = this.cells[1].innerHTML;
-             document.getElementById("NAMA_OBAT").value = this.cells[2].innerHTML;
-             document.getElementById("JUMLAH").value = this.cells[4].innerHTML;
-             document.getElementById("CATATAN").value = this.cells[5].innerHTML;
-             button.disabled = false;
-             button2.disabled = true;
-        };
-        
-    }
-    
-
-</script>
+               
