@@ -405,22 +405,22 @@ function update_detail($data)
         return mysqli_affected_rows($conn);
 }
 
-function input_detail_periksa($data){
+// function input_detail_periksa($data){
 
-    global $conn;
-    $id_det_periksa = htmlspecialchars($data["ID_DET_PERIKSA"]);
-    $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
-    $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
-    $id_klinik = htmlspecialchars($data["ID_KLINIK"]);
-    $diagnosa = htmlspecialchars($data["DIAGNOSA"]);
-    $alergi_obat = htmlspecialchars($data["ALERGI"]);   
-    $catatan = htmlspecialchars($data["CATATAN"]);
+//     global $conn;
+//     $id_det_periksa = htmlspecialchars($data["ID_DET_PERIKSA"]);
+//     $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
+//     $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
+//     $id_klinik = htmlspecialchars($data["ID_KLINIK"]);
+//     $diagnosa = htmlspecialchars($data["DIAGNOSA"]);
+//     $alergi_obat = htmlspecialchars($data["ALERGI"]);   
+//     $catatan = htmlspecialchars($data["CATATAN"]);
 
 
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_detail_periksa VALUES ('$id_det_periksa' , '$id_berobat' , '$id_dokter' , '$id_klinik' , '$diagnosa' , '$alergi_obat' , '$catatan')");
-    return $qu;
-}
+//     $qu = mysqli_query($conn, "INSERT INTO tb_detail_periksa VALUES ('$id_det_periksa' , '$id_berobat' , '$id_dokter' , '$id_klinik' , '$diagnosa' , '$alergi_obat' , '$catatan')");
+//     return $qu;
+// }
 
 function tambahpengumuman($data)
 {

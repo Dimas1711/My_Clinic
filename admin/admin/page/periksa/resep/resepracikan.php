@@ -209,33 +209,7 @@ if (isset ($_POST["hapus"])){
     <label for="CATATAN"><b>Dosis</b></label><input type="text" name="CATATAN" id="CATATAN" ></textarea>
     </br>
     </div>
-<!-- 
-<div class="col-md-12">
-    <h1>Racikan Obat</h1>
-    <hr>
-    <form method ="POST" id="formracikan">
-    <div class="form-group">
-    <label for="ID_DETAIL_RACIKAN"><b>Id Detail</b></label> <input type="text" name="ID_DETAIL_RACIKAN" id="ID_DETAIL_RACIKAN" value="<?= $detailnya;?>"  readonly>
-    </br>
-    </div>
-    <div class="form-group">
-    <label for="NAMA_OBAT_RACIKAN"><b>Nama Obat</b></label> <input type="text" name="NAMA_OBAT_RACIKAN" id="NAMA_OBAT_RACIKAN"  readonly>
-    <input type="hidden" name="ID_OBAT_RACIKAN" id="ID_OBAT_RACIKAN"  readonly>
-    </div>
-    <div class="form-group">
-    <input type="number" name="STOK_RACIKAN" id="STOK_RACIKAN" hidden>
-  
-    </div>
-    <div class="form-group">
-    <label for="JUMLAH_RACIKAN"><b>Jumlah</b></label><input type="number" name="JUMLAH_RACIKAN" id="JUMLAH_RACIKAN">
-    </br>
-    </div>
-    <div class="form-group">
-    <label for="CATATAN_RACIKAN"><b>Dosis</b></label><input type="text" name="CATATAN_RACIKAN" id="CATATAN_RACIKAN" ></textarea>
-    </br>
-    </div>
 
-     -->
     
     
     <div class="form-group">

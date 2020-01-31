@@ -90,9 +90,7 @@
                           elseif ($aksi == "cetak") {
                             include "page/periksa/cetakrujukan.php";
                           }
-                          elseif ($aksi == "racikan") {
-                            include "page/periksa/resepracikan.php";
-                          }
+                        
                           else if ($aksi == "detail") {
                             include "page/periksa/detail.php";
                           }
@@ -100,6 +98,9 @@
                         elseif ($page == "detail") {
                            if ($aksi == "resepobat") {
                             include "page/periksa/resep/resepobat.php";
+                          }  
+                          elseif ($aksi == "racikan") {
+                            include "page/periksa/resep/resepracikan.php";
                           }
                         }
                         elseif ($page == "resepobat") {
