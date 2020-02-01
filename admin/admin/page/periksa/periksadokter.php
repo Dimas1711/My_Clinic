@@ -1,5 +1,9 @@
 <?php 
-        require 'functions_admin.php';
+require 'functions_admin.php';
+$poli = mysqli_query($koneksi,"SELECT * from tb_dokter WHERE NAMA_DOKTER = '".$_SESSION['username']."'");
+$row = mysqli_fetch_array($poli);
+
+$polinya = $row['ID_KLINIK'];
         
 ?>
 
@@ -44,7 +48,7 @@
 
                       <?php
                       $no = 1;
-                          $sql = $koneksi -> query ("SELECT * FROM tb_berobat WHERE STATUS = 'pending'");
+                          $sql = $koneksi -> query ("SELECT * FROM tb_berobat WHERE STATUS = 'pending' AND ID_KLINIK = '$polinya' ");
            
                           while ($data=$sql ->fetch_assoc()) {
 

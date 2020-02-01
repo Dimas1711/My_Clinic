@@ -26,8 +26,10 @@ if($cek > 0) {
 }
 
 else if($cek1 > 0) {
+    $row = mysqli_fetch_assoc($cek1);
     session_start();
     $_SESSION['username'] = $username;
+    $_SESSION['poli'] = $row['ID_KLINIK'];
     $_SESSION['status'] = 'login';
 
     header("location:home1.php?page=dashborddokter");

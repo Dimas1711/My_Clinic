@@ -5,6 +5,10 @@ if(!isset($_SESSION["status"])){
   
   header("location:index.php");
 }
+$poli = mysqli_query($koneksi,"SELECT * from tb_dokter WHERE NAMA_DOKTER = '".$_SESSION['username']."'");
+$row = mysqli_fetch_array($poli);
+
+$polinya = $row['ID_KLINIK'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +63,8 @@ if(!isset($_SESSION["status"])){
                           AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER 
                           AND tb_berobat.ID_BEROBAT = tb_detail_berobat.ID_BEROBAT 
                           AND tb_obat.ID_OBAT = tb_detail_berobat.ID_OBAT 
-                          AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK");
+                          AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK 
+                          AND tb_berobat.ID_KLINIK = '$polinya'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
