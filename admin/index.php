@@ -163,7 +163,9 @@ s0.parentNode.insertBefore(s1,s0);
 
     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          User
+                      <?php 
+                            echo $_SESSION['user']; 
+                          ?>
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="edit_profil.php">Edit Profil</a>
