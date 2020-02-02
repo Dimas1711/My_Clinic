@@ -220,19 +220,19 @@
                     <label style="margin-left: -20px">cm</label>
                 </div>
                 
-                <div class="form-group">
+                <div class="form-group col-lg-12">
                     <label>Diagnosa</label>
                     <input class="form-control" type="text" name="DIAGNOSA" id="DIAGNOSA" value="<?= $getdata["DIAGNOSA"]?>" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-lg-12">
                     <label>Alergi Obat</label>
                     <input class="form-control" type="text" name="ALERGI" id="ALERGI" value="<?= $getdata["ALERGI_OBAT"]?>"/>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-lg-12">
                     <label>Catatan</label>
-                    <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN"><?php echo $getdata["CATATAN"]?> </Textarea>
+                    <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN" readonly><?php echo $getdata["CATATAN"]?> </Textarea>
                 </div>
                
                     </table>
