@@ -164,7 +164,7 @@
                     <input class="form-control" type="text" id="NAMA" name="NAMA_ANGGOTA" readonly />
                 </div>
                 <div class="form-group">
-                    <label>Nomer RM</label>
+                    <label>Nomer Rekam Medis</label>
                     <input class="form-control" type="text" id="ID_ANGGOTA" name="ID_ANGGOTA" readonly />
                 </div>
               
