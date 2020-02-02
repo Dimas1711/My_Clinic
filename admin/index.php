@@ -14,8 +14,8 @@ $pengumuman = query("SELECT * FROM tb_pengumuman")[0];
     <title>SI WEB Poliklinik Politeknik Negeri Jember</title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+		<meta name="description" content="Klinik Pratama" />
+		<meta name="keywords" content="Klinik Polije,Politeknik Negeri Jember,Klinik Pratama" />
 		<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
