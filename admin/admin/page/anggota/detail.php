@@ -80,7 +80,8 @@ $ang = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id'")[0];
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input class="form-control" type="file" name="FOTO" />
+                    <br>
+                    <img class="foto" src="../img/<?= $ang["FOTO"];?>" alt="tidak ada gambar" width="150px">
                 </div>
              
               </form>
