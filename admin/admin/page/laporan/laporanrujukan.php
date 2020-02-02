@@ -32,13 +32,13 @@ if(!isset($_SESSION["status"])){
                             <tr>
                               
                                 <th>Id Rujukan</th>
-                                <th>Id Berobat</th>
                                 <th>Nama Anggota</th>
                                 <th>Nama Dokter</th>
                                 <th>Diagnosa</th>
                                 <th>Dokter Tujuan</th>
                                 <th>Tujuan</th>
                                 <th>Tanggal Rujukan</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
 
@@ -58,15 +58,15 @@ if(!isset($_SESSION["status"])){
                       <tr>
                         
                         <td><?php echo $data ['ID_RUJUKAN']; ?></td>
-                        <td><?php echo $data ['ID_BEROBAT']; ?></td>
                         <td><?php echo $data ['NAMA_ANGGOTA']; ?></td>
                         <td><?php echo $data ['NAMA_DOKTER']; ?></td>
                         <td><?php echo $data ['DIAGNOSA']; ?></td>
                         <td><?php echo $data ['DOKTER_TUJUAN']; ?></td>
                         <td><?php echo $data ['TUJUAN']; ?></td>
                         <td><?php echo $data ['TANGGAL_RUJUKAN']; ?></td>
-                         
-                        
+                        <td>
+                        <a href="?page=laporanberobat&aksi=detailrujukan&ID_BEROBAT=<?= $data["ID_BEROBAT"];?>" name="detail" class="btn btn-primary"><i class="fa fa-print"></i></a>  
+                    </td>
                         
                       </tr>
 
