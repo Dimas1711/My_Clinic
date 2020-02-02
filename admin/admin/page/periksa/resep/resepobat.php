@@ -192,11 +192,12 @@ if (isset($_POST["racikan"])){
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for=">ID_DETAIL"><b>Id Detail</b></label> <input type="text" name="ID_DETAILNYA" id="ID_DETAIL" value="<?= $detailnya;?>"  readonly>
+    <label for=">ID_DETAIL"><b>Id Detail</b></label> 
+    <input style="margin-left:65px;" type="text" name="ID_DETAILNYA" id="ID_DETAIL" value="<?= $detailnya;?>"  readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for=">NAMA_OBAT"><b>Nama Obat</b></label> <input type="text" name="NAMA_OBAT" id="NAMA_OBAT"  readonly>
+    <label for=">NAMA_OBAT"><b>Nama Obat</b></label> <input  style="margin-left:45px;" type="text" name="NAMA_OBAT" id="NAMA_OBAT"  readonly>
     <input type="hidden" name="ID_OBAT" id="ID_OBAT"  readonly>
     </div>
     <div class="form-group">
@@ -204,11 +205,11 @@ if (isset($_POST["racikan"])){
   
     </div>
     <div class="form-group">
-    <label for="JUMLAH"><b>Jumlah</b></label><input type="number" name="JUMLAH" id="JUMLAH">
+    <label for="JUMLAH"><b>Jumlah</b></label><input style="margin-left:80px;"type="number" name="JUMLAH" id="JUMLAH">
     </br>
     </div>
     <div class="form-group">
-    <label for="CATATAN"><b>Dosis</b></label><input type="text" name="CATATAN" id="CATATAN" ></textarea>
+    <label for="CATATAN"><b>Dosis</b></label><input style="margin-left:90px;" type="text" name="CATATAN" id="CATATAN" ></textarea>
     </br>
     </div>
 
