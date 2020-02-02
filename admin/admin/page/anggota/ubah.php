@@ -51,7 +51,7 @@ if( isset ($_POST["submit"]) )
             <input type="hidden" name="GAMBARLAMA" value="<?= $ang["FOTO"];?>">
 
                 <div class="form-group">
-                    <label>No RM</label>
+                    <label>Nomer RM</label>
                     <input class="form-control" name="ID_ANGGOTA"  value="<?= $ang["ID_ANGGOTA"];?>" readonly/>
 
                 </div>
@@ -131,6 +131,8 @@ if( isset ($_POST["submit"]) )
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
+                    <br>
+                    <img class="foto" src="../img/<?= $ang["FOTO"];?>" alt="tidak ada gambar" width="150px">
                     <input class="form-control" type="file" name="FOTO" />
                 </div>
                 <div>
