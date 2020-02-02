@@ -113,7 +113,7 @@
                 </div>     
                 
                 <div class="form-group">
-                    <label>Klinik</label>
+                    <label>Klinik Tujuan</label>
                     <input class="form-control" type="text" id="POLI" name="POLI" value="<?= $getdata["NAMA_KLINIK"]?>" readonly>
                     <input type="hidden" name="ID_KLINIK" value="<?= $getdata["ID_KLINIK"]?>" >
                     <input class="hidden" type="text" id="ID_BEROBAT" name="ID_BEROBAT" value="<?= $getdata["ID_BEROBAT"]?>" readonly />
@@ -176,7 +176,7 @@
                 </div> 
 
                 <div class="form-group col-lg-4">
-                    <label>NADI</label>
+                    <label>Nadi</label>
                     <input class="form-control" type="text" name="NADI" id="NADI" value="<?= $getdata["NADI"]?>"readonly/>
                 </div>
                 <div class="form-group col-lg-2" > 
@@ -185,7 +185,7 @@
                 </div>
 
                 <div class="form-group col-lg-4">
-                    <label>PERNAPASAN</label>
+                    <label>Pernapasan</label>
                     <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" value="<?= $getdata["PERNAPASAN"]?>"readonly/>
                 </div>
                 <div class="form-group col-lg-2" > 
@@ -194,12 +194,12 @@
                 </div>
 
                 <div class="form-group col-lg-4">
-                    <label>GOLONGAN DARAH</label>
+                    <label>Golongan Darah</label>
                     <input class="form-control" type="text" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH" value="<?= $getdata["GOLONGAN DARAH"]?>"readonly/>
                 </div>
                 
                 <div class="form-group col-lg-4">
-                    <label>BERAT BADAN</label>
+                    <label>Berat Badan</label>
                     <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN" value="<?= $getdata["BERAT BADAN"]?>"readonly/>
                     
                 </div>
@@ -209,7 +209,7 @@
                 </div>
 
                 <div class="form-group col-lg-4">
-                    <label>TINGGI BADAN</label>
+                    <label>Tinggi Badan</label>
                     <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" value="<?= $getdata["TINGGI BADAN"]?>"readonly/>
                 </div>
                 <div class="form-group col-lg-2" > 
