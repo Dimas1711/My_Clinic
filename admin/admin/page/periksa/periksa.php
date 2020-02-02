@@ -193,39 +193,50 @@
                 <div class="form-group">
                     <label>Jenis Anggota</label>
                     <input class="form-control" type="text" name="JA" id="JA" readonly/>
-                </div>               
-                <div class="form-group"> 
-                    <label>Sistole</label><!-- ini tekanan atas sebelah kiri-->
-                    <input class="form-control" type="number" name="SISTOLE" id="SISTOLE" min="60" max="300"/> 
-                </div>
-                                
-                <div class="form-group">
-                    <label>Diastole</label><!-- ini tekanan bawa sebelah kanan-->
-                    <input class="form-control" type="number" name="DIASTOLE" id="DIASTOLE" min="60" max="300"/>
-                </div>
-                   
+                </div>  
                 <div class="form-group">
                     <label>Anamanesa</label>
                     <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" />
+                </div>             
+                <center>
+                <div class="form-group">
+                <div class="form-group col-lg-1"> 
+                    <label>Sistole</label>
+                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" /> 
+                </div>
+                <div class="form-group col-lg-1" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -45px">MmHg</label>
                 </div>
 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-1" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label> / </label>
+                </div>             
+                        
+                <div class="form-group col-lg-1">
+                    <label>Diastole</label>
+                    <input class="form-control" type="text" name="DIASTOLE" id="DIASTOLE" />
+                </div>
+                <div class="form-group col-lg-1" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -45px">MmHg</label>
+                </div>
+                
+                </div>
+                </center>
+
+                <div class="form-group col-lg-5">
                     <label>Suhu</label>
-                    <input class="form-control" type="number" name="SUHU" id="SUHU" min="36"/>
+                    <input class="form-control" type="text" name="SUHU" id="SUHU" />
                 </div>
+                <div class="form-group col-lg-2" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -20px">°C</label>
+                </div> 
 
-                <div class="form-group col-lg-6">
-                    <label>NADI</label>
-                    <input class="form-control" type="number" name="NADI" id="NADI" min="60" max="100"/>
-                </div>
-
-                <div class="form-group col-lg-6">
-                    <label>PERNAPASAN</label>
-                    <input class="form-control" type="number" name="PERNAPASAN" id="PERNAPASAN" min="12" max="60"/>
-                </div>
-
-                <div class="form-group col-lg-6">
-                    <label>GOLONGAN DARAH</label>
+                <div class="form-group col-lg-3">
+                    <label>GOL. DARAH</label>
                     <select class="form-control" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH">
                         <option value="A">A</option>
                         <option value="B">B</option>
@@ -234,18 +245,47 @@
                     </select>
                 </div>
                 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-3">
                     <label>BERAT BADAN</label>
                     <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN"/>
                     
                 </div>
+                <div class="form-group col-lg-1" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -20px">Kg</label>
+                </div>
 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-3">
                     <label>TINGGI BADAN</label>
                     <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" />
+                    
+                </div>
+                <div class="form-group col-lg-1" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -20px">cm</label>
+                </div>
+
+                <div class="form-group col-lg-4">
+                    <label>NADI</label>
+                    <input class="form-control" type="text" name="NADI" id="NADI" />
+                </div>
+
+                <div class="form-group col-lg-2" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -25px">X /Menit</label>
+                </div>   
+
+                <div class="form-group col-lg-4">
+                    <label>PERNAPASAN</label>
+                    <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" />
+                </div>
+
+                <div class="form-group col-lg-2" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -25px">X /Menit</label>
                 </div>
                 <input class="form-control" type="hidden" name="STATUS" id="STATUS" value="pending"/>
-                <div class="form-group">
+                <div class="form-group col-lg-12">
                     <label>Catatan</label>
                     <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN"></Textarea>
                 </div>
