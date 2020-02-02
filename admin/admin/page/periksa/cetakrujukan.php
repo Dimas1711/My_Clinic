@@ -37,8 +37,8 @@ AND tb_rujukan.ID_DOKTER = tb_dokter.ID_DOKTER AND tb_berobat.ID_ANGGOTA = tb_an
 </div>
     <h3>SURAT RUJUKAN</h3>
     <P class="tanggal">Jember, <?= $rujukan['TANGGAL_RUJUKAN'];?></P>
-    <p class="ts">Yth. TS Dokter<?= $rujukan['DOKTER_TUJUAN'];?></p>
-    <p class="rs">RS <?= $rujukan['TUJUAN'];?></p>
+    <p class="ts">Yth. TS Dokter <?= $rujukan['DOKTER_TUJUAN'];?></p>
+    <p class="rs"> <?= $rujukan['TUJUAN'];?></p>
     <p class="di">di</p>
     <p class="tempat">tempat</p>
     <p class="bersama">Bersama ini kami sampaikan pasien:</p>
@@ -63,7 +63,7 @@ AND tb_rujukan.ID_DOKTER = tb_dokter.ID_DOKTER AND tb_berobat.ID_ANGGOTA = tb_an
             <td rowspan="2">Pemeriksaan Fisik</td>
             <td rowspan="2">:</td>
             <td style="float: left; margin-right:10px">TD</td>
-            <td style="float: left; margin-right:10px"><?= $berobat2['TENSI']?></td>
+            <td style="float: left; margin-right:10px"><?= $berobat2['SISTOLE']?> / <?= $berobat2['DIASTOLE']?></td>
             <td style="float: left;">mmHg,</td>
             <td style="float: left; margin-right:10px">RR</td>
             <td style="float: left; margin-right:10px"><?= $berobat2['PERNAPASAN']?></td>

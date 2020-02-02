@@ -157,7 +157,7 @@ if (isset($_POST["biasa"])) {
                                 <th>Nama Obat</th>
                                 <th>Stok</th>
                                 <th>Exp</th>
-                                <th>Aksi</th>
+                            
                             </tr>
                         </thead>
 
@@ -175,7 +175,6 @@ if (isset($_POST["biasa"])) {
                         <td><?php echo $data ['NAMA_OBAT']; ?></td>
                         <td><?php echo $data ['STOK']; ?></td>
                         <td><?php echo $data ['EXP']; ?></td>
-                        <td><button>Obat</button> <button>Racikan</button></td>
                         
                       </tr>
 

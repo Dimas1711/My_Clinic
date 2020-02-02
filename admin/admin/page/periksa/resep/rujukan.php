@@ -97,8 +97,8 @@ if (isset ($_POST["submit"]))
                     <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>
       <div class="form-group">
-                    <label>ID_ANGGOTA</label>
-                    <input class="form-control" type="text" id="ID_ANGGOTA" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>"readonly />
+                    <!-- <label>ID_ANGGOTA</label> -->
+                    <input class="form-control" type="hidden" id="ID_ANGGOTA" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>"readonly />
       </div>
      
       <div class="form-group">
@@ -110,27 +110,31 @@ if (isset ($_POST["submit"]))
                     <input class="form-control" type="text" id="JENIS_KELAMIN" name="JENIS_KELAMIN" value="<?= $qAnggota ["JENIS_KELAMIN"]?>"readonly />
       </div>
       <div class="form-group">
-                    <label>TENSI</label>
-                    <input class="form-control" type="text" id="TENSI" name="TENSI" value="<?= $berobat ["TENSI"]?>" readonly />
+                    <label>Sistole</label>
+                    <input class="form-control" type="text" id="TENSI" name="TENSI" value="<?= $berobat ["SISTOLE"]?>" readonly />
+      </div>
+      <div class="form-group">
+                    <label>Diastole</label>
+                    <input class="form-control" type="text" id="TENSI" name="TENSI" value="<?= $berobat ["DIASTOLE"]?>" readonly />
       </div>
       <div class="form-group">
                     <label>DIAGNOSA</label>
                     <input class="form-control" type="text" id="DIAGNOSA" name="DIAGNOSA"  value="<?= $berobat ["DIAGNOSA"]?>"readonly />
       </div>
       <div class="form-group">
-                    <label>ID_KLINIK</label>
-                    <input class="form-control" type="text" id="ID_KLINIK" name="ID_KLINIK"  value="<?= $qklinik ["ID_KLINIK"]?>" readonly />
+                    <!-- <label>ID_KLINIK</label> -->
+                    <input class="form-control" type="hidden" id="ID_KLINIK" name="ID_KLINIK"  value="<?= $qklinik ["ID_KLINIK"]?>" readonly />
       </div>
       <div class="form-group">
-                    <label>NAMA_KLINIK</label>
+                    <label>Nama Klinik</label>
                     <input class="form-control" type="text" id="NAMA_KLINIK" name="NAMA_KLINIK"  value="<?= $qklinik ["NAMA_KLINIK"]?>" readonly />
       </div>     
       <div class="form-group">
-                    <label>DOKTER_TUJUAN</label>
+                    <label>Dokter Tujuan</label>
                     <input class="form-control" type="text" id="DOKTER_TUJUAN" name="DOKTER_TUJUAN"   />
       </div>
       <div class="form-group">
-                    <label>TUJUAN</label>
+                    <label>Tujuan Rumah Sakit</label>
                     <input class="form-control" type="text" id="TUJUAN" name="TUJUAN" important/>
       </div>
 

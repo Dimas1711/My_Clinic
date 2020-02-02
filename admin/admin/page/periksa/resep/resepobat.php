@@ -212,8 +212,6 @@ if (isset($_POST["racikan"])){
     <input  type="submit" name="tambahkan" value="Tambahkan" id="tambahkan" class="btn btn-info">
     <input  type="submit" name="update" value="update" id="update" class="btn btn-info" disabled>
     <input  type="submit" name="racikan" value="Resep Racikan" class="btn btn-primary">
-    <!-- <input  type="submit" name="racikan" value="Racikan" id="racikan" class="btn btn-info">
-    <input  type="submit" name="obat" value="Obat" id="obat" class="btn btn-info">  -->
     </div>
 </div>
 </div>

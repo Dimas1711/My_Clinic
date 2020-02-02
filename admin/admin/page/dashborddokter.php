@@ -1,6 +1,6 @@
 <?php
   include_once "koneksi.php";
-  $result1 = mysqli_query($koneksi, "SELECT * FROM tb_dokter WHERE NAMA_DOKTER='".$_SESSION['username']."'");
+  $result1 = mysqli_query($koneksi, "SELECT NAMA_KLINIK , NAMA_DOKTER FROM tb_dokter , tb_klinik WHERE tb_klinik.ID_KLINIK = tb_dokter.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
   $row = mysqli_fetch_array($result1);
   $totalanggota = mysqli_query($koneksi , "SELECT * FROM tb_anggota WHERE STATUS = 'ACCEPT'");
   $d = mysqli_num_rows($totalanggota);
@@ -47,11 +47,11 @@
                 if ($row!=""){
                   echo 
                    '<div style="color: black; padding: 15px 50px 5px 50px; float: left; font-size: 32px;  font-family: "Arial, Helvetica, sans-serif";>
-                   Anda Memiliki Hak Akses Sebagai Dokter
+                   Anda Memiliki Hak Akses Sebagai Dokter '.$row['NAMA_KLINIK']. '
                    </br>
                    Selamat Datang  
                    ' .$row['NAMA_DOKTER'].'
-                   
+                  
                    </div>';
                    
             }
