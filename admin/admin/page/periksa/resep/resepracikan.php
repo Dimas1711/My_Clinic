@@ -115,28 +115,28 @@ if (isset($_POST["biasa"])) {
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
+    <label for="TANGGAL"><b>TANGGAL</b></label> <input style="margin-left:90px;" type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
+    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input style="margin-left:75px;" type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_ANGGOTA"><b>ID ANGGOTA</b></label> <input type="text" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>" readonly>
+    <label for="ID_ANGGOTA"><b>ID ANGGOTA</b></label> <input style="margin-left:70px;" type="text" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label><input type="text" name="NAMA_ANGGOTA" value="<?=$qAnggota["NAMA_ANGGOTA"];?>" readonly>
+    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label><input style="margin-left:48px;" type="text" name="NAMA_ANGGOTA" value="<?=$qAnggota["NAMA_ANGGOTA"];?>" readonly>
     </br>
     </div>
    
     <div class="form-group">
-    <label for="ID_KLINIK"><b>KLINIK</b></label> <input type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
+    <label for="ID_KLINIK"><b>KLINIK</b></label> <input style="margin-left:115px;" type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>ALERGI OBAT</b></label> <input type="text" name="ALERGI" value="<?= $berobat["ALERGI_OBAT"];?>" readonly>
+    <label for="ALERGI"><b>ALERGI OBAT</b></label> <input style="margin-left:70px;" type="text" name="ALERGI" value="<?= $berobat["ALERGI_OBAT"];?>" readonly>
     </br>
     </div>
 </div>
