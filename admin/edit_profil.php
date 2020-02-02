@@ -42,6 +42,7 @@ if(isset($_POST["batal"]))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="editt.css">
     <title>Document</title>
 
@@ -182,8 +183,8 @@ if(isset($_POST["batal"]))
                         <td class="nama"><input type="text" name="EMAIL" id="email" value="<?= $ang["EMAIL"]?>"></td>
                 </tr>
                 <tr>
-                        <td  class="btnubah"><button type="submit" name="submit" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button></td>
-                        <td class="btnbatal"><button name="batal">Batal</button></td>
+                        <td  class="btnubah"><button type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button></td>
+                        <td class="btnbatal"><button name="batal" class="btn btn-danger">Batal</button></td>
                 </tr>
                 <!-- <button class="kirim" type="submit" name="submit" onclick="return confirm('Apakah Anda Benar Ingin Merubah Profil Anda?');">Ubah</button>
                 <button class="batal" name="batal">Batal</button> -->

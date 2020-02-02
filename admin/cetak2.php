@@ -35,6 +35,7 @@ if(isset($_POST["batal"]))
 		<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
@@ -118,8 +119,8 @@ if(isset($_POST["batal"]))
                         <td class="nama"><?= $ang["PEKERJAAN_PRODI"]?></td>
                 </tr>
              </table>
-                <button type="submit" name="submit" class="btn"><a style="color:black;" href="cetak3.php" target="_blank">Cetak</a></button>
-                <button type="submit" name="batal" class="btn2"><a style="color:black;" href="index.php">Batal</a></button>
+                <button type="submit" name="submit" class="btn btn-primary"><a style="color:black;" href="cetak3.php" target="_blank">Cetak</a></button>
+                <button type="submit" name="batal" class="btn btn-danger"><a style="color:black;" href="index.php">Batal</a></button>
         </form>
         
              
