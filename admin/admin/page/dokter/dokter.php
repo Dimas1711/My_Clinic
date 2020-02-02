@@ -26,9 +26,7 @@ if(!isset($_SESSION["status"])){
                                 <th>NAMA DOKTER</th>
                                 <th>JENIS KELAMIN</th>
                                 <th>TANGGAL LAHIR</th>
-                                <th>ALAMAT</th>
-                                <th>PENDIDIKAN TERAKHIR</th>
-                                <th>NO.HP</th>
+                              
                                 <th>KLINIK </th>
                                 <th>AKSI</th>
                             </tr>
@@ -41,11 +39,10 @@ if(!isset($_SESSION["status"])){
                     <td><?= $row["NAMA_DOKTER"];?></td>
                     <td><?= $row["JENIS_KELAMIN"];?></td>
                     <td><?= $row["TANGGAL_LAHIR"];?></td>
-                    <td><?= $row["ALAMAT"];?></td>
-                    <td><?= $row["PENDIDIKAN_TERAKHIR"];?></td>
-                    <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["NAMA_KLINIK"];?></td>
                     <td>
+                    <a href="?page=dokter&aksi=detail&ID_DOKTER=<?= $row["ID_DOKTER"];?>" name="hapus" class="btn btn-success"><i class="fa fa-plus"></i></a>  
+                    
                         <a href="?page=dokter&aksi=ubah&ID_DOKTER=<?= $row["ID_DOKTER"];?>" class="btn btn-info"><i class="fa fa-edit"></i></a>  
                         <a href="?page=dokter&aksi=hapus&ID_DOKTER=<?= $row["ID_DOKTER"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger"><i class="fa fa-close"></i></a>
                     </td>     

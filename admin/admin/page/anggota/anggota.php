@@ -37,7 +37,7 @@ if(!isset($_SESSION["status"])){
                     <td><?= $row["JENIS_KELAMIN"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
                     <td>
-                    <a href="?page=anggota&aksi=detail&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-success"><i class="fa fa-plus"></i></a>  
+                        <a href="?page=anggota&aksi=detail&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-success"><i class="fa fa-plus"></i></a>  
                         <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info"><i class="fa fa-edit"></i></a>  
                         <a href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger"><i class="fa fa-close"></i></a>
                     </td>     

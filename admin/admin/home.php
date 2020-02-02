@@ -125,6 +125,7 @@
                           elseif ($aksi == "hapus") {
                             include "page/admin/hapus.php";
                           }
+                          
                         }
                         elseif ($page == "dokter") {
                           if ($aksi == "") {
@@ -138,6 +139,9 @@
                           }
                           elseif ($aksi == "hapus"){
                             include "page/dokter/hapus.php";
+                          }
+                          elseif ($aksi == "detail"){
+                            include "page/dokter/detail.php";
                           }
                         }
                         elseif ($page == "obat") {

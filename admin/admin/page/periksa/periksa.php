@@ -97,7 +97,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>ID_ANGGOTA</th>
+                                <th>Nomer RM</th>
                                 <th>NO.KTP/NIM/NIP</th>
                                 <th>NAMA ANGGOTA</th>
                                 <th>JENIS ANGGOTA</th>
@@ -195,12 +195,12 @@
                     <input class="form-control" type="text" name="JA" id="JA" readonly/>
                 </div>               
                 <div class="form-group"> 
-                    <label>Sistole</label>
-                    <input class="form-control" type="number" name="SISTOLE" id="SISTOLE" /> 
+                    <label>Sistole</label><!-- ini tekanan atas sebelah kiri-->
+                    <input class="form-control" type="number" name="SISTOLE" id="SISTOLE" min="60" max="300"/> 
                 </div>
                                 
                 <div class="form-group">
-                    <label>Diastole</label>
+                    <label>Diastole</label><!-- ini tekanan bawa sebelah kanan-->
                     <input class="form-control" type="number" name="DIASTOLE" id="DIASTOLE" min="60" max="300"/>
                 </div>
                    
@@ -216,12 +216,12 @@
 
                 <div class="form-group col-lg-6">
                     <label>NADI</label>
-                    <input class="form-control" type="number" name="NADI" id="NADI" />
+                    <input class="form-control" type="number" name="NADI" id="NADI" min="60" max="100"/>
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label>PERNAPASAN</label>
-                    <input class="form-control" type="number" name="PERNAPASAN" id="PERNAPASAN" />
+                    <input class="form-control" type="number" name="PERNAPASAN" id="PERNAPASAN" min="12" max="60"/>
                 </div>
 
                 <div class="form-group col-lg-6">

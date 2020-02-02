@@ -11,7 +11,7 @@ $ang = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id'")[0];
 
 <div class="panel panel-default">
     <div class="panel-heading">
-      Ubah Anggota
+      Detail Anggota
     </div>
 <div class="panel-body">
     <div class="row">
@@ -21,7 +21,7 @@ $ang = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id'")[0];
             <input type="hidden" name="GAMBARLAMA" value="<?= $ang["FOTO"];?>">
 
                 <div class="form-group">
-                    <label>Id_Anggota</label>
+                    <label>Nomer RM</label>
                     <input class="form-control" name="ID_ANGGOTA"  value="<?= $ang["ID_ANGGOTA"];?>" readonly/>
 
                 </div>
