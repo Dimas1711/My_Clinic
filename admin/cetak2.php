@@ -119,8 +119,8 @@ if(isset($_POST["batal"]))
                         <td class="nama"><?= $ang["PEKERJAAN_PRODI"]?></td>
                 </tr>
              </table>
-                <button type="submit" name="submit" class="btn btn-primary"><a style="color:black;" href="cetak3.php" target="_blank">Cetak</a></button>
-                <button type="submit" name="batal" class="btn btn-danger"><a style="color:black;" href="index.php">Batal</a></button>
+                <button type="submit" name="submit" class="btn btn-primary" style="margin-left:300px"><a style="color:white;" href="cetak3.php" target="_blank">Cetak</a></button>
+                <button type="submit" name="batal" class="btn btn-danger" style="margin-left:50px"><a style="color:white;" href="index.php">Batal</a></button>
         </form>
         
              
