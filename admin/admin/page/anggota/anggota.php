@@ -20,15 +20,11 @@ if(!isset($_SESSION["status"])){
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                        <th>ID Anggota</th>
+                        <th>No. RM</th>
                         <th>Nama Anggota</th>
                         <th>Jenis Anggota</th>
                         <th>Jenis Kelamin</th>
-                        <th>Alamat</th>
-                        <th>NO.HP</th>
                         <th>Pekerjaan/Prodi</th>
-                        <th>Email</th>
-                        <th>Foto</th>
                         <th>Aksi</th>
                             </tr>
                         </thead>
@@ -39,12 +35,9 @@ if(!isset($_SESSION["status"])){
                     <td><?= $row["NAMA_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_ANGGOTA"];?></td>
                     <td><?= $row["JENIS_KELAMIN"];?></td>
-                    <td><?= $row["ALAMAT"];?></td>
-                    <td><?= $row["NO_HP"];?></td>
                     <td><?= $row["PEKERJAAN_PRODI"];?></td>
-                    <td><?= $row["EMAIL"];?></td>
-                    <td><img src="../img/<?=  $row["FOTO"]; ?>" alt="" width="50px"></td>
                     <td>
+                    <a href="?page=anggota&aksi=detail&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-success"><i class="fa fa-plus"></i></a>  
                         <a href="?page=anggota&aksi=ubah&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info"><i class="fa fa-edit"></i></a>  
                         <a href="?page=anggota&aksi=hapus&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Menghapus Data ini ?');" class="btn btn-danger"><i class="fa fa-close"></i></a>
                     </td>     

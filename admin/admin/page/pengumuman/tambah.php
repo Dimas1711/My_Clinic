@@ -55,7 +55,7 @@
                     </div>
                 <div class="form-group">
                     <label>ISI</label>
-                    <input class="form-control" name="ISI"  />
+                    <Textarea class="form-control" name="ISI"></Textarea>
 
                 </div>
                

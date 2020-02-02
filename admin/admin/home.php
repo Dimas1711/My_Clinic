@@ -108,6 +108,9 @@
                         elseif ($aksi == "ftam") {
                           include "page/anggota/ftam.php";
                         }
+                        elseif ($aksi == "detail") {
+                          include "page/anggota/detail.php";
+                        }
                       }
                         elseif ($page == "admin") {
                           if ($aksi == "") {

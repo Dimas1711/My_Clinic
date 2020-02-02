@@ -94,7 +94,7 @@
             <form method="post" enctype="multipart/form-data">
             <input class="form-control" type="hidden" name="USIA" value='0'/>
                 <div class="form-group">
-                    <label>Id Anggota</label>
+                    <label>No RM</label>
                     <input type="text" class="form-control" name="ID_ANGGOTA" value="<?php echo $hasilkode ?>" readonly />
 
                 </div>

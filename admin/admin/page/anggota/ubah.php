@@ -51,7 +51,7 @@ if( isset ($_POST["submit"]) )
             <input type="hidden" name="GAMBARLAMA" value="<?= $ang["FOTO"];?>">
 
                 <div class="form-group">
-                    <label>Id_Anggota</label>
+                    <label>No RM</label>
                     <input class="form-control" name="ID_ANGGOTA"  value="<?= $ang["ID_ANGGOTA"];?>" readonly/>
 
                 </div>

@@ -43,7 +43,7 @@ if( isset ($_POST["submit"]) )
                 
                 <div class="form-group">
                     <label>ISI</label>
-                    <input class="form-control"  name="ISI" value="<?= $pengumuman["ISI"];?>"/>
+                    <Textarea class="form-control"  name="ISI" ><?php echo $pengumuman["ISI"];?></Textarea>
                 </div>
             
                 <div>
