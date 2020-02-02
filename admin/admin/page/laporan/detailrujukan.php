@@ -8,7 +8,7 @@ $qAnggota = query("SELECT * FROM tb_anggota WHERE ID_ANGGOTA = '$id_anggota'")[0
 
 $id_klinik = $berobat["ID_KLINIK"];
 $qklinik = query("SELECT * FROM tb_klinik  WHERE ID_KLINIK ='$id_klinik'")[0];
-
+$rujukan = query("SELECT * FROM tb_rujukan WHERE ID_BEROBAT = '$id'")[0];
 $tanggal = date("Y/m/d");
 $carikode = mysqli_query($conn, "SELECT max(ID_RUJUKAN) FROM tb_rujukan") or die(mysqli_error($conn));
 
@@ -79,8 +79,8 @@ if (isset ($_POST["submit"]))
          
                 ?>
                  <div class="form-group">
-    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
-    </br>
+    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="datetime" name="TANGGAL" class="form-control"value="<?= $tanggal;?>" readonly>
+  
     </div>
       <div class="form-group">
                     <label>ID_RUJUKAN</label>
@@ -131,11 +131,11 @@ if (isset ($_POST["submit"]))
       </div>     
       <div class="form-group">
                     <label>Dokter Tujuan</label>
-                    <input class="form-control" type="text" id="DOKTER_TUJUAN" name="DOKTER_TUJUAN"   />
+                    <input class="form-control" type="text" id="DOKTER_TUJUAN" name="DOKTER_TUJUAN"  value="<?= $rujukan ["DOKTER_TUJUAN"]?>"readonly />
       </div>
       <div class="form-group">
                     <label>Tujuan Rumah Sakit</label>
-                    <input class="form-control" type="text" id="TUJUAN" name="TUJUAN" important/>
+                    <input class="form-control" type="text" id="TUJUAN" name="TUJUAN" value="<?= $rujukan ["TUJUAN"]?>"readonly/>
       </div>
 
     <div class="form-group">

@@ -66,7 +66,7 @@
       else if (update_detail($_POST) > 0){
           echo "<script>
           alert('Data Berhasil Ditambahkan');
-          document.location.href = 'home1.php?page=periksa&aksi=resepobat&detail=resepobat&ID_BEROBAT=$id';
+          document.location.href = 'home1.php?page=detail&aksi=rujukan&ID_BEROBAT=$id';
           </script>";   
       
           

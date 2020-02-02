@@ -97,6 +97,17 @@
                           Include "page/laporan/laporanberobatadm.php"; 
                           }
                           }
+                          elseif ($page == "laporanberobat") {
+                            if ($aksi == "") {
+                              include "page/laporan/laporanberobat.php";
+                            }
+                            elseif ($aksi == "detail") {
+                              include "page/laporan/detail.php";
+                            }
+                            elseif ($aksi == "detailrujukan") {
+                              include "page/laporan/detailrujukan.php";
+                            }
+                          }
                       
 
                      ?>

@@ -102,9 +102,13 @@
                           elseif ($aksi == "racikan") {
                             include "page/periksa/resep/resepracikan.php";
                           }
-                          if ($aksi == "hapusresep") {
+                          else if ($aksi == "hapusresep") {
                             include "page/periksa/resep/hapus.php";
                           }
+                          elseif ($aksi == "rujukan") {
+                            include "page/periksa/resep/rujukan.php";
+                          }
+                         
                         }
                         elseif ($page == "resepobat") {
                           if ($aksi == "hapus") {
@@ -137,6 +141,9 @@
                           }
                           elseif ($aksi == "detail") {
                             include "page/laporan/detail.php";
+                          }
+                          elseif ($aksi == "detailrujukan") {
+                            include "page/laporan/detailrujukan.php";
                           }
                         }
                         
