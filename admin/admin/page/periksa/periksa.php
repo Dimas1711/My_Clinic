@@ -236,7 +236,7 @@
                 </div> 
 
                 <div class="form-group col-lg-3">
-                    <label>GOL. DARAH</label>
+                    <label>Golongan Darah</label>
                     <select class="form-control" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH">
                         <option value="A">A</option>
                         <option value="B">B</option>
@@ -246,7 +246,7 @@
                 </div>
                 
                 <div class="form-group col-lg-3">
-                    <label>BERAT BADAN</label>
+                    <label>Berat Badan</label>
                     <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN"/>
                     
                 </div>
@@ -256,7 +256,7 @@
                 </div>
 
                 <div class="form-group col-lg-3">
-                    <label>TINGGI BADAN</label>
+                    <label>Tinggi Badan</label>
                     <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" />
                     
                 </div>
@@ -266,7 +266,7 @@
                 </div>
 
                 <div class="form-group col-lg-4">
-                    <label>NADI</label>
+                    <label>Nadi</label>
                     <input class="form-control" type="text" name="NADI" id="NADI" />
                 </div>
 
@@ -276,7 +276,7 @@
                 </div>   
 
                 <div class="form-group col-lg-4">
-                    <label>PERNAPASAN</label>
+                    <label>Pernapasan</label>
                     <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" />
                 </div>
 
