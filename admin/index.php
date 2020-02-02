@@ -174,7 +174,7 @@ s0.parentNode.insertBefore(s1,s0);
                       </div>
                   </li>
     <li class="nav-item ">
-    <a href="logout.php">logout</a>
+    <a href="logout.php" onclick="return confirm('Apakah anda ingin keluar?')">logout</a>
     <!-- <button type="button" name= "logout" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><a id=lgn href="logout.php"onclick="return confirm('Apakan Anda Benar Ingin Logout?');">Logout</a>
     </button> -->
     

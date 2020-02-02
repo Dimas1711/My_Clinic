@@ -97,6 +97,7 @@ if(isset($_POST["batal"]))
 
     <section style="margin:30px 250px; padding:100px; font-size:15px; margin-left:300px; background-color: rgba(238, 235, 235, 0.836);">
     <form action="" method="POST">
+    <h2>Ubah Password</h2>
     <table>
                 <input type="hidden" name = "ID_ANGGOTA" value="<?= $ang["ID_ANGGOTA"];?>">
                 <input type="hidden" name="PASSWORD" value="<?= $ang["PASSWORD"];?>">
