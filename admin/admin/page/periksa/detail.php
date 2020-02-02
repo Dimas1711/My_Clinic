@@ -232,7 +232,7 @@
 
                 <div class="form-group col-lg-12">
                     <label>Catatan</label>
-                    <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN" readonly><?php echo $getdata["CATATAN"]?> </Textarea>
+                    <Textarea class="form-control" type="text" name="CATATAN" id="CATATAN"><?php echo $getdata["CATATAN"]?> </Textarea>
                 </div>
                
                     </table>
