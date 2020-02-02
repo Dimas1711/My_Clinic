@@ -88,7 +88,7 @@ else
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">ID Anggota</label>
+                                    <label class="label">Nomer RM</label>
                                     <input class="input--style-4" type="text" name="ID_ANGGOTA" value="<?php echo $hasilkode ?>" readonly>
                                 </div>
                             </div>

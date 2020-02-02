@@ -109,7 +109,7 @@
                 <div class="form-group">
                     <label>Nama Dokter</label><br>
                     <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
-                    <input type="text" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
+                    <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>     
                 
                 <div class="form-group">
@@ -120,12 +120,12 @@
                 </div> 
                 
                 <div class="form-group">
-                    <label>Id_Anggota</label>
+                    <label>Nama Anggota</label>
                     <input class="form-control" type="text" name="ID_ANGGOTA" id="ID_ANGGOTA" value="<?= $getdata["NAMA_ANGGOTA"]?>" readonly/>
                 </div>
 
                 <div class="form-group">
-                    <label>Id Perawat</label>
+                    <label>Nama Perawat</label>
                     <input class="form-control" type="text" id="ID_KARYAWAN" name="ID_KARYAWAN"   value="<?= $getdata["NAMA_KARYAWAN"]?>" readonly />
                 </div>
 

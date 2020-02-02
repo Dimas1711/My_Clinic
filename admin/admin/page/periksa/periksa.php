@@ -164,7 +164,7 @@
                     <input class="form-control" type="text" id="NAMA" name="NAMA_ANGGOTA" readonly />
                 </div>
                 <div class="form-group">
-                    <label>Id_Anggota</label>
+                    <label>Nomer RM</label>
                     <input class="form-control" type="text" id="ID_ANGGOTA" name="ID_ANGGOTA" readonly />
                 </div>
               
@@ -196,12 +196,12 @@
                 </div>               
                 <div class="form-group"> 
                     <label>Sistole</label>
-                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" /> 
+                    <input class="form-control" type="number" name="SISTOLE" id="SISTOLE" /> 
                 </div>
                                 
                 <div class="form-group">
                     <label>Diastole</label>
-                    <input class="form-control" type="text" name="DIASTOLE" id="DIASTOLE" />
+                    <input class="form-control" type="number" name="DIASTOLE" id="DIASTOLE" min="60" max="300"/>
                 </div>
                    
                 <div class="form-group">
@@ -211,17 +211,17 @@
 
                 <div class="form-group col-lg-6">
                     <label>Suhu</label>
-                    <input class="form-control" type="text" name="SUHU" id="SUHU" />
+                    <input class="form-control" type="number" name="SUHU" id="SUHU" min="36"/>
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label>NADI</label>
-                    <input class="form-control" type="text" name="NADI" id="NADI" />
+                    <input class="form-control" type="number" name="NADI" id="NADI" />
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label>PERNAPASAN</label>
-                    <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" />
+                    <input class="form-control" type="number" name="PERNAPASAN" id="PERNAPASAN" />
                 </div>
 
                 <div class="form-group col-lg-6">
