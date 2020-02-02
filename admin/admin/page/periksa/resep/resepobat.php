@@ -123,7 +123,7 @@ if (isset($_POST["racikan"])){
     </div>
     <div class="form-group">
     <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label>
-    <input style="margin-left:45px;" type="text" name="NAMA_ANGGOTA" value="<?=$qAnggota["NAMA_ANGGOTA"];?>" readonly>
+    <input style="margin-left:48px;" type="text" name="NAMA_ANGGOTA" value="<?=$qAnggota["NAMA_ANGGOTA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
