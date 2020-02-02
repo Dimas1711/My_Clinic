@@ -58,13 +58,15 @@ $polinya = $row['ID_KLINIK'];
 
                       <?php
                      
-                          $sql = $koneksi -> query ("SELECT tb_berobat.ID_BEROBAT, tb_anggota.NAMA_ANGGOTA, tb_dokter.NAMA_DOKTER, tb_klinik.NAMA_KLINIK, tb_berobat.ANAMNESA, tb_berobat.DIAGNOSA, tb_berobat.ALERGI_OBAT, tb_obat.NAMA_OBAT ,tb_berobat.TANGGAL_BEROBAT FROM tb_berobat, tb_anggota, tb_dokter, tb_detail_berobat, tb_obat, tb_klinik WHERE 
-                          tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA 
+                          $sql = $koneksi -> query ("SELECT tb_berobat.ID_BEROBAT, tb_anggota.NAMA_ANGGOTA, tb_dokter.NAMA_DOKTER, tb_klinik.NAMA_KLINIK, tb_berobat.ANAMNESA, tb_berobat.DIAGNOSA, tb_berobat.ALERGI_OBAT, tb_obat.NAMA_OBAT ,tb_berobat.TANGGAL_BEROBAT 
+                          FROM tb_berobat, tb_anggota, tb_dokter, tb_detail_berobat, tb_obat, tb_klinik 
+                          WHERE tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA 
                           AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER 
                           AND tb_berobat.ID_BEROBAT = tb_detail_berobat.ID_BEROBAT 
                           AND tb_obat.ID_OBAT = tb_detail_berobat.ID_OBAT 
                           AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK 
-                          AND tb_berobat.ID_KLINIK = '$polinya'");
+                          AND tb_berobat.ID_KLINIK = '$polinya'
+                          AND tb_berobat.STATUS = 'Accept'");
            
                           while ($data=$sql ->fetch_assoc()) {
 

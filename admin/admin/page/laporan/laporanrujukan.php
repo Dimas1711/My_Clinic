@@ -5,6 +5,9 @@ if(!isset($_SESSION["status"])){
   
   header("location:index.php");
 }
+$poli = mysqli_query($koneksi,"SELECT * from tb_dokter WHERE NAMA_DOKTER = '".$_SESSION['username']."'");
+$row = mysqli_fetch_array($poli);
+$polinya = $row['ID_KLINIK'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +35,13 @@ if(!isset($_SESSION["status"])){
                             <tr>
                               
                                 <th>Id Rujukan</th>
+                                <th>Tanggal Rujukan</th>
                                 <th>Nama Anggota</th>
                                 <th>Nama Dokter</th>
-                                <th>Diagnosa</th>
+                                <th>Nama KLinik</th>
                                 <th>Dokter Tujuan</th>
                                 <th>Tujuan</th>
-                                <th>Tanggal Rujukan</th>
+                                
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -46,11 +50,14 @@ if(!isset($_SESSION["status"])){
 
                       <?php
                      
-                          $sql = $koneksi -> query ("SELECT tb_rujukan.ID_RUJUKAN, tb_berobat.ID_BEROBAT, tb_anggota.NAMA_ANGGOTA, tb_dokter.NAMA_DOKTER, tb_berobat.DIAGNOSA, tb_rujukan.DOKTER_TUJUAN, tb_rujukan.TUJUAN, tb_rujukan.TANGGAL_RUJUKAN
-                          FROM tb_rujukan, tb_dokter, tb_anggota, tb_berobat
+                          $sql = $koneksi -> query ("SELECT tb_rujukan.ID_RUJUKAN, tb_klinik.NAMA_KLINIK, tb_berobat.ID_BEROBAT, tb_anggota.NAMA_ANGGOTA, tb_dokter.NAMA_DOKTER, tb_berobat.DIAGNOSA, tb_rujukan.DOKTER_TUJUAN, tb_rujukan.TUJUAN, tb_rujukan.TANGGAL_RUJUKAN
+                          FROM tb_rujukan, tb_dokter, tb_anggota, tb_berobat, tb_klinik
                           WHERE tb_berobat.ID_BEROBAT = tb_rujukan.ID_BEROBAT
                           AND tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA
-                          AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER");
+                          AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER
+                          AND tb_klinik.ID_KLINIK = tb_rujukan.ID_KLINIK
+                          AND tb_rujukan.ID_KLINIK = '$polinya'
+                          AND tb_berobat.STATUS = 'Accept'");
            
                           while ($data=$sql ->fetch_assoc()) {
 
@@ -58,12 +65,13 @@ if(!isset($_SESSION["status"])){
                       <tr>
                         
                         <td><?php echo $data ['ID_RUJUKAN']; ?></td>
+                        <td><?php echo $data ['TANGGAL_RUJUKAN']; ?></td>
                         <td><?php echo $data ['NAMA_ANGGOTA']; ?></td>
                         <td><?php echo $data ['NAMA_DOKTER']; ?></td>
-                        <td><?php echo $data ['DIAGNOSA']; ?></td>
+                        <td><?php echo $data ['NAMA_KLINIK']; ?></td>
                         <td><?php echo $data ['DOKTER_TUJUAN']; ?></td>
                         <td><?php echo $data ['TUJUAN']; ?></td>
-                        <td><?php echo $data ['TANGGAL_RUJUKAN']; ?></td>
+                        
                         <td>
                         <a href="?page=laporanberobat&aksi=detailrujukan&ID_BEROBAT=<?= $data["ID_BEROBAT"];?>" name="detail" class="btn btn-primary"><i class="fa fa-print"></i></a>  
                     </td>

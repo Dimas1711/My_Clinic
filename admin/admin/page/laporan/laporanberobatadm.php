@@ -59,7 +59,7 @@ if(!isset($_SESSION["status"])){
                      AND tb_berobat.ID_BEROBAT = tb_detail_berobat.ID_BEROBAT 
                      AND tb_obat.ID_OBAT = tb_detail_berobat.ID_OBAT 
                      AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK 
-                    ");
+                     AND tb_berobat.STATUS = 'Accept'");
       
                      while ($data=$sql ->fetch_assoc()) {
 
