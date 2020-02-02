@@ -135,15 +135,33 @@
                     <input class="form-control" type="text" name="TANGGAL_BEROBAT" id="TANGGAL_BEROBAT"  value="<?= $getdata["TANGGAL_BEROBAT"]?>" readonly/>
                 </div>   
               
+                <center>
                 <div class="form-group">
+                <div class="form-group col-lg-2"> 
                     <label>Sistole</label>
-                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" value="<?= $getdata["SISTOLE"]?>" readonly/>
-                </div> 
-                                
-                <div class="form-group">
-                    <label>Diastole</label>
-                    <input class="form-control" type="text" name="DIASTOLE" id="DIASTOLE" value="<?= $getdata["DIASTOLE"]?>" readonly/>
+                    <input class="form-control" type="text" name="SISTOLE" id="SISTOLE" readonly /> 
                 </div>
+                <div class="form-group col-lg-1" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -45px">MmHg</label>
+                </div>
+
+                <div class="form-group col-lg-1" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label> / </label>
+                </div>             
+                        
+                <div class="form-group col-lg-2">
+                    <label>Diastole</label>
+                    <input class="form-control" type="text" name="DIASTOLE" id="DIASTOLE" readonly/>
+                </div>
+                <div class="form-group col-lg-1" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -45px">MmHg</label>
+                </div>
+                
+                </div>
+                </center>
                    
                 <div class="form-group">
                     <label>Anamanesa</label>
