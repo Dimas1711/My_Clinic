@@ -179,7 +179,6 @@ else
                                         <option value="SMP">SMP</option>
                                         <option value="SMA">SMA</option>
                                         <option value="D1">D1</option>
-                                        <option value="D2">D2</option>
                                         <option value="D3">D3</option>
                                         <option value="D4 / S1">D4 / S1</option>
                                         <option value="S2">S2</option>
@@ -206,7 +205,7 @@ else
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">NO.HP</label>
-                                    <input class="input--style-4" type="text" name="NO_HP"  pattern=”[0-9]{12}” title="gunakan angka dan maksimal 12 angka" >
+                                    <input class="input--style-4" type="number" name="NO_HP"  pattern=”[0-9]{12}” title="gunakan angka dan maksimal 12 angka" >
                                 </div>
                             </div>
                         </div>
