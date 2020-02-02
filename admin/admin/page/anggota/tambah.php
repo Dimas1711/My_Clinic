@@ -127,6 +127,7 @@
                 <div class="form-group col-lg-6">
                     <label>Jenis Kelamin</label>
                     <select class="form-control" name="JENIS_KELAMIN">
+                    <option>Pilih Jenis Kelamin</option>
                         <option value="L">Laki Laki</option>
                         <option value="P">Perempuan</option>
                     </select>
@@ -139,8 +140,7 @@
                 <div class="form-group col-lg-6">
                     <label>Pendidikan Terakhir</label>
                     <select class="form-control" name="PENDIDIKAN_TERAKHIR">
-                      <option >- - - - - - -</option>
-                  
+                        <option>Pilih Pendidikan Terakhir</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA">SMA</option>
