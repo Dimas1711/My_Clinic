@@ -160,7 +160,7 @@
                     <input type="hidden" name="ID_KARYAWAN" value="<?= $row2["ID_KARYAWAN"]?>" >
                 </div>                  
                 <div class="form-group">
-                    <label>Nama</label>
+                    <label>Nama Anggota</label>
                     <input class="form-control" type="text" id="NAMA" name="NAMA_ANGGOTA" readonly />
                 </div>
                 <div class="form-group">
