@@ -163,41 +163,61 @@
                 </div>
                 </center>
                    
-                <div class="form-group">
+                <div class="form-group col-lg-12">
                     <label>Anamanesa</label>
-                    <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" value="<?= $getdata["ANAMNESA"]?>" readonly/>
+                    <input class="form-control" type="text" name="ANAMNESA" id="ANAMNESA" readonly/>
                 </div>
                 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-4">
                     <label>Suhu</label>
-                    <input class="form-control" type="text" name="SUHU" id="SUHU" value="<?= $getdata["SUHU"]?>" readonly/>
+                    <input class="form-control" type="text" name="SUHU" id="SUHU" readonly/>
                 
                 </div>
+                <div class="form-group col-lg-2" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -20px">°C</label>
+                </div> 
 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-4">
                     <label>NADI</label>
-                    <input class="form-control" type="text" name="NADI" id="NADI" value="<?= $getdata["NADI"]?>" readonly/>
+                    <input class="form-control" type="text" name="NADI" id="NADI" readonly/>
+                </div>
+                <div class="form-group col-lg-2" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -25px">X /Menit</label>
                 </div>
 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-4">
                     <label>PERNAPASAN</label>
-                    <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" value="<?= $getdata["PERNAPASAN"]?>" readonly/>
+                    <input class="form-control" type="text" name="PERNAPASAN" id="PERNAPASAN" readonly/>
+                </div>
+                <div class="form-group col-lg-2" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -25px">X /Menit</label>
                 </div>
 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-4">
                     <label>GOLONGAN DARAH</label>
-                    <input class="form-control" type="text" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH" value="<?= $getdata["GOLONGAN DARAH"]?>" readonly/>
+                    <input class="form-control" type="text" name="GOLONGAN_DARAH" id="GOLONGAN_DARAH" readonly/>
                 </div>
                 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-4">
                     <label>BERAT BADAN</label>
-                    <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN" value="<?= $getdata["BERAT BADAN"]?>" readonly/>
+                    <input class="form-control" type="text" name="BERAT_BADAN" id="BERAT_BADAN" readonly/>
                     
                 </div>
+                <div class="form-group col-lg-2" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -20px">Kg</label>
+                </div>
 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-4">
                     <label>TINGGI BADAN</label>
-                    <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" value="<?= $getdata["TINGGI BADAN"]?>" readonly/>
+                    <input class="form-control" type="text" name="TINGGI_BADAN" id="TINGGI_BADAN" readonly/>
+                </div>
+                <div class="form-group col-lg-2" > 
+                    <label style="margin-bottom: 45px;"></label>
+                    <label style="margin-left: -20px">cm</label>
                 </div>
                 
                 <div class="form-group">
