@@ -107,32 +107,32 @@ if (isset($_POST["racikan"])){
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for="TANGGAL"><b>TANGGAL</b></label> 
+    <label for="TANGGAL"><b>Tanggal Berobat</b></label> 
     <input style="margin-left:90px;" type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> 
+    <label for="ID_BEROBAT"><b>ID Berobat</b></label> 
     <input style="margin-left:75px;" type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_ANGGOTA"><b>ID ANGGOTA</b></label> 
+    <label for="ID_ANGGOTA"><b>ID Anggota</b></label> 
     <input style="margin-left:70px;" type="text" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label>
+    <label for="NAMA_ANGGOTA"><b>Nama Anggota</b></label>
     <input style="margin-left:48px;" type="text" name="NAMA_ANGGOTA" value="<?=$qAnggota["NAMA_ANGGOTA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_KLINIK"><b>KLINIK</b></label> 
+    <label for="ID_KLINIK"><b>Klinik</b></label> 
     <input style="margin-left:115px;" type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>ALERGI OBAT</b></label> 
+    <label for="ALERGI"><b>Alergi Obat</b></label> 
     <input style="margin-left:70px;" type="text" name="ALERGI" value="<?= $berobat["ALERGI_OBAT"];?>" readonly>
     </br>
     </div>
@@ -150,7 +150,7 @@ if (isset($_POST["racikan"])){
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>Id Obat</th>
+                                <th>ID Obat</th>
                                 <th>Nama Obat</th>
                                 <th>Stok</th>
                                 <th>Exp</th>
@@ -192,7 +192,7 @@ if (isset($_POST["racikan"])){
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for=">ID_DETAIL"><b>Id Detail</b></label> 
+    <label for=">ID_DETAIL"><b>ID Detail</b></label> 
     <input style="margin-left:65px;" type="text" name="ID_DETAILNYA" id="ID_DETAIL" value="<?= $detailnya;?>"  readonly>
     </br>
     </div>
