@@ -113,11 +113,11 @@ if(isset($_POST["batal"]))
                 </tr>
                 <tr>
                         <th>No.KTP/NIM/NIP</th>
-                        <td class="nama"><input type="text" name="NO_KTP_NIM_NIP" id="ktp" value="<?= $ang["NO_KTP_NIM_NIP"]?>"></td>
+                        <td class="nama"><input type="text" name="NO_KTP_NIM_NIP" id="ktp" value="<?= $ang["NO_KTP_NIM_NIP"]?>" readonly></td>
                 </tr>
                 <tr>
                         <th>Nama Anggota</th>
-                        <td class="nama"><input type="text" name="NAMA_ANGGOTA" id="nama" value="<?= $ang["NAMA_ANGGOTA"]?>"></td>
+                        <td class="nama"><input type="text" name="NAMA_ANGGOTA" id="nama" value="<?= $ang["NAMA_ANGGOTA"]?>" readonly></td>
                 </tr>
                 <tr>
                         <th>Jenis Anggota</th>
@@ -134,7 +134,7 @@ if(isset($_POST["batal"]))
                 <tr>
                         <th>Jenis Kelamin</th>
                         <td class="nama">
-                        <select name="JENIS_KELAMIN" id="jenis_kelamin" value="<?= $ang["JENIS_KELAMIN"]?>">
+                        <select name="JENIS_KELAMIN" id="jenis_kelamin" value="<?= $ang["JENIS_KELAMIN"]?>" readonly>
                                 <option value="">Silahkan Pilih</option>
                                 <option value="L" <?php if ($ang["JENIS_KELAMIN"] == 'L') {echo "selected";} ?> >L</option>
                                 <option value="P" <?php if ($ang["JENIS_KELAMIN"] == 'P') {echo "selected";} ?> >P</option>
@@ -147,7 +147,7 @@ if(isset($_POST["batal"]))
                 </tr>
                 <tr>
                         <th>Usia</th>
-                        <td class="nama"><input type="text" name="USIA" id="usia" value="<?= $ang["USIA"]?>"></td>
+                        <td class="nama"><input type="text" name="USIA" id="usia" value="<?= $ang["USIA"]?>" readonly></td>
                 </tr>
                 <tr>
                         <th>Alamat</th>
