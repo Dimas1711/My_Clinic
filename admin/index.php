@@ -311,11 +311,7 @@ s0.parentNode.insertBefore(s1,s0);
                               <br>
                               Diharapkan untuk tetap menggunakan masker dan membawa air puth -->
                             </p>
-                            <p class="card-text"><?= $pengumuman["ISI"]?>
-                            <!-- Tubuh yang sehat selalu didukung dengan asupan kebutuhan nutrisi yang tepat
-                            dan tercukupi . Maka cukupilah kebutuhan dasar 4 sehat 5 sempurna dalam makanan
-                            yang kamu konsumsi sehari hari . Hindari makanan cepat saji karena tidak baik untuk tubuh -->
-                   </p>
+                            <textarea style="border: none" rows="10" cols="83" readonly><?= $pengumuman["ISI"]?> </textarea>
                           </div>
                         </div>
                       </div>
