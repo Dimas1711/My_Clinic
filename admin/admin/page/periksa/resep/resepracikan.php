@@ -115,11 +115,11 @@ if (isset($_POST["biasa"])) {
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for="TANGGAL"><b>Tanggal Berobat</b></label> <input style="margin-left:90px;" type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
+    <label for="TANGGAL"><b>Tanggal Berobat</b></label> <input style="margin-left:35px;" type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_BEROBAT"><b>ID Berobat</b></label> <input style="margin-left:75px;" type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
+    <label for="ID_BEROBAT"><b>ID Berobat</b></label> <input style="margin-left:70px;" type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
@@ -132,7 +132,7 @@ if (isset($_POST["biasa"])) {
     </div>
    
     <div class="form-group">
-    <label for="ID_KLINIK"><b>Klinik Tujuan</b></label> <input style="margin-left:115px;" type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
+    <label for="ID_KLINIK"><b>Klinik Tujuan</b></label> <input style="margin-left:60px;" type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
@@ -153,7 +153,7 @@ if (isset($_POST["biasa"])) {
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>Id Obat</th>
+                                <th>ID Obat</th>
                                 <th>Nama Obat</th>
                                 <th>Stok</th>
                                 <th>Exp</th>
@@ -253,8 +253,8 @@ if (isset($_POST["biasa"])) {
                     <table class="table table-striped table-bordered table-hover" id="table-beli" >
                         <thead>
                             <tr>
-                            <th>Id Detail</th>
-                                <th>Id Obat</th>
+                            <th>ID Detail</th>
+                                <th>ID Obat</th>
                                 <th>Nama Obat</th>
                                 <th hidden>Stok</th>
                                 <th>Jumlah</th>
