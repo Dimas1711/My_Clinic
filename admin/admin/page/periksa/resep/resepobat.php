@@ -108,7 +108,7 @@ if (isset($_POST["racikan"])){
     <form method ="POST">
     <div class="form-group">
     <label for="TANGGAL"><b>Tanggal Berobat</b></label> 
-    <input style="margin-left:90px;" type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
+    <input style="margin-left:38px;" type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
     </br>
     </div>
     <div class="form-group">
@@ -118,7 +118,7 @@ if (isset($_POST["racikan"])){
     </div>
     <div class="form-group">
     <label for="ID_ANGGOTA"><b>ID Anggota</b></label> 
-    <input style="margin-left:70px;" type="text" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>" readonly>
+    <input style="margin-left:73px;" type="text" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
@@ -128,7 +128,7 @@ if (isset($_POST["racikan"])){
     </div>
     <div class="form-group">
     <label for="ID_KLINIK"><b>Klinik</b></label> 
-    <input style="margin-left:115px;" type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
+    <input style="margin-left:110px;" type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
@@ -250,8 +250,8 @@ if (isset($_POST["racikan"])){
                     
                         <thead>
                             <tr>
-                            <th>Id Detail</th>
-                                <th>Id Obat</th>
+                            <th>ID Detail</th>
+                                <th>ID Obat</th>
                                 <th>Nama Obat</th>
                                 <th hidden>Stok</th>
                                 <th>Jumlah</th>
