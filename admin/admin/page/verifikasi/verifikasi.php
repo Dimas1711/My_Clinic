@@ -39,7 +39,7 @@ if(!isset($_SESSION["status"])){
                         <!-- <a href="?page=verifikasi&aksi=accept&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-info"><i class="fa fa-check"></i></a>  
                         <a href="?page=verifikasi&aksi=reject&ID_ANGGOTA=<?= $row["ID_ANGGOTA"]; ?>"onclick="return confirm('Anda Yakin Ingin Reject Data Ini ?');" class="btn btn-danger"><i class="fa fa-times"></i></a>
                     </td>      -->
-                        <a href="?page=verifikasi&aksi=detail&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-primary"><i class="fa fa-search"></i></a>  
+                        <a href="?page=verifikasi&aksi=detail&ID_ANGGOTA=<?= $row["ID_ANGGOTA"];?>" name="hapus" class="btn btn-success"><i class="fa fa-plus"></i></a>  
                     
                     </td>
                 </tr>

@@ -53,6 +53,7 @@ if(isset($_POST["batal"]))
 		<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
@@ -114,9 +115,9 @@ if(isset($_POST["batal"]))
                         <td>Konfirmasi Password</td>
                         <td class="nama"><input type="password" name="KONFIRMASI_PASSWORD" ></td>
                 </tr>
-                <button type="submit" name="submit" class="kirim">Kirim</button>
-                <button class="batal" name="batal">Batal</button>
     </table>
+    <button type="submit" name="submit" class="btn btn-primary" style="margin-left:100px; margin-top:50px">Kirim</button>
+                <button  name="batal" class="btn btn-danger" style="margin-left:20px; margin-top:50px">Batal</button>
     </form>
     </section>
 </body>
