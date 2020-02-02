@@ -176,14 +176,14 @@
                     <?php } ?>
                     </select>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Dokter</label>
                     <select class="form-control" name="DOKTER">
                     <?php while($data = mysqli_fetch_assoc($result) ){?>
                     <option name="DOKTER" value="<?php echo $data['ID_DOKTER']; ?>"><?php echo $data['NAMA_DOKTER']; ?>
                     <?php } ?>
                     </select>
-                </div>
+                </div> -->
                 
                 <div class="form-group">
                     <label>No.KTP/NIM/NIP</label>

@@ -360,7 +360,7 @@ function input_periksa($data){
     $id_berobat = htmlspecialchars($data["ID_BEROBAT"]);
     $id_karyawan = htmlspecialchars($data["ID_KARYAWAN"]);
     $id_anggota = htmlspecialchars($data["ID_ANGGOTA"]);
-    $id_dokter = htmlspecialchars($data["DOKTER"]);
+    //$id_dokter = htmlspecialchars($data["DOKTER"]);
     $id_klinik = htmlspecialchars($data["KLINIK"]);
     $sistole = htmlspecialchars($data["SISTOLE"]);
     $diastole = htmlspecialchars($data["DIASTOLE"]);
@@ -378,7 +378,7 @@ function input_periksa($data){
   
 
 
-    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat','$id_karyawan','$id_anggota','$id_dokter','$id_klinik','$sistole','$diastole','$tglku',
+    $qu = mysqli_query($conn, "INSERT INTO tb_berobat VALUES ('$id_berobat','$id_karyawan','$id_anggota','','$id_klinik','$sistole','$diastole','$tglku',
     '$anamnesa','$suhu','$nadi','$pernapasan','$goldar','$berat','$tinggi','','','$ctt','$k')");
     // echo "INSERT INTO tb_berobat VALUES ('$id_berobat', '$id_klinik','$id_anggota'  , '$tensi' ,'$anamnesa',' $diagnosa','$tanggal')";
     return $qu;   
@@ -387,12 +387,14 @@ function update_detail($data)
 {
     global $conn;
         $id= htmlspecialchars($data["ID_BEROBAT"]);
+        $id_dokter = htmlspecialchars($data["ID_DOKTER"]);
         $diagnosa = htmlspecialchars($data["DIAGNOSA"]);
         $alergi_obat = htmlspecialchars($data["ALERGI"]);
         $catatan = htmlspecialchars($data["CATATAN"]);
 
         $query="UPDATE tb_berobat SET
 
+                ID_DOKTER = '$id_dokter',
                 DIAGNOSA = '$diagnosa',
                 ALERGI_OBAT = '$alergi_obat',
                 CATATAN = '$catatan' , 

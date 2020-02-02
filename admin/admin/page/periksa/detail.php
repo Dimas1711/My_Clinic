@@ -7,8 +7,13 @@
                     // $result1 = mysqli_query($koneksi, "SELECT tb_klinik.ID_KLINIK, NAMA_KLINIK , tb_dokter.ID_DOKTER, NAMA_DOKTER FROM tb_klinik , tb_dokter WHERE tb_dokter.ID_KLINIK = tb_klinik.ID_KLINIK AND NAMA_DOKTER='".$_SESSION['username']."'");
                     // $row = mysqli_fetch_array($result1);
 
-                    $getdata = query("SELECT * FROM tb_karyawan , tb_berobat , tb_klinik , tb_dokter , tb_anggota
-                     WHERE tb_karyawan.ID_KARYAWAN = tb_berobat.ID_KARYAWAN AND tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER AND tb_berobat.ID_BEROBAT ='$id'")[0];
+                    // $getdata = query("SELECT * FROM tb_karyawan , tb_berobat , tb_klinik , tb_dokter , tb_anggota
+                    //  WHERE tb_karyawan.ID_KARYAWAN = tb_berobat.ID_KARYAWAN AND tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK AND tb_dokter.ID_DOKTER = tb_berobat.ID_DOKTER AND tb_berobat.ID_BEROBAT ='$id'")[0];
+                    $dokter = mysqli_query($koneksi, "SELECT * FROM tb_dokter WHERE NAMA_DOKTER='".$_SESSION['username']."'");
+                    $row = mysqli_fetch_array($dokter);
+                    
+ $getdata = query("SELECT * FROM tb_karyawan , tb_berobat , tb_klinik , tb_dokter , tb_anggota
+                     WHERE tb_karyawan.ID_KARYAWAN = tb_berobat.ID_KARYAWAN AND tb_anggota.ID_ANGGOTA = tb_berobat.ID_ANGGOTA AND tb_klinik.ID_KLINIK = tb_berobat.ID_KLINIK AND tb_berobat.ID_BEROBAT ='$id'")[0];
  
  if (isset ($_POST["resep"]))
   {
@@ -103,8 +108,8 @@
                 <table style="margin-left:35%" id="table">
                 <div class="form-group">
                     <label>Nama Dokter</label><br>
-                    <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $getdata["NAMA_DOKTER"]?>" readonly>
-                    <input type="hidden" name="ID_DOKTER" value="<?= $getdata["ID_DOKTER"]?>" >
+                    <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
+                    <input type="text" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>     
                 
                 <div class="form-group">

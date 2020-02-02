@@ -67,7 +67,7 @@ if(isset($_POST["login"])){
                             <form  action="" autocomplete="on" method="POST"> 
                                 <h1>Log in</h1> 
                                 <p> 
-                                    <label for="username" class="uname" data-icon="u" >ID Anggota</label>
+                                    <label for="username" class="uname" data-icon="u" >Nomer RM</label>
                                     <input id="username" name="ID_ANGGOTA" required="required" type="text"/>
                                 </p>
                                 <p> 
