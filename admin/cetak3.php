@@ -49,6 +49,10 @@ $ang = query("SELECT * FROM tb_anggota WHERE NAMA_ANGGOTA = '$id'")[0];
                         <td class="nama"><?= $ang["JENIS_KELAMIN"]?></td>
                 </tr>
                 <tr>
+                        <td class="judul">Usia</td>
+                        <td class="nama"><?= $ang["USIA"]?></td>
+                </tr>
+                <tr>
                         <td class="judul">Alamat</td>
                         <td class="nama"><?= $ang["ALAMAT"]?></td>
                 </tr>

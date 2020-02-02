@@ -143,7 +143,7 @@ if(isset($_POST["batal"]))
                 </tr>
                 <tr>
                         <th>Tempat Tanggal Lahir</th>
-                        <td class="nama"><input type="date" name="TEMPAT_TANGGAL_LAHIR" id="ttl" value="<?= $ang["TANGGAL_LAHIR"]?>"></td>
+                        <td class="nama"><input type="date" name="TEMPAT_TANGGAL_LAHIR" id="ttl" value="<?= $ang["TANGGAL_LAHIR"]?>" readonly></td>
                 </tr>
                 <tr>
                         <th>Usia</th>
