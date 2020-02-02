@@ -169,7 +169,7 @@
                 </div>
               
                 <div class="form-group">
-                    <label>Klinik</label>
+                    <label>Klinik Tujuan</label>
                     <select class="form-control" name="KLINIK">
                     <?php while($data = mysqli_fetch_assoc($result4) ){?>
                     <option name="KLINIK" value="<?php echo $data['ID_KLINIK']; ?>"><?php echo $data['NAMA_KLINIK']; ?>
