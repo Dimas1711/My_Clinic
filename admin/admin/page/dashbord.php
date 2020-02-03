@@ -37,7 +37,7 @@ if(!isset($_SESSION["status"])){
                 if ($row!=""){
                   echo 
                    '<div style="color: black; padding: 15px 50px 5px 50px; float: left; font-size: 32px;  font-family: "Arial, Helvetica, sans-serif";>
-                   Anda Memiliki Hak Akses Sebagai Karyawan
+                   Anda Memiliki Hak Akses Sebagai Perawat
                    </br>
                    Selamat Datang  
                    ' .$row['NAMA_KARYAWAN'].'

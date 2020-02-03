@@ -107,59 +107,59 @@ if (isset($_POST["racikan"])){
     <hr>
     <form method ="POST">
     <div class="form-group">
-    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
+    <label for="TANGGAL"><b>TANGGAL</b></label> <input style="margin-left:85px;" type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
+    <label for="ID_BEROBAT"><b>ID BEROBAT</b></label> <input style="margin-left:70px;"type="text" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ID_ANGGOTA"><b>ID ANGGOTA</b></label> <input type="text" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>" readonly>
+    <label for="ID_ANGGOTA"><b>ID ANGGOTA</b></label> <input style="margin-left:65px;" type="text" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label><input type="text" name="NAMA_ANGGOTA" value="<?=$qAnggota["NAMA_ANGGOTA"];?>" readonly>
+    <label for="NAMA_ANGGOTA"><b>NAMA ANGGOTA</b></label><input style="margin-left:43px;" type="text" name="NAMA_ANGGOTA" value="<?=$qAnggota["NAMA_ANGGOTA"];?>" readonly>
     </br>
     </div>
    
     <div class="form-group">
-    <label for="ID_KLINIK"><b>KLINIK</b></label> <input type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
+    <label for="ID_KLINIK"><b>KLINIK</b></label> <input style="margin-left:110px;" type="text"  name="NAMA_KLINIK" value="<?=$kliniknya["NAMA_KLINIK"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>SISTOLE</b></label> <input type="text" name="ALERGI" value="<?= $berobat["SISTOLE"];?>" readonly>
+    <label for="ALERGI"><b>SISTOLE</b></label> <input style="margin-left:100px;" type="text" name="ALERGI" value="<?= $berobat["SISTOLE"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>DIASTOLE</b></label> <input type="text" name="ALERGI" value="<?= $berobat["DIASTOLE"];?>" readonly>
+    <label for="ALERGI"><b>DIASTOLE</b></label> <input style="margin-left:87px;" type="text" name="ALERGI" value="<?= $berobat["DIASTOLE"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>ANAMNESA</b></label> <input type="text" name="ALERGI" value="<?= $berobat["ANAMNESA"];?>" readonly>
+    <label for="ALERGI"><b>ANAMNESA</b></label> <input style="margin-left:78px;" type="text" name="ALERGI" value="<?= $berobat["ANAMNESA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>SUHU</b></label> <input type="text" name="ALERGI" value="<?= $berobat["SUHU"];?>" readonly>
+    <label for="ALERGI"><b>SUHU</b></label> <input style="margin-left:115px;" type="text" name="ALERGI" value="<?= $berobat["SUHU"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>NADI</b></label> <input type="text" name="ALERGI" value="<?= $berobat["NADI"];?>" readonly>
+    <label for="ALERGI"><b>NADI</b></label> <input style="margin-left:120px;" type="text" name="ALERGI" value="<?= $berobat["NADI"];?>" readonly>
     </br>
     </div> <div class="form-group">
-    <label for="ALERGI"><b>PERNAPASAN</b></label> <input type="text" name="ALERGI" value="<?= $berobat["PERNAPASAN"];?>" readonly>
+    <label for="ALERGI"><b>PERNAPASAN</b></label> <input style="margin-left:65px;" type="text" name="ALERGI" value="<?= $berobat["PERNAPASAN"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>DIAGNOSA</b></label> <input type="text" name="ALERGI" value="<?= $berobat["DIAGNOSA"];?>" readonly>
+    <label for="ALERGI"><b>DIAGNOSA</b></label> <input style="margin-left:80px;" type="text" name="ALERGI" value="<?= $berobat["DIAGNOSA"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>ALERGI OBAT</b></label> <input type="text" name="ALERGI" value="<?= $berobat["ALERGI_OBAT"];?>" readonly>
+    <label for="ALERGI"><b>ALERGI OBAT</b></label> <input style="margin-left:65px;" type="text" name="ALERGI" value="<?= $berobat["ALERGI_OBAT"];?>" readonly>
     </br>
     </div>
     <div class="form-group">
-    <label for="ALERGI"><b>CATATAN</b></label> <input type="text" name="ALERGI" value="<?= $berobat["CATATAN"];?>" readonly>
+    <label for="ALERGI"><b>CATATAN</b></label> <input style="margin-left:90px;" type="text" name="ALERGI" value="<?= $berobat["CATATAN"];?>" readonly>
     </br>
     </div>
    

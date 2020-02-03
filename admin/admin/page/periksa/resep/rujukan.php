@@ -79,66 +79,65 @@ if (isset ($_POST["submit"]))
          
                 ?>
                  <div class="form-group">
-    <label for="TANGGAL"><b>TANGGAL</b></label> <input type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
+    <label for="TANGGAL"><b>Tanggal Berobat</b></label> <input style="margin-left:40px;" type="datetime" name="TANGGAL" value="<?= $tanggal;?>" readonly>
     </br>
     </div>
-      <div class="form-group">
-                    <label>ID_RUJUKAN</label>
+      <div class="form-group col-lg-7">
+                    <label>ID Rujukan</label>
                     <input class="form-control" type="text" id="ID_RUJUKAN" name="ID_RUJUKAN"  value="<?php echo $hasilkode ?>" readonly />
       </div>
-      <div class="form-group">
-                    <label>ID_BEROBAT</label>
+      <div class="form-group col-lg-7">
+                    <label>ID Berobat</label>
                     <input class="form-control" type="text" id="ID_BEROBAT" name="ID_BEROBAT" value="<?= $berobat["ID_BEROBAT"];?>" readonly />
       </div>
-      <div class="form-
-      ">
+      <div class="form-group col-lg-7">
                     <label>Nama Dokter</label><br>
                     <input class="form-control" type="text" id="NAMA_DOKTER" name="NAMA_DOKTER" value="<?= $row["NAMA_DOKTER"]?>" readonly>
                     <input type="hidden" name="ID_DOKTER" value="<?= $row["ID_DOKTER"]?>" >
                 </div>
-      <div class="form-group">
+      <div class="form-group col-lg-7">
                     <!-- <label>ID_ANGGOTA</label> -->
                     <input class="form-control" type="hidden" id="ID_ANGGOTA" name="ID_ANGGOTA" value="<?= $berobat["ID_ANGGOTA"];?>"readonly />
       </div>
      
-      <div class="form-group">
-                    <label>NAMA_ANGGOTA</label>
+      <div class="form-group col-lg-7">
+                    <label>Nama Anggota</label>
                     <input class="form-control" type="text" id="NAMA_ANGGOTA" name="NAMA_ANGGOTA" value="<?= $qAnggota ["NAMA_ANGGOTA"]?>" readonly />
       </div>
-      <div class="form-group">
-                    <label>JENIS_KELAMIN</label>
+      <div class="form-group col-lg-7">
+                    <label>Jenis Kelamin</label>
                     <input class="form-control" type="text" id="JENIS_KELAMIN" name="JENIS_KELAMIN" value="<?= $qAnggota ["JENIS_KELAMIN"]?>"readonly />
       </div>
-      <div class="form-group">
+      <div class="form-group col-lg-7">
                     <label>Sistole</label>
                     <input class="form-control" type="text" id="TENSI" name="TENSI" value="<?= $berobat ["SISTOLE"]?>" readonly />
       </div>
-      <div class="form-group">
+      <div class="form-group col-lg-7">
                     <label>Diastole</label>
                     <input class="form-control" type="text" id="TENSI" name="TENSI" value="<?= $berobat ["DIASTOLE"]?>" readonly />
       </div>
-      <div class="form-group">
-                    <label>DIAGNOSA</label>
+      <div class="form-group col-lg-7">
+                    <label>Diagnosa</label>
                     <input class="form-control" type="text" id="DIAGNOSA" name="DIAGNOSA"  value="<?= $berobat ["DIAGNOSA"]?>"readonly />
       </div>
-      <div class="form-group">
+      <div class="form-group col-lg-7">
                     <!-- <label>ID_KLINIK</label> -->
                     <input class="form-control" type="hidden" id="ID_KLINIK" name="ID_KLINIK"  value="<?= $qklinik ["ID_KLINIK"]?>" readonly />
       </div>
-      <div class="form-group">
+      <div class="form-group col-lg-7">
                     <label>Nama Klinik</label>
                     <input class="form-control" type="text" id="NAMA_KLINIK" name="NAMA_KLINIK"  value="<?= $qklinik ["NAMA_KLINIK"]?>" readonly />
       </div>     
-      <div class="form-group">
+      <div class="form-group col-lg-7">
                     <label>Dokter Tujuan</label>
                     <input class="form-control" type="text" id="DOKTER_TUJUAN" name="DOKTER_TUJUAN"   />
       </div>
-      <div class="form-group">
+      <div class="form-group col-lg-7">
                     <label>Tujuan Rumah Sakit</label>
                     <input class="form-control" type="text" id="TUJUAN" name="TUJUAN" important/>
       </div>
 
-    <div class="form-group">
+    <div class="form-group col-lg-7">
     <!-- <button type="submit"><a href="page/periksa/cetakrujukan.php?id=<?= $hasilkode;?>" target="_blank" name="submit" >Cetak</a></button> -->
     <button type="submit" name ="submit" class="btn btn-primary" value="Print" target="_blank">Cetak</button>
     </div>
