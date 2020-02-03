@@ -13,6 +13,8 @@
 
   $totalperiksa = mysqli_query($koneksi , "SELECT * FROM tb_berobat");
   $g = mysqli_num_rows($totalperiksa);
+  $new = mysqli_query($koneksi , "SELECT * FROM tb_berobat WHERE STATUS = 'pending'");
+  $h = mysqli_num_rows($new);
   if(!isset($_SESSION["status"])){
     echo "<script>alert('login sek boss')</script>";
     
@@ -82,12 +84,21 @@
                 </div>
              </div>
 		     </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <div class="text-box" >
+                <img src="assets/img/verif.png" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Total Berobat</p>
+                    <p class="main-text"><?php echo "$g";?></p>
+                </div>
+             </div>
+		     </div>
          <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
                 <div class="text-box" >
-                <img src="assets/img/periksa.jpg" class="user-image img-responsive" style= "width:65%"/>
-                    <p class="text-muted">Total Berobat</p>
-                    <p class="main-text"><?php echo "$g";?></p>
+                <img src="assets/img/yoo.png" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Berobat Baru</p>
+                    <p class="main-text"><?php echo "$h";?></p>
                 </div>
              </div>
 		     </div>
