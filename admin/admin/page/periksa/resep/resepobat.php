@@ -44,7 +44,7 @@ if( isset ($_POST["simpan"]))
 {
   echo "<script>
                 alert('Data Berhasil');
-                document.location.href = '?page=laporanberobat&aksi=detail&ID_BEROBAT='$id'';
+                document.location.href = '?page=laporanberobat';
                 </script>";
 }
 
