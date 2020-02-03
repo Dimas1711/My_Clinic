@@ -36,7 +36,7 @@ if( isset ($_POST["tambahkan"]) )
         {
 
             echo "<script>
-                alert('Data Berhasil');
+                alert('Data Berhasil Disimpan');
                 document.location.href = 'home1.php?page=detail&aksi=resepracikan&ID_BEROBAT='$id'';
                 </script>";
         }
@@ -311,6 +311,7 @@ if (isset($_POST["biasa"])) {
                   </div>
                   </div>
                   </div>
+                   <form action="" method="post">
                   <div class=" col-sm-12 col-xs-12">   
                   <input  type="submit" name="simpan" value="Simpan" class="btn btn-info">
                   </form>    

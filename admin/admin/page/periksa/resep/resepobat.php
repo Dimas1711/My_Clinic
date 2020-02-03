@@ -43,7 +43,7 @@ if( isset ($_POST["tambahkan"]) )
 if( isset ($_POST["simpan"]))
 {
   echo "<script>
-                alert('Data Berhasil');
+                alert('Data Berhasil Disimpan');
                 document.location.href = '?page=laporanberobat';
                 </script>";
 }

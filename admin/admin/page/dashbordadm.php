@@ -61,22 +61,23 @@ if(!isset($_SESSION["status"])){
                 </div>
              </div>
 		     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
-                
-                <div class="text-box" >
-                <img src="assets/img/verif.png" class="user-image img-responsive" style= "width:65%"/>
-                    <p class="text-muted">Verifikasi Anggota</p>
-                    <p class="main-text"><?php echo "$f";?></p>
-                </div>
-             </div>
-		     </div>
+     
                     <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
                 <div class="text-box" >
                 <img src="assets/img/dokter.jpg" class="user-image img-responsive" style= "width:65%"/>
                     <p class="text-muted">Total Dokter</p>
                     <p class="main-text"><?php echo "$e";?></p>
+                </div>
+             </div>
+		     </div>
+         <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                
+                <div class="text-box" >
+                <img src="assets/img/verif.png" class="user-image img-responsive" style= "width:65%"/>
+                    <p class="text-muted">Permintaan Verifikasi Anggota</p>
+                    <p class="main-text"><?php echo "$f";?></p>
                 </div>
              </div>
 		     </div>

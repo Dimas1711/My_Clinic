@@ -52,7 +52,7 @@
                         <a  href="?page=dashbordadm"> Dashboard</a>
                     </li>
                     <li>
-                        <a  href="?page=verifikasi"> Verifikasi Akun Anggota</a>
+                        <a  href="?page=verifikasi"> Permintaan Verifikasi Anggota</a>
                     </li>
 
                     <li>
@@ -60,7 +60,7 @@
                     </li>
 
                     <li>
-                        <a  href="?page=admin"> Data Admin</a>
+                        <a  href="?page=admin"> Data Karyawan</a>
                     </li>
 
                     <li>

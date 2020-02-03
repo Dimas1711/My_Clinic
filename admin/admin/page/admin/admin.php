@@ -23,7 +23,7 @@ if(!isset($_SESSION["status"])){
                                 <!-- <th>No</th> -->
 
                                 <th>NO.KTP/NIM/NIP</th>
-                                <th>NAMA ADMIN</th>
+                                <th>NAMA KARYAWAN</th>
                                 <th>JENIS KELAMIN</th>
                                 <th>TANGGAL LAHIR</th>
                                 <th>ALAMAT</th>

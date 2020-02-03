@@ -295,7 +295,7 @@
                 </div>
             
                 <input  type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-                <input  type="submit" name="Reset" value="Reset" class="btn btn-info" href='home1.php?page=periksa'>
+                <input  type="submit" name="Reset" value="Reset" class="btn btn-danger" href='home1.php?page=periksa'>
                 </form>
                 <script>
                 var table = document.getElementById('dataTables-example');
