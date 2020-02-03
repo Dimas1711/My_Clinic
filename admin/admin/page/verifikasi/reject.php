@@ -62,7 +62,8 @@ if (reject($id) > 0)
     } catch (Exception $e) {
         // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         echo "<script>
-        alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');
+        alert('Anggota baru telah ditolak');
+        document.location.href = '?page=verifikasi';
         </script>";
     }         
                 }

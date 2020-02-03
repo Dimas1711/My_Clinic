@@ -117,7 +117,7 @@ try {
                                     <input id="username" name="idanggota" required="required" type="text"/>
                                 </p>
                                 <p> 
-                                    <label for="email" class="youpasswd" data-icon="e">Email</label>
+                                    <label for="email" class="youpasswd" data-icon="e">Email yang terdaftar</label>
                                     <input id="email" name="email" required="required" type="email" /> 
                                 </p>
                                 <p class="login button"> 

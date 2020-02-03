@@ -63,7 +63,7 @@ if(isset($_POST["batal"]))
 	                            <div class="form-bottom">
 				                    <form role="form" action="" method="post" class="login-form">
 				                    	<div class="form-group">
-				                        	<input type="text" name="EMAIL" placeholder="Email" class="form-username form-control" id="form-username">
+				                        	<input type="text" name="EMAIL" placeholder="Email yang terdaftar" class="form-username form-control" id="form-username">
                                             <input style="margin-top:10px" type="text" name="PASSWORD_BARU" placeholder="Password" class="form-username form-control" id="form-username">
                                             <input style="margin-top:10px" type="text" name="KONFIRMASI_PASSWORD" placeholder="Konfirmasi Password" class="form-username form-control" id="form-username">
 				                        </div>				                        
