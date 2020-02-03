@@ -305,6 +305,7 @@ if (isset($_POST["racikan"])){
                   </div>
                   </div>
                   </div>
+                  <form action="" method="post">
                   <div class=" col-sm-12 col-xs-12">   
                   <input  type="submit" name="simpan" value="Simpan" class="btn btn-info">
                   </form>    

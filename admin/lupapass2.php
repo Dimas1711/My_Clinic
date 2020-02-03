@@ -38,7 +38,7 @@ if($_POST)
 
         if($count > 0 )
         {
-            // echo $row['PASSWORD'];
+            //echo $row['PASSWORD'];
             
     $mail = new PHPMailer(true);
 
@@ -60,7 +60,7 @@ try {
 
     $mail->isHTML(true);                                 
     $mail->Subject = 'Here is the subject';
-    $mail->Body    =  'Silahkan Ganti Password Anda di http://localhost/My_Clinic/admin/resetpass2.php' ;
+    $mail->Body    =  'Silahkan Ganti Password Anda di http://localhost/My_Clinic/admin/resetpass2.php';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

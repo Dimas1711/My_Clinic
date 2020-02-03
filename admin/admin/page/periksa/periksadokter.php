@@ -37,8 +37,9 @@ $polinya = $row['ID_KLINIK'];
                                 <th>No</th>
                                 <th>TANGGAL BEROBAT</th>
                                 <th>ID BEROBAT</th>
-                                <th>ID ANGGOTA</th>
-                                <th>ID PERAWAT</th>
+                                <th>NOMER RM</th>
+                                <th>NAMA ANGGOTA</th>
+                                <th>NAMA PERAWAT</th>
                                 <th>STATUS</th>
                                 <th>Aksi</th>
                             </tr>
@@ -48,17 +49,23 @@ $polinya = $row['ID_KLINIK'];
 
                       <?php
                       $no = 1;
-                          $sql = $koneksi -> query ("SELECT * FROM tb_berobat WHERE STATUS = 'pending' AND ID_KLINIK = '$polinya' ");
+                          $sql = $koneksi -> query ("SELECT tb_berobat.TANGGAL_BEROBAT, tb_berobat.ID_BEROBAT ,tb_anggota.ID_ANGGOTA, tb_anggota.NAMA_ANGGOTA, tb_karyawan.NAMA_KARYAWAN, tb_berobat.STATUS
+                          FROM tb_berobat, tb_anggota, tb_karyawan 
+                          WHERE tb_berobat.ID_ANGGOTA = tb_anggota.ID_ANGGOTA
+                          AND tb_berobat.ID_KARYAWAN = tb_karyawan.ID_KARYAWAN 
+                          AND tb_berobat.STATUS = 'pending' 
+                          AND tb_berobat.ID_KLINIK = '$polinya'");
            
-                          while ($data=$sql ->fetch_assoc()) {
-
+           while ($data=$sql ->fetch_assoc()) {
+                            
                        ?>
                       <tr>
                         <td><?php  echo $no++; ?></td>
                         <td><?php echo $data ['TANGGAL_BEROBAT']; ?></td>
                         <td><?php echo $data ['ID_BEROBAT']; ?></td>
                         <td><?php echo $data ['ID_ANGGOTA']; ?></td>
-                        <td><?php echo $data ['ID_KARYAWAN']; ?></td>
+                        <td><?php echo $data['NAMA_ANGGOTA'];?></td>
+                        <td><?php echo $data ['NAMA_KARYAWAN']; ?></td>
                         <td><?php echo $data ['STATUS']; ?></td>
                         <td>
                         <a href="?page=periksadokter&aksi=detail&ID_BEROBAT=<?= $data["ID_BEROBAT"];?>" name="detail" class="btn btn-primary"><i class="fa fa-search"></i></a>  
